@@ -1,22 +1,87 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="c0c-FT-4u7">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--My Navigation Controller-->
         <scene sceneID="ATy-XO-1yM">
             <objects>
-                <navigationController id="c0c-FT-4u7" sceneMemberID="viewController">
+                <navigationController id="c0c-FT-4u7" customClass="MyNavigationController" customModule="VenEcon2" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="c9r-vJ-6ah">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="zDY-Lm-TOB" kind="relationship" relationship="rootViewController" id="P5s-lZ-MRe"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7Z-Ft-ZNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-186" y="350"/>
+            <point key="canvasLocation" x="-247" y="336"/>
+        </scene>
+        <!--Code-->
+        <scene sceneID="u1K-Tj-vYY">
+            <objects>
+                <viewController storyboardIdentifier="FXViewController" id="zDY-Lm-TOB" customClass="FXCode" customModule="VenEcon2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pPl-ad-7UV"/>
+                        <viewControllerLayoutGuide type="bottom" id="dql-nS-G3N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2cC-yP-Aup">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foreign Exchange" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7It-mU-p5V">
+                                <rect key="frame" x="201" y="74" width="199" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OeS-VE-e7o" customClass="ShinobiChart">
+                                <rect key="frame" x="20" y="350" width="560" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="S6o-nB-Mm1"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="JIR-Ze-I2l">
+                                <rect key="frame" x="20" y="312" width="560" height="29"/>
+                                <segments>
+                                    <segment title="4 years"/>
+                                    <segment title="3 years"/>
+                                    <segment title="2 years"/>
+                                    <segment title="1 year"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="RangeControl:" destination="zDY-Lm-TOB" eventType="valueChanged" id="XER-uE-fMl"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="JIR-Ze-I2l" firstAttribute="leading" secondItem="2cC-yP-Aup" secondAttribute="leadingMargin" id="8Qm-ci-Ymt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OeS-VE-e7o" secondAttribute="trailing" id="9ii-Hl-Lb0"/>
+                            <constraint firstItem="dql-nS-G3N" firstAttribute="top" secondItem="OeS-VE-e7o" secondAttribute="bottom" id="DAB-zX-Qdp"/>
+                            <constraint firstItem="7It-mU-p5V" firstAttribute="top" secondItem="pPl-ad-7UV" secondAttribute="bottom" constant="10" id="JDJ-AD-lw9"/>
+                            <constraint firstItem="7It-mU-p5V" firstAttribute="centerX" secondItem="2cC-yP-Aup" secondAttribute="centerX" id="L4i-4d-2dm"/>
+                            <constraint firstItem="OeS-VE-e7o" firstAttribute="top" secondItem="JIR-Ze-I2l" secondAttribute="bottom" constant="10" id="Ng0-lB-s3e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JIR-Ze-I2l" secondAttribute="trailing" id="Rhd-80-6VJ"/>
+                            <constraint firstItem="OeS-VE-e7o" firstAttribute="leading" secondItem="2cC-yP-Aup" secondAttribute="leadingMargin" id="spk-Sh-hQR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wUH-8R-b0q"/>
+                    <connections>
+                        <outlet property="RangeController" destination="JIR-Ze-I2l" id="yXA-wf-DMY"/>
+                        <outlet property="chart" destination="OeS-VE-e7o" id="gQN-NJ-fTl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aCd-ZE-d6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="396" y="353"/>
         </scene>
     </scenes>
 </document>
