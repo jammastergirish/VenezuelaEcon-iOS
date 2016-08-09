@@ -166,6 +166,7 @@
 				TargetAttributes = {
 					68D3DB921D593AA600F42648 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 82R2WDARJW;
 					};
 					68D3DBA61D593AA700F42648 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -353,13 +354,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/VenEcon2",
 				);
 				INFOPLIST_FILE = VenEcon2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.VenEcon2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.girish.VenEcon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "VenEcon2/ShinobiCharts.framework/Headers/ShinobiChart-Bridging-Header.h";
 			};
@@ -369,13 +371,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/VenEcon2",
 				);
 				INFOPLIST_FILE = VenEcon2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.VenEcon2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.girish.VenEcon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "VenEcon2/ShinobiCharts.framework/Headers/ShinobiChart-Bridging-Header.h";
 			};
@@ -424,6 +427,7 @@
 				68D3DBB21D593AA700F42648 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68D3DBB31D593AA700F42648 /* Build configuration list for PBXNativeTarget "VenEcon2Tests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +436,7 @@
 				68D3DBB51D593AA700F42648 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

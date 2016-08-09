@@ -13,6 +13,14 @@ class MyMenuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        var label = UILabel(frame: CGRectMake(0, 0, 200, 21))
+        label.center = CGPointMake(108, -30)
+        label.textAlignment = NSTextAlignment.Left
+        label.text = "VENEZUELA ECON"
+        label.textColor = UIColor.whiteColor()
+        self.view.addSubview(label)
+        
         // Customize apperance of table view
         tableView.contentInset = UIEdgeInsetsMake(64.0, 0, 0, 0) //
         tableView.separatorStyle = .None
@@ -32,7 +40,7 @@ class MyMenuTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     
-        let labels : [String] = ["Foreign Exchange", "Foreign Reserves", "Oil Prices", "Inflation", "Money Supply", "GDP", "Tax revenue", "Minimum Wage"]
+        let labels : [String] = ["Exchange Rates", "Foreign Reserves", "Oil Prices", "Inflation", "Money Supply", "GDP", "Tax revenue", "Minimum Wage"]
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
