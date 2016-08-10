@@ -15,7 +15,7 @@ class MyMenuTableViewController: UITableViewController {
         
         
         var label = UILabel(frame: CGRectMake(0, 0, 200, 21))
-        label.center = CGPointMake(108, -30)
+        label.center = CGPointMake(108, -25)
         label.textAlignment = NSTextAlignment.Left
         label.text = "VENEZUELA ECON"
         label.textColor = UIColor.whiteColor()
@@ -29,26 +29,22 @@ class MyMenuTableViewController: UITableViewController {
         
         // Preserve selection between presentations
         self.clearsSelectionOnViewWillAppear = false
-        
-        tableView.selectRowAtIndexPath(NSIndexPath(forRow: selectedMenuItem, inSection: 0), animated: false, scrollPosition: .Middle)
+        //animated: true/false? changed. scrollpostiion?
+        tableView.selectRowAtIndexPath(NSIndexPath(forRow: selectedMenuItem, inSection: 0), animated: true, scrollPosition: .Middle)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
     
-        let labels : [String] = ["Exchange Rates", "Foreign Reserves", "Oil Prices", "Inflation", "Money Supply", "GDP", "Tax revenue", "Minimum Wage"]
+        let labels : [String] = ["Exchange Rates", "Foreign Reserves", "Oil Prices", "Inflation", "Money Supply", "Minimum Wage", "GDP", "Exports breakdown", "Oil exports to US", "Tax revenue"]
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // Return the number of sections.
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Return the number of rows in the section.
         return labels.count
     }
 
@@ -85,21 +81,20 @@ class MyMenuTableViewController: UITableViewController {
         
         selectedMenuItem = indexPath.row
         
-        //Present new view controller
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         var destViewController : UIViewController
         switch (indexPath.row) {
         case 0:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXVC") 
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXViewController")
             break
         case 1:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController2")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXViewController")
             break
         case 2:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXVC")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXViewController")
             break
         default:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController4") 
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXViewController")
             break
         }
         sideMenuController()?.setContentViewController(destViewController)

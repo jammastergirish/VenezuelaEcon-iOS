@@ -30,7 +30,13 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     @IBOutlet var M2_ResVal: UILabel!
     @IBOutlet var BlackMarketVal: UILabel!
     
+    @IBOutlet var BlackMarketYesterday: UILabel!
+    @IBOutlet var BlackMarketMonth: UILabel!
+    @IBOutlet var BlackMarketYear: UILabel!
+    @IBOutlet var BlackMarketTwoYear: UILabel!
     
+    @IBOutlet var SIMADIMonth: UILabel!
+    @IBOutlet var SIMADIYesterday: UILabel!
     @IBOutlet var chart: ShinobiChart!
     
     
@@ -42,7 +48,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     @IBOutlet var RangeController: UISegmentedControl!
     @IBAction func RangeControl(sender: AnyObject) {
-        var Start : String = "2015-08-07"
+        var Start : String = "2015-08-09"
         switch RangeController.selectedSegmentIndex
         {
         case 0:
@@ -99,6 +105,8 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 print("Did download but the data doesn't look like JSON")
                 return // stick in an alert or whatever here for corrupt data
             }
+            
+         dispatch_async(dispatch_get_main_queue(), { () -> Void in // Does this bit need to be in main thread? Much quicker if so
             print("Got here")
             self.Data(json)
             print("Got here too")
@@ -125,16 +133,271 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             NumberFormatter.numberStyle = .DecimalStyle
             NumberFormatter.maximumFractionDigits = 2
             
-            print(NumberFormatter.stringFromNumber(self.BM[Today]!)!)
-            //For some reason, this next block of code takes forever to run, whereas the test line above works as expected.
-            var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.BM[Today]!)! + " <font size=2>BsF/$</font></font>"
+            
+            
+            
+            var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.Simadi[Today]!)! + " <font size=2>BsF/$</font></font>"
             var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
             var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+            do {
+                let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                self.SIMADIVal.attributedText = attributedString
+                
+            } catch _ {}
+            
+            if (self.Simadi[Today]!==self.Simadi[Yesterday]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>Same as a month ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.SIMADIYesterday.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.BM[Today]!>self.Simadi[OneYearAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.Simadi[Yesterday]!, new: self.Simadi[Today]!))! + "% from a year ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.SIMADIYesterday.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.Simadi[Today]!<self.Simadi[OneYearAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.Simadi[Yesterday]!, new: self.Simadi[Today]!))! + "% from a year ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.SIMADIYesterday.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            
+            if (self.Simadi[Today]!==self.Simadi[OneMonthAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>Same as a month ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.SIMADIMonth.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.Simadi[Today]!>self.Simadi[OneMonthAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.Simadi[Yesterday]!, new: self.Simadi[Today]!))! + "% from a year ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.SIMADIMonth.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.Simadi[Today]!<self.Simadi[OneMonthAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.Simadi[Yesterday]!, new: self.Simadi[Today]!))! + "% from a year ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.SIMADIMonth.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            
+           /*  text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.M2_Res[Today]!)! + " <font size=2>BsF/$</font></font>"
+             encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+             attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+            do {
+                let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                self.M2_ResVal.attributedText = attributedString
+                
+            } catch _ {}*/
+            
+
+             text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.Official[Today]!)! + " <font size=2>BsF/$</font></font>"
+             encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+             attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+            do {
+                let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                self.DIPROVal.attributedText = attributedString
+                
+            } catch _ {}
+            
+            
+            
+
+            text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.BM[Today]!)! + " <font size=2>BsF/$</font></font>"
+            encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+            attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
             do {
                 let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
                 self.BlackMarketVal.attributedText = attributedString
                 
             } catch _ {}
+            
+            if (self.BM[Today]!==self.BM[Yesterday]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>Same as yesterday</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketYesterday.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.BM[Today]!>self.BM[Yesterday]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[Yesterday]!, new: self.BM[Today]!))! + "% from yesterday</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketYesterday.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.BM[Today]!<self.BM[Yesterday]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[Yesterday]!, new: self.BM[Today]!))! + "% from yesterday</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketYesterday.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            
+            if (self.BM[Today]!==self.BM[OneMonthAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>Same as a month ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketMonth.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.BM[Today]!>self.BM[OneMonthAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[OneMonthAgo]!, new: self.BM[Today]!))! + "% from a month ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketMonth.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.BM[Today]!<self.BM[OneMonthAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[OneMonthAgo]!, new: self.BM[Today]!))! + "% from a month ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketMonth.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            
+            
+            if (self.BM[Today]!==self.BM[OneYearAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>Same as a month ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketYear.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.BM[Today]!>self.BM[OneYearAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[OneYearAgo]!, new: self.BM[Today]!))! + "% from a year ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketYear.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.BM[Today]!<self.BM[OneYearAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[OneYearAgo]!, new: self.BM[Today]!))! + "% from a year ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketYear.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            
+            if (self.BM[Today]!==self.BM[TwoYearsAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>Same as a month ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketTwoYear.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.BM[Today]!>self.BM[TwoYearsAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[TwoYearsAgo]!, new: self.BM[Today]!))! + "% from a year ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketTwoYear.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.BM[Today]!<self.BM[TwoYearsAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[TwoYearsAgo]!, new: self.BM[Today]!))! + "% from a year ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketTwoYear.attributedText = attributedString
+                    
+                } catch _ {}
+            }
             
             
 
@@ -186,7 +449,11 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             self.chart.hidden = false
             self.RangeControl(3)
-            
+                                
+                                
+                                
+                                
+            })
    
             
         }
@@ -378,7 +645,15 @@ func sChart(chart: ShinobiChart, dataPointAtIndex dataIndex: Int, forSeriesAtInd
     else { return DataM2_Res[dataIndex] }
 }
 
-
+    func DevalPerc(let old : Double, let new : Double) -> Double
+    {
+        return 100*((1/old)-(1/new))/(1/old)
+    }
+    
+    func PercDiff(let old : Double, let new : Double) -> Double
+    {
+        return 100*(old-new)/old
+    }
 
 
 
