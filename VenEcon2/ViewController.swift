@@ -219,14 +219,15 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 } catch _ {}
             }
             
-           /*  text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.M2_Res[Today]!)! + " <font size=2>BsF/$</font></font>"
+
+             text = "<CENTER><font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(GetLatestNonZeroValue(self.M2_Res, date: Today))! + " <font size=2>BsF/$</font></font></CENTER>"
              encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
              attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
             do {
                 let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
                 self.M2_ResVal.attributedText = attributedString
                 
-            } catch _ {}*/
+            } catch _ {}
             
 
              text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.Official[Today]!)! + " <font size=2>BsF/$</font></font>"
@@ -425,7 +426,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             xAxis.style.lineColor = UIColor.whiteColor()
             xAxis.style.titleStyle.textColor = UIColor.whiteColor()
             //xAxis.labelFormatter!.dateFormatter().dateStyle = .MediumStyle
-            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM d, YYYY"
             self.chart.xAxis = xAxis
             
             // Y Axis
@@ -657,4 +658,37 @@ func sChart(chart: ShinobiChart, dataPointAtIndex dataIndex: Int, forSeriesAtInd
 
 
 
+}
+
+
+
+
+
+
+func GetLatestNonZeroValue(let dict : [String: Double], let date : String) -> Double
+{
+    let userCalendar = NSCalendar.currentCalendar()
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    
+    
+    var value : Double? = dict[date]
+    if ((value != 0) && (value != nil))
+    {
+        return value!
+    }
+    else
+    {
+        let DayBeforeDate = userCalendar.dateByAddingUnit([.Day], value: -1, toDate: dateFormatter.dateFromString(date)!, options: [])
+        value = dict[dateFormatter.stringFromDate(DayBeforeDate!)]
+        if ((value != 0) && (value != nil))
+        {
+           // print (value!)
+            return value!
+        }
+        else
+        {
+            return GetLatestNonZeroValue(dict, date: dateFormatter.stringFromDate(DayBeforeDate!))
+        }
+    }
 }
