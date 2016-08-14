@@ -203,7 +203,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!>self.Simadi[Yesterday]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(self.Simadi[Yesterday]!, new: self.Simadi[Today]!)))! + "% c.f. yesterday</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(self.Simadi[Yesterday]!, new: self.Simadi[Today]!)))! + "% in a day</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -215,7 +215,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.Simadi[Today]!<self.Simadi[Yesterday]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.Simadi[Yesterday]!, new: self.Simadi[Today]!))! + "% c.f. yesterday</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.Simadi[Yesterday]!, new: self.Simadi[Today]!))! + "% in a day</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -240,7 +240,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.Simadi[Today]!>self.Simadi[OneMonthAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.Simadi[OneMonthAgo]!, new: self.Simadi[Today]!))! + "% c.f. a month ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.Simadi[OneMonthAgo]!, new: self.Simadi[Today]!))! + "% in a month</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -252,7 +252,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.Simadi[Today]!<self.Simadi[OneMonthAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.Simadi[OneMonthAgo]!, new: self.Simadi[Today]!))! + "% c.f. a month ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.Simadi[OneMonthAgo]!, new: self.Simadi[Today]!))! + "% in a month</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -277,7 +277,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.Simadi[Today]!>self.Simadi[OneYearAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.Simadi[OneYearAgo]!, new: self.Simadi[Today]!))! + "% c.f. a year ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.Simadi[OneYearAgo]!, new: self.Simadi[Today]!))! + "% in a year</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -289,7 +289,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.Simadi[Today]!<self.Simadi[OneYearAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.Simadi[OneYearAgo]!, new: self.Simadi[Today]!))! + "% c.f. a year ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.Simadi[OneYearAgo]!, new: self.Simadi[Today]!))! + "% in a year</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -346,7 +346,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!>self.BM[Yesterday]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(self.BM[Yesterday]!, new: self.BM[Today]!)))! + "% c.f. yesterday</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(self.BM[Yesterday]!, new: self.BM[Today]!)))! + "% in a day</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -358,7 +358,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!<self.BM[Yesterday]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(self.BM[Yesterday]!, new: self.BM[Today]!)))! + "% c.f. yesterday</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(self.BM[Yesterday]!, new: self.BM[Today]!)))! + "% in a day</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -383,7 +383,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!>self.BM[OneMonthAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(self.BM[OneMonthAgo]!, new: self.BM[Today]!)))! + "% c.f. a month ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(self.BM[OneMonthAgo]!, new: self.BM[Today]!)))! + "% in a month</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -395,7 +395,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!<self.BM[OneMonthAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(self.BM[OneMonthAgo]!, new: self.BM[Today]!)))! + "% c.f. a month ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(self.BM[OneMonthAgo]!, new: self.BM[Today]!)))! + "% in a month</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -420,7 +420,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!>self.BM[OneYearAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[OneYearAgo]!, new: self.BM[Today]!))! + "% c.f. a year ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[OneYearAgo]!, new: self.BM[Today]!))! + "% in a year</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -432,7 +432,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!<self.BM[OneYearAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[OneYearAgo]!, new: self.BM[Today]!))! + "% c.f. a year ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[OneYearAgo]!, new: self.BM[Today]!))! + "% in a year</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -459,7 +459,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!>self.BM[TwoYearsAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[TwoYearsAgo]!, new: self.BM[Today]!))! + "% c.f. 2 years ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[TwoYearsAgo]!, new: self.BM[Today]!))! + "% in 2 years</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -471,7 +471,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!<self.BM[TwoYearsAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[TwoYearsAgo]!, new: self.BM[Today]!))! + "% c.f. 2 years ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[TwoYearsAgo]!, new: self.BM[Today]!))! + "% in 2 years</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -496,7 +496,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!>self.BM[ThreeYearsAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[ThreeYearsAgo]!, new: self.BM[Today]!))! + "% c.f. 3 years ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[ThreeYearsAgo]!, new: self.BM[Today]!))! + "% in 3 years</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -508,7 +508,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!<self.BM[ThreeYearsAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[ThreeYearsAgo]!, new: self.BM[Today]!))! + "% c.f. 3 years ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[ThreeYearsAgo]!, new: self.BM[Today]!))! + "% in 3 years</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -533,7 +533,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!>self.BM[FourYearsAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[FourYearsAgo]!, new: self.BM[Today]!))! + "% c.f. 4 years ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[FourYearsAgo]!, new: self.BM[Today]!))! + "% in 4 years</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -545,7 +545,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!<self.BM[FourYearsAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[FourYearsAgo]!, new: self.BM[Today]!))! + "% c.f. 4 years ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(DevalPerc(self.BM[FourYearsAgo]!, new: self.BM[Today]!))! + "% in 4 years</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
