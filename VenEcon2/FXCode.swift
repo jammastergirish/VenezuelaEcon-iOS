@@ -64,7 +64,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         switch RangeController.selectedSegmentIndex
         {
         case 0:
-            Start = "2011-08-13"
+            Start = "2011-08-13" // If those date definitions were higher, I could use them here instead of typing manually or copying and pasting from below which obviously isn't okay.
         case 1:
             Start = "2012-08-13"
         case 2:
@@ -141,7 +141,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
 
             self.Data(json)
             
-            //Set all the text
+            //Set all the text. There must be a way of doing this without using so many repetetive lines of code? I mean the attributed text rather than my if statements.
             var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.Simadi[Today]!)! + " <font size=2>BsF/$</font></font>"
             var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
             var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]

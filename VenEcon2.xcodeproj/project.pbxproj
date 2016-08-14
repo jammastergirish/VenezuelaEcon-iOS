@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6866B1CD1D601A030073926F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6866B1CC1D601A030073926F /* Images.xcassets */; };
 		68D3DB971D593AA600F42648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DB961D593AA600F42648 /* AppDelegate.swift */; };
 		68D3DB991D593AA600F42648 /* FXCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DB981D593AA600F42648 /* FXCode.swift */; };
 		68D3DB9C1D593AA600F42648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D3DB9A1D593AA600F42648 /* Main.storyboard */; };
-		68D3DB9E1D593AA600F42648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D3DB9D1D593AA600F42648 /* Assets.xcassets */; };
 		68D3DBA11D593AA600F42648 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D3DB9F1D593AA600F42648 /* LaunchScreen.storyboard */; };
 		68D3DBAC1D593AA700F42648 /* VenEcon2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DBAB1D593AA700F42648 /* VenEcon2Tests.swift */; };
 		68D3DBBA1D593AFF00F42648 /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DBB61D593AFF00F42648 /* ENSideMenu.swift */; };
@@ -32,11 +32,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6866B1CC1D601A030073926F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		68D3DB931D593AA600F42648 /* VenEcon2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenEcon2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D3DB961D593AA600F42648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68D3DB981D593AA600F42648 /* FXCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXCode.swift; sourceTree = "<group>"; };
 		68D3DB9B1D593AA600F42648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		68D3DB9D1D593AA600F42648 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68D3DBA01D593AA600F42648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68D3DBA21D593AA600F42648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68D3DBA71D593AA700F42648 /* VenEcon2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VenEcon2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,9 +100,9 @@
 				68D3DBB81D593AFF00F42648 /* MyMenuTableViewController.swift */,
 				68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */,
 				68D3DB9A1D593AA600F42648 /* Main.storyboard */,
-				68D3DB9D1D593AA600F42648 /* Assets.xcassets */,
 				68D3DB9F1D593AA600F42648 /* LaunchScreen.storyboard */,
 				68D3DBA21D593AA600F42648 /* Info.plist */,
+				6866B1CC1D601A030073926F /* Images.xcassets */,
 			);
 			path = VenEcon2;
 			sourceTree = "<group>";
@@ -199,7 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68D3DBA11D593AA600F42648 /* LaunchScreen.storyboard in Resources */,
-				68D3DB9E1D593AA600F42648 /* Assets.xcassets in Resources */,
+				6866B1CD1D601A030073926F /* Images.xcassets in Resources */,
 				68D3DB9C1D593AA600F42648 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +305,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -344,6 +345,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
