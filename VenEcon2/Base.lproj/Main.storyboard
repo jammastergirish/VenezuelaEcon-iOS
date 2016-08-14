@@ -263,5 +263,133 @@
             </objects>
             <point key="canvasLocation" x="512" y="352"/>
         </scene>
+        <!--Reserves Code-->
+        <scene sceneID="D6w-SK-7LO">
+            <objects>
+                <viewController storyboardIdentifier="ReservesViewController" id="7Xw-Wz-ddH" customClass="ReservesCode" customModule="VenEcon2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0U6-lm-kFW"/>
+                        <viewControllerLayoutGuide type="bottom" id="vB0-9u-nBk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rxc-q4-qwm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foreign Reserves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63q-MY-4hB">
+                                <rect key="frame" x="205" y="60" width="191" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Qwb-eu-4B7">
+                                <rect key="frame" x="225" y="130" width="150" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ForeignReservesVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbI-Sh-lWP">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ForeignReservesYesterday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7o-By-iQV">
+                                        <rect key="frame" x="0.0" y="26" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ForeignReservesMonth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZc-So-dZh">
+                                        <rect key="frame" x="0.0" y="47" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ForeignReservesYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSK-CH-OEF">
+                                        <rect key="frame" x="0.0" y="69" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="ForeignReservesTwoYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkC-A0-ISy">
+                                        <rect key="frame" x="0.0" y="90" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="ForeignReservesThreeYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfD-2V-Cgn">
+                                        <rect key="frame" x="0.0" y="112" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="ForeignReservesFourYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6M-t0-9cl">
+                                        <rect key="frame" x="0.0" y="133" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Vwt-26-JAc"/>
+                                    <constraint firstAttribute="height" constant="150" id="m2Q-Wy-hgp"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xrT-Gd-YI8">
+                                <rect key="frame" x="20" y="320" width="560" height="280"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UMZ-00-2VQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="OVl-UG-bfE"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="5 years"/>
+                                            <segment title="4 years"/>
+                                            <segment title="3 years"/>
+                                            <segment title="2 years"/>
+                                            <segment title="1 year"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="RangeControl:" destination="zDY-Lm-TOB" eventType="valueChanged" id="AdK-R5-CRy"/>
+                                            <action selector="RangeControl:" destination="7Xw-Wz-ddH" eventType="valueChanged" id="Anb-mD-T1f"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bte-vU-Sar" customClass="ShinobiChart">
+                                        <rect key="frame" x="0.0" y="33" width="560" height="247"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Bte-vU-Sar" firstAttribute="top" secondItem="UMZ-00-2VQ" secondAttribute="bottom" constant="5" id="xkF-if-iPM"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qwb-eu-4B7" firstAttribute="top" secondItem="63q-MY-4hB" secondAttribute="bottom" constant="40" id="A6u-82-yl4"/>
+                            <constraint firstItem="63q-MY-4hB" firstAttribute="top" secondItem="0U6-lm-kFW" secondAttribute="bottom" constant="40" id="Hxp-Qh-eIm"/>
+                            <constraint firstItem="63q-MY-4hB" firstAttribute="centerX" secondItem="Rxc-q4-qwm" secondAttribute="centerX" id="aTs-pu-8bY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xrT-Gd-YI8" secondAttribute="trailing" id="cmz-fD-eP3"/>
+                            <constraint firstItem="Qwb-eu-4B7" firstAttribute="centerX" secondItem="Rxc-q4-qwm" secondAttribute="centerX" id="eJL-AN-Mgi"/>
+                            <constraint firstItem="vB0-9u-nBk" firstAttribute="top" secondItem="xrT-Gd-YI8" secondAttribute="bottom" id="oJi-yY-uyc"/>
+                            <constraint firstItem="xrT-Gd-YI8" firstAttribute="top" secondItem="Qwb-eu-4B7" secondAttribute="bottom" constant="40" id="skt-Ow-KM7"/>
+                            <constraint firstItem="xrT-Gd-YI8" firstAttribute="leading" secondItem="Rxc-q4-qwm" secondAttribute="leadingMargin" id="t16-YG-unw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="RangeController" destination="UMZ-00-2VQ" id="NOp-bj-3lK"/>
+                        <outlet property="ReservesFourYear" destination="z6M-t0-9cl" id="OAf-Bu-ScE"/>
+                        <outlet property="ReservesMonth" destination="sZc-So-dZh" id="goY-V9-AmR"/>
+                        <outlet property="ReservesThreeYear" destination="LfD-2V-Cgn" id="lou-dG-EzK"/>
+                        <outlet property="ReservesTwoYear" destination="TkC-A0-ISy" id="xZx-1e-aCD"/>
+                        <outlet property="ReservesVal" destination="FbI-Sh-lWP" id="Jc5-0o-RWP"/>
+                        <outlet property="ReservesYear" destination="WSK-CH-OEF" id="Y3z-Uk-yZQ"/>
+                        <outlet property="ReservesYesterday" destination="V7o-By-iQV" id="fhF-zK-VpU"/>
+                        <outlet property="chart" destination="Bte-vU-Sar" id="i1T-pX-47E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rbk-Yo-suV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="161" y="1008"/>
+        </scene>
     </scenes>
 </document>

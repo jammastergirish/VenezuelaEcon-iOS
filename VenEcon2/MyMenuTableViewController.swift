@@ -88,7 +88,7 @@ class MyMenuTableViewController: UITableViewController {
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXViewController")
             break
         case 1:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXViewController")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ReservesViewController")
             break
         case 2:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXViewController")
