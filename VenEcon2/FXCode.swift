@@ -10,16 +10,17 @@ import UIKit
 
 class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
-    
     let userCalendar = NSCalendar.currentCalendar()
     
     let currencies : [String: String] = ["GBP": "£", "USD": "$", "EUR": "€", "COP": "COL$", "VEF": "BsF"]
     
+    //Variables to hold data
     var BM = [String: Double]()
     var Official = [String: Double]()
     var Simadi = [String: Double]()
     var M2_Res = [String: Double]()
     
+    //Variables to hold chart data
     var DataBM: [SChartDataPoint] = []
     var DataOfficial: [SChartDataPoint] = []
     var DataSimadi: [SChartDataPoint] = []
@@ -29,11 +30,13 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     var DataSicad2: [SChartDataPoint] = []
     var DataM2_Res: [SChartDataPoint] = []
     
+    //Labels for main values
     @IBOutlet var BlackMarketVal: UILabel!
     @IBOutlet var SIMADIVal: UILabel!
     @IBOutlet var DIPROVal: UILabel!
     @IBOutlet var M2_ResVal: UILabel!
     
+    //Labels for variation text
     @IBOutlet var BlackMarketYesterday: UILabel!
     @IBOutlet var BlackMarketMonth: UILabel!
     @IBOutlet var BlackMarketYear: UILabel!
@@ -44,14 +47,17 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     @IBOutlet var SIMADIYesterday: UILabel!
     @IBOutlet var SIMADIYear: UILabel!
     
+    //Chart
     @IBOutlet var chart: ShinobiChart!
     
+    //DateFormatter for data for chart. Not sure why in this format with "required init..."
     let dateFormatter = NSDateFormatter()
     required init?(coder aDecoder: NSCoder) {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         super.init(coder: aDecoder)
     }
     
+    //Range Controller and Range Control functions
     @IBOutlet var RangeController: UISegmentedControl!
     @IBAction func RangeControl(sender: AnyObject) {
         var Start : String = "2015-08-09"
@@ -80,17 +86,20 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         chart.redrawChart()
     }
     
-    
+    //Internet download session
     let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //For menu
         self.sideMenuController()?.sideMenu?.delegate = self
         self.navigationController?.navigationBarHidden = true
         
+        //Telling what units we're using. Hopefully will be able to shift all this
         var units : String = self.currencies["VEF"]! + "/" + self.currencies["USD"]!
         
+        //Definitions for time. These should ideally be far out of this function. Why can't I put these higher?
         let Today = self.dateFormatter.stringFromDate(NSDate())
         let Yesterday = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -1, toDate: NSDate(), options: [])!)
         let OneWeekAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -7, toDate: NSDate(), options: [])!)
@@ -103,14 +112,15 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         let FourYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*4), toDate: NSDate(), options: [])!)
         let FiveYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*5), toDate: NSDate(), options: [])!)
         
+        //A number formatter
         let NumberFormatter = NSNumberFormatter()
         NumberFormatter.numberStyle = .DecimalStyle
         NumberFormatter.maximumFractionDigits = 1
         
-        //Loading so everything hidden
+        //Loading so everything hidden. I can't seem to add other stuff to this. Better way to hide/show everything?
         self.chart.hidden = true
         
-        //Added this bit with Pat on 20160804, to download the file c.f. server
+        //Added this bit with Pat on 20160804, to download the file
         let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=2011-01-01")!
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
@@ -710,6 +720,7 @@ func numberOfSeriesInSChart(chart: ShinobiChart) -> Int {
     return 8
 }
 
+    //How can I make this cleaner?
 func sChart(chart: ShinobiChart, seriesAtIndex index: Int) -> SChartSeries {
     
     
@@ -756,7 +767,10 @@ func sChart(chart: ShinobiChart, seriesAtIndex index: Int) -> SChartSeries {
     return lineSeries
     
 }
-
+    
+    
+    
+    //How can I make this cleaner?
 func sChart(chart: ShinobiChart, numberOfDataPointsForSeriesAtIndex seriesIndex: Int) -> Int {
     
     if seriesIndex == 0
@@ -794,6 +808,7 @@ func sChart(chart: ShinobiChart, numberOfDataPointsForSeriesAtIndex seriesIndex:
     else { return 0 }
 }
 
+        //How can I make this cleaner?
 func sChart(chart: ShinobiChart, dataPointAtIndex dataIndex: Int, forSeriesAtIndex seriesIndex: Int) -> SChartData {
     
     
@@ -833,6 +848,7 @@ func sChart(chart: ShinobiChart, dataPointAtIndex dataIndex: Int, forSeriesAtInd
     }
 
 
+    //I want these to be global functions
 func DevalPerc(let old : Double, let new : Double) -> Double
 {
     return 100*((1/old)-(1/new))/(1/old)
@@ -846,7 +862,7 @@ func PercDiff(let old : Double, let new : Double) -> Double
 }
 
 
-// Wrote on 20160810
+// Wrote on 20160810. I want this to be a global function...
 func GetLatestNonZeroValue(let dict : [String: Double], let date : String) -> Double
 {
     let userCalendar = NSCalendar.currentCalendar()
