@@ -8,6 +8,16 @@
 
 import UIKit
 
+func DevalPerc(let old : Double, let new : Double) -> Double
+{
+    return 100*((1/old)-(1/new))/(1/old)
+}
+
+func PercDiff(let old : Double, let new : Double) -> Double
+{
+    return 100*(old-new)/old
+}
+
 // Wrote this function on 20160810.
 func GetLatestNonZeroValue(let dict : [String: Double], let date : String) -> Double
 {
@@ -33,16 +43,6 @@ func GetLatestNonZeroValue(let dict : [String: Double], let date : String) -> Do
             return GetLatestNonZeroValue(dict, date: dateFormatter.stringFromDate(DayBeforeDate!))
         }
     }
-}
-
-func DevalPerc(let old : Double, let new : Double) -> Double
-{
-    return 100*((1/old)-(1/new))/(1/old)
-}
-
-func PercDiff(let old : Double, let new : Double) -> Double
-{
-    return 100*(old-new)/old
 }
 
 
@@ -102,15 +102,15 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         switch RangeController.selectedSegmentIndex
         {
         case 0:
-            Start = "2011-08-13" // If those date definitions were higher, I could use them here instead of typing manually or copying and pasting from below which obviously isn't okay.
+            Start = "2011-08-15" // If those date definitions below were higher, I could use them here instead of typing manually or copying and pasting from below which obviously isn't okay.
         case 1:
-            Start = "2012-08-13"
+            Start = "2012-08-15"
         case 2:
-            Start = "2013-08-13"
+            Start = "2013-08-15"
         case 3:
-            Start = "2014-08-13"
+            Start = "2014-08-15"
         case 4:
-            Start = "2015-08-13"
+            Start = "2015-08-15"
         default:
             break;
         }
@@ -578,12 +578,12 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             xAxis.style.lineColor = UIColor.whiteColor()
             xAxis.style.titleStyle.textColor = UIColor.whiteColor()
             //xAxis.labelFormatter!.dateFormatter().dateStyle = .MediumStyle
-            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM d, YYYY"
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM, YYYY"
             self.chart.xAxis = xAxis
             
             // Y Axis
             let yAxis = SChartNumberAxis()
-            yAxis.title = "Exchange rate (" + units + ")"
+            yAxis.title = "Exchange Rate (" + units + ")"
             self.enablePanningAndZoomingOnAxis(yAxis)
             yAxis.rangePaddingLow = 1
             yAxis.rangePaddingHigh = 1
@@ -756,7 +756,7 @@ func numberOfSeriesInSChart(chart: ShinobiChart) -> Int {
     return 8
 }
 
-    //How can I make this cleaner?
+    
 func sChart(chart: ShinobiChart, seriesAtIndex index: Int) -> SChartSeries {
     
     let lineSeries = SChartLineSeries()
@@ -784,48 +784,22 @@ func sChart(chart: ShinobiChart, seriesAtIndex index: Int) -> SChartSeries {
     
     
     
-    //How can I make this cleaner?
 func sChart(chart: ShinobiChart, numberOfDataPointsForSeriesAtIndex seriesIndex: Int) -> Int {
     
-    if seriesIndex == 0
-    {
-        return DataBM.count
-    }
-    if seriesIndex == 1
-    {
-        return DataOfficial.count
-    }
-    if seriesIndex == 2
-    {
-        return DataSimadi.count
-    }
-    if seriesIndex == 3
-    {
-        return DataM2_Res.count
-    }
-    if seriesIndex == 4
-    {
-        return DataSitme.count
-    }
-    if seriesIndex == 5
-    {
-        return DataSicad1.count
-    }
-    if seriesIndex == 6
-    {
-        return DataSicad2.count
-    }
-    if seriesIndex == 7
-    {
-        return DataSupp.count
-    }
-    else { return 0 }
+    let counts : [Int] = [DataBM.count,DataOfficial.count,DataSimadi.count, DataM2_Res.count, DataSitme.count, DataSicad1.count, DataSicad2.count, DataSupp.count]
+    
+    return counts[seriesIndex]
+    
+    
+    
+    /* if seriesIndex == 0
+     {
+     return DataBM.count
+     } etc */
+    
 }
 
-        //How can I make this cleaner?
 func sChart(chart: ShinobiChart, dataPointAtIndex dataIndex: Int, forSeriesAtIndex seriesIndex: Int) -> SChartData {
-
-    
     
     if seriesIndex == 0
     {
