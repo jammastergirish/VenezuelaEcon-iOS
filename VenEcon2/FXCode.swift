@@ -790,8 +790,6 @@ func sChart(chart: ShinobiChart, numberOfDataPointsForSeriesAtIndex seriesIndex:
     
     return counts[seriesIndex]
     
-    
-    
     /* if seriesIndex == 0
      {
      return DataBM.count
