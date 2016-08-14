@@ -23,22 +23,28 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     var DataBM: [SChartDataPoint] = []
     var DataOfficial: [SChartDataPoint] = []
     var DataSimadi: [SChartDataPoint] = []
+    var DataSupp: [SChartDataPoint] = []
+    var DataSitme: [SChartDataPoint] = []
+    var DataSicad1: [SChartDataPoint] = []
+    var DataSicad2: [SChartDataPoint] = []
     var DataM2_Res: [SChartDataPoint] = []
     
+    @IBOutlet var BlackMarketVal: UILabel!
     @IBOutlet var SIMADIVal: UILabel!
     @IBOutlet var DIPROVal: UILabel!
     @IBOutlet var M2_ResVal: UILabel!
-    @IBOutlet var BlackMarketVal: UILabel!
     
     @IBOutlet var BlackMarketYesterday: UILabel!
     @IBOutlet var BlackMarketMonth: UILabel!
     @IBOutlet var BlackMarketYear: UILabel!
     @IBOutlet var BlackMarketTwoYear: UILabel!
-    
+    @IBOutlet var BlackMarketThreeYear: UILabel!
+    @IBOutlet var BlackMarketFourYear: UILabel!
     @IBOutlet var SIMADIMonth: UILabel!
     @IBOutlet var SIMADIYesterday: UILabel!
-    @IBOutlet var chart: ShinobiChart!
+    @IBOutlet var SIMADIYear: UILabel!
     
+    @IBOutlet var chart: ShinobiChart!
     
     let dateFormatter = NSDateFormatter()
     required init?(coder aDecoder: NSCoder) {
@@ -52,13 +58,15 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         switch RangeController.selectedSegmentIndex
         {
         case 0:
-            Start = "2012-08-09"
+            Start = "2011-08-13"
         case 1:
-            Start = "2013-08-09"
+            Start = "2012-08-13"
         case 2:
-            Start = "2014-08-09"
+            Start = "2013-08-13"
         case 3:
-            Start = "2015-08-09"
+            Start = "2014-08-13"
+        case 4:
+            Start = "2015-08-13"
         default:
             break;
         }
@@ -79,23 +87,36 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         super.viewDidLoad()
         
         self.sideMenuController()?.sideMenu?.delegate = self
-        
         self.navigationController?.navigationBarHidden = true
         
-        //Why does this have to be here?
-            var units : String = self.currencies["VEF"]! + "/" + self.currencies["USD"]!
+        var units : String = self.currencies["VEF"]! + "/" + self.currencies["USD"]!
         
+        let Today = self.dateFormatter.stringFromDate(NSDate())
+        let Yesterday = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -1, toDate: NSDate(), options: [])!)
+        let OneWeekAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -7, toDate: NSDate(), options: [])!)
+        let FirstOfThisMonth = ""
+        let OneMonthAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -30, toDate: NSDate(), options: [])!)
+        let FirstOfThisYear = ""
+        let OneYearAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -365, toDate: NSDate(), options: [])!)
+        let TwoYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*2), toDate: NSDate(), options: [])!)
+        let ThreeYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*3), toDate: NSDate(), options: [])!)
+        let FourYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*4), toDate: NSDate(), options: [])!)
+        let FiveYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*5), toDate: NSDate(), options: [])!)
         
+        let NumberFormatter = NSNumberFormatter()
+        NumberFormatter.numberStyle = .DecimalStyle
+        NumberFormatter.maximumFractionDigits = 1
         
+        //Loading so everything hidden
         self.chart.hidden = true
         
-        //Added this bit with Pat on 20160804, to download the file from server
-        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=2012-01-01")!
+        //Added this bit with Pat on 20160804, to download the file c.f. server
+        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=2011-01-01")!
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             
             guard let data = data where error == nil else {
-                print("Didn't download properly") // stick in an alert or whatever here for failed download
+                print("Didn't download properly")
                 return
             }
             
@@ -103,39 +124,14 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 json = optionalJSON else
             {
                 print("Did download but the data doesn't look like JSON")
-                return // stick in an alert or whatever here for corrupt data
+                return
             }
             
          dispatch_async(dispatch_get_main_queue(), { () -> Void in // Does this bit need to be in main thread? Much quicker if so
-            print("Got here")
+
             self.Data(json)
-            print("Got here too")
             
-            
-
-            
-            //Some definitions which ideally I'd want to get higher up. Why do they need to be here?
-            let Today = self.dateFormatter.stringFromDate(NSDate())
-            let Yesterday = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -1, toDate: NSDate(), options: [])!)
-            let OneWeekAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -7, toDate: NSDate(), options: [])!)
-            let FirstOfThisMonth = ""
-            let OneMonthAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -30, toDate: NSDate(), options: [])!)
-            let FirstOfThisYear = ""
-            let OneYearAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -365, toDate: NSDate(), options: [])!)
-            let TwoYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*2), toDate: NSDate(), options: [])!)
-            let ThreeYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*3), toDate: NSDate(), options: [])!)
-            let FourYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*4), toDate: NSDate(), options: [])!)
-            //self.BM[OneWeekAgo]! is how you get a value back in time/today
-            
-
-            //Again, be nice to put this higher.
-            let NumberFormatter = NSNumberFormatter()
-            NumberFormatter.numberStyle = .DecimalStyle
-            NumberFormatter.maximumFractionDigits = 2
-            
-            
-            
-            
+            //Set all the text
             var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.Simadi[Today]!)! + " <font size=2>BsF/$</font></font>"
             var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
             var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -147,7 +143,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             if (self.Simadi[Today]!==self.Simadi[Yesterday]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>Same as a month ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>Same as yesterday</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -157,9 +153,9 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
             }
-            else if (self.BM[Today]!>self.Simadi[OneYearAgo]!)
+            else if (self.BM[Today]!>self.Simadi[Yesterday]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.Simadi[Yesterday]!, new: self.Simadi[Today]!))! + "% from a year ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(self.DevalPerc(self.Simadi[Yesterday]!, new: self.Simadi[Today]!)))! + "% c.f. yesterday</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -169,9 +165,9 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
             }
-            else if (self.Simadi[Today]!<self.Simadi[OneYearAgo]!)
+            else if (self.Simadi[Today]!<self.Simadi[Yesterday]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.Simadi[Yesterday]!, new: self.Simadi[Today]!))! + "% from a year ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.Simadi[Yesterday]!, new: self.Simadi[Today]!))! + "% c.f. yesterday</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -196,7 +192,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.Simadi[Today]!>self.Simadi[OneMonthAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.Simadi[Yesterday]!, new: self.Simadi[Today]!))! + "% from a year ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.Simadi[OneMonthAgo]!, new: self.Simadi[Today]!))! + "% c.f. a month ago</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -208,13 +204,50 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.Simadi[Today]!<self.Simadi[OneMonthAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.Simadi[Yesterday]!, new: self.Simadi[Today]!))! + "% from a year ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.Simadi[OneMonthAgo]!, new: self.Simadi[Today]!))! + "% c.f. a month ago</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
                     let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
                     self.SIMADIMonth.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            
+            if (self.Simadi[Today]!==self.Simadi[OneYearAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>Same as a year ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.SIMADIYear.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.Simadi[Today]!>self.Simadi[OneYearAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.Simadi[OneYearAgo]!, new: self.Simadi[Today]!))! + "% c.f. a year ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.SIMADIYear.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.Simadi[Today]!<self.Simadi[OneYearAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.Simadi[OneYearAgo]!, new: self.Simadi[Today]!))! + "% c.f. a year ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.SIMADIYear.attributedText = attributedString
                     
                 } catch _ {}
             }
@@ -265,7 +298,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!>self.BM[Yesterday]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[Yesterday]!, new: self.BM[Today]!))! + "% from yesterday</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(self.DevalPerc(self.BM[Yesterday]!, new: self.BM[Today]!)))! + "% c.f. yesterday</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -277,7 +310,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!<self.BM[Yesterday]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[Yesterday]!, new: self.BM[Today]!))! + "% from yesterday</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(self.DevalPerc(self.BM[Yesterday]!, new: self.BM[Today]!)))! + "% c.f. yesterday</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -302,7 +335,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!>self.BM[OneMonthAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[OneMonthAgo]!, new: self.BM[Today]!))! + "% from a month ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(self.DevalPerc(self.BM[OneMonthAgo]!, new: self.BM[Today]!)))! + "% c.f. a month ago</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -314,7 +347,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!<self.BM[OneMonthAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[OneMonthAgo]!, new: self.BM[Today]!))! + "% from a month ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(self.DevalPerc(self.BM[OneMonthAgo]!, new: self.BM[Today]!)))! + "% c.f. a month ago</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -325,10 +358,9 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 } catch _ {}
             }
             
-            
             if (self.BM[Today]!==self.BM[OneYearAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>Same as a month ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>Same as a year ago</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -340,7 +372,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!>self.BM[OneYearAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[OneYearAgo]!, new: self.BM[Today]!))! + "% from a year ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[OneYearAgo]!, new: self.BM[Today]!))! + "% c.f. a year ago</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -352,7 +384,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!<self.BM[OneYearAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[OneYearAgo]!, new: self.BM[Today]!))! + "% from a year ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[OneYearAgo]!, new: self.BM[Today]!))! + "% c.f. a year ago</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -362,10 +394,12 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
             }
+
+            
             
             if (self.BM[Today]!==self.BM[TwoYearsAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>Same as a month ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>Same as 2 years ago</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -377,7 +411,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!>self.BM[TwoYearsAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[TwoYearsAgo]!, new: self.BM[Today]!))! + "% from a year ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[TwoYearsAgo]!, new: self.BM[Today]!))! + "% c.f. 2 years ago</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -389,7 +423,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
             else if (self.BM[Today]!<self.BM[TwoYearsAgo]!)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[TwoYearsAgo]!, new: self.BM[Today]!))! + "% from a year ago</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[TwoYearsAgo]!, new: self.BM[Today]!))! + "% c.f. 2 years ago</font>"
                 
                 let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -400,11 +434,81 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 } catch _ {}
             }
             
+            if (self.BM[Today]!==self.BM[ThreeYearsAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>Same as 3 years ago ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketThreeYear.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.BM[Today]!>self.BM[ThreeYearsAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[ThreeYearsAgo]!, new: self.BM[Today]!))! + "% c.f. 3 years ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketThreeYear.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.BM[Today]!<self.BM[ThreeYearsAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[ThreeYearsAgo]!, new: self.BM[Today]!))! + "% c.f. 3 years ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketThreeYear.attributedText = attributedString
+                    
+                } catch _ {}
+            }
             
-
+            if (self.BM[Today]!==self.BM[FourYearsAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>Same as 4 years ago ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketFourYear.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.BM[Today]!>self.BM[FourYearsAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[FourYearsAgo]!, new: self.BM[Today]!))! + "% c.f. 4 years ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketFourYear.attributedText = attributedString
+                    
+                } catch _ {}
+            }
+            else if (self.BM[Today]!<self.BM[FourYearsAgo]!)
+            {
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(self.DevalPerc(self.BM[FourYearsAgo]!, new: self.BM[Today]!))! + "% c.f. 4 years ago</font>"
+                
+                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BlackMarketFourYear.attributedText = attributedString
+                    
+                } catch _ {}
+            }
             
-            
-            //Moved this up as was drawing graph before it had the data
+            //DRAW THE GRAPHS
             self.chart.canvasAreaBackgroundColor = UIColor.blackColor()
             self.chart.backgroundColor = UIColor.blackColor()
             self.chart.canvas.backgroundColor = UIColor.blueColor()
@@ -448,10 +552,10 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             self.chart.datasource = self
             self.chart.positionLegend()
             
+            
+            //All set to make everything visible again!
             self.chart.hidden = false
-            self.RangeControl(3)
-                                
-                                
+            self.RangeControl(4)
                                 
                                 
             })
@@ -468,6 +572,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     /*@IBAction func ButtonPress(sender: AnyObject) {
         toggleSideMenuView()
     }*/
@@ -498,8 +603,6 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
 
     
-    
-    
 func enablePanningAndZoomingOnAxis(axis: SChartAxis) {
     axis.enableGesturePanning = true
     axis.enableGestureZooming = true
@@ -509,7 +612,7 @@ func enablePanningAndZoomingOnAxis(axis: SChartAxis) {
     
 func Data(json : [[String : AnyObject]]) {
     
-    // for dataPoint in JSONDataFromFile("ve_fx") {
+    // for dataPoint in JSONDatac.f.File("ve_fx") {
     for dataPoint in json {
         
         
@@ -518,6 +621,10 @@ func Data(json : [[String : AnyObject]]) {
             OfficialVal = dataPoint["official"] as? String,
             BMVal = dataPoint["bm"] as? String,
             SimadiVal = dataPoint["simadi"] as? String,
+            SitmeVal = dataPoint["sitme"] as? String,
+            Sicad1Val = dataPoint["sicad1"] as? String,
+            Sicad2Val = dataPoint["sicad2"] as? String,
+            SuppVal = dataPoint["sicad2"] as? String,
             M2_ResVal = dataPoint["m2_res"] as? String
             else {
                 print("Data is JSON but not the JSON variables expected")
@@ -563,13 +670,44 @@ func Data(json : [[String : AnyObject]]) {
         DataM2_Res.append(DataPointM2_Res)
         }
         
+        if (SitmeVal != "0")
+        {
+            let DataPointSitme = SChartDataPoint()
+            DataPointSitme.xValue = date
+            DataPointSitme.yValue = Double(SitmeVal)
+            DataSitme.append(DataPointSitme)
+        }
+        
+        if (Sicad1Val != "0")
+        {
+            let DataPointSicad1 = SChartDataPoint()
+            DataPointSicad1.xValue = date
+            DataPointSicad1.yValue = Double(Sicad1Val)
+            DataSicad1.append(DataPointSicad1)
+        }
+        
+        if (Sicad2Val != "0")
+        {
+            let DataPointSicad2 = SChartDataPoint()
+            DataPointSicad2.xValue = date
+            DataPointSicad2.yValue = Double(Sicad2Val)
+            DataSicad2.append(DataPointSicad2)
+        }
+        
+        if (SuppVal != "0")
+        {
+            let DataPointSupp = SChartDataPoint()
+            DataPointSupp.xValue = date
+            DataPointSupp.yValue = Double(SuppVal)
+            DataSupp.append(DataPointSupp)
+        }
+        
     }
 }
 
 
-
 func numberOfSeriesInSChart(chart: ShinobiChart) -> Int {
-    return 4
+    return 8
 }
 
 func sChart(chart: ShinobiChart, seriesAtIndex index: Int) -> SChartSeries {
@@ -597,6 +735,22 @@ func sChart(chart: ShinobiChart, seriesAtIndex index: Int) -> SChartSeries {
         lineSeries.title = "M2/Reserves"
         lineSeries.style().lineColor = UIColor.whiteColor()
     }
+    if index == 4 {
+        lineSeries.title = "Sitme"
+        lineSeries.style().lineColor = UIColor.blueColor()
+    }
+    if index == 5 {
+        lineSeries.title = "Sicad I"
+        lineSeries.style().lineColor = UIColor.purpleColor()
+    }
+    if index == 6 {
+        lineSeries.title = "Sicad II"
+        lineSeries.style().lineColor = UIColor.grayColor()
+    }
+    if index == 7 {
+        lineSeries.title = "Supplementary Official"
+        lineSeries.style().lineColor = UIColor.lightGrayColor()
+    }
     
     
     return lineSeries
@@ -621,6 +775,22 @@ func sChart(chart: ShinobiChart, numberOfDataPointsForSeriesAtIndex seriesIndex:
     {
         return DataM2_Res.count
     }
+    if seriesIndex == 4
+    {
+        return DataSitme.count
+    }
+    if seriesIndex == 5
+    {
+        return DataSicad1.count
+    }
+    if seriesIndex == 6
+    {
+        return DataSicad2.count
+    }
+    if seriesIndex == 7
+    {
+        return DataSupp.count
+    }
     else { return 0 }
 }
 
@@ -643,28 +813,40 @@ func sChart(chart: ShinobiChart, dataPointAtIndex dataIndex: Int, forSeriesAtInd
     {
         return DataM2_Res[dataIndex]
     }
+    if seriesIndex == 4
+    {
+        return DataSitme[dataIndex]
+    }
+    if seriesIndex == 5
+    {
+        return DataSicad1[dataIndex]
+    }
+    if seriesIndex == 6
+    {
+        return DataSicad2[dataIndex]
+    }
+    if seriesIndex == 7
+    {
+        return DataSupp[dataIndex]
+    }
     else { return DataM2_Res[dataIndex] }
+    }
+
+
+func DevalPerc(let old : Double, let new : Double) -> Double
+{
+    return 100*((1/old)-(1/new))/(1/old)
 }
 
-    func DevalPerc(let old : Double, let new : Double) -> Double
-    {
-        return 100*((1/old)-(1/new))/(1/old)
-    }
+func PercDiff(let old : Double, let new : Double) -> Double
+{
+    return 100*(old-new)/old
+}
     
-    func PercDiff(let old : Double, let new : Double) -> Double
-    {
-        return 100*(old-new)/old
-    }
-
-
-
 }
 
 
-
-
-
-
+// Wrote on 20160810
 func GetLatestNonZeroValue(let dict : [String: Double], let date : String) -> Double
 {
     let userCalendar = NSCalendar.currentCalendar()
