@@ -8,13 +8,12 @@
 
 import UIKit
 
-// Wrote on 20160810.
+// Wrote this function on 20160810.
 func GetLatestNonZeroValue(let dict : [String: Double], let date : String) -> Double
 {
     let userCalendar = NSCalendar.currentCalendar()
     let dateFormatter = NSDateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd"
-    
     
     var value : Double? = dict[date]
     if ((value != 0) && (value != nil))
@@ -135,7 +134,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.sideMenuController()?.sideMenu?.delegate = self
         self.navigationController?.navigationBarHidden = true
         
-        //Telling what units we're using. Hopefully will be able to shift all this
+        //Telling what units we're using. Hopefully will be able to shift all this later
         var units : String = self.currencies["VEF"]! + "/" + self.currencies["USD"]!
         
         //Definitions for time. These should ideally be far out of this function. Why can't I put these higher?
@@ -664,7 +663,6 @@ func Data(json : [[String : AnyObject]]) {
     // for dataPoint in JSONDatac.f.File("ve_fx") {
     for dataPoint in json {
         
-        
         guard let
             dateString = dataPoint["date"] as? String,
             OfficialVal = dataPoint["official"] as? String,
@@ -682,41 +680,40 @@ func Data(json : [[String : AnyObject]]) {
         
         let date = dateFormatter.dateFromString(dateString)
         
-        
         if (BMVal != "0")
         {
-        BM[dateString] = Double(BMVal) // Adds to my dictionary
-        let DataPointBM = SChartDataPoint() // Adds to graph data
-        DataPointBM.xValue = date
-        DataPointBM.yValue = Double(BMVal)
-        DataBM.append(DataPointBM)
+            BM[dateString] = Double(BMVal) // Adds to my dictionary
+            let DataPointBM = SChartDataPoint() // Adds to graph data
+            DataPointBM.xValue = date
+            DataPointBM.yValue = Double(BMVal)
+            DataBM.append(DataPointBM)
         }
         
         if (OfficialVal != "0")
         {
-        Official[dateString] = Double(OfficialVal)
-        let DataPointOfficial = SChartDataPoint()
-        DataPointOfficial.xValue = date
-        DataPointOfficial.yValue = Double(OfficialVal)
-        DataOfficial.append(DataPointOfficial)
+            Official[dateString] = Double(OfficialVal)
+            let DataPointOfficial = SChartDataPoint()
+            DataPointOfficial.xValue = date
+            DataPointOfficial.yValue = Double(OfficialVal)
+            DataOfficial.append(DataPointOfficial)
         }
         
         if (SimadiVal != "0")
         {
-        Simadi[dateString] = Double(SimadiVal)
-        let DataPointSimadi = SChartDataPoint()
-        DataPointSimadi.xValue = date
-        DataPointSimadi.yValue = Double(SimadiVal)
-        DataSimadi.append(DataPointSimadi)
+            Simadi[dateString] = Double(SimadiVal)
+            let DataPointSimadi = SChartDataPoint()
+            DataPointSimadi.xValue = date
+            DataPointSimadi.yValue = Double(SimadiVal)
+            DataSimadi.append(DataPointSimadi)
         }
         
         if (M2_ResVal != "0")
         {
-        M2_Res[dateString] = Double(M2_ResVal)
-        let DataPointM2_Res = SChartDataPoint()
-        DataPointM2_Res.xValue = date
-        DataPointM2_Res.yValue = Double(M2_ResVal)
-        DataM2_Res.append(DataPointM2_Res)
+            M2_Res[dateString] = Double(M2_ResVal)
+            let DataPointM2_Res = SChartDataPoint()
+            DataPointM2_Res.xValue = date
+            DataPointM2_Res.yValue = Double(M2_ResVal)
+            DataM2_Res.append(DataPointM2_Res)
         }
         
         if (SitmeVal != "0")
@@ -762,7 +759,6 @@ func numberOfSeriesInSChart(chart: ShinobiChart) -> Int {
     //How can I make this cleaner?
 func sChart(chart: ShinobiChart, seriesAtIndex index: Int) -> SChartSeries {
     
-    
     let lineSeries = SChartLineSeries()
     lineSeries.style().lineWidth = 2
     lineSeries.animationEnabled = false
@@ -778,36 +774,8 @@ func sChart(chart: ShinobiChart, seriesAtIndex index: Int) -> SChartSeries {
     if index == 0 {
         lineSeries.title = "BM"
         lineSeries.style().lineColor = UIColor.redColor()
-        
-    }
-    if index == 1 {
-        lineSeries.title = "Official"
-        lineSeries.style().lineColor = UIColor.greenColor()
-    }
-    if index == 2 {
-        lineSeries.title = "Simadi"
-        lineSeries.style().lineColor = UIColor.orangeColor()
-    }
-    if index == 3 {
-        lineSeries.title = "M2/Reserves"
-        lineSeries.style().lineColor = UIColor.whiteColor()
-    }
-    if index == 4 {
-        lineSeries.title = "Sitme"
-        lineSeries.style().lineColor = UIColor.blueColor()
-    }
-    if index == 5 {
-        lineSeries.title = "Sicad I"
-        lineSeries.style().lineColor = UIColor.purpleColor()
-    }
-    if index == 6 {
-        lineSeries.title = "Sicad II"
-        lineSeries.style().lineColor = UIColor.grayColor()
-    }
-    if index == 7 {
-        lineSeries.title = "Supplementary Official"
-        lineSeries.style().lineColor = UIColor.lightGrayColor()
-    }*/
+    } etc
+ */
     
     
     return lineSeries
