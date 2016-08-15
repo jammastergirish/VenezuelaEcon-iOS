@@ -148,8 +148,8 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 } catch _ {}
                 
 
-                
-                if (self.Reserves[Today]!==self.Reserves[Yesterday]!)
+                var comparison : Double = GetLatestNonZeroValue(self.Reserves, date: Yesterday)
+                if (self.Reserves[Today]!==comparison)
                 {
                     let text = "<font face=\"Trebuchet MS\" color=#808080>Same as yesterday</font>"
                     
@@ -161,9 +161,9 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                         
                     } catch _ {}
                 }
-                else if (self.Reserves[Today]!>self.Reserves[Yesterday]!)
+                else if (self.Reserves[Today]!>comparison)
                 {
-                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(self.Reserves[Yesterday]!, new: self.Reserves[Today]!)))! + "% in a day</font>"
+                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: self.Reserves[Today]!)))! + "% in a day</font>"
                     
                     let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                     let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -173,9 +173,9 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                         
                     } catch _ {}
                 }
-                else if (self.Reserves[Today]!<self.Reserves[Yesterday]!)
+                else if (self.Reserves[Today]!<comparison)
                 {
-                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(self.Reserves[Yesterday]!, new: self.Reserves[Today]!)))! + "% in a day</font>"
+                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: self.Reserves[Today]!)))! + "% in a day</font>"
                     
                     let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                     let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -186,7 +186,8 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     } catch _ {}
                 }
                 
-                if (self.Reserves[Today]!==self.Reserves[OneMonthAgo]!)
+                comparison = GetLatestNonZeroValue(self.Reserves, date: OneMonthAgo)
+                if (self.Reserves[Today]!==comparison)
                 {
                     let text = "<font face=\"Trebuchet MS\" color=#808080>Same as a month ago</font>"
                     
@@ -198,9 +199,9 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                         
                     } catch _ {}
                 }
-                else if (self.Reserves[Today]!>self.Reserves[OneMonthAgo]!)
+                else if (self.Reserves[Today]!>comparison)
                 {
-                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(self.Reserves[OneMonthAgo]!, new: self.Reserves[Today]!)))! + "% in a month</font>"
+                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: self.Reserves[Today]!)))! + "% in a month</font>"
                     
                     let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                     let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -210,9 +211,9 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                         
                     } catch _ {}
                 }
-                else if (self.Reserves[Today]!<self.Reserves[OneMonthAgo]!)
+                else if (self.Reserves[Today]!<comparison)
                 {
-                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(self.Reserves[OneMonthAgo]!, new: self.Reserves[Today]!)))! + "% in a month</font>"
+                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: self.Reserves[Today]!)))! + "% in a month</font>"
                     
                     let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                     let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -223,7 +224,8 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     } catch _ {}
                 }
                 
-                if (self.Reserves[Today]!==self.Reserves[OneYearAgo]!)
+                comparison = GetLatestNonZeroValue(self.Reserves, date: OneYearAgo)
+                if (self.Reserves[Today]!==comparison)
                 {
                     let text = "<font face=\"Trebuchet MS\" color=#808080>Same as a year ago</font>"
                     
@@ -235,9 +237,9 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                         
                     } catch _ {}
                 }
-                else if (self.Reserves[Today]!>self.Reserves[OneYearAgo]!)
+                else if (self.Reserves[Today]!>comparison)
                 {
-                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(self.Reserves[OneYearAgo]!, new: self.Reserves[Today]!)))! + "% in a year</font>"
+                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: self.Reserves[Today]!)))! + "% in a year</font>"
                     
                     let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                     let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -247,9 +249,9 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                         
                     } catch _ {}
                 }
-                else if (self.Reserves[Today]!<self.Reserves[OneYearAgo]!)
+                else if (self.Reserves[Today]!<comparison)
                 {
-                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(self.Reserves[OneYearAgo]!, new: self.Reserves[Today]!)))! + "% in a year</font>"
+                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: self.Reserves[Today]!)))! + "% in a year</font>"
                     
                     let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                     let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -260,7 +262,8 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     } catch _ {}
                 }
                 
-                if (self.Reserves[Today]!==self.Reserves[TwoYearsAgo]!)
+                comparison = GetLatestNonZeroValue(self.Reserves, date: TwoYearsAgo)
+                if (self.Reserves[Today]!==comparison)
                 {
                     let text = "<font face=\"Trebuchet MS\" color=#808080>Same as 2 years ago</font>"
                     
@@ -272,9 +275,9 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                         
                     } catch _ {}
                 }
-                else if (self.Reserves[Today]!>self.Reserves[TwoYearsAgo]!)
+                else if (self.Reserves[Today]!>comparison)
                 {
-                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(self.Reserves[TwoYearsAgo]!, new: self.Reserves[Today]!)))! + "% in 2 years</font>"
+                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: self.Reserves[Today]!)))! + "% in 2 years</font>"
                     
                     let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                     let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -284,9 +287,9 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                         
                     } catch _ {}
                 }
-                else if (self.Reserves[Today]!<self.Reserves[TwoYearsAgo]!)
+                else if (self.Reserves[Today]!<comparison)
                 {
-                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(self.Reserves[TwoYearsAgo]!, new: self.Reserves[Today]!)))! + "% in 2 years</font>"
+                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: self.Reserves[Today]!)))! + "% in 2 years</font>"
                     
                     let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                     let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -297,7 +300,8 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     } catch _ {}
                 }
                 
-                if (self.Reserves[Today]!==self.Reserves[ThreeYearsAgo]!)
+                comparison = GetLatestNonZeroValue(self.Reserves, date: ThreeYearsAgo)
+                if (self.Reserves[Today]!==comparison)
                 {
                     let text = "<font face=\"Trebuchet MS\" color=#808080>Same as 3 years ago</font>"
                     
@@ -309,9 +313,9 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                         
                     } catch _ {}
                 }
-                else if (self.Reserves[Today]!>self.Reserves[ThreeYearsAgo]!)
+                else if (self.Reserves[Today]!>comparison)
                 {
-                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(self.Reserves[ThreeYearsAgo]!, new: self.Reserves[Today]!)))! + "% in 3 years</font>"
+                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: self.Reserves[Today]!)))! + "% in 3 years</font>"
                     
                     let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                     let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -321,9 +325,9 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                         
                     } catch _ {}
                 }
-                else if (self.Reserves[Today]!<self.Reserves[ThreeYearsAgo]!)
+                else if (self.Reserves[Today]!<comparison)
                 {
-                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(self.Reserves[ThreeYearsAgo]!, new: self.Reserves[Today]!)))! + "% in 3 years</font>"
+                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: self.Reserves[Today]!)))! + "% in 3 years</font>"
                     
                     let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                     let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -334,7 +338,8 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     } catch _ {}
                 }
                 
-                if (self.Reserves[Today]!==self.Reserves[FourYearsAgo]!)
+                comparison = GetLatestNonZeroValue(self.Reserves, date: FourYearsAgo)
+                if (self.Reserves[Today]!==comparison)
                 {
                     let text = "<font face=\"Trebuchet MS\" color=#808080>Same as 4 years ago</font>"
                     
@@ -346,9 +351,9 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                         
                     } catch _ {}
                 }
-                else if (self.Reserves[Today]!>self.Reserves[FourYearsAgo]!)
+                else if (self.Reserves[Today]!>comparison)
                 {
-                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(self.Reserves[FourYearsAgo]!, new: self.Reserves[Today]!)))! + "% in 4 years</font>"
+                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: self.Reserves[Today]!)))! + "% in 4 years</font>"
                     
                     let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                     let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -358,9 +363,9 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                         
                     } catch _ {}
                 }
-                else if (self.Reserves[Today]!<self.Reserves[FourYearsAgo]!)
+                else if (self.Reserves[Today]!<comparison)
                 {
-                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(self.Reserves[FourYearsAgo]!, new: self.Reserves[Today]!)))! + "% in 4 years</font>"
+                    let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: self.Reserves[Today]!)))! + "% in 4 years</font>"
                     
                     let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                     let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
