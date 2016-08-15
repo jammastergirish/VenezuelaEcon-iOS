@@ -46,7 +46,7 @@ func GetLatestNonZeroValue(let dict : [String: Double], let date : String) -> Do
 }
 
 //Written early 20160815
-func Compare(let dict : [String: Double], let date : String, let label : UILabel)
+func Compare(let dict : [String: Double], let date : String, let label : UILabel, let type : String?)
 {
     let userCalendar = NSCalendar.currentCalendar()
 
@@ -100,7 +100,10 @@ func Compare(let dict : [String: Double], let date : String, let label : UILabel
         ComparisonString = "4 years"
     }
     
-    var comparison : Double = GetLatestNonZeroValue(dict, date: date)
+    let comparison : Double = GetLatestNonZeroValue(dict, date: date)
+    
+    if (type=="FX")
+    {
     if (dict[Today]!==comparison)
     {
         let text = "<font face=\"Trebuchet MS\" color=#808080>Same as "+ComparisonString+"</font>"
@@ -115,7 +118,7 @@ func Compare(let dict : [String: Double], let date : String, let label : UILabel
     }
     else if (dict[Today]!>comparison)
     {
-        let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(DevalPerc(comparison, new: dict[Today]!))! + "% in "+ComparisonString+"</font>"
+        let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(comparison, new: dict[Today]!)))! + "% in "+ComparisonString+"</font>"
         
         let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
         let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -127,7 +130,7 @@ func Compare(let dict : [String: Double], let date : String, let label : UILabel
     }
     else if (dict[Today]!<comparison)
     {
-        let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(DevalPerc(comparison, new: dict[Today]!))! + "% in "+ComparisonString+"</font>"
+        let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(comparison, new: dict[Today]!)))! + "% in "+ComparisonString+"</font>"
         
         let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
         let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -137,6 +140,48 @@ func Compare(let dict : [String: Double], let date : String, let label : UILabel
             
         } catch _ {}
     }
+    }
+    else
+    {
+        if (dict[Today]!==comparison)
+        {
+            let text = "<font face=\"Trebuchet MS\" color=#808080>Same as "+ComparisonString+"</font>"
+            
+            let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+            let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+            do {
+                let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                label.attributedText = attributedString
+                
+            } catch _ {}
+        }
+        else if (dict[Today]!>comparison)
+        {
+            let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: dict[Today]!)))! + "% in "+ComparisonString+"</font>"
+            
+            let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+            let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+            do {
+                let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                label.attributedText = attributedString
+                
+            } catch _ {}
+        }
+        else if (dict[Today]!<comparison)
+        {
+            let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: dict[Today]!)))! + "% in "+ComparisonString+"</font>"
+            
+            let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+            let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+            do {
+                let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                label.attributedText = attributedString
+                
+            } catch _ {}
+        }
+    }
+    
+    
 }
 
 
@@ -313,9 +358,9 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             } catch _ {}
             
             
-            Compare(self.Simadi, date: Yesterday, label: self.SIMADIYesterday)
-            Compare(self.Simadi, date: OneMonthAgo, label: self.SIMADIMonth)
-            Compare(self.Simadi, date: OneYearAgo, label: self.SIMADIYear)
+            Compare(self.Simadi, date: Yesterday, label: self.SIMADIYesterday, type: "FX")
+            Compare(self.Simadi, date: OneMonthAgo, label: self.SIMADIMonth, type: "FX")
+            Compare(self.Simadi, date: OneYearAgo, label: self.SIMADIYear, type: "FX")
             
 
              text = "<CENTER><font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(GetLatestNonZeroValue(self.M2_Res, date: Today))! + " <font size=2>BsF/$</font></font></CENTER>"
@@ -350,12 +395,12 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             } catch _ {}
             
             
-            Compare(self.BM, date: Yesterday, label: self.BlackMarketYesterday)
-            Compare(self.BM, date: OneMonthAgo, label: self.BlackMarketMonth)
-            Compare(self.BM, date: OneYearAgo, label: self.BlackMarketYear)
-            Compare(self.BM, date: TwoYearsAgo, label: self.BlackMarketTwoYear)
-            Compare(self.BM, date: ThreeYearsAgo, label: self.BlackMarketThreeYear)
-            Compare(self.BM, date: FourYearsAgo, label: self.BlackMarketFourYear)
+            Compare(self.BM, date: Yesterday, label: self.BlackMarketYesterday, type: "FX")
+            Compare(self.BM, date: OneMonthAgo, label: self.BlackMarketMonth, type: "FX")
+            Compare(self.BM, date: OneYearAgo, label: self.BlackMarketYear, type: "FX")
+            Compare(self.BM, date: TwoYearsAgo, label: self.BlackMarketTwoYear, type: "FX")
+            Compare(self.BM, date: ThreeYearsAgo, label: self.BlackMarketThreeYear, type: "FX")
+            Compare(self.BM, date: FourYearsAgo, label: self.BlackMarketFourYear, type: "FX")
 
 
             //DRAW THE GRAPHS
