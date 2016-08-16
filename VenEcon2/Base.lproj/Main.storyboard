@@ -652,7 +652,7 @@
                         <outlet property="VenVal" destination="7GQ-Jq-rQe" id="ctQ-Dl-snz"/>
                         <outlet property="VenWeek" destination="7TP-hJ-A5t" id="zWf-X2-8gk"/>
                         <outlet property="VenYear" destination="VkW-rH-8Op" id="hF3-bM-j9R"/>
-                        <outlet property="WIILabel" destination="4hF-kV-L5P" id="Eif-LP-L5n"/>
+                        <outlet property="WTILabel" destination="4hF-kV-L5P" id="sAy-9Y-zJ7"/>
                         <outlet property="WTITwoYear" destination="xKn-X9-rKe" id="y3z-W8-Ivz"/>
                         <outlet property="WTIVal" destination="coO-6k-T7P" id="wh9-re-tos"/>
                         <outlet property="WTIWeek" destination="xpX-F1-lbk" id="Rxs-UB-csN"/>
