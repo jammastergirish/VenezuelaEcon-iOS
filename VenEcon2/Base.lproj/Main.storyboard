@@ -800,5 +800,136 @@
             </objects>
             <point key="canvasLocation" x="801" y="973"/>
         </scene>
+        <!--Min Wage Code-->
+        <scene sceneID="AhG-ID-3rJ">
+            <objects>
+                <viewController storyboardIdentifier="MinWageViewController" id="hlm-kR-DaP" customClass="MinWageCode" customModule="VenEcon2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WnV-BX-oFg"/>
+                        <viewControllerLayoutGuide type="bottom" id="eX0-wo-1dX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eNp-o3-72m">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Minimum Wage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irI-ol-7Hg">
+                                <rect key="frame" x="207" y="40" width="173" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="KpQ-u1-q65">
+                                <rect key="frame" x="225" y="110" width="150" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MinWageVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djT-14-sAM">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M2Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCK-pj-npX">
+                                        <rect key="frame" x="0.0" y="26" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M2Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCJ-D1-e8L">
+                                        <rect key="frame" x="0.0" y="47" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="M2TwoYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vK-ue-uUB">
+                                        <rect key="frame" x="0.0" y="69" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="M2ThreeYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ynu-hx-rjn">
+                                        <rect key="frame" x="0.0" y="90" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="M2FourYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etF-zO-Clq">
+                                        <rect key="frame" x="0.0" y="112" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="M2FiveYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUh-2C-u1w">
+                                        <rect key="frame" x="0.0" y="133" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="DXM-eD-jde"/>
+                                    <constraint firstAttribute="width" constant="150" id="NYD-o2-bxf"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="eWc-kL-4Of">
+                                <rect key="frame" x="20" y="300" width="560" height="280"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="woQ-ZR-LOG">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="77S-sb-L2r"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="5 years"/>
+                                            <segment title="4 years"/>
+                                            <segment title="3 years"/>
+                                            <segment title="2 years"/>
+                                            <segment title="1 year"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="RangeControl:" destination="vLn-Rh-y4A" eventType="valueChanged" id="9M8-yA-QNZ"/>
+                                            <action selector="RangeControl:" destination="7Xw-Wz-ddH" eventType="valueChanged" id="Y1h-BW-hse"/>
+                                            <action selector="RangeControl:" destination="hlm-kR-DaP" eventType="valueChanged" id="feR-Eb-TVA"/>
+                                            <action selector="RangeControl:" destination="zDY-Lm-TOB" eventType="valueChanged" id="g4X-9o-h3Q"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fja-W5-XV6" customClass="ShinobiChart">
+                                        <rect key="frame" x="0.0" y="33" width="560" height="247"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fja-W5-XV6" firstAttribute="top" secondItem="woQ-ZR-LOG" secondAttribute="bottom" constant="5" id="jQE-V4-sOv"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eWc-kL-4Of" firstAttribute="trailing" secondItem="eNp-o3-72m" secondAttribute="trailingMargin" id="1rl-5f-spO"/>
+                            <constraint firstItem="irI-ol-7Hg" firstAttribute="top" secondItem="WnV-BX-oFg" secondAttribute="bottom" constant="40" id="3rR-lS-F1b"/>
+                            <constraint firstItem="KpQ-u1-q65" firstAttribute="top" secondItem="irI-ol-7Hg" secondAttribute="bottom" constant="40" id="8Af-Ea-eMt"/>
+                            <constraint firstItem="irI-ol-7Hg" firstAttribute="centerX" secondItem="eNp-o3-72m" secondAttribute="centerX" id="GMX-nl-rqq"/>
+                            <constraint firstItem="eX0-wo-1dX" firstAttribute="top" secondItem="eWc-kL-4Of" secondAttribute="bottom" id="Rw2-HC-jFi"/>
+                            <constraint firstItem="KpQ-u1-q65" firstAttribute="centerX" secondItem="eNp-o3-72m" secondAttribute="centerX" id="en3-4i-HXc"/>
+                            <constraint firstItem="eWc-kL-4Of" firstAttribute="top" secondItem="KpQ-u1-q65" secondAttribute="bottom" constant="40" id="icM-4T-OFR"/>
+                            <constraint firstItem="eWc-kL-4Of" firstAttribute="leading" secondItem="eNp-o3-72m" secondAttribute="leadingMargin" id="tem-hz-DOE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Header" destination="irI-ol-7Hg" id="h9h-re-IlW"/>
+                        <outlet property="MinWageFiveYear" destination="gUh-2C-u1w" id="U0r-Oe-bpA"/>
+                        <outlet property="MinWageFourYear" destination="etF-zO-Clq" id="EAr-BB-hmZ"/>
+                        <outlet property="MinWageMonth" destination="xCK-pj-npX" id="iwP-or-7zw"/>
+                        <outlet property="MinWageThreeYear" destination="Ynu-hx-rjn" id="0iq-G7-nRh"/>
+                        <outlet property="MinWageTwoYear" destination="2vK-ue-uUB" id="wjV-kg-jyV"/>
+                        <outlet property="MinWageVal" destination="djT-14-sAM" id="Iks-AM-EB7"/>
+                        <outlet property="MinWageYear" destination="wCJ-D1-e8L" id="vfr-aG-SWl"/>
+                        <outlet property="RangeController" destination="woQ-ZR-LOG" id="qx1-A4-87g"/>
+                        <outlet property="chart" destination="fja-W5-XV6" id="8Lf-im-MXT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fdt-dx-ywJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="597" y="1714"/>
+        </scene>
     </scenes>
 </document>
