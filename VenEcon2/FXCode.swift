@@ -116,9 +116,9 @@ func Compare(let dict : [String: Double], let date : String, let label : UILabel
             
         } catch _ {}
     }
-    else if (dict[Today]!>comparison)
+    else if (GetLatestNonZeroValue(dict, date: Today)>comparison)
     {
-        let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(comparison, new: dict[Today]!)))! + "% in "+ComparisonString+"</font>"
+        let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(comparison, new: GetLatestNonZeroValue(dict, date: Today))))! + "% in "+ComparisonString+"</font>"
         
         let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
         let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -128,9 +128,9 @@ func Compare(let dict : [String: Double], let date : String, let label : UILabel
             
         } catch _ {}
     }
-    else if (dict[Today]!<comparison)
+    else if (GetLatestNonZeroValue(dict, date: Today)<comparison)
     {
-        let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(comparison, new: dict[Today]!)))! + "% in "+ComparisonString+"</font>"
+        let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(comparison, new: GetLatestNonZeroValue(dict, date: Today))))! + "% in "+ComparisonString+"</font>"
         
         let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
         let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -143,7 +143,7 @@ func Compare(let dict : [String: Double], let date : String, let label : UILabel
     }
     else
     {
-        if (dict[Today]!==comparison)
+        if (GetLatestNonZeroValue(dict, date: Today)==comparison)
         {
             let text = "<font face=\"Trebuchet MS\" color=#808080>Same as "+ComparisonString+"</font>"
             
@@ -155,9 +155,9 @@ func Compare(let dict : [String: Double], let date : String, let label : UILabel
                 
             } catch _ {}
         }
-        else if (dict[Today]!>comparison)
+        else if (GetLatestNonZeroValue(dict, date: Today)>comparison)
         {
-            let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: dict[Today]!)))! + "% in "+ComparisonString+"</font>"
+            let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: GetLatestNonZeroValue(dict, date: Today))))! + "% in "+ComparisonString+"</font>"
             
             let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
             let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -167,9 +167,9 @@ func Compare(let dict : [String: Double], let date : String, let label : UILabel
                 
             } catch _ {}
         }
-        else if (dict[Today]!<comparison)
+        else if (GetLatestNonZeroValue(dict, date: Today)<comparison)
         {
-            let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: dict[Today]!)))! + "% in "+ComparisonString+"</font>"
+            let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: GetLatestNonZeroValue(dict, date: Today))))! + "% in "+ComparisonString+"</font>"
             
             let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
             let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]

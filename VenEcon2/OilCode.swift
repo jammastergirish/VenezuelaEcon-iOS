@@ -40,15 +40,19 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     @IBOutlet var OPECVal: UILabel!
     
     //Labels for variation text //Sort these later
-    @IBOutlet var BlackMarketYesterday: UILabel!
-    @IBOutlet var BlackMarketMonth: UILabel!
-    @IBOutlet var BlackMarketYear: UILabel!
-    @IBOutlet var BlackMarketTwoYear: UILabel!
-    @IBOutlet var BlackMarketThreeYear: UILabel!
-    @IBOutlet var BlackMarketFourYear: UILabel!
-    @IBOutlet var SIMADIMonth: UILabel!
-    @IBOutlet var SIMADIYesterday: UILabel!
-    @IBOutlet var SIMADIYear: UILabel!
+    @IBOutlet var WTIWeek: UILabel!
+    @IBOutlet var WTIYear: UILabel!
+    @IBOutlet var WTITwoYear: UILabel!
+    @IBOutlet var BrentWeek: UILabel!
+    @IBOutlet var BrentYear: UILabel!
+    @IBOutlet var BrentTwoYear: UILabel!
+    @IBOutlet var VenWeek: UILabel!
+    @IBOutlet var VenYear: UILabel!
+    @IBOutlet var VenTwoYear: UILabel!
+    @IBOutlet var OPECWeek: UILabel!
+    @IBOutlet var OPECYear: UILabel!
+    @IBOutlet var OPECTwoYear: UILabel!
+
     
     //Chart
     @IBOutlet var chart: ShinobiChart!
@@ -184,13 +188,21 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                /*
-                Compare(self.Simadi, date: Yesterday, label: self.SIMADIYesterday, type: "FX")
-                Compare(self.Simadi, date: OneMonthAgo, label: self.SIMADIMonth, type: "FX")
-                Compare(self.Simadi, date: OneYearAgo, label: self.SIMADIYear, type: "FX")
-                */
+                Compare(self.WTI, date: OneWeekAgo, label: self.WTIWeek, type: nil)
+                Compare(self.WTI, date: OneYearAgo, label: self.WTIYear, type: nil)
+                Compare(self.WTI, date: TwoYearsAgo, label: self.WTITwoYear, type: nil)
                 
-
+                Compare(self.Brent, date: OneWeekAgo, label: self.BrentWeek, type: nil)
+                Compare(self.Brent, date: OneYearAgo, label: self.BrentYear, type: nil)
+                Compare(self.Brent, date: TwoYearsAgo, label: self.BrentTwoYear, type: nil)
+                
+                Compare(self.Ven, date: OneWeekAgo, label: self.VenWeek, type: nil)
+                Compare(self.Ven, date: OneYearAgo, label: self.VenYear, type: nil)
+                Compare(self.Ven, date: TwoYearsAgo, label: self.VenTwoYear, type: nil)
+                
+                Compare(self.OPEC, date: OneWeekAgo, label: self.OPECWeek, type: nil)
+                Compare(self.OPEC, date: OneYearAgo, label: self.OPECYear, type: nil)
+                Compare(self.OPEC, date: TwoYearsAgo, label: self.OPECTwoYear, type: nil)
                 
                 //DRAW THE GRAPHS
                 self.chart.canvasAreaBackgroundColor = UIColor.blackColor()
