@@ -99,6 +99,10 @@ func Compare(let dict : [String: Double], let date : String, let label : UILabel
     {
         ComparisonString = "4 years"
     }
+    if (date==FiveYearsAgo)
+    {
+        ComparisonString = "5 years"
+    }
     
     let comparison : Double = GetLatestNonZeroValue(dict, date: date)
     

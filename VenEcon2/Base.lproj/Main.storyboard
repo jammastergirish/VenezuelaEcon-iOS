@@ -268,6 +268,142 @@
             </objects>
             <point key="canvasLocation" x="512" y="352"/>
         </scene>
+        <!--Code-->
+        <scene sceneID="b8l-Vw-p9M">
+            <objects>
+                <viewController storyboardIdentifier="M2ViewController" id="vLn-Rh-y4A" customClass="M2Code" customModule="VenEcon2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UwB-AH-dQA"/>
+                        <viewControllerLayoutGuide type="bottom" id="CJd-SL-Ps4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cNb-nx-Xdn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money Supply" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1es-2u-m1V">
+                                <rect key="frame" x="221" y="60" width="159" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="V1U-ni-8ia">
+                                <rect key="frame" x="225" y="130" width="150" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M2Val" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMZ-Gx-c7y">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M2Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HM1-3c-hxj">
+                                        <rect key="frame" x="0.0" y="26" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M2Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGT-HW-8cS">
+                                        <rect key="frame" x="0.0" y="47" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="M2TwoYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwj-Qn-vMm">
+                                        <rect key="frame" x="0.0" y="69" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="M2ThreeYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKL-Y7-lhh">
+                                        <rect key="frame" x="0.0" y="90" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="M2FourYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTK-ol-W9b">
+                                        <rect key="frame" x="0.0" y="112" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="M2FiveYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G61-CS-gaR">
+                                        <rect key="frame" x="0.0" y="133" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="HfF-6K-Uj7"/>
+                                    <constraint firstAttribute="height" constant="150" id="LIi-BN-oC7"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vKc-Aw-B06">
+                                <rect key="frame" x="20" y="320" width="560" height="280"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XPF-rr-eEv">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="8lo-di-E6f"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="5 years"/>
+                                            <segment title="4 years"/>
+                                            <segment title="3 years"/>
+                                            <segment title="2 years"/>
+                                            <segment title="1 year"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="RangeControl:" destination="7Xw-Wz-ddH" eventType="valueChanged" id="FiM-7O-Gg5"/>
+                                            <action selector="RangeControl:" destination="zDY-Lm-TOB" eventType="valueChanged" id="ciY-pZ-fFB"/>
+                                            <action selector="RangeControl:" destination="vLn-Rh-y4A" eventType="valueChanged" id="lgA-sl-ove"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJg-6d-ngH" customClass="ShinobiChart">
+                                        <rect key="frame" x="0.0" y="33" width="560" height="247"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="rJg-6d-ngH" firstAttribute="top" secondItem="XPF-rr-eEv" secondAttribute="bottom" constant="5" id="GAv-Ed-GVD"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vKc-Aw-B06" firstAttribute="top" secondItem="V1U-ni-8ia" secondAttribute="bottom" constant="40" id="12w-bb-irc"/>
+                            <constraint firstItem="V1U-ni-8ia" firstAttribute="centerX" secondItem="cNb-nx-Xdn" secondAttribute="centerX" id="8uz-Ku-gi3"/>
+                            <constraint firstItem="CJd-SL-Ps4" firstAttribute="top" secondItem="vKc-Aw-B06" secondAttribute="bottom" id="C3Y-ct-5hI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vKc-Aw-B06" secondAttribute="trailing" id="JOt-Yb-d5f"/>
+                            <constraint firstItem="V1U-ni-8ia" firstAttribute="top" secondItem="1es-2u-m1V" secondAttribute="bottom" constant="40" id="M3b-dr-9Y7"/>
+                            <constraint firstItem="vKc-Aw-B06" firstAttribute="leading" secondItem="cNb-nx-Xdn" secondAttribute="leadingMargin" id="Tam-0f-rgz"/>
+                            <constraint firstItem="V1U-ni-8ia" firstAttribute="top" secondItem="1es-2u-m1V" secondAttribute="bottom" constant="40" id="Tbd-aZ-aCp"/>
+                            <constraint firstItem="1es-2u-m1V" firstAttribute="top" secondItem="UwB-AH-dQA" secondAttribute="bottom" constant="40" id="aHe-S1-ned"/>
+                            <constraint firstItem="1es-2u-m1V" firstAttribute="centerX" secondItem="cNb-nx-Xdn" secondAttribute="centerX" id="veA-Sb-Hju"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="M3b-dr-9Y7"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="Header" destination="1es-2u-m1V" id="q1O-HH-Q8h"/>
+                        <outlet property="M2FiveYear" destination="G61-CS-gaR" id="d0R-JV-t64"/>
+                        <outlet property="M2FourYear" destination="QTK-ol-W9b" id="gqh-BQ-PaY"/>
+                        <outlet property="M2Month" destination="HM1-3c-hxj" id="6li-Ix-Ogg"/>
+                        <outlet property="M2ThreeYear" destination="cKL-Y7-lhh" id="Ptb-on-KwA"/>
+                        <outlet property="M2TwoYear" destination="Lwj-Qn-vMm" id="FKP-rZ-brg"/>
+                        <outlet property="M2Val" destination="bMZ-Gx-c7y" id="DwZ-EX-aoh"/>
+                        <outlet property="M2Year" destination="XGT-HW-8cS" id="nQx-Bp-yjo"/>
+                        <outlet property="RangeController" destination="XPF-rr-eEv" id="bRB-9V-Jwy"/>
+                        <outlet property="chart" destination="rJg-6d-ngH" id="RYP-QZ-mb6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E6q-6M-M4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-469" y="1030"/>
+        </scene>
         <!--Reserves Code-->
         <scene sceneID="D6w-SK-7LO">
             <objects>
