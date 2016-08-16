@@ -149,7 +149,7 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 
                 var comparison : Double = GetLatestNonZeroValue(self.MinWage, date: Yesterday)
-                //Compare(self.MinWage, date: FiveYearsAgo, label: self.MinWageFiveYear, type: nil)
+               // Compare(self.MinWage, date: FiveYearsAgo, label: self.MinWageFiveYear, type: nil)
                 Compare(self.MinWage, date: OneMonthAgo, label: self.MinWageMonth, type: nil)
                 Compare(self.MinWage, date: OneYearAgo, label: self.MinWageYear, type: nil)
                 Compare(self.MinWage, date: TwoYearsAgo, label: self.MinWageTwoYear, type: nil)
@@ -183,7 +183,7 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 // Y Axis
                 let yAxis = SChartNumberAxis()
-                yAxis.title = "Money Supply (billion BsF)"
+                yAxis.title = "Minimum Wage (BsF)"
                 self.enablePanningAndZoomingOnAxis(yAxis)
                 yAxis.rangePaddingLow = 1
                 yAxis.rangePaddingHigh = 1
@@ -209,7 +209,7 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.MinWageTwoYear.hidden = false
                 self.MinWageFourYear.hidden = false
                 self.MinWageThreeYear.hidden = false
-                self.MinWageFiveYear.hidden = false
+                //self.MinWageFiveYear.hidden = false
                 self.RangeController.hidden = false
                 self.Header.hidden = false
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
