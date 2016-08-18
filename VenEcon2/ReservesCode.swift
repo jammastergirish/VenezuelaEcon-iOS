@@ -85,19 +85,6 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         //Telling what units we're using. Hopefully will be able to shift all this later
         var units : String = self.currencies["VEF"]! + "/" + self.currencies["USD"]!
         
-        //Definitions for time. These should ideally be far out of this function. Why can't I put these higher?
-        let Today = self.dateFormatter.stringFromDate(NSDate())
-        let Yesterday = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -1, toDate: NSDate(), options: [])!)
-        let OneWeekAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -7, toDate: NSDate(), options: [])!)
-        let FirstOfThisMonth = ""
-        let OneMonthAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -30, toDate: NSDate(), options: [])!)
-        let FirstOfThisYear = ""
-        let OneYearAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -365, toDate: NSDate(), options: [])!)
-        let TwoYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*2), toDate: NSDate(), options: [])!)
-        let ThreeYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*3), toDate: NSDate(), options: [])!)
-        let FourYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*4), toDate: NSDate(), options: [])!)
-        let FiveYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*5), toDate: NSDate(), options: [])!)
-        
         //A number formatter
         let NumberFormatter = NSNumberFormatter()
         NumberFormatter.numberStyle = .DecimalStyle
@@ -138,7 +125,7 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.Data(json)
                 
                 //Set all the text. There must be a way of doing this without using so many repetetive lines of code? I mean the attributed text rather than my if statements.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + NumberFormatter.stringFromNumber(self.Reserves[Today]!/1000)! + " <font size=2>billion</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + NumberFormatter.stringFromNumber(self.Reserves[Utils.shared.Today()]!/1000)! + " <font size=2>billion</font></font>"
                 var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -148,13 +135,13 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 } catch _ {}
                 
 
-                var comparison : Double = GetLatestNonZeroValue(self.Reserves, date: Yesterday)
-                Compare(self.Reserves, date: Yesterday, label: self.ReservesYesterday, type: nil)
-                Compare(self.Reserves, date: OneMonthAgo, label: self.ReservesMonth, type: nil)
-                Compare(self.Reserves, date: OneYearAgo, label: self.ReservesYear, type: nil)
-                Compare(self.Reserves, date: TwoYearsAgo, label: self.ReservesTwoYear, type: nil)
-                Compare(self.Reserves, date: ThreeYearsAgo, label: self.ReservesThreeYear, type: nil)
-                Compare(self.Reserves, date: FourYearsAgo, label: self.ReservesFourYear, type: nil)
+                //var comparison : Double = Utils.shared.YearsAgo(GetLatestNonZeroValue(self.Reserves, date: Yesterday)
+                Utils.shared.Compare(self.Reserves, date: Utils.shared.Yesterday(), label: self.ReservesYesterday, type: nil)
+                Utils.shared.Compare(self.Reserves, date: Utils.shared.OneMonthAgo(), label: self.ReservesMonth, type: nil)
+                Utils.shared.Compare(self.Reserves, date: Utils.shared.YearsAgo(1), label: self.ReservesYear, type: nil)
+                Utils.shared.Compare(self.Reserves, date: Utils.shared.YearsAgo(2), label: self.ReservesTwoYear, type: nil)
+                Utils.shared.Compare(self.Reserves, date: Utils.shared.YearsAgo(3), label: self.ReservesThreeYear, type: nil)
+                Utils.shared.Compare(self.Reserves, date: Utils.shared.YearsAgo(4), label: self.ReservesFourYear, type: nil)
                                 
                 //DRAW THE GRAPHS
                 self.chart.canvasAreaBackgroundColor = UIColor.blackColor()

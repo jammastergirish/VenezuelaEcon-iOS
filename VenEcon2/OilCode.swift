@@ -106,19 +106,6 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         //Telling what units we're using. Hopefully will be able to shift all this later
         var units : String = self.currencies["VEF"]! + "/" + self.currencies["USD"]!
         
-        //Definitions for time. These should ideally be far out of this function. Why can't I put these higher?
-        let Today = self.dateFormatter.stringFromDate(NSDate())
-        let Yesterday = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -1, toDate: NSDate(), options: [])!)
-        let OneWeekAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -7, toDate: NSDate(), options: [])!)
-        let FirstOfThisMonth = ""
-        let OneMonthAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -30, toDate: NSDate(), options: [])!)
-        let FirstOfThisYear = ""
-        let OneYearAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -365, toDate: NSDate(), options: [])!)
-        let TwoYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*2), toDate: NSDate(), options: [])!)
-        let ThreeYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*3), toDate: NSDate(), options: [])!)
-        let FourYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*4), toDate: NSDate(), options: [])!)
-        let FiveYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*5), toDate: NSDate(), options: [])!)
-        
         //A number formatter
         let NumberFormatter = NSNumberFormatter()
         NumberFormatter.numberStyle = .DecimalStyle
@@ -173,7 +160,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.Data(json)
                 
                 //Set all the text. There must be a way of doing this without using so many repetetive lines of code? I mean the attributed text rather than my if statements.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + NumberFormatter.stringFromNumber(GetLatestNonZeroValue(self.WTI, date: Today))! + " <font size=2> per barrel</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.WTI, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
                 var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -182,7 +169,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + NumberFormatter.stringFromNumber(GetLatestNonZeroValue(self.Brent, date: Today))! + " <font size=2> per barrel</font></font>"
+                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.Brent, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
                  encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                  attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -191,7 +178,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + NumberFormatter.stringFromNumber(GetLatestNonZeroValue(self.Ven, date: Today))! + " <font size=2> per barrel</font></font>"
+                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.Ven, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
                 encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -200,7 +187,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + NumberFormatter.stringFromNumber(GetLatestNonZeroValue(self.OPEC, date: Today))! + " <font size=2> per barrel</font></font>"
+                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.OPEC, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
                 encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -209,21 +196,21 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                Compare(self.WTI, date: OneWeekAgo, label: self.WTIWeek, type: nil)
-                Compare(self.WTI, date: OneYearAgo, label: self.WTIYear, type: nil)
-                Compare(self.WTI, date: TwoYearsAgo, label: self.WTITwoYear, type: nil)
+                Utils.shared.Compare(self.WTI, date: Utils.shared.OneWeekAgo(), label: self.WTIWeek, type: nil)
+                Utils.shared.Compare(self.WTI, date: Utils.shared.YearsAgo(1), label: self.WTIYear, type: nil)
+                Utils.shared.Compare(self.WTI, date: Utils.shared.YearsAgo(2), label: self.WTITwoYear, type: nil)
                 
-                Compare(self.Brent, date: OneWeekAgo, label: self.BrentWeek, type: nil)
-                Compare(self.Brent, date: OneYearAgo, label: self.BrentYear, type: nil)
-                Compare(self.Brent, date: TwoYearsAgo, label: self.BrentTwoYear, type: nil)
+                Utils.shared.Compare(self.Brent, date: Utils.shared.OneWeekAgo(), label: self.BrentWeek, type: nil)
+                Utils.shared.Compare(self.Brent, date: Utils.shared.YearsAgo(1), label: self.BrentYear, type: nil)
+                Utils.shared.Compare(self.Brent, date: Utils.shared.YearsAgo(2), label: self.BrentTwoYear, type: nil)
                 
-                Compare(self.Ven, date: OneWeekAgo, label: self.VenWeek, type: nil)
-                Compare(self.Ven, date: OneYearAgo, label: self.VenYear, type: nil)
-                Compare(self.Ven, date: TwoYearsAgo, label: self.VenTwoYear, type: nil)
+                Utils.shared.Compare(self.Ven, date: Utils.shared.OneWeekAgo(), label: self.VenWeek, type: nil)
+                Utils.shared.Compare(self.Ven, date: Utils.shared.YearsAgo(1), label: self.VenYear, type: nil)
+                Utils.shared.Compare(self.Ven, date: Utils.shared.YearsAgo(2), label: self.VenTwoYear, type: nil)
                 
-                Compare(self.OPEC, date: OneWeekAgo, label: self.OPECWeek, type: nil)
-                Compare(self.OPEC, date: OneYearAgo, label: self.OPECYear, type: nil)
-                Compare(self.OPEC, date: TwoYearsAgo, label: self.OPECTwoYear, type: nil)
+                Utils.shared.Compare(self.OPEC, date: Utils.shared.OneWeekAgo(), label: self.OPECWeek, type: nil)
+                Utils.shared.Compare(self.OPEC, date: Utils.shared.YearsAgo(1), label: self.OPECYear, type: nil)
+                Utils.shared.Compare(self.OPEC, date: Utils.shared.YearsAgo(2), label: self.OPECTwoYear, type: nil)
                 
                 //DRAW THE GRAPHS
                 self.chart.canvasAreaBackgroundColor = UIColor.blackColor()

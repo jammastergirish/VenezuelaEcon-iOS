@@ -1040,14 +1040,8 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Gel-qb-DOX"/>
                                     <constraint firstItem="Kdq-eY-Lij" firstAttribute="top" secondItem="cgo-QI-xrY" secondAttribute="bottom" constant="5" id="lum-BZ-VLB"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Gel-qb-DOX"/>
-                                    </mask>
-                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

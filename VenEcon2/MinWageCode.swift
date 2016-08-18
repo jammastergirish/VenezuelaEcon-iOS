@@ -85,19 +85,6 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         //Telling what units we're using. Hopefully will be able to shift all this later
         var units : String = self.currencies["VEF"]! + "/" + self.currencies["USD"]!
         
-        //Definitions for time. These should ideally be far out of this function. Why can't I put these higher?
-        let Today = self.dateFormatter.stringFromDate(NSDate())
-        let Yesterday = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -1, toDate: NSDate(), options: [])!)
-        let OneWeekAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -7, toDate: NSDate(), options: [])!)
-        let FirstOfThisMonth = ""
-        let OneMonthAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -30, toDate: NSDate(), options: [])!)
-        let FirstOfThisYear = ""
-        let OneYearAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -365, toDate: NSDate(), options: [])!)
-        let TwoYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*2), toDate: NSDate(), options: [])!)
-        let ThreeYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*3), toDate: NSDate(), options: [])!)
-        let FourYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*4), toDate: NSDate(), options: [])!)
-        let FiveYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*5), toDate: NSDate(), options: [])!)
-        
         //A number formatter
         let NumberFormatter = NSNumberFormatter()
         NumberFormatter.numberStyle = .DecimalStyle
@@ -138,7 +125,7 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.Data(json)
                 
                 //Set all the text. There must be a way of doing this without using so many repetetive lines of code? I mean the attributed text rather than my if statements.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(GetLatestNonZeroValue(self.MinWage, date: Today))! + " <font size=2>BsF/month</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.MinWage, date: Utils.shared.Today()))! + " <font size=2>BsF/month</font></font>"
                 var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -148,13 +135,13 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 } catch _ {}
                 
                 
-                var comparison : Double = GetLatestNonZeroValue(self.MinWage, date: Yesterday)
+               // var comparison : Double = Utils.shared.GetLatestNonZeroValue(self.MinWage, date: Utils.shared.Yesterday())
                // Compare(self.MinWage, date: FiveYearsAgo, label: self.MinWageFiveYear, type: nil)
-                Compare(self.MinWage, date: OneMonthAgo, label: self.MinWageMonth, type: nil)
-                Compare(self.MinWage, date: OneYearAgo, label: self.MinWageYear, type: nil)
-                Compare(self.MinWage, date: TwoYearsAgo, label: self.MinWageTwoYear, type: nil)
-                Compare(self.MinWage, date: ThreeYearsAgo, label: self.MinWageThreeYear, type: nil)
-                Compare(self.MinWage, date: FourYearsAgo, label: self.MinWageFourYear, type: nil)
+                Utils.shared.Compare(self.MinWage, date: Utils.shared.OneMonthAgo(), label: self.MinWageMonth, type: nil)
+                Utils.shared.Compare(self.MinWage, date: Utils.shared.YearsAgo(1), label: self.MinWageYear, type: nil)
+                Utils.shared.Compare(self.MinWage, date: Utils.shared.YearsAgo(2), label: self.MinWageTwoYear, type: nil)
+                Utils.shared.Compare(self.MinWage, date: Utils.shared.YearsAgo(3), label: self.MinWageThreeYear, type: nil)
+                Utils.shared.Compare(self.MinWage, date: Utils.shared.YearsAgo(4), label: self.MinWageFourYear, type: nil)
                 
                 //DRAW THE GRAPHS
                 self.chart.canvasAreaBackgroundColor = UIColor.blackColor()

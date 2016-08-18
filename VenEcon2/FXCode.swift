@@ -8,189 +8,10 @@
 
 import UIKit
 
-func DevalPerc(let old : Double, let new : Double) -> Double
-{
-    return 100*((1/old)-(1/new))/(1/old)
-}
-
-func PercDiff(let old : Double, let new : Double) -> Double
-{
-    return 100*(old-new)/old
-}
-
-// Wrote this function on 20160810.
-func GetLatestNonZeroValue(let dict : [String: Double], let date : String) -> Double
-{
-    let userCalendar = NSCalendar.currentCalendar()
-    let dateFormatter = NSDateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd"
-    
-    var value : Double? = dict[date]
-    if ((value != 0) && (value != nil))
-    {
-        return value!
-    }
-    else
-    {
-        let DayBeforeDate = userCalendar.dateByAddingUnit([.Day], value: -1, toDate: dateFormatter.dateFromString(date)!, options: [])
-        value = dict[dateFormatter.stringFromDate(DayBeforeDate!)]
-        if ((value != 0) && (value != nil))
-        {
-            return value!
-        }
-        else
-        {
-            return GetLatestNonZeroValue(dict, date: dateFormatter.stringFromDate(DayBeforeDate!))
-        }
-    }
-}
-
-//Written early 20160815
-func Compare(let dict : [String: Double], let date : String, let label : UILabel, let type : String?)
-{
-    let userCalendar = NSCalendar.currentCalendar()
-
-    let NumberFormatter = NSNumberFormatter()
-    NumberFormatter.numberStyle = .DecimalStyle
-    NumberFormatter.maximumFractionDigits = 1
-    
-    let dateFormatter = NSDateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd"
-    
-    let Today = dateFormatter.stringFromDate(NSDate())
-    let Yesterday = dateFormatter.stringFromDate(userCalendar.dateByAddingUnit([.Day], value: -1, toDate: NSDate(), options: [])!)
-    let OneWeekAgo = dateFormatter.stringFromDate(userCalendar.dateByAddingUnit([.Day], value: -7, toDate: NSDate(), options: [])!)
-    let FirstOfThisMonth = ""
-    let OneMonthAgo = dateFormatter.stringFromDate(userCalendar.dateByAddingUnit([.Day], value: -30, toDate: NSDate(), options: [])!)
-    let FirstOfThisYear = ""
-    let OneYearAgo = dateFormatter.stringFromDate(userCalendar.dateByAddingUnit([.Day], value: -365, toDate: NSDate(), options: [])!)
-    let TwoYearsAgo = dateFormatter.stringFromDate(userCalendar.dateByAddingUnit([.Day], value: -(365*2), toDate: NSDate(), options: [])!)
-    let ThreeYearsAgo = dateFormatter.stringFromDate(userCalendar.dateByAddingUnit([.Day], value: -(365*3), toDate: NSDate(), options: [])!)
-    let FourYearsAgo = dateFormatter.stringFromDate(userCalendar.dateByAddingUnit([.Day], value: -(365*4), toDate: NSDate(), options: [])!)
-    let FiveYearsAgo = dateFormatter.stringFromDate(userCalendar.dateByAddingUnit([.Day], value: -(365*5), toDate: NSDate(), options: [])!)
-    
-    var ComparisonString : String = ""
-    
-    if (date==Yesterday)
-    {
-        ComparisonString = "yesterday"
-    }
-    if (date==OneWeekAgo)
-    {
-        ComparisonString = "a week"
-    }
-    if (date==OneMonthAgo)
-    {
-        ComparisonString = "a month"
-    }
-    if (date==OneYearAgo)
-    {
-        ComparisonString = "a year"
-    }
-    if (date==TwoYearsAgo)
-    {
-        ComparisonString = "2 years"
-    }
-    if (date==ThreeYearsAgo)
-    {
-        ComparisonString = "3 years"
-    }
-    if (date==FourYearsAgo)
-    {
-        ComparisonString = "4 years"
-    }
-    if (date==FiveYearsAgo)
-    {
-        ComparisonString = "5 years"
-    }
-    
-    let comparison : Double = GetLatestNonZeroValue(dict, date: date)
-    
-    if (type=="FX")
-    {
-    if (dict[Today]!==comparison)
-    {
-        let text = "<font face=\"Trebuchet MS\" color=#808080>Same as "+ComparisonString+"</font>"
-        
-        let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
-        let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            label.attributedText = attributedString
-            
-        } catch _ {}
-    }
-    else if (GetLatestNonZeroValue(dict, date: Today)>comparison)
-    {
-        let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(comparison, new: GetLatestNonZeroValue(dict, date: Today))))! + "% in "+ComparisonString+"</font>"
-        
-        let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
-        let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            label.attributedText = attributedString
-            
-        } catch _ {}
-    }
-    else if (GetLatestNonZeroValue(dict, date: Today)<comparison)
-    {
-        let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(comparison, new: GetLatestNonZeroValue(dict, date: Today))))! + "% in "+ComparisonString+"</font>"
-        
-        let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
-        let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            label.attributedText = attributedString
-            
-        } catch _ {}
-    }
-    }
-    else
-    {
-        if (GetLatestNonZeroValue(dict, date: Today)==comparison)
-        {
-            let text = "<font face=\"Trebuchet MS\" color=#808080>Same as "+ComparisonString+"</font>"
-            
-            let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
-            let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-            do {
-                let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-                label.attributedText = attributedString
-                
-            } catch _ {}
-        }
-        else if (GetLatestNonZeroValue(dict, date: Today)>comparison)
-        {
-            let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: GetLatestNonZeroValue(dict, date: Today))))! + "% in "+ComparisonString+"</font>"
-            
-            let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
-            let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-            do {
-                let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-                label.attributedText = attributedString
-                
-            } catch _ {}
-        }
-        else if (GetLatestNonZeroValue(dict, date: Today)<comparison)
-        {
-            let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: GetLatestNonZeroValue(dict, date: Today))))! + "% in "+ComparisonString+"</font>"
-            
-            let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
-            let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-            do {
-                let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-                label.attributedText = attributedString
-                
-            } catch _ {}
-        }
-    }
-    
-    
-}
-
-
-
 class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
+    
+    // 20160818 Decided not to use the following and just use Utils.shared.XXX
+    // let utils = Utils.shared
     
     let userCalendar = NSCalendar.currentCalendar()
     
@@ -253,15 +74,15 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         switch RangeController.selectedSegmentIndex
         {
         case 0:
-            Start = "2011-08-15" // If those date definitions below were higher, I could use them here instead of typing manually or copying and pasting from below which obviously isn't okay.
+            Start = Utils.shared.YearsAgo(5)
         case 1:
-            Start = "2012-08-15"
+            Start = Utils.shared.YearsAgo(4)
         case 2:
-            Start = "2013-08-15"
+            Start = Utils.shared.YearsAgo(3)
         case 3:
-            Start = "2014-08-15"
+            Start = Utils.shared.YearsAgo(2)
         case 4:
-            Start = "2015-08-15"
+            Start = Utils.shared.YearsAgo(1)
         default:
             break;
         }
@@ -287,19 +108,6 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         
         //Telling what units we're using. Hopefully will be able to shift all this later
         var units : String = self.currencies["VEF"]! + "/" + self.currencies["USD"]!
-        
-        //Definitions for time. These should ideally be far out of this function. Why can't I put these higher?
-        let Today = self.dateFormatter.stringFromDate(NSDate())
-        let Yesterday = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -1, toDate: NSDate(), options: [])!)
-        let OneWeekAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -7, toDate: NSDate(), options: [])!)
-        let FirstOfThisMonth = ""
-        let OneMonthAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -30, toDate: NSDate(), options: [])!)
-        let FirstOfThisYear = ""
-        let OneYearAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -365, toDate: NSDate(), options: [])!)
-        let TwoYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*2), toDate: NSDate(), options: [])!)
-        let ThreeYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*3), toDate: NSDate(), options: [])!)
-        let FourYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*4), toDate: NSDate(), options: [])!)
-        let FiveYearsAgo = self.dateFormatter.stringFromDate(self.userCalendar.dateByAddingUnit([.Day], value: -(365*5), toDate: NSDate(), options: [])!)
         
         //A number formatter
         let NumberFormatter = NSNumberFormatter()
@@ -351,8 +159,8 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
 
             self.Data(json)
             
-            //Set all the text. There must be a way of doing this without using so many repetetive lines of code? I mean the attributed text rather than my if statements.
-            var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.Simadi[Today]!)! + " <font size=2>BsF/$</font></font>"
+            //Set all the text.
+            var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.Simadi[Utils.shared.Today()]!)! + " <font size=2>BsF/$</font></font>"
             var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
             var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
             do {
@@ -362,12 +170,12 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             } catch _ {}
             
             
-            Compare(self.Simadi, date: Yesterday, label: self.SIMADIYesterday, type: "FX")
-            Compare(self.Simadi, date: OneMonthAgo, label: self.SIMADIMonth, type: "FX")
-            Compare(self.Simadi, date: OneYearAgo, label: self.SIMADIYear, type: "FX")
+            Utils.shared.Compare(self.Simadi, date: Utils.shared.Yesterday(), label: self.SIMADIYesterday, type: "FX")
+            Utils.shared.Compare(self.Simadi, date: Utils.shared.OneMonthAgo(), label: self.SIMADIMonth, type: "FX")
+            Utils.shared.Compare(self.Simadi, date: Utils.shared.YearsAgo(1), label: self.SIMADIYear, type: "FX")
             
 
-             text = "<CENTER><font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(GetLatestNonZeroValue(self.M2_Res, date: Today))! + " <font size=2>BsF/$</font></font></CENTER>"
+             text = "<CENTER><font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.M2_Res, date: Utils.shared.Today()))! + " <font size=2>BsF/$</font></font></CENTER>"
              encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
              attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
             do {
@@ -377,7 +185,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             } catch _ {}
             
 
-             text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.Official[Today]!)! + " <font size=2>BsF/$</font></font>"
+             text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.Official[Utils.shared.Today()]!)! + " <font size=2>BsF/$</font></font>"
              encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
              attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
             do {
@@ -389,7 +197,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             
 
-            text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.BM[Today]!)! + " <font size=2>BsF/$</font></font>"
+            text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.BM[Utils.shared.Today()]!)! + " <font size=2>BsF/$</font></font>"
             encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
             attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
             do {
@@ -399,12 +207,12 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             } catch _ {}
             
             
-            Compare(self.BM, date: Yesterday, label: self.BlackMarketYesterday, type: "FX")
-            Compare(self.BM, date: OneMonthAgo, label: self.BlackMarketMonth, type: "FX")
-            Compare(self.BM, date: OneYearAgo, label: self.BlackMarketYear, type: "FX")
-            Compare(self.BM, date: TwoYearsAgo, label: self.BlackMarketTwoYear, type: "FX")
-            Compare(self.BM, date: ThreeYearsAgo, label: self.BlackMarketThreeYear, type: "FX")
-            Compare(self.BM, date: FourYearsAgo, label: self.BlackMarketFourYear, type: "FX")
+            Utils.shared.Compare(self.BM, date: Utils.shared.Yesterday(), label: self.BlackMarketYesterday, type: "FX")
+            Utils.shared.Compare(self.BM, date: Utils.shared.OneMonthAgo(), label: self.BlackMarketMonth, type: "FX")
+            Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(1), label: self.BlackMarketYear, type: "FX")
+            Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(2), label: self.BlackMarketTwoYear, type: "FX")
+            Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(3), label: self.BlackMarketThreeYear, type: "FX")
+            Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(4), label: self.BlackMarketFourYear, type: "FX")
 
 
             //DRAW THE GRAPHS
@@ -453,6 +261,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             
             //All set to make everything visible again!
+            // Can put these things in a view but will mess up layout
             self.chart.hidden = false
             self.SIMADIVal.hidden = false
             self.SIMADIYesterday.hidden = false
