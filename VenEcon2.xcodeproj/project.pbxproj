@@ -12,6 +12,7 @@
 		6866B1CD1D601A030073926F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6866B1CC1D601A030073926F /* Images.xcassets */; };
 		68B867E61D63B73800309C56 /* M2Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E51D63B73800309C56 /* M2Code.swift */; };
 		68B867E81D63C0B500309C56 /* MinWageCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E71D63C0B500309C56 /* MinWageCode.swift */; };
+		68B867EA1D63D0A600309C56 /* InflationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E91D63D0A600309C56 /* InflationCode.swift */; };
 		68D3DB971D593AA600F42648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DB961D593AA600F42648 /* AppDelegate.swift */; };
 		68D3DB991D593AA600F42648 /* FXCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DB981D593AA600F42648 /* FXCode.swift */; };
 		68D3DB9C1D593AA600F42648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D3DB9A1D593AA600F42648 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		6866B1CC1D601A030073926F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		68B867E51D63B73800309C56 /* M2Code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M2Code.swift; sourceTree = "<group>"; };
 		68B867E71D63C0B500309C56 /* MinWageCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinWageCode.swift; sourceTree = "<group>"; };
+		68B867E91D63D0A600309C56 /* InflationCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflationCode.swift; sourceTree = "<group>"; };
 		68D3DB931D593AA600F42648 /* VenEcon2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenEcon2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D3DB961D593AA600F42648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68D3DB981D593AA600F42648 /* FXCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXCode.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				68B867E71D63C0B500309C56 /* MinWageCode.swift */,
 				68D3DB9F1D593AA600F42648 /* LaunchScreen.storyboard */,
 				68D3DBA21D593AA600F42648 /* Info.plist */,
+				68B867E91D63D0A600309C56 /* InflationCode.swift */,
 				6866B1CC1D601A030073926F /* Images.xcassets */,
 				6839E79D1D610DC5005ED3FA /* ReservesCode.swift */,
 				68B867E51D63B73800309C56 /* M2Code.swift */,
@@ -236,6 +239,7 @@
 				68D3DBBD1D593AFF00F42648 /* MyNavigationController.swift in Sources */,
 				68D3DB991D593AA600F42648 /* FXCode.swift in Sources */,
 				68B867E81D63C0B500309C56 /* MinWageCode.swift in Sources */,
+				68B867EA1D63D0A600309C56 /* InflationCode.swift in Sources */,
 				6839E79E1D610DC5005ED3FA /* ReservesCode.swift in Sources */,
 				68B867E61D63B73800309C56 /* M2Code.swift in Sources */,
 				68D3DB971D593AA600F42648 /* AppDelegate.swift in Sources */,
