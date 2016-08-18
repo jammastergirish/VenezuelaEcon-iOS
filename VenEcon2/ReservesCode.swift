@@ -100,6 +100,9 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ChartSVHeight.active = false
+
+        
         //For menu
         self.sideMenuController()?.sideMenu?.delegate = self
         self.navigationController?.navigationBarHidden = true
