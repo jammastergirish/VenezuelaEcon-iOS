@@ -20,7 +20,9 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     //Variables to hold chart data
     var DataInflation: [SChartDataPoint] = []
     
+    //Layout stuff
     @IBOutlet var Header: UILabel!
+    
     
     //Labels for main values
     @IBOutlet var AnnualInflationVal: UILabel!

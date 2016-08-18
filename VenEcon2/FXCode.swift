@@ -33,6 +33,29 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     var DataSicad2: [SChartDataPoint] = []
     var DataM2_Res: [SChartDataPoint] = []
     
+    //Layouts
+    @IBOutlet var AllText: UIStackView!
+    @IBOutlet var DistanceBetweenAllTextAndChartSV: NSLayoutConstraint!
+    @IBOutlet var ChartSVHeight: NSLayoutConstraint!
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        if (toInterfaceOrientation == .Portrait)
+        {
+            ChartSVHeight.active = false
+            AllText.hidden = false
+            Header.hidden = false
+            DistanceBetweenAllTextAndChartSV.active = true
+        }
+        else
+        {
+            ChartSVHeight.active = true
+            ChartSVHeight.constant = view.frame.width
+            AllText.hidden = true
+            Header.hidden = true
+            DistanceBetweenAllTextAndChartSV.active = false
+        }
+    }
+    
+    
     //Labels for headers
     @IBOutlet var Header: UILabel!
     @IBOutlet var SIMADILabel: UILabel!
@@ -70,7 +93,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     //Range Controller and Range Control functions
     @IBOutlet var RangeController: UISegmentedControl!
     @IBAction func RangeControl(sender: AnyObject) {
-        var Start : String = "2015-08-09"
+        var Start : String = Utils.shared.YearsAgo(5)
         switch RangeController.selectedSegmentIndex
         {
         case 0:

@@ -22,7 +22,7 @@ class Utils
         return dateFormatter
     } ()
     
-    //Could make these functions or computed variables, says Pat
+    //Could make these functions or computed variables, says Pat on 20160817
     
     
     func Today() -> String
