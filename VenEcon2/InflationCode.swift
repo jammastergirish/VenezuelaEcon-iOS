@@ -20,6 +20,29 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     //Variables to hold chart data
     var DataInflation: [SChartDataPoint] = []
     
+    
+    //Layouts
+    @IBOutlet var AllText: UIStackView!
+    @IBOutlet var DistanceBetweenAllTextAndChartSV: NSLayoutConstraint!
+    @IBOutlet var ChartSVHeight: NSLayoutConstraint!
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        if (toInterfaceOrientation == .Portrait)
+        {
+            ChartSVHeight.active = false
+            AllText.hidden = false
+            Header.hidden = false
+            DistanceBetweenAllTextAndChartSV.active = true
+        }
+        else
+        {
+            ChartSVHeight.active = true
+            ChartSVHeight.constant = view.frame.width
+            AllText.hidden = true
+            Header.hidden = true
+            DistanceBetweenAllTextAndChartSV.active = false
+        }
+    }
+    
     //Layout stuff
     @IBOutlet var Header: UILabel!
     

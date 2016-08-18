@@ -26,6 +26,28 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     var DataVen: [SChartDataPoint] = []
     var DataOPEC: [SChartDataPoint] = []
     
+    //Layouts
+    @IBOutlet var AllText: UIStackView!
+    @IBOutlet var DistanceBetweenAllTextAndChartSV: NSLayoutConstraint!
+    @IBOutlet var ChartSVHeight: NSLayoutConstraint!
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        if (toInterfaceOrientation == .Portrait)
+        {
+            ChartSVHeight.active = false
+            AllText.hidden = false
+            Header.hidden = false
+            DistanceBetweenAllTextAndChartSV.active = true
+        }
+        else
+        {
+            ChartSVHeight.active = true
+            ChartSVHeight.constant = view.frame.width
+            AllText.hidden = true
+            Header.hidden = true
+            DistanceBetweenAllTextAndChartSV.active = false
+        }
+    }
+    
     //Labels for headers
     @IBOutlet var Header: UILabel!
     @IBOutlet var WTILabel: UILabel!

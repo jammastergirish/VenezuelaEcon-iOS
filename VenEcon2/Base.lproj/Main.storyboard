@@ -357,6 +357,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="79a-Oa-98e"/>
                                     <constraint firstItem="rJg-6d-ngH" firstAttribute="top" secondItem="XPF-rr-eEv" secondAttribute="bottom" constant="5" id="GAv-Ed-GVD"/>
                                 </constraints>
                             </stackView>
@@ -380,6 +381,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="AllText" destination="V1U-ni-8ia" id="qQe-ZL-PW1"/>
+                        <outlet property="ChartSVHeight" destination="79a-Oa-98e" id="ukA-kM-J2R"/>
+                        <outlet property="DistanceBetweenAllTextAndChartSV" destination="12w-bb-irc" id="ncG-OA-51l"/>
                         <outlet property="Header" destination="1es-2u-m1V" id="q1O-HH-Q8h"/>
                         <outlet property="M2FiveYear" destination="G61-CS-gaR" id="d0R-JV-t64"/>
                         <outlet property="M2FourYear" destination="QTK-ol-W9b" id="gqh-BQ-PaY"/>
@@ -492,6 +496,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="CIT-VZ-cyb"/>
                                     <constraint firstItem="Bte-vU-Sar" firstAttribute="top" secondItem="UMZ-00-2VQ" secondAttribute="bottom" constant="5" id="xkF-if-iPM"/>
                                 </constraints>
                             </stackView>
@@ -509,6 +514,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="AllText" destination="Qwb-eu-4B7" id="Qrz-ZG-Ugg"/>
+                        <outlet property="ChartSVHeight" destination="CIT-VZ-cyb" id="Uhq-W8-mi8"/>
+                        <outlet property="DistanceBetweenAllTextAndChartSV" destination="skt-Ow-KM7" id="zzZ-vy-Fmc"/>
                         <outlet property="Header" destination="63q-MY-4hB" id="DNR-cO-Kra"/>
                         <outlet property="RangeController" destination="UMZ-00-2VQ" id="NOp-bj-3lK"/>
                         <outlet property="ReservesFourYear" destination="z6M-t0-9cl" id="OAf-Bu-ScE"/>
@@ -740,14 +748,9 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="0ib-9C-q0n"/>
                                     <constraint firstItem="FxM-Sh-ACO" firstAttribute="top" secondItem="JBu-Fb-eYq" secondAttribute="bottom" constant="5" id="CeO-bf-7yC"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="TVR-Ic-xlg"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="TVR-Ic-xlg"/>
-                                    </mask>
-                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -763,11 +766,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="AllText" destination="qpe-TA-zWS" id="UoG-te-XkZ"/>
                         <outlet property="BrentLabel" destination="d8k-96-4Bb" id="DGm-kW-Kx5"/>
                         <outlet property="BrentTwoYear" destination="mGe-iq-b4r" id="EpV-dh-5PK"/>
                         <outlet property="BrentVal" destination="M7f-KQ-YZt" id="i0j-eL-s2g"/>
                         <outlet property="BrentWeek" destination="UF3-8M-JT3" id="L77-PW-oOE"/>
                         <outlet property="BrentYear" destination="Z33-wq-3el" id="jSN-z3-ZYV"/>
+                        <outlet property="ChartSVHeight" destination="0ib-9C-q0n" id="TeA-YX-NIf"/>
+                        <outlet property="DistanceBetweenAllTextAndChartSV" destination="aLG-PU-Zug" id="PqD-Ii-W2l"/>
                         <outlet property="Header" destination="m9i-CZ-ZXB" id="3mj-mk-A8G"/>
                         <outlet property="OPECLabel" destination="mgs-WQ-Qfa" id="Ygn-kX-tLM"/>
                         <outlet property="OPECTwoYear" destination="aK8-2d-foi" id="tDY-Kn-fdo"/>
@@ -1032,6 +1038,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="IC8-w0-jJ7"/>
                                     <constraint firstItem="Kdq-eY-Lij" firstAttribute="top" secondItem="cgo-QI-xrY" secondAttribute="bottom" constant="5" id="lum-BZ-VLB"/>
                                 </constraints>
                             </stackView>
@@ -1049,7 +1056,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="AllText" destination="s0g-yn-Xge" id="P6n-h0-AQy"/>
                         <outlet property="AnnualInflationVal" destination="s3g-c8-nr6" id="ggP-dl-2Oz"/>
+                        <outlet property="ChartSVHeight" destination="IC8-w0-jJ7" id="yKM-f0-OY0"/>
+                        <outlet property="DistanceBetweenAllTextAndChartSV" destination="VWE-Jf-49q" id="e2c-f6-sFQ"/>
                         <outlet property="Header" destination="L5c-2w-Xj6" id="eaI-8K-4I1"/>
                         <outlet property="MonthlyInflationVal" destination="swV-bB-bSY" id="oE9-Dk-kFg"/>
                         <outlet property="RangeController" destination="cgo-QI-xrY" id="B7H-gX-rUS"/>
@@ -1073,14 +1083,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Minimum Wage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irI-ol-7Hg">
-                                <rect key="frame" x="207" y="40" width="173" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum Wage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irI-ol-7Hg">
+                                <rect key="frame" x="214" y="60" width="173" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="KpQ-u1-q65">
-                                <rect key="frame" x="225" y="110" width="150" height="150"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="KpQ-u1-q65">
+                                <rect key="frame" x="225" y="130" width="150" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MinWageVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djT-14-sAM">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="21"/>
@@ -1130,8 +1140,8 @@
                                     <constraint firstAttribute="width" constant="150" id="NYD-o2-bxf"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="eWc-kL-4Of">
-                                <rect key="frame" x="20" y="300" width="560" height="280"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="eWc-kL-4Of">
+                                <rect key="frame" x="20" y="320" width="560" height="280"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="woQ-ZR-LOG">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="29"/>
@@ -1159,6 +1169,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="2XB-3Y-wVH"/>
                                     <constraint firstItem="fja-W5-XV6" firstAttribute="top" secondItem="woQ-ZR-LOG" secondAttribute="bottom" constant="5" id="jQE-V4-sOv"/>
                                 </constraints>
                             </stackView>
@@ -1176,6 +1187,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="AllText" destination="KpQ-u1-q65" id="Wgg-5l-5ZZ"/>
+                        <outlet property="ChartSVHeight" destination="2XB-3Y-wVH" id="mcC-T8-8dJ"/>
+                        <outlet property="DistanceBetweenAllTextAndChartSV" destination="icM-4T-OFR" id="Dgk-hg-Siy"/>
                         <outlet property="Header" destination="irI-ol-7Hg" id="h9h-re-IlW"/>
                         <outlet property="MinWageFiveYear" destination="gUh-2C-u1w" id="U0r-Oe-bpA"/>
                         <outlet property="MinWageFourYear" destination="etF-zO-Clq" id="EAr-BB-hmZ"/>
