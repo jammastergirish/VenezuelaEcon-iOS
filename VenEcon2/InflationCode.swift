@@ -8,6 +8,14 @@
 
 import UIKit
 
+//Written 20160819 morning
+func AnnualInflation(let Year : Int, let source : [String: Double]) ->  Double
+{
+    let old : Double = source[String(Year-1)+"-12-31"]!
+    let new : Double = source[String(Year)+"-12-31"]!
+    return abs(Utils.shared.PercDiff(old, new: new))
+}
+
 class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     let userCalendar = NSCalendar.currentCalendar()
@@ -52,8 +60,13 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     @IBOutlet var MonthlyInflationVal: UILabel!
     
     //Labels for variation text
-    @IBOutlet var YearLabels: UILabel!
-    
+    @IBOutlet var Label2015: UILabel!
+    @IBOutlet var Label2014: UILabel!
+    @IBOutlet var Label2013: UILabel!
+    @IBOutlet var Label2012: UILabel!
+    @IBOutlet var Label2011: UILabel!
+    @IBOutlet var Label2010: UILabel!
+    @IBOutlet var Label2009: UILabel!
 
     
     //Chart
@@ -114,13 +127,11 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         //A number formatter
         let NumberFormatter = NSNumberFormatter()
         NumberFormatter.numberStyle = .DecimalStyle
-        NumberFormatter.maximumFractionDigits = 2
+        NumberFormatter.maximumFractionDigits = 1
         
         //Loading so everything hidden. I can't seem to add other stuff to this. Better way to hide/show everything?
         self.chart.hidden = true
-        self.AnnualInflationVal.hidden = true
-        self.MonthlyInflationVal.hidden =  true
-        self.YearLabels.hidden = true
+        self.AllText.hidden = true
         self.RangeController.hidden = true
         self.Header.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -145,26 +156,15 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             dispatch_async(dispatch_get_main_queue(), { () -> Void in // Does this bit need to be in main thread? Much quicker if so
                 
                 self.Data(json)
-                /*
-                //Set all the text. There must be a way of doing this without using so many repetetive lines of code? I mean the attributed text rather than my if statements.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(GetLatestNonZeroValue(self.Inflation, date: Today))! + " <font size=2>BsF/month</font></font>"
-                var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
-                var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-                do {
-                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-                    self.AnnualInflationVal.attributedText = attributedString
-                    
-                } catch _ {}
                 
-                
-                var comparison : Double = GetLatestNonZeroValue(self.Inflation, date: Yesterday)
-                // Compare(self.Inflation, date: FiveYearsAgo, label: self.InflationFiveYear, type: nil)
-                Compare(self.Inflation, date: OneMonthAgo, label: self.InflationMonth, type: nil)
-                Compare(self.Inflation, date: OneYearAgo, label: self.InflationYear, type: nil)
-                Compare(self.Inflation, date: TwoYearsAgo, label: self.InflationTwoYear, type: nil)
-                Compare(self.Inflation, date: ThreeYearsAgo, label: self.InflationThreeYear, type: nil)
-                Compare(self.Inflation, date: FourYearsAgo, label: self.InflationFourYear, type: nil)
-                */
+                self.Label2015.text = NumberFormatter.stringFromNumber((AnnualInflation(2015, source: self.Inflation)))!+"%"
+                self.Label2014.text = NumberFormatter.stringFromNumber((AnnualInflation(2014, source: self.Inflation)))!+"%"
+                self.Label2013.text = NumberFormatter.stringFromNumber((AnnualInflation(2013, source: self.Inflation)))!+"%"
+                self.Label2012.text = NumberFormatter.stringFromNumber((AnnualInflation(2012, source: self.Inflation)))!+"%"
+                self.Label2011.text = NumberFormatter.stringFromNumber((AnnualInflation(2011, source: self.Inflation)))!+"%"
+                self.Label2010.text = NumberFormatter.stringFromNumber((AnnualInflation(2010, source: self.Inflation)))!+"%"
+                self.Label2009.text = NumberFormatter.stringFromNumber((AnnualInflation(2009, source: self.Inflation)))!+"%"
+
                 //DRAW THE GRAPHS
                 self.chart.canvasAreaBackgroundColor = UIColor.blackColor()
                 self.chart.backgroundColor = UIColor.blackColor()
@@ -212,9 +212,7 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 //All set to make everything visible again!
                 self.chart.hidden = false
-                self.AnnualInflationVal.hidden = false
-                self.MonthlyInflationVal.hidden =  false
-                self.YearLabels.hidden = false
+                self.AllText.hidden = false
                 self.RangeController.hidden = false
                 self.Header.hidden = false
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false

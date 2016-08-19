@@ -106,21 +106,21 @@
 			isa = PBXGroup;
 			children = (
 				68D3DB961D593AA600F42648 /* AppDelegate.swift */,
-				68D3DB981D593AA600F42648 /* FXCode.swift */,
 				68589DC21D65563400ECBC3E /* Utils.swift */,
+				68D3DB981D593AA600F42648 /* FXCode.swift */,
+				6839E79D1D610DC5005ED3FA /* ReservesCode.swift */,
 				685D86AF1D629DA500F7FC42 /* OilCode.swift */,
+				68B867E91D63D0A600309C56 /* InflationCode.swift */,
+				68B867E51D63B73800309C56 /* M2Code.swift */,
+				68B867E71D63C0B500309C56 /* MinWageCode.swift */,
 				68D3DBB61D593AFF00F42648 /* ENSideMenu.swift */,
 				68D3DBB71D593AFF00F42648 /* ENSideMenuNavigationController.swift */,
 				68D3DBB81D593AFF00F42648 /* MyMenuTableViewController.swift */,
 				68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */,
 				68D3DB9A1D593AA600F42648 /* Main.storyboard */,
-				68B867E71D63C0B500309C56 /* MinWageCode.swift */,
 				68D3DB9F1D593AA600F42648 /* LaunchScreen.storyboard */,
 				68D3DBA21D593AA600F42648 /* Info.plist */,
-				68B867E91D63D0A600309C56 /* InflationCode.swift */,
 				6866B1CC1D601A030073926F /* Images.xcassets */,
-				6839E79D1D610DC5005ED3FA /* ReservesCode.swift */,
-				68B867E51D63B73800309C56 /* M2Code.swift */,
 			);
 			path = VenEcon2;
 			sourceTree = "<group>";
