@@ -29,6 +29,7 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             AllText.hidden = false
             Header.hidden = false
             DistanceBetweenAllTextAndChartSV.active = true
+            ShowMenuButton.hidden = false
         }
         else
         {
@@ -37,6 +38,7 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             AllText.hidden = true
             Header.hidden = true
             DistanceBetweenAllTextAndChartSV.active = false
+            ShowMenuButton.hidden = true
         }
     }
     
@@ -111,6 +113,7 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.AllText.hidden = true
         self.RangeController.hidden = true
         self.chart.hidden = true
+        self.ShowMenuButton.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         //Added this bit with Pat on 20160804, to download the file
@@ -201,6 +204,7 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.AllText.hidden = false
                 self.RangeController.hidden = false
                 self.chart.hidden = false
+                self.ShowMenuButton.hidden = false
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 
             })
@@ -218,11 +222,10 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         // Dispose of any resources that can be recreated.
     }
     
-    /*@IBAction func ButtonPress(sender: AnyObject) {
-     toggleSideMenuView()
-     }*/
-    
-    
+    @IBOutlet var ShowMenuButton: UIButton!
+    @IBAction func ShowMenu(sender: AnyObject) {
+         toggleSideMenuView()
+    }
     
     func sideMenuWillOpen() {
         print("sideMenuWillOpen")
