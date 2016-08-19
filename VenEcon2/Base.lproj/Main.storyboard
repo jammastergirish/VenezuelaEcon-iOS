@@ -757,7 +757,6 @@
                     </view>
                     <connections>
                         <outlet property="AllText" destination="qpe-TA-zWS" id="UoG-te-XkZ"/>
-                        <outlet property="BrentLabel" destination="d8k-96-4Bb" id="DGm-kW-Kx5"/>
                         <outlet property="BrentTwoYear" destination="mGe-iq-b4r" id="EpV-dh-5PK"/>
                         <outlet property="BrentVal" destination="M7f-KQ-YZt" id="i0j-eL-s2g"/>
                         <outlet property="BrentWeek" destination="UF3-8M-JT3" id="L77-PW-oOE"/>
@@ -765,18 +764,15 @@
                         <outlet property="ChartSVHeight" destination="0ib-9C-q0n" id="TeA-YX-NIf"/>
                         <outlet property="DistanceBetweenAllTextAndChartSV" destination="aLG-PU-Zug" id="PqD-Ii-W2l"/>
                         <outlet property="Header" destination="m9i-CZ-ZXB" id="3mj-mk-A8G"/>
-                        <outlet property="OPECLabel" destination="mgs-WQ-Qfa" id="Ygn-kX-tLM"/>
                         <outlet property="OPECTwoYear" destination="aK8-2d-foi" id="tDY-Kn-fdo"/>
                         <outlet property="OPECVal" destination="Rua-Jd-lqk" id="uvG-dG-yMO"/>
                         <outlet property="OPECWeek" destination="Gb8-bU-lcZ" id="UtI-Y6-g7B"/>
                         <outlet property="OPECYear" destination="QvL-oh-rEl" id="fvN-zu-Mqo"/>
                         <outlet property="RangeController" destination="JBu-Fb-eYq" id="JAb-LM-5kU"/>
-                        <outlet property="VenLabel" destination="kwk-gR-fc2" id="Jhk-mQ-Eg8"/>
                         <outlet property="VenTwoYear" destination="dsi-nb-9iK" id="ugz-J8-B5A"/>
                         <outlet property="VenVal" destination="7GQ-Jq-rQe" id="ctQ-Dl-snz"/>
                         <outlet property="VenWeek" destination="7TP-hJ-A5t" id="zWf-X2-8gk"/>
                         <outlet property="VenYear" destination="VkW-rH-8Op" id="hF3-bM-j9R"/>
-                        <outlet property="WTILabel" destination="4hF-kV-L5P" id="sAy-9Y-zJ7"/>
                         <outlet property="WTITwoYear" destination="xKn-X9-rKe" id="y3z-W8-Ivz"/>
                         <outlet property="WTIVal" destination="coO-6k-T7P" id="wh9-re-tos"/>
                         <outlet property="WTIWeek" destination="xpX-F1-lbk" id="Rxs-UB-csN"/>

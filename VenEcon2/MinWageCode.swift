@@ -117,13 +117,7 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         
         //Loading so everything hidden. I can't seem to add other stuff to this. Better way to hide/show everything?
         self.chart.hidden = true
-        self.MinWageVal.hidden = true
-        self.MinWageYear.hidden = true
-        self.MinWageMonth.hidden = true
-        self.MinWageTwoYear.hidden = true
-        self.MinWageFourYear.hidden = true
-        self.MinWageThreeYear.hidden = true
-        self.MinWageFiveYear.hidden = true
+        self.AllText.hidden = true
         self.RangeController.hidden = true
         self.Header.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -215,13 +209,7 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 //All set to make everything visible again!
                 self.chart.hidden = false
-                self.MinWageVal.hidden = false
-                self.MinWageYear.hidden = false
-                self.MinWageMonth.hidden = false
-                self.MinWageTwoYear.hidden = false
-                self.MinWageFourYear.hidden = false
-                self.MinWageThreeYear.hidden = false
-                //self.MinWageFiveYear.hidden = false
+                self.AllText.hidden = false
                 self.RangeController.hidden = false
                 self.Header.hidden = false
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false

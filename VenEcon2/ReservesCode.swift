@@ -117,13 +117,7 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         
         //Loading so everything hidden. I can't seem to add other stuff to this. Better way to hide/show everything?
         self.chart.hidden = true
-        self.ReservesVal.hidden = true
-        self.ReservesYear.hidden = true
-        self.ReservesMonth.hidden = true
-        self.ReservesTwoYear.hidden = true
-        self.ReservesFourYear.hidden = true
-        self.ReservesThreeYear.hidden = true
-        self.ReservesYesterday.hidden = true
+        self.AllText.hidden = true
         self.RangeController.hidden = true
         self.Header.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -215,13 +209,7 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 //All set to make everything visible again!
                 self.chart.hidden = false
-                self.ReservesVal.hidden = false
-                self.ReservesYear.hidden = false
-                self.ReservesMonth.hidden = false
-                self.ReservesTwoYear.hidden = false
-                self.ReservesFourYear.hidden = false
-                self.ReservesThreeYear.hidden = false
-                self.ReservesYesterday.hidden = false
+                self.AllText.hidden = false
                 self.RangeController.hidden = false
                 self.Header.hidden = false
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false

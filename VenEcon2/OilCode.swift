@@ -50,10 +50,6 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     //Labels for headers
     @IBOutlet var Header: UILabel!
-    @IBOutlet var WTILabel: UILabel!
-    @IBOutlet var BrentLabel: UILabel!
-    @IBOutlet var VenLabel: UILabel!
-    @IBOutlet var OPECLabel: UILabel!
     
     //Labels for main values
     @IBOutlet var WTIVal: UILabel!
@@ -139,27 +135,8 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         //Loading so everything hidden. I can't seem to add other stuff to this. Better way to hide/show everything?
         self.chart.hidden = true
         self.Header.hidden = true
-        self.WTIVal.hidden = true
-        self.VenVal.hidden = true
-        self.BrentVal.hidden = true
-        self.OPECVal.hidden = true
         self.RangeController.hidden = true
-        self.WTIWeek.hidden = true
-        self.WTIYear.hidden = true
-        self.WTITwoYear.hidden = true
-        self.BrentWeek.hidden = true
-        self.BrentYear.hidden = true
-        self.BrentTwoYear.hidden = true
-        self.VenWeek.hidden = true
-        self.VenYear.hidden = true
-        self.VenTwoYear.hidden = true
-        self.OPECWeek.hidden = true
-        self.OPECYear.hidden = true
-        self.OPECTwoYear.hidden = true
-        self.WTILabel.hidden = true
-        self.VenLabel.hidden = true
-        self.OPECLabel.hidden = true
-        self.BrentLabel.hidden = true
+        self.AllText.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         
@@ -285,27 +262,8 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 //All set to make everything visible again!
                 self.chart.hidden = false
                 self.Header.hidden = false
-                self.WTIVal.hidden = false
-                self.VenVal.hidden = false
-                self.BrentVal.hidden = false
-                self.OPECVal.hidden = false
                 self.RangeController.hidden = false
-                self.WTIWeek.hidden = false
-                self.WTIYear.hidden = false
-                self.WTITwoYear.hidden = false
-                self.BrentWeek.hidden = false
-                self.BrentYear.hidden = false
-                self.BrentTwoYear.hidden = false
-                self.VenWeek.hidden = false
-                self.VenYear.hidden = false
-                self.VenTwoYear.hidden = false
-                self.OPECWeek.hidden = false
-                self.OPECYear.hidden = false
-                self.OPECTwoYear.hidden = false
-                self.WTILabel.hidden = false
-                self.VenLabel.hidden = false
-                self.OPECLabel.hidden = false
-                self.BrentLabel.hidden = false
+                self.AllText.hidden = false
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 //self.RangeControl(4)
                 

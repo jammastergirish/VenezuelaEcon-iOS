@@ -117,13 +117,7 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
         
         //Loading so everything hidden. I can't seem to add other stuff to this. Better way to hide/show everything?
         self.chart.hidden = true
-        self.M2Val.hidden = true
-        self.M2Year.hidden = true
-        self.M2Month.hidden = true
-        self.M2TwoYear.hidden = true
-        self.M2FourYear.hidden = true
-        self.M2ThreeYear.hidden = true
-        self.M2FiveYear.hidden = true
+        self.AllText.hidden = true
         self.RangeController.hidden = true
         self.Header.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -215,13 +209,7 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 //All set to make everything visible again!
                 self.chart.hidden = false
-                self.M2Val.hidden = false
-                self.M2Year.hidden = false
-                self.M2Month.hidden = false
-                self.M2TwoYear.hidden = false
-                self.M2FourYear.hidden = false
-                self.M2ThreeYear.hidden = false
-                self.M2FiveYear.hidden = false
+                self.AllText.hidden = false
                 self.RangeController.hidden = false
                 self.Header.hidden = false
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
