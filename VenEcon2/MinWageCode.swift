@@ -102,7 +102,6 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         
         ChartSVHeight.active = false
 
-        
         //For menu
         self.sideMenuController()?.sideMenu?.delegate = self
         self.navigationController?.navigationBarHidden = true

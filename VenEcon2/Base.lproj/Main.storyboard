@@ -164,7 +164,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="CLI-hB-cW4">
                                         <rect key="frame" x="0.0" y="213" width="300" height="38"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="M2 / Reserves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U3-u9-xyv">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="M2 / Reserves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U3-u9-xyv">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -193,9 +193,9 @@
                                             <constraint firstAttribute="height" constant="28" id="8tI-dS-wvC"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="5 years"/>
+                                            <segment title="16 years"/>
+                                            <segment title="8 years"/>
                                             <segment title="4 years"/>
-                                            <segment title="3 years"/>
                                             <segment title="2 years"/>
                                             <segment title="1 year"/>
                                         </segments>
@@ -334,9 +334,9 @@
                                             <constraint firstAttribute="height" constant="28" id="8lo-di-E6f"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="5 years"/>
+                                            <segment title="16 years"/>
+                                            <segment title="8 years"/>
                                             <segment title="4 years"/>
-                                            <segment title="3 years"/>
                                             <segment title="2 years"/>
                                             <segment title="1 year"/>
                                         </segments>
@@ -468,9 +468,9 @@
                                             <constraint firstAttribute="height" constant="28" id="OVl-UG-bfE"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="5 years"/>
+                                            <segment title="16 years"/>
+                                            <segment title="8 years"/>
                                             <segment title="4 years"/>
-                                            <segment title="3 years"/>
                                             <segment title="2 years"/>
                                             <segment title="1 year"/>
                                         </segments>
@@ -720,9 +720,9 @@
                                             <constraint firstAttribute="height" constant="28" id="Eib-nc-1Km"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="5 years"/>
+                                            <segment title="16 years"/>
+                                            <segment title="8 years"/>
                                             <segment title="4 years"/>
-                                            <segment title="3 years"/>
                                             <segment title="2 years"/>
                                             <segment title="1 year"/>
                                         </segments>

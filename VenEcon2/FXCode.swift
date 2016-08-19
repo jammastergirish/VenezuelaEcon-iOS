@@ -92,11 +92,11 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         switch RangeController.selectedSegmentIndex
         {
         case 0:
-            Start = Utils.shared.YearsAgo(5)
+            Start = Utils.shared.YearsAgo(16)
         case 1:
-            Start = Utils.shared.YearsAgo(4)
+            Start = Utils.shared.YearsAgo(8)
         case 2:
-            Start = Utils.shared.YearsAgo(3)
+            Start = Utils.shared.YearsAgo(4)
         case 3:
             Start = Utils.shared.YearsAgo(2)
         case 4:
@@ -144,7 +144,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=2011-01-01")!
+        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=1999-01-01")!
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             
@@ -242,7 +242,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             xAxis.style.lineColor = UIColor.whiteColor()
             xAxis.style.titleStyle.textColor = UIColor.whiteColor()
             //xAxis.labelFormatter!.dateFormatter().dateStyle = .MediumStyle
-            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM, YYYY"
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
             self.chart.xAxis = xAxis
             
             // Y Axis

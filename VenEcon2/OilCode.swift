@@ -85,19 +85,19 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     //Range Controller and Range Control functions
     @IBOutlet var RangeController: UISegmentedControl!
     @IBAction func RangeControl(sender: AnyObject) {
-        var Start : String = "2011-08-15"
+        var Start : String = Utils.shared.YearsAgo(5)
         switch RangeController.selectedSegmentIndex
         {
         case 0:
-            Start = "2011-08-15" // If those date definitions below were higher, I could use them here instead of typing manually or copying and pasting from below which obviously isn't okay.
+            Start = Utils.shared.YearsAgo(16)
         case 1:
-            Start = "2012-08-15"
+            Start = Utils.shared.YearsAgo(8)
         case 2:
-            Start = "2013-08-15"
+            Start = Utils.shared.YearsAgo(4)
         case 3:
-            Start = "2014-08-15"
+            Start = Utils.shared.YearsAgo(2)
         case 4:
-            Start = "2015-08-15"
+            Start = Utils.shared.YearsAgo(1)
         default:
             break;
         }
@@ -141,7 +141,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_oil&format=json&start=2011-01-01")!
+        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_oil&format=json&start=2000-01-01")!
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             
@@ -236,7 +236,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 xAxis.style.lineColor = UIColor.whiteColor()
                 xAxis.style.titleStyle.textColor = UIColor.whiteColor()
                 //xAxis.labelFormatter!.dateFormatter().dateStyle = .MediumStyle
-                xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM, YYYY"
+                xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
                 self.chart.xAxis = xAxis
                 
                 // Y Axis
