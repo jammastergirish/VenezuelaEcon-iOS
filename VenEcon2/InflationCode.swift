@@ -18,16 +18,11 @@ func AnnualInflation(let Year : Int, let source : [String: Double]) ->  Double
 
 class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
-    let userCalendar = NSCalendar.currentCalendar()
-    
-    let currencies : [String: String] = ["GBP": "£", "USD": "$", "EUR": "€", "COP": "COL$", "VEF": "BsF"]
-    
     //Variables to hold data
     var Inflation = [String: Double]()
     
     //Variables to hold chart data
     var DataInflation: [SChartDataPoint] = []
-    
     
     //Layouts
     @IBOutlet var AllText: UIStackView!
@@ -82,19 +77,19 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     //Range Controller and Range Control functions
     @IBOutlet var RangeController: UISegmentedControl!
     @IBAction func RangeControl(sender: AnyObject) {
-        var Start : String = "2007-01-01"
+        var Start : String = Utils.shared.YearsAgo(5)
         switch RangeController.selectedSegmentIndex
         {
         case 0:
-            Start = "2011-08-15" // If those date definitions below were higher, I could use them here instead of typing manually or copying and pasting from below which obviously isn't okay.
+            Start = Utils.shared.YearsAgo(5)
         case 1:
-            Start = "2012-08-15"
+            Start = Utils.shared.YearsAgo(4)
         case 2:
-            Start = "2013-08-15"
+            Start = Utils.shared.YearsAgo(3)
         case 3:
-            Start = "2014-08-15"
+            Start = Utils.shared.YearsAgo(2)
         case 4:
-            Start = "2015-08-15"
+            Start = Utils.shared.YearsAgo(1)
         default:
             break;
         }
@@ -122,18 +117,14 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.navigationController?.navigationBarHidden = true
         
         //Telling what units we're using. Hopefully will be able to shift all this later
-        var units : String = self.currencies["VEF"]! + "/" + self.currencies["USD"]!
+        var units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
         
-        //A number formatter
-        let NumberFormatter = NSNumberFormatter()
-        NumberFormatter.numberStyle = .DecimalStyle
-        NumberFormatter.maximumFractionDigits = 1
         
-        //Loading so everything hidden. I can't seem to add other stuff to this. Better way to hide/show everything?
-        self.chart.hidden = true
+        //Hide everything on loading
+        self.Header.hidden = true
         self.AllText.hidden = true
         self.RangeController.hidden = true
-        self.Header.hidden = true
+        self.chart.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         //Added this bit with Pat on 20160804, to download the file
@@ -153,17 +144,17 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 return
             }
             
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in // Does this bit need to be in main thread? Much quicker if so
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 
                 self.Data(json)
                 
-                self.Label2015.text = NumberFormatter.stringFromNumber((AnnualInflation(2015, source: self.Inflation)))!+"%"
-                self.Label2014.text = NumberFormatter.stringFromNumber((AnnualInflation(2014, source: self.Inflation)))!+"%"
-                self.Label2013.text = NumberFormatter.stringFromNumber((AnnualInflation(2013, source: self.Inflation)))!+"%"
-                self.Label2012.text = NumberFormatter.stringFromNumber((AnnualInflation(2012, source: self.Inflation)))!+"%"
-                self.Label2011.text = NumberFormatter.stringFromNumber((AnnualInflation(2011, source: self.Inflation)))!+"%"
-                self.Label2010.text = NumberFormatter.stringFromNumber((AnnualInflation(2010, source: self.Inflation)))!+"%"
-                self.Label2009.text = NumberFormatter.stringFromNumber((AnnualInflation(2009, source: self.Inflation)))!+"%"
+                self.Label2015.text = Utils.shared.NumberFormatter.stringFromNumber((AnnualInflation(2015, source: self.Inflation)))!+"%"
+                self.Label2014.text = Utils.shared.NumberFormatter.stringFromNumber((AnnualInflation(2014, source: self.Inflation)))!+"%"
+                self.Label2013.text = Utils.shared.NumberFormatter.stringFromNumber((AnnualInflation(2013, source: self.Inflation)))!+"%"
+                self.Label2012.text = Utils.shared.NumberFormatter.stringFromNumber((AnnualInflation(2012, source: self.Inflation)))!+"%"
+                self.Label2011.text = Utils.shared.NumberFormatter.stringFromNumber((AnnualInflation(2011, source: self.Inflation)))!+"%"
+                self.Label2010.text = Utils.shared.NumberFormatter.stringFromNumber((AnnualInflation(2010, source: self.Inflation)))!+"%"
+                self.Label2009.text = Utils.shared.NumberFormatter.stringFromNumber((AnnualInflation(2009, source: self.Inflation)))!+"%"
 
                 //DRAW THE GRAPHS
                 self.chart.canvasAreaBackgroundColor = UIColor.blackColor()
@@ -211,13 +202,11 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 
                 //All set to make everything visible again!
-                self.chart.hidden = false
+                self.Header.hidden = false
                 self.AllText.hidden = false
                 self.RangeController.hidden = false
-                self.Header.hidden = false
+                self.chart.hidden = false
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                //self.RangeControl(4)
-                
                 
             })
             
@@ -330,11 +319,6 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         let counts : [Int] = [DataInflation.count]
         
         return counts[seriesIndex]
-        
-        /* if seriesIndex == 0
-         {
-         return DataInflation.count
-         } etc */
         
     }
     

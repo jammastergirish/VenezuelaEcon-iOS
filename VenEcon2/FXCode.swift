@@ -13,10 +13,6 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     // 20160818 Decided not to use the following and just use Utils.shared.XXX
     // let utils = Utils.shared
     
-    let userCalendar = NSCalendar.currentCalendar()
-    
-    let currencies : [String: String] = ["GBP": "£", "USD": "$", "EUR": "€", "COP": "COL$", "VEF": "BsF"]
-    
     //Variables to hold data
     var BM = [String: Double]()
     var Official = [String: Double]()
@@ -128,20 +124,14 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.navigationController?.navigationBarHidden = true
         
         //Telling what units we're using. Hopefully will be able to shift all this later
-        var units : String = self.currencies["VEF"]! + "/" + self.currencies["USD"]!
+        var units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
         
-        //A number formatter
-        let NumberFormatter = NSNumberFormatter()
-        NumberFormatter.numberStyle = .DecimalStyle
-        NumberFormatter.maximumFractionDigits = 1
-        
-        //Loading so everything hidden. I can't seem to add other stuff to this. Better way to hide/show everything?
-        self.chart.hidden = true
+        //Hide everything while loading
+        self.Header.hidden = true
         self.AllText.hidden = true
         self.RangeController.hidden = true
-        self.Header.hidden = true
+        self.chart.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
         
         //Added this bit with Pat on 20160804, to download the file
         let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=1999-01-01")!
@@ -165,7 +155,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             self.Data(json)
             
             //Set all the text.
-            var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.Simadi[Utils.shared.Today()]!)! + " <font size=2>BsF/$</font></font>"
+            var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(self.Simadi[Utils.shared.Today()]!)! + " <font size=2>BsF/$</font></font>"
             var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
             var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
             do {
@@ -180,7 +170,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             Utils.shared.Compare(self.Simadi, date: Utils.shared.YearsAgo(1), label: self.SIMADIYear, type: "FX")
             
 
-             text = "<CENTER><font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.M2_Res, date: Utils.shared.Today()))! + " <font size=2>BsF/$</font></font></CENTER>"
+             text = "<CENTER><font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.M2_Res, date: Utils.shared.Today()))! + " <font size=2>BsF/$</font></font></CENTER>"
              encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
              attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
             do {
@@ -188,9 +178,8 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.M2_ResVal.attributedText = attributedString
                 
             } catch _ {}
-            
 
-             text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.Official[Utils.shared.Today()]!)! + " <font size=2>BsF/$</font></font>"
+             text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(self.Official[Utils.shared.Today()]!)! + " <font size=2>BsF/$</font></font>"
              encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
              attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
             do {
@@ -198,11 +187,8 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.DIPROVal.attributedText = attributedString
                 
             } catch _ {}
-            
-            
-            
 
-            text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(self.BM[Utils.shared.Today()]!)! + " <font size=2>BsF/$</font></font>"
+            text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(self.BM[Utils.shared.Today()]!)! + " <font size=2>BsF/$</font></font>"
             encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
             attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
             do {
@@ -218,7 +204,6 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(2), label: self.BlackMarketTwoYear, type: "FX")
             Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(3), label: self.BlackMarketThreeYear, type: "FX")
             Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(4), label: self.BlackMarketFourYear, type: "FX")
-
 
             //DRAW THE GRAPHS
             self.chart.canvasAreaBackgroundColor = UIColor.blackColor()
@@ -241,7 +226,6 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             self.enablePanningAndZoomingOnAxis(xAxis)
             xAxis.style.lineColor = UIColor.whiteColor()
             xAxis.style.titleStyle.textColor = UIColor.whiteColor()
-            //xAxis.labelFormatter!.dateFormatter().dateStyle = .MediumStyle
             xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
             self.chart.xAxis = xAxis
             
@@ -264,14 +248,13 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             self.chart.datasource = self
             self.chart.positionLegend()
             
-            
             //All set to make everything visible again!
-            // Can put these things in a view but will mess up layout
-            self.chart.hidden = false
+            self.Header.hidden = false
             self.AllText.hidden = false
             self.RangeController.hidden = false
-            self.Header.hidden = false
+            self.chart.hidden = false
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            
             self.RangeControl(4)
                                 
                                 
@@ -329,7 +312,6 @@ func enablePanningAndZoomingOnAxis(axis: SChartAxis) {
     
 func Data(json : [[String : AnyObject]]) {
     
-    // for dataPoint in JSONDatac.f.File("ve_fx") {
     for dataPoint in json {
         
         guard let

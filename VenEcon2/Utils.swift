@@ -22,8 +22,38 @@ class Utils
         return dateFormatter
     } ()
     
-    //Could make these functions or computed variables, says Pat on 20160817
     
+    let NumberFormatter : NSNumberFormatter = {
+        let NumberFormatter = NSNumberFormatter()
+        NumberFormatter.numberStyle = .DecimalStyle
+        NumberFormatter.maximumFractionDigits = 1
+        return NumberFormatter
+    } ()
+    
+    let CurrencyFormatter : NSNumberFormatter = {
+        let CurrencyFormatter = NSNumberFormatter()
+        CurrencyFormatter.numberStyle = .CurrencyStyle
+        CurrencyFormatter.currencySymbol = "$"
+        return CurrencyFormatter
+    } ()
+
+    let currencies : [String: String] = ["GBP": "£", "USD": "$", "EUR": "€", "COP": "COL$", "VEF": "BsF"]
+    
+    
+    //Could make these functions or computed variables, says Pat on 20160817
+    /*
+    func DateHistory(let To : String, let From : String?) -> String
+    {
+        if (To=="Today")
+        {
+            return dateFormatter.stringFromDate(NSDate())
+        }
+        
+        if (From==nil)
+        {
+            From = DateHi
+        }
+    }*/
     
     func Today() -> String
     {
@@ -72,10 +102,6 @@ class Utils
     // Wrote this function on 20160810.
     func GetLatestNonZeroValue(let dict : [String: Double], let date : String) -> Double
     {
-     /*   let userCalendar = NSCalendar.currentCalendar()
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        */
         var value : Double? = dict[date]
         if ((value != 0) && (value != nil))
         {
@@ -98,22 +124,12 @@ class Utils
     
     
     
-    
-    
-    
-    
+  
     
     
     //Written early 20160815
     func Compare(let dict : [String: Double], let date : String, let label : UILabel, let type : String?)
     {
-        
-        let NumberFormatter = NSNumberFormatter()
-        NumberFormatter.numberStyle = .DecimalStyle
-        NumberFormatter.maximumFractionDigits = 1
-        
-        
-        
         
         var ComparisonString : String = ""
         

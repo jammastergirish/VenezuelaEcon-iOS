@@ -10,10 +10,6 @@ import UIKit
 
 class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
-    let userCalendar = NSCalendar.currentCalendar()
-    
-    let currencies : [String: String] = ["GBP": "£", "USD": "$", "EUR": "€", "COP": "COL$", "VEF": "BsF"]
-    
     //Variables to hold data
     var M2 = [String: Double]()
     
@@ -108,18 +104,13 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.navigationController?.navigationBarHidden = true
         
         //Telling what units we're using. Hopefully will be able to shift all this later
-        var units : String = self.currencies["VEF"]! + "/" + self.currencies["USD"]!
+        var units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
         
-        //A number formatter
-        let NumberFormatter = NSNumberFormatter()
-        NumberFormatter.numberStyle = .DecimalStyle
-        NumberFormatter.maximumFractionDigits = 2
-        
-        //Loading so everything hidden. I can't seem to add other stuff to this. Better way to hide/show everything?
-        self.chart.hidden = true
+        //Hide everything on loading
+        self.Header.hidden = true
         self.AllText.hidden = true
         self.RangeController.hidden = true
-        self.Header.hidden = true
+        self.chart.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         //Added this bit with Pat on 20160804, to download the file
@@ -139,12 +130,12 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 return
             }
             
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in // Does this bit need to be in main thread? Much quicker if so
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 
                 self.Data(json)
                 
                 //Set all the text. There must be a way of doing this without using so many repetetive lines of code? I mean the attributed text rather than my if statements.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.M2, date: Utils.shared.Today())/1000000000)! + " <font size=2>billion BsF</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.M2, date: Utils.shared.Today())/1000000000)! + " <font size=2>billion BsF</font></font>"
                 var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -153,8 +144,6 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                
-               // var comparison : Double = Utils.shared.GetLatestNonZeroValue(self.M2, date: Yesterday)
                 Utils.shared.Compare(self.M2, date: Utils.shared.YearsAgo(5), label: self.M2FiveYear, type: nil)
                 Utils.shared.Compare(self.M2, date: Utils.shared.OneMonthAgo(), label: self.M2Month, type: nil)
                 Utils.shared.Compare(self.M2, date: Utils.shared.YearsAgo(1), label: self.M2Year, type: nil)
@@ -208,14 +197,12 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 
                 //All set to make everything visible again!
-                self.chart.hidden = false
+                self.Header.hidden = false
                 self.AllText.hidden = false
                 self.RangeController.hidden = false
-                self.Header.hidden = false
+                self.chart.hidden = false
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                //self.RangeControl(4)
-                
-                
+      
             })
             
             
@@ -315,14 +302,6 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
         lineSeries.title = titles[index]
         lineSeries.style().lineColor = colors[index]
         
-        /*
-         if index == 0 {
-         lineSeries.title = "M2"
-         lineSeries.style().lineColor = UIColor.redColor()
-         } etc
-         */
-        
-        
         return lineSeries
         
     }
@@ -334,11 +313,6 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
         let counts : [Int] = [DataM2.count]
         
         return counts[seriesIndex]
-        
-        /* if seriesIndex == 0
-         {
-         return DataM2.count
-         } etc */
         
     }
     

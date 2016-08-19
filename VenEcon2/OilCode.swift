@@ -10,10 +10,6 @@ import UIKit
 
 class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
-    let userCalendar = NSCalendar.currentCalendar()
-    
-    let currencies : [String: String] = ["GBP": "£", "USD": "$", "EUR": "€", "COP": "COL$", "VEF": "BsF"]
-    
     //Variables to hold data
     var WTI = [String: Double]()
     var Brent = [String: Double]()
@@ -71,7 +67,6 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     @IBOutlet var OPECYear: UILabel!
     @IBOutlet var OPECTwoYear: UILabel!
 
-    
     //Chart
     @IBOutlet var chart: ShinobiChart!
     
@@ -125,18 +120,13 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.navigationController?.navigationBarHidden = true
         
         //Telling what units we're using. Hopefully will be able to shift all this later
-        var units : String = self.currencies["VEF"]! + "/" + self.currencies["USD"]!
-        
-        //A number formatter
-        let NumberFormatter = NSNumberFormatter()
-        NumberFormatter.numberStyle = .DecimalStyle
-        NumberFormatter.maximumFractionDigits = 2
+        var units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
         
         //Loading so everything hidden. I can't seem to add other stuff to this. Better way to hide/show everything?
-        self.chart.hidden = true
         self.Header.hidden = true
-        self.RangeController.hidden = true
         self.AllText.hidden = true
+        self.RangeController.hidden = true
+        self.chart.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         
@@ -157,12 +147,12 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 return
             }
             
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in // Does this bit need to be in main thread? Much quicker if so
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 
                 self.Data(json)
                 
-                //Set all the text. There must be a way of doing this without using so many repetetive lines of code? I mean the attributed text rather than my if statements.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.WTI, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
+                //Set all the text.
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.WTI, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
                 var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -171,7 +161,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.Brent, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
+                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.Brent, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
                  encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                  attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -180,7 +170,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.Ven, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
+                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.Ven, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
                 encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -189,7 +179,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.OPEC, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
+                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.OPEC, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
                 encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -258,15 +248,12 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.datasource = self
                 self.chart.positionLegend()
                 
-                
                 //All set to make everything visible again!
-                self.chart.hidden = false
                 self.Header.hidden = false
-                self.RangeController.hidden = false
                 self.AllText.hidden = false
+                self.RangeController.hidden = false
+                self.chart.hidden = false
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                //self.RangeControl(4)
-                
                 
             })
             
@@ -395,7 +382,6 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         
         lineSeries.title = titles[index]
         lineSeries.style().lineColor = colors[index]
-        
         
         return lineSeries
         

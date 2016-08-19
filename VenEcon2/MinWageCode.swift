@@ -10,10 +10,6 @@ import UIKit
 
 class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
-    let userCalendar = NSCalendar.currentCalendar()
-    
-    let currencies : [String: String] = ["GBP": "£", "USD": "$", "EUR": "€", "COP": "COL$", "VEF": "BsF"]
-    
     //Variables to hold data
     var MinWage = [String: Double]()
     
@@ -68,19 +64,19 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     //Range Controller and Range Control functions
     @IBOutlet var RangeController: UISegmentedControl!
     @IBAction func RangeControl(sender: AnyObject) {
-        var Start : String = "2011-08-15"
+        var Start : String = Utils.shared.YearsAgo(5)
         switch RangeController.selectedSegmentIndex
         {
         case 0:
-            Start = "2011-08-15" // If those date definitions below were higher, I could use them here instead of typing manually or copying and pasting from below which obviously isn't okay.
+            Start = Utils.shared.YearsAgo(5)
         case 1:
-            Start = "2012-08-15"
+            Start = Utils.shared.YearsAgo(4)
         case 2:
-            Start = "2013-08-15"
+            Start = Utils.shared.YearsAgo(3)
         case 3:
-            Start = "2014-08-15"
+            Start = Utils.shared.YearsAgo(2)
         case 4:
-            Start = "2015-08-15"
+            Start = Utils.shared.YearsAgo(1)
         default:
             break;
         }
@@ -107,18 +103,14 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.navigationController?.navigationBarHidden = true
         
         //Telling what units we're using. Hopefully will be able to shift all this later
-        var units : String = self.currencies["VEF"]! + "/" + self.currencies["USD"]!
+        var units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
+    
         
-        //A number formatter
-        let NumberFormatter = NSNumberFormatter()
-        NumberFormatter.numberStyle = .DecimalStyle
-        NumberFormatter.maximumFractionDigits = 2
-        
-        //Loading so everything hidden. I can't seem to add other stuff to this. Better way to hide/show everything?
-        self.chart.hidden = true
+        //Hide everything on loading
+        self.Header.hidden = true
         self.AllText.hidden = true
         self.RangeController.hidden = true
-        self.Header.hidden = true
+        self.chart.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         //Added this bit with Pat on 20160804, to download the file
@@ -142,8 +134,8 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 self.Data(json)
                 
-                //Set all the text. There must be a way of doing this without using so many repetetive lines of code? I mean the attributed text rather than my if statements.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.MinWage, date: Utils.shared.Today()))! + " <font size=2>BsF/month</font></font>"
+                //Set all the text.
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.MinWage, date: Utils.shared.Today()))! + " <font size=2>BsF/month</font></font>"
                 var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -207,13 +199,11 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 
                 //All set to make everything visible again!
-                self.chart.hidden = false
+                self.Header.hidden = false
                 self.AllText.hidden = false
                 self.RangeController.hidden = false
-                self.Header.hidden = false
+                self.chart.hidden = false
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                //self.RangeControl(4)
-                
                 
             })
             
@@ -326,11 +316,6 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         let counts : [Int] = [DataMinWage.count]
         
         return counts[seriesIndex]
-        
-        /* if seriesIndex == 0
-         {
-         return DataMinWage.count
-         } etc */
         
     }
     

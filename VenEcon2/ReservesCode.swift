@@ -10,10 +10,6 @@ import UIKit
 
 class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
-    let userCalendar = NSCalendar.currentCalendar()
-    
-    let currencies : [String: String] = ["GBP": "£", "USD": "$", "EUR": "€", "COP": "COL$", "VEF": "BsF"]
-    
     //Variables to hold data
     var Reserves = [String: Double]()
     
@@ -108,18 +104,13 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.navigationController?.navigationBarHidden = true
         
         //Telling what units we're using. Hopefully will be able to shift all this later
-        var units : String = self.currencies["VEF"]! + "/" + self.currencies["USD"]!
+        var units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
         
-        //A number formatter
-        let NumberFormatter = NSNumberFormatter()
-        NumberFormatter.numberStyle = .DecimalStyle
-        NumberFormatter.maximumFractionDigits = 2
-        
-        //Loading so everything hidden. I can't seem to add other stuff to this. Better way to hide/show everything?
-        self.chart.hidden = true
+        //Hide everything while loading
+        self.Header.hidden = true
         self.AllText.hidden = true
         self.RangeController.hidden = true
-        self.Header.hidden = true
+        self.chart.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         //Added this bit with Pat on 20160804, to download the file
@@ -143,8 +134,8 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 self.Data(json)
                 
-                //Set all the text. There must be a way of doing this without using so many repetetive lines of code? I mean the attributed text rather than my if statements.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + NumberFormatter.stringFromNumber(self.Reserves[Utils.shared.Today()]!/1000)! + " <font size=2>billion</font></font>"
+                //Set all the text.
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.stringFromNumber(self.Reserves[Utils.shared.Today()]!/1000)! + " <font size=2>billion</font></font>"
                 var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -153,7 +144,6 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-
                 //var comparison : Double = Utils.shared.YearsAgo(GetLatestNonZeroValue(self.Reserves, date: Yesterday)
                 Utils.shared.Compare(self.Reserves, date: Utils.shared.Yesterday(), label: self.ReservesYesterday, type: nil)
                 Utils.shared.Compare(self.Reserves, date: Utils.shared.OneMonthAgo(), label: self.ReservesMonth, type: nil)
@@ -184,7 +174,7 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 xAxis.style.lineColor = UIColor.whiteColor()
                 xAxis.style.titleStyle.textColor = UIColor.whiteColor()
                 //xAxis.labelFormatter!.dateFormatter().dateStyle = .MediumStyle
-                xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM, YYYY"
+                xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
                 self.chart.xAxis = xAxis
                 
                 // Y Axis
@@ -206,15 +196,12 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.datasource = self
                 self.chart.positionLegend()
                 
-                
                 //All set to make everything visible again!
-                self.chart.hidden = false
+                self.Header.hidden = false
                 self.AllText.hidden = false
                 self.RangeController.hidden = false
-                self.Header.hidden = false
+                self.chart.hidden = false
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                //self.RangeControl(4)
-                
                 
             })
             
@@ -315,14 +302,6 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         lineSeries.title = titles[index]
         lineSeries.style().lineColor = colors[index]
         
-        /*
-         if index == 0 {
-         lineSeries.title = "Reserves"
-         lineSeries.style().lineColor = UIColor.redColor()
-         } etc
-         */
-        
-        
         return lineSeries
         
     }
@@ -334,11 +313,6 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         let counts : [Int] = [DataReserves.count]
         
         return counts[seriesIndex]
-        
-        /* if seriesIndex == 0
-         {
-         return DataReserves.count
-         } etc */
         
     }
     
