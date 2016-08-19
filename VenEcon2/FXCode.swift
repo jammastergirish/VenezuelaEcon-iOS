@@ -56,12 +56,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     }
     
     
-    //Labels for headers
     @IBOutlet var Header: UILabel!
-    @IBOutlet var SIMADILabel: UILabel!
-    @IBOutlet var BlackMarketLabel: UILabel!
-    @IBOutlet var M2_ResLabel: UILabel!
-    @IBOutlet var DIPROLabel: UILabel!
     
     //Labels for main values
     @IBOutlet var BlackMarketVal: UILabel!
@@ -142,25 +137,9 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         
         //Loading so everything hidden. I can't seem to add other stuff to this. Better way to hide/show everything?
         self.chart.hidden = true
-        self.SIMADIVal.hidden = true
-        self.SIMADIYesterday.hidden = true
-        self.SIMADIMonth.hidden = true
-        self.SIMADIYear.hidden = true
-        self.DIPROVal.hidden = true
-        self.BlackMarketVal.hidden = true
-        self.BlackMarketYear.hidden = true
-        self.BlackMarketMonth.hidden = true
-        self.BlackMarketTwoYear.hidden = true
-        self.BlackMarketFourYear.hidden = true
-        self.BlackMarketThreeYear.hidden = true
-        self.BlackMarketYesterday.hidden = true
+        self.AllText.hidden = true
         self.RangeController.hidden = true
-        self.M2_ResVal.hidden = true
         self.Header.hidden = true
-        self.SIMADILabel.hidden = true
-        self.DIPROLabel.hidden = true
-        self.BlackMarketLabel.hidden = true
-        self.M2_ResLabel.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         
@@ -289,25 +268,9 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             //All set to make everything visible again!
             // Can put these things in a view but will mess up layout
             self.chart.hidden = false
-            self.SIMADIVal.hidden = false
-            self.SIMADIYesterday.hidden = false
-            self.SIMADIMonth.hidden = false
-            self.SIMADIYear.hidden = false
-            self.DIPROVal.hidden = false
-            self.BlackMarketVal.hidden = false
-            self.BlackMarketYear.hidden = false
-            self.BlackMarketMonth.hidden = false
-            self.BlackMarketTwoYear.hidden = false
-            self.BlackMarketFourYear.hidden = false
-            self.BlackMarketThreeYear.hidden = false
-            self.BlackMarketYesterday.hidden = false
+            self.AllText.hidden = false
             self.RangeController.hidden = false
-            self.M2_ResVal.hidden = false
             self.Header.hidden = false
-            self.SIMADILabel.hidden = false
-            self.DIPROLabel.hidden = false
-            self.BlackMarketLabel.hidden = false
-            self.M2_ResLabel.hidden = false
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             self.RangeControl(4)
                                 

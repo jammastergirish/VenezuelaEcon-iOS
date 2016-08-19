@@ -41,10 +41,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WK6-gD-Vfg">
-                                <rect key="frame" x="135" y="110" width="330" height="250"/>
+                                <rect key="frame" x="150" y="110" width="300" height="250"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="c7D-TO-AeX">
-                                        <rect key="frame" x="0.0" y="0.0" width="330" height="160"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="160"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="IvL-xC-9nq">
                                                 <rect key="frame" x="0.0" y="0.0" width="112" height="160"/>
@@ -104,7 +104,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ENC-ud-p7k">
-                                                <rect key="frame" x="186" y="0.0" width="145" height="160"/>
+                                                <rect key="frame" x="156" y="0.0" width="145" height="160"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="Black Market" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaf-R8-Zdq">
                                                         <rect key="frame" x="0.0" y="0.0" width="84" height="17"/>
@@ -162,16 +162,16 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="CLI-hB-cW4">
-                                        <rect key="frame" x="0.0" y="213" width="330" height="38"/>
+                                        <rect key="frame" x="0.0" y="213" width="300" height="38"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="M2 / Reserves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U3-u9-xyv">
-                                                <rect key="frame" x="0.0" y="0.0" width="330" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="M2 / Reserves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U3-u9-xyv">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="M2_ResVal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEL-or-DUD">
-                                                <rect key="frame" x="0.0" y="17" width="330" height="21"/>
+                                                <rect key="frame" x="0.0" y="17" width="300" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -180,7 +180,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="330" id="PV2-g8-tTE"/>
+                                    <constraint firstAttribute="width" constant="300" id="PV2-g8-tTE"/>
                                     <constraint firstAttribute="height" constant="250" id="gkz-A9-2Os"/>
                                 </constraints>
                             </stackView>
@@ -233,7 +233,6 @@
                     <connections>
                         <outlet property="AllText" destination="WK6-gD-Vfg" id="DPP-jo-ucg"/>
                         <outlet property="BlackMarketFourYear" destination="BpK-6D-uiX" id="F4q-2q-oFz"/>
-                        <outlet property="BlackMarketLabel" destination="xaf-R8-Zdq" id="YyG-QJ-5lV"/>
                         <outlet property="BlackMarketMonth" destination="hsZ-D8-rqB" id="JjS-9c-w96"/>
                         <outlet property="BlackMarketThreeYear" destination="sI4-ig-7CF" id="oHK-Ci-YfX"/>
                         <outlet property="BlackMarketTwoYear" destination="0mC-eX-t4r" id="ALm-F5-PtL"/>
@@ -241,14 +240,11 @@
                         <outlet property="BlackMarketYear" destination="y73-0R-Qxq" id="bcQ-DW-qQN"/>
                         <outlet property="BlackMarketYesterday" destination="N6i-oJ-slI" id="znZ-qm-0PM"/>
                         <outlet property="ChartSVHeight" destination="M3f-DF-Cg4" id="EFr-Jb-WI5"/>
-                        <outlet property="DIPROLabel" destination="t85-OQ-UKY" id="2ZO-Rx-laU"/>
                         <outlet property="DIPROVal" destination="29o-Gd-D8A" id="zbb-CX-4xg"/>
                         <outlet property="DistanceBetweenAllTextAndChartSV" destination="bFb-rH-IbK" id="JKV-Fq-31G"/>
                         <outlet property="Header" destination="7It-mU-p5V" id="WaX-lF-KNd"/>
-                        <outlet property="M2_ResLabel" destination="0U3-u9-xyv" id="tg8-w4-OZc"/>
                         <outlet property="M2_ResVal" destination="WEL-or-DUD" id="zNb-9f-peY"/>
                         <outlet property="RangeController" destination="JIR-Ze-I2l" id="yXA-wf-DMY"/>
-                        <outlet property="SIMADILabel" destination="lG2-Jf-fh1" id="5m8-Dr-dwb"/>
                         <outlet property="SIMADIMonth" destination="yak-ra-zmo" id="g6S-V7-Odm"/>
                         <outlet property="SIMADIVal" destination="h8Q-iV-nYK" id="1ec-EX-zKd"/>
                         <outlet property="SIMADIYear" destination="wXU-HU-rAf" id="7SS-BY-T2O"/>
