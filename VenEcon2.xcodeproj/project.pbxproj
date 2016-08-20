@@ -10,6 +10,7 @@
 		6839E79E1D610DC5005ED3FA /* ReservesCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6839E79D1D610DC5005ED3FA /* ReservesCode.swift */; };
 		68589DC31D65563400ECBC3E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68589DC21D65563400ECBC3E /* Utils.swift */; };
 		685D86B01D629DA500F7FC42 /* OilCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685D86AF1D629DA500F7FC42 /* OilCode.swift */; };
+		68652D411D67DB9500049CBC /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68652D401D67DB9500049CBC /* Notes.swift */; };
 		68814A151D67180A002B88AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68814A141D67180A002B88AF /* Images.xcassets */; };
 		68B867E61D63B73800309C56 /* M2Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E51D63B73800309C56 /* M2Code.swift */; };
 		68B867E81D63C0B500309C56 /* MinWageCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E71D63C0B500309C56 /* MinWageCode.swift */; };
@@ -41,6 +42,7 @@
 		6839E79D1D610DC5005ED3FA /* ReservesCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservesCode.swift; sourceTree = "<group>"; };
 		68589DC21D65563400ECBC3E /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		685D86AF1D629DA500F7FC42 /* OilCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilCode.swift; sourceTree = "<group>"; };
+		68652D401D67DB9500049CBC /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		68814A141D67180A002B88AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		68B867E51D63B73800309C56 /* M2Code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M2Code.swift; sourceTree = "<group>"; };
 		68B867E71D63C0B500309C56 /* MinWageCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinWageCode.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		68D3DB951D593AA600F42648 /* VenEcon2 */ = {
 			isa = PBXGroup;
 			children = (
+				68652D401D67DB9500049CBC /* Notes.swift */,
 				68D3DB961D593AA600F42648 /* AppDelegate.swift */,
 				68589DC21D65563400ECBC3E /* Utils.swift */,
 				68D3DB981D593AA600F42648 /* FXCode.swift */,
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68D3DBBB1D593AFF00F42648 /* ENSideMenuNavigationController.swift in Sources */,
+				68652D411D67DB9500049CBC /* Notes.swift in Sources */,
 				68D3DBBC1D593AFF00F42648 /* MyMenuTableViewController.swift in Sources */,
 				68D3DBBA1D593AFF00F42648 /* ENSideMenu.swift in Sources */,
 				68D3DBBD1D593AFF00F42648 /* MyNavigationController.swift in Sources */,

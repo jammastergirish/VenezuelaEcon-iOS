@@ -11,9 +11,18 @@ import UIKit
 //Written 20160819 morning
 func AnnualInflation(let Year : Int, let source : [String: Double]) ->  Double
 {
-    let old : Double = source[String(Year-1)+"-12-31"]!
-    let new : Double = source[String(Year)+"-12-31"]!
-    return abs(Utils.shared.PercDiff(old, new: new))
+    if (Year != 1)
+    {
+     let old : Double = source[String(Year-1)+"-12-31"]!
+     let new : Double = source[String(Year)+"-12-31"]!
+     return abs(Utils.shared.PercDiff(old, new: new))
+    }
+    else
+    { // Here I need to write code to output the last twelve months, so need GetLatestNonZeroValue() to output the date too, so I know how far back to go for old (20160819)
+        let old : Double = source[String(Year-1)+"-12-31"]!
+        let new : Double = source[Utils.shared.Today()]!
+        return abs(Utils.shared.PercDiff(old, new: new))
+    }
 }
 
 class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
@@ -150,6 +159,9 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 
                 self.Data(json)
+                
+                
+                Utils.shared.GetLatestNonZeroValue(self.Inflation, date: Utils.shared.Today())
                 
                 self.Label2015.text = Utils.shared.NumberFormatter.stringFromNumber((AnnualInflation(2015, source: self.Inflation)))!+"%"
                 self.Label2014.text = Utils.shared.NumberFormatter.stringFromNumber((AnnualInflation(2014, source: self.Inflation)))!+"%"
