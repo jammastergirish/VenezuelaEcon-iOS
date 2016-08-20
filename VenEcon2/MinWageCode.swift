@@ -185,7 +185,7 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 // Y Axis
                 let yAxis = SChartNumberAxis()
-                yAxis.title = "Minimum Wage (BsF)"
+                yAxis.title = "Minimum Wage (BsF/month)"
                 self.enablePanningAndZoomingOnAxis(yAxis)
                 yAxis.rangePaddingLow = 1
                 yAxis.rangePaddingHigh = 1

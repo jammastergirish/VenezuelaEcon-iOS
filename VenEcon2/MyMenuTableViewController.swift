@@ -22,7 +22,7 @@ class MyMenuTableViewController: UITableViewController {
         self.view.addSubview(label)
         
         // Customize apperance of table view
-        tableView.contentInset = UIEdgeInsetsMake(64.0, 0, 0, 0) //
+        tableView.contentInset = UIEdgeInsetsMake(64.0, 0, 0, 0)
         tableView.separatorStyle = .None
         tableView.backgroundColor = UIColor.clearColor()
         tableView.scrollsToTop = false
@@ -38,7 +38,7 @@ class MyMenuTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-        let labels : [String] = ["Exchange Rates", "Foreign Reserves", "Oil Prices", "Inflation", "Money Supply", "Minimum Wage", "GDP", "Crude Production", "Exports", "Oil Exports to US", "Tax Revenue"]
+        let labels : [String] = ["Exchange Rates", "Foreign Reserves", "Oil Prices", "Inflation", "Money Supply", "Minimum Wage", "GDP", "Oil Exports (%)", "Oil Exports (US)", "Oil Imports (US)", "Tax Revenue", "About"]
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -61,6 +61,11 @@ class MyMenuTableViewController: UITableViewController {
             cell!.selectedBackgroundView = selectedBackgroundView
         }
         
+        if (indexPath.row==(labels.count-1))
+        {
+            cell!.textLabel?.textColor = UIColor.grayColor()
+        }
+
          cell!.textLabel!.text = labels[indexPath.row]
         
         return cell!
@@ -101,6 +106,9 @@ class MyMenuTableViewController: UITableViewController {
             break
         case 5:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MinWageViewController")
+            break
+        case (labels.count-1):
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("AboutViewController")
             break
         default:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXViewController")

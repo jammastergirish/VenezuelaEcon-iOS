@@ -161,7 +161,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.Data(json)
                 
                 //Set all the text.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.WTI, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.WTI, date: Utils.shared.Today()))! + " <font size=2> / barrel</font></font>"
                 var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -170,7 +170,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.Brent, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
+                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.Brent, date: Utils.shared.Today()))! + " <font size=2> / barrel</font></font>"
                  encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                  attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -179,7 +179,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.Ven, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
+                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.Ven, date: Utils.shared.Today()))! + " <font size=2> / barrel</font></font>"
                 encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -188,7 +188,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.OPEC, date: Utils.shared.Today()))! + " <font size=2> per barrel</font></font>"
+                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.OPEC, date: Utils.shared.Today()))! + " <font size=2> / barrel</font></font>"
                 encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -240,7 +240,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 // Y Axis
                 let yAxis = SChartNumberAxis()
-                yAxis.title = "Oil Price ($ per barrel)"
+                yAxis.title = "Oil Price ($/barrel)"
                 self.enablePanningAndZoomingOnAxis(yAxis)
                 yAxis.rangePaddingLow = 1
                 yAxis.rangePaddingHigh = 1
