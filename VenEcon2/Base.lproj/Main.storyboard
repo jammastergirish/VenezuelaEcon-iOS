@@ -947,8 +947,8 @@
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WTIWeek" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vb6-hJ-W3h">
-                                                        <rect key="frame" x="0.0" y="38" width="60" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YearVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vb6-hJ-W3h">
+                                                        <rect key="frame" x="0.0" y="38" width="48" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -970,7 +970,7 @@
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BrentWeek" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zu2-Dn-QXR">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MonthVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zu2-Dn-QXR">
                                                         <rect key="frame" x="0.0" y="38" width="60" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -1342,6 +1342,7 @@
                         <outlet property="AllText" destination="ThV-Zc-2RC" id="P76-jP-OQa"/>
                         <outlet property="ChartSVHeight" destination="nWQ-Fw-GMs" id="hKi-Hr-pAr"/>
                         <outlet property="ChartSVToTop" destination="nav-EV-Chh" id="xn4-3h-RF8"/>
+                        <outlet property="DistanceBetweenAllTextAndChartSV" destination="ik2-MU-eVx" id="P2f-VW-FT1"/>
                         <outlet property="Header" destination="08k-WE-5YB" id="fOP-OV-2OM"/>
                         <outlet property="RangeController" destination="Ser-LE-PAL" id="5lm-Sh-3U7"/>
                         <outlet property="ShowMenuButton" destination="93d-c2-HUb" id="Map-rI-RMP"/>
@@ -1501,6 +1502,7 @@
                         <outlet property="AllText" destination="R2N-bQ-iKc" id="8y0-Yu-94K"/>
                         <outlet property="ChartSVHeight" destination="mgA-Nd-GJ6" id="NU6-Yj-7qk"/>
                         <outlet property="ChartSVToTop" destination="sUl-Az-nhz" id="tuX-xK-E0G"/>
+                        <outlet property="DistanceBetweenAllTextAndChartSV" destination="gjw-FO-KZm" id="Zxa-Oo-9i3"/>
                         <outlet property="Header" destination="OzU-0z-Bic" id="5W6-Zg-dTb"/>
                         <outlet property="RangeController" destination="Iqu-VB-Pzo" id="DxU-U1-Mei"/>
                         <outlet property="ShowMenuButton" destination="qD9-4L-5wl" id="AcY-Uu-pJW"/>

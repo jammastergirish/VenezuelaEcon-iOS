@@ -186,6 +186,7 @@ class USimportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
                 self.chart.xAxis = xAxis
                 
+                
                 // Y Axis
                 let yAxis = SChartNumberAxis()
                 yAxis.title = "U.S. Imports (billion barrels/year)"
@@ -204,6 +205,7 @@ class USimportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 self.chart.datasource = self
                 self.chart.positionLegend()
+            
                 
                 //All set to make everything visible again!
                 self.Header.hidden = false

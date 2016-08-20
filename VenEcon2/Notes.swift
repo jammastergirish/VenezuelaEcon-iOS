@@ -1,9 +1,9 @@
 /*
  
  TODO:
-  - Get GetLatestNonZeroValue to output the date as well so I can work out dates for historical relative values. Is that best way to do this?
-  - Then sort inflation
-  - Work out the graph date bug.
+  - Get GetLatestNonZeroValue() to output the date as well so I can work out dates for historical relative values - or similar.
+  - Then sort inflation figure
   - Add toggle for minimum wage and also FX.
+  - Always show y=0 on graphs so not distorted.
  
  */
