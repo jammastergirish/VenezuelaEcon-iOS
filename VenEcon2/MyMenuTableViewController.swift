@@ -38,7 +38,7 @@ class MyMenuTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-        let labels : [String] = ["Exchange Rates", "Foreign Reserves", "Oil Prices", "Inflation", "Money Supply", "Minimum Wage", "GDP", "Oil Exports (%)", "Oil Exports (US)", "Oil Imports (US)", "Tax Revenue", "About"]
+        let labels : [String] = ["Exchange Rates", "Foreign Reserves", "Inflation", "Money Supply", "Minimum Wage", "Oil Prices", "Oil Exports (%)", "Oil Exports (US)", "Oil Imports (US)", "About"]
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
