@@ -51,7 +51,6 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     @IBOutlet var MinWageTwoYear: UILabel!
     @IBOutlet var MinWageThreeYear: UILabel!
     @IBOutlet var MinWageFourYear: UILabel!
-    @IBOutlet var MinWageFiveYear: UILabel!
     
     //Chart
     @IBOutlet var chart: ShinobiChart!
@@ -138,7 +137,7 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.Data(json)
                 
                 //Set all the text.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.MinWage, date: Utils.shared.Today()))! + " <font size=2>BsF/month</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.MinWage, date: Utils.shared.Today()))! + " <font size=2>BsF/month</font></font>"
                 var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -147,9 +146,6 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                
-               // var comparison : Double = Utils.shared.GetLatestNonZeroValue(self.MinWage, date: Utils.shared.Yesterday())
-               // Compare(self.MinWage, date: FiveYearsAgo, label: self.MinWageFiveYear, type: nil)
                 Utils.shared.Compare(self.MinWage, date: Utils.shared.OneMonthAgo(), label: self.MinWageMonth, type: nil)
                 Utils.shared.Compare(self.MinWage, date: Utils.shared.YearsAgo(1), label: self.MinWageYear, type: nil)
                 Utils.shared.Compare(self.MinWage, date: Utils.shared.YearsAgo(2), label: self.MinWageTwoYear, type: nil)
