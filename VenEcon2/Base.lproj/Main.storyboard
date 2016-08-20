@@ -398,15 +398,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="vKc-Aw-B06" secondAttribute="trailing" id="JOt-Yb-d5f"/>
                             <constraint firstItem="vKc-Aw-B06" firstAttribute="leading" secondItem="cNb-nx-Xdn" secondAttribute="leadingMargin" id="Tam-0f-rgz"/>
                             <constraint firstItem="V1U-ni-8ia" firstAttribute="top" secondItem="1es-2u-m1V" secondAttribute="bottom" constant="40" id="Tbd-aZ-aCp"/>
-                            <constraint firstItem="1es-2u-m1V" firstAttribute="top" secondItem="UwB-AH-dQA" secondAttribute="bottom" constant="40" id="aHe-S1-ned"/>
                             <constraint firstItem="1es-2u-m1V" firstAttribute="top" secondItem="cNb-nx-Xdn" secondAttribute="topMargin" constant="40" id="pFe-WN-f7Q"/>
                             <constraint firstItem="1es-2u-m1V" firstAttribute="centerX" secondItem="cNb-nx-Xdn" secondAttribute="centerX" id="veA-Sb-Hju"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="aHe-S1-ned"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="AllText" destination="V1U-ni-8ia" id="qQe-ZL-PW1"/>
@@ -549,8 +543,6 @@
                             <constraint firstItem="63q-MY-4hB" firstAttribute="top" secondItem="Rxc-q4-qwm" secondAttribute="topMargin" constant="40" id="46e-ws-FRN"/>
                             <constraint firstItem="Qwb-eu-4B7" firstAttribute="top" secondItem="63q-MY-4hB" secondAttribute="bottom" constant="40" id="A6u-82-yl4"/>
                             <constraint firstItem="4yK-P1-E0B" firstAttribute="leading" secondItem="Rxc-q4-qwm" secondAttribute="leadingMargin" id="CVz-LK-86k"/>
-                            <constraint firstItem="63q-MY-4hB" firstAttribute="top" secondItem="0U6-lm-kFW" secondAttribute="bottom" constant="40" id="Hxp-Qh-eIm"/>
-                            <constraint firstItem="4yK-P1-E0B" firstAttribute="bottom" secondItem="63q-MY-4hB" secondAttribute="bottom" id="IkO-Rc-R2Z"/>
                             <constraint firstItem="63q-MY-4hB" firstAttribute="centerX" secondItem="Rxc-q4-qwm" secondAttribute="centerX" id="aTs-pu-8bY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xrT-Gd-YI8" secondAttribute="trailing" id="cmz-fD-eP3"/>
                             <constraint firstItem="Qwb-eu-4B7" firstAttribute="centerX" secondItem="Rxc-q4-qwm" secondAttribute="centerX" id="eJL-AN-Mgi"/>
@@ -559,12 +551,6 @@
                             <constraint firstItem="xrT-Gd-YI8" firstAttribute="top" secondItem="Qwb-eu-4B7" secondAttribute="bottom" constant="40" id="skt-Ow-KM7"/>
                             <constraint firstItem="xrT-Gd-YI8" firstAttribute="leading" secondItem="Rxc-q4-qwm" secondAttribute="leadingMargin" id="t16-YG-unw"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="IkO-Rc-R2Z"/>
-                                <exclude reference="Hxp-Qh-eIm"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="AllText" destination="Qwb-eu-4B7" id="Qrz-ZG-Ugg"/>
@@ -1102,14 +1088,9 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" id="IC8-w0-jJ7"/>
+                                    <constraint firstAttribute="height" constant="270" id="6oV-ph-aqa"/>
                                     <constraint firstItem="Kdq-eY-Lij" firstAttribute="top" secondItem="cgo-QI-xrY" secondAttribute="bottom" constant="5" id="lum-BZ-VLB"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="IC8-w0-jJ7"/>
-                                    </mask>
-                                </variation>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cp-O8-Bdb">
                                 <rect key="frame" x="20" y="40" width="30" height="30"/>
@@ -1141,7 +1122,7 @@
                     <connections>
                         <outlet property="AllText" destination="s0g-yn-Xge" id="P6n-h0-AQy"/>
                         <outlet property="AnnualInflationVal" destination="s3g-c8-nr6" id="ggP-dl-2Oz"/>
-                        <outlet property="ChartSVHeight" destination="IC8-w0-jJ7" id="yKM-f0-OY0"/>
+                        <outlet property="ChartSVHeight" destination="6oV-ph-aqa" id="AhI-Aj-ZDf"/>
                         <outlet property="DistanceBetweenAllTextAndChartSV" destination="VWE-Jf-49q" id="e2c-f6-sFQ"/>
                         <outlet property="Header" destination="L5c-2w-Xj6" id="eaI-8K-4I1"/>
                         <outlet property="Label2009" destination="PTf-dG-0oZ" id="eSa-qZ-Ym6"/>
