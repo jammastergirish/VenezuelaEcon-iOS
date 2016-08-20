@@ -8,13 +8,13 @@
 
 import UIKit
 
-class USimportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
+class USexportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     //Variables to hold data
-    var USimports = [String: Double]()
+    var USexports = [String: Double]()
     
     //Variables to hold chart data
-    var DataUSimports: [SChartDataPoint] = []
+    var DataUSexports: [SChartDataPoint] = []
     
     @IBOutlet var Header: UILabel!
     
@@ -47,15 +47,15 @@ class USimportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     }
     
     //Labels for main values
-    @IBOutlet var USimportsVal: UILabel!
+    @IBOutlet var USexportsVal: UILabel!
     
     //Labels for variation text
-    @IBOutlet var USimportsTwoYear: UILabel!
-    @IBOutlet var USimportsThreeYear: UILabel!
-    @IBOutlet var USimportsFourYear: UILabel!
-    @IBOutlet var USimportsFiveYear: UILabel!
-    @IBOutlet var USimportsSixYear: UILabel!
-    @IBOutlet var USimportsSevenYear: UILabel!
+    @IBOutlet var USexportsTwoYear: UILabel!
+    @IBOutlet var USexportsThreeYear: UILabel!
+    @IBOutlet var USexportsFourYear: UILabel!
+    @IBOutlet var USexportsFiveYear: UILabel!
+    @IBOutlet var USexportsSixYear: UILabel!
+    @IBOutlet var USexportsSevenYear: UILabel!
     
     //Chart
     @IBOutlet var chart: ShinobiChart!
@@ -123,7 +123,7 @@ class USimportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_USimports&format=json&start=2001-01-01")!
+        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_USexports&format=json&start=2001-01-01")!
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             
@@ -144,22 +144,22 @@ class USimportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.Data(json)
                 
                 //Set all the text.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.USimports, date: Utils.shared.Today())/1000)! + " <font size=2>billion barrels / year</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.USexports, date: Utils.shared.Today())/1000)! + " <font size=2>billion barrels / year</font></font>"
                 var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
                     let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-                    self.USimportsVal.attributedText = attributedString
+                    self.USexportsVal.attributedText = attributedString
                     
                 } catch _ {}
                 
-                //var comparison : Double = Utils.shared.YearsAgo(GetLatestNonZeroValue(self.USimports, date: Yesterday)
-                Utils.shared.Compare(self.USimports, date: Utils.shared.YearsAgo(2), label: self.USimportsTwoYear, type: nil)
-                Utils.shared.Compare(self.USimports, date: Utils.shared.YearsAgo(3), label: self.USimportsThreeYear, type: nil)
-                Utils.shared.Compare(self.USimports, date: Utils.shared.YearsAgo(4), label: self.USimportsFourYear, type: nil)
-                Utils.shared.Compare(self.USimports, date: Utils.shared.YearsAgo(5), label: self.USimportsFiveYear, type: nil)
-                Utils.shared.Compare(self.USimports, date: Utils.shared.YearsAgo(6), label: self.USimportsSixYear, type: nil)
-                Utils.shared.Compare(self.USimports, date: Utils.shared.YearsAgo(7), label: self.USimportsSevenYear, type: nil)
+                //var comparison : Double = Utils.shared.YearsAgo(GetLatestNonZeroValue(self.USexports, date: Yesterday)
+                Utils.shared.Compare(self.USexports, date: Utils.shared.YearsAgo(2), label: self.USexportsTwoYear, type: nil)
+                Utils.shared.Compare(self.USexports, date: Utils.shared.YearsAgo(3), label: self.USexportsThreeYear, type: nil)
+                Utils.shared.Compare(self.USexports, date: Utils.shared.YearsAgo(4), label: self.USexportsFourYear, type: nil)
+                Utils.shared.Compare(self.USexports, date: Utils.shared.YearsAgo(5), label: self.USexportsFiveYear, type: nil)
+                Utils.shared.Compare(self.USexports, date: Utils.shared.YearsAgo(6), label: self.USexportsSixYear, type: nil)
+                Utils.shared.Compare(self.USexports, date: Utils.shared.YearsAgo(7), label: self.USexportsSevenYear, type: nil)
                 
                 //DRAW THE GRAPHS
                 self.chart.canvasAreaBackgroundColor = UIColor.blackColor()
@@ -188,7 +188,7 @@ class USimportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 // Y Axis
                 let yAxis = SChartNumberAxis()
-                yAxis.title = "U.S. Imports (billion barrels/year)"
+                yAxis.title = "U.S. Exports (billion barrels/year)"
                 self.enablePanningAndZoomingOnAxis(yAxis)
                 yAxis.rangePaddingLow = 1
                 yAxis.rangePaddingHigh = 1
@@ -271,7 +271,7 @@ class USimportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             guard let
                 dateString = dataPoint["date"] as? String,
-                USimportsVal = dataPoint["imp"] as? String
+                USexportsVal = dataPoint["exp"] as? String
                 else {
                     print("Data is JSON but not the JSON variables expected")
                     return
@@ -279,13 +279,13 @@ class USimportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             let date = dateFormatter.dateFromString(dateString)
             
-            if (USimportsVal != "0")
+            if (USexportsVal != "0")
             {
-                USimports[dateString] = Double(USimportsVal) // Adds to my dictionary
-                let DataPointUSimports = SChartDataPoint() // Adds to graph data
-                DataPointUSimports.xValue = date
-                DataPointUSimports.yValue = Double(USimportsVal)!/1000
-                DataUSimports.append(DataPointUSimports)
+                USexports[dateString] = Double(USexportsVal) // Adds to my dictionary
+                let DataPointUSexports = SChartDataPoint() // Adds to graph data
+                DataPointUSexports.xValue = date
+                DataPointUSexports.yValue = Double(USexportsVal)!/1000
+                DataUSexports.append(DataPointUSexports)
             }
             
             
@@ -305,7 +305,7 @@ class USimportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         lineSeries.animationEnabled = false
         lineSeries.crosshairEnabled = true
         
-        let titles : [String] = ["US imports (billion barrels/year)"]
+        let titles : [String] = ["US exports (billion barrels/year)"]
         let colors : [UIColor] = [UIColor.redColor()]
         
         lineSeries.title = titles[index]
@@ -319,7 +319,7 @@ class USimportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     func sChart(chart: ShinobiChart, numberOfDataPointsForSeriesAtIndex seriesIndex: Int) -> Int {
         
-        let counts : [Int] = [DataUSimports.count]
+        let counts : [Int] = [DataUSexports.count]
         
         return counts[seriesIndex]
         
@@ -329,9 +329,9 @@ class USimportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         
         if seriesIndex == 0
         {
-            return DataUSimports[dataIndex]
+            return DataUSexports[dataIndex]
         }
-        else { return DataUSimports[dataIndex] }
+        else { return DataUSexports[dataIndex] }
     }
     
     

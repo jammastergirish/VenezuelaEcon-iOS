@@ -108,13 +108,13 @@ class MyMenuTableViewController: UITableViewController {
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("OilViewController")
             break
         case 6:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("OilViewController")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("XXXX")
             break
         case 7:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("USimportsViewController")
             break
-        case 7:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("OilViewController")
+        case 8:
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("USexportsViewController")
             break
         case (labels.count-1):
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("AboutViewController")
