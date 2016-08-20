@@ -37,6 +37,7 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     @IBOutlet var AllText: UIStackView!
     @IBOutlet var DistanceBetweenAllTextAndChartSV: NSLayoutConstraint!
     @IBOutlet var ChartSVHeight: NSLayoutConstraint!
+    @IBOutlet var ChartSVToTop: NSLayoutConstraint!
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
         if (toInterfaceOrientation == .Portrait)
         {
@@ -45,6 +46,7 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             Header.hidden = false
             DistanceBetweenAllTextAndChartSV.active = true
             ShowMenuButton.hidden = false
+            ChartSVToTop.active = false
         }
         else
         {
@@ -54,6 +56,8 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             Header.hidden = true
             DistanceBetweenAllTextAndChartSV.active = false
             ShowMenuButton.hidden = true
+            ChartSVToTop.active = true
+            ChartSVToTop.constant = 0
         }
     }
     
@@ -120,7 +124,9 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Layout
         ChartSVHeight.active = false
+        ChartSVToTop.active = false
 
         
         //For menu
