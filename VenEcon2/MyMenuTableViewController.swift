@@ -96,16 +96,25 @@ class MyMenuTableViewController: UITableViewController {
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ReservesViewController")
             break
         case 2:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("OilViewController")
-            break
-        case 3:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("InflationViewController")
             break
-        case 4:
+        case 3:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("M2ViewController")
             break
-        case 5:
+        case 4:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MinWageViewController")
+            break
+        case 5:
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("OilViewController")
+            break
+        case 6:
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("OilViewController")
+            break
+        case 7:
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("OilViewController")
+            break
+        case 7:
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("OilViewController")
             break
         case (labels.count-1):
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("AboutViewController")
