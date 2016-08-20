@@ -26,6 +26,7 @@
 		68D3DBBD1D593AFF00F42648 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */; };
 		68D3DBBF1D593D4D00F42648 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D3DBBE1D593D4D00F42648 /* ShinobiCharts.framework */; };
 		68D3DBC11D593E4200F42648 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D3DBC01D593E4200F42648 /* libc++.tbd */; };
+		68E16F841D690C9900CD8DA1 /* USimportsCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E16F831D690C9900CD8DA1 /* USimportsCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		68D3DBBE1D593D4D00F42648 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiCharts.framework; path = VenEcon2/ShinobiCharts.framework; sourceTree = "<group>"; };
 		68D3DBC01D593E4200F42648 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		68E16F831D690C9900CD8DA1 /* USimportsCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USimportsCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				68D3DBB81D593AFF00F42648 /* MyMenuTableViewController.swift */,
 				68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */,
 				68D3DB9A1D593AA600F42648 /* Main.storyboard */,
+				68E16F831D690C9900CD8DA1 /* USimportsCode.swift */,
 				68D3DB9F1D593AA600F42648 /* LaunchScreen.storyboard */,
 				68D3DBA21D593AA600F42648 /* Info.plist */,
 				68814A141D67180A002B88AF /* Images.xcassets */,
@@ -244,6 +247,7 @@
 				68D3DBBC1D593AFF00F42648 /* MyMenuTableViewController.swift in Sources */,
 				68D3DBBA1D593AFF00F42648 /* ENSideMenu.swift in Sources */,
 				68D3DBBD1D593AFF00F42648 /* MyNavigationController.swift in Sources */,
+				68E16F841D690C9900CD8DA1 /* USimportsCode.swift in Sources */,
 				68D3DB991D593AA600F42648 /* FXCode.swift in Sources */,
 				68B867E81D63C0B500309C56 /* MinWageCode.swift in Sources */,
 				68B867EA1D63D0A600309C56 /* InflationCode.swift in Sources */,

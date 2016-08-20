@@ -165,6 +165,14 @@ class Utils
         {
             ComparisonString = "5 years"
         }
+        if (date==YearsAgo(6))
+        {
+            ComparisonString = "6 years"
+        }
+        if (date==YearsAgo(7))
+        {
+            ComparisonString = "7 years"
+        }
         
         let comparison : Double = GetLatestNonZeroValue(dict, date: date)
         
