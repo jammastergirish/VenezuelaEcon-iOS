@@ -216,6 +216,7 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 yAxis.style.majorGridLineStyle.lineWidth = 1
                 yAxis.style.majorGridLineStyle.lineColor = UIColor.darkGrayColor()
                 yAxis.style.majorGridLineStyle.showMajorGridLines = true
+                yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.Inflation.values.maxElement()!/100)
                 self.chart.yAxis = yAxis
                 
                 self.chart.datasource = self

@@ -143,7 +143,7 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.Data(json)
                 
                 //Set all the text. There must be a way of doing this without using so many repetetive lines of code? I mean the attributed text rather than my if statements.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.M2, date: Utils.shared.Today())/1000000000)! + " <font size=2>billion BsF</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.M2, date: Utils.shared.Today())/1000000)! + " <font size=2>billion BsF</font></font>"
                 var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -198,6 +198,7 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 yAxis.style.majorGridLineStyle.lineWidth = 1
                 yAxis.style.majorGridLineStyle.lineColor = UIColor.darkGrayColor()
                 yAxis.style.majorGridLineStyle.showMajorGridLines = true
+                yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.M2.values.maxElement()!/1000000)
                 self.chart.yAxis = yAxis
                 
                 self.chart.datasource = self
@@ -282,7 +283,7 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             if (M2Val != "0")
             {
-                M2[dateString] = Double(M2Val)!*1000 // Adds to my dictionary
+                M2[dateString] = Double(M2Val)! // Adds to my dictionary
                 let DataPointM2 = SChartDataPoint() // Adds to graph data
                 DataPointM2.xValue = date
                 DataPointM2.yValue = Double(M2Val)!/1000000
