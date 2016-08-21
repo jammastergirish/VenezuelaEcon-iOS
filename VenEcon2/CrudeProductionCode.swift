@@ -53,16 +53,16 @@ class CrudeProductionCode: UIViewController, ENSideMenuDelegate, SChartDatasourc
     @IBOutlet var SecondaryVal: UILabel!
     
     //Labels for variation text
+    @IBOutlet var DirectOneYear: UILabel!
     @IBOutlet var DirectTwoYear: UILabel!
     @IBOutlet var DirectThreeYear: UILabel!
     @IBOutlet var DirectFourYear: UILabel!
     @IBOutlet var DirectFiveYear: UILabel!
-    @IBOutlet var DirectSixYear: UILabel!
+    @IBOutlet var SecondaryOneYear: UILabel!
     @IBOutlet var SecondaryTwoYear: UILabel!
     @IBOutlet var SecondaryThreeYear: UILabel!
     @IBOutlet var SecondaryFourYear: UILabel!
     @IBOutlet var SecondaryFiveYear: UILabel!
-    @IBOutlet var SecondarySixYear: UILabel!
     
     //Chart
     @IBOutlet var chart: ShinobiChart!
@@ -167,14 +167,15 @@ class CrudeProductionCode: UIViewController, ENSideMenuDelegate, SChartDatasourc
                 } catch _ {}
                 
                 
+
+                Utils.shared.Compare(self.Direct, date: Utils.shared.YearsAgo(1), label: self.DirectOneYear, type: nil)
                 Utils.shared.Compare(self.Direct, date: Utils.shared.YearsAgo(2), label: self.DirectTwoYear, type: nil)
                 Utils.shared.Compare(self.Direct, date: Utils.shared.YearsAgo(3), label: self.DirectThreeYear, type: nil)
                 Utils.shared.Compare(self.Direct, date: Utils.shared.YearsAgo(4), label: self.DirectFourYear, type: nil)
+                Utils.shared.Compare(self.Secondary, date: Utils.shared.YearsAgo(1), label: self.SecondaryOneYear, type: nil)
                 Utils.shared.Compare(self.Secondary, date: Utils.shared.YearsAgo(2), label: self.SecondaryTwoYear, type: nil)
                 Utils.shared.Compare(self.Secondary, date: Utils.shared.YearsAgo(3), label: self.SecondaryThreeYear, type: nil)
                 Utils.shared.Compare(self.Secondary, date: Utils.shared.YearsAgo(4), label: self.SecondaryFourYear, type: nil)
-                Utils.shared.Compare(self.Secondary, date: Utils.shared.YearsAgo(5), label: self.SecondaryFiveYear, type: nil)
-                Utils.shared.Compare(self.Secondary, date: Utils.shared.YearsAgo(6), label: self.SecondarySixYear, type: nil)
                 
                 //DRAW THE GRAPHS
                 self.chart.canvasAreaBackgroundColor = UIColor.blackColor()
