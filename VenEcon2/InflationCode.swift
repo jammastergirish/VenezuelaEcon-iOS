@@ -214,6 +214,8 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.xAxis = xAxis
                 self.chart.yAxis = yAxis
                 
+                self.chart.datasource = self
+                self.chart.positionLegend()
                 
                 //All set to make everything visible again!
                 self.Header.hidden = false
