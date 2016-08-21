@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68315B3A1D6A561600BE7036 /* AboutCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68315B391D6A561600BE7036 /* AboutCode.swift */; };
 		6839E79E1D610DC5005ED3FA /* ReservesCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6839E79D1D610DC5005ED3FA /* ReservesCode.swift */; };
 		68589DC31D65563400ECBC3E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68589DC21D65563400ECBC3E /* Utils.swift */; };
 		685D86B01D629DA500F7FC42 /* OilCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685D86AF1D629DA500F7FC42 /* OilCode.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68315B391D6A561600BE7036 /* AboutCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCode.swift; sourceTree = "<group>"; };
 		6839E79D1D610DC5005ED3FA /* ReservesCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservesCode.swift; sourceTree = "<group>"; };
 		68589DC21D65563400ECBC3E /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		685D86AF1D629DA500F7FC42 /* OilCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilCode.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				68D3DBB81D593AFF00F42648 /* MyMenuTableViewController.swift */,
 				68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */,
 				68D3DB9A1D593AA600F42648 /* Main.storyboard */,
+				68315B391D6A561600BE7036 /* AboutCode.swift */,
 				68E505A31D6A054D0017B885 /* CrudeProductionCode.swift */,
 				68E16F851D69157E00CD8DA1 /* USexportsCode.swift */,
 				68D3DB9F1D593AA600F42648 /* LaunchScreen.storyboard */,
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68315B3A1D6A561600BE7036 /* AboutCode.swift in Sources */,
 				68D3DBBB1D593AFF00F42648 /* ENSideMenuNavigationController.swift in Sources */,
 				68652D411D67DB9500049CBC /* Notes.swift in Sources */,
 				68D3DBBC1D593AFF00F42648 /* MyMenuTableViewController.swift in Sources */,
