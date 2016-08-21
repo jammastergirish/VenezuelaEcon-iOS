@@ -901,7 +901,7 @@
                                     <constraint firstAttribute="width" constant="325" id="FnI-rd-x8O"/>
                                     <constraint firstAttribute="height" constant="119" id="VyX-7M-5bu"/>
                                 </constraints>
-                                <string key="text">This app was created by Girish Gupta, a Caracas-based journalist. Data is scraped from various sources and compiled into an online database, from which your device pulls data. Notifications are fully automated and therefore fast and accurate.</string>
+                                <string key="text">This app was created by Girish Gupta, a Caracas-based journalist. Data from various sources is automatically compiled into an online database, from which your device pulls data. Notifications are fully automated and therefore fast and accurate.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
