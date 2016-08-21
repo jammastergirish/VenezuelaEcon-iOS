@@ -1023,6 +1023,76 @@
             </objects>
             <point key="canvasLocation" x="-474" y="1752"/>
         </scene>
+        <!--Calc Code-->
+        <scene sceneID="6Kh-pb-Jdg">
+            <objects>
+                <viewController storyboardIdentifier="FXCalcViewController" id="qjl-bd-12C" customClass="FXCalcCode" customModule="VenEcon2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oEB-oW-0P4"/>
+                        <viewControllerLayoutGuide type="bottom" id="aiC-wW-VwE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Sk-OK-w2h">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="V95-GQ-MFL">
+                                <rect key="frame" x="125" y="64" width="350" height="129"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7qS-es-Kv7">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="29"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a value..." textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KYu-N2-l2Y">
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4j8-bt-CTJ">
+                                                <rect key="frame" x="275" y="0.0" width="75" height="30"/>
+                                                <segments>
+                                                    <segment title="$"/>
+                                                    <segment title="BsF"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0tZ-OQ-so9">
+                                        <rect key="frame" x="0.0" y="29" width="350" height="100"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="R66-6D-0HC"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="493509589.70242703">
+                                            <!--2016-08-21 21:59:49 +0000-->
+                                        </date>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-347115600">
+                                            <!--1990-01-01 11:00:00 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="8qw-8l-q2h"/>
+                                    <constraint firstItem="0tZ-OQ-so9" firstAttribute="width" secondItem="V95-GQ-MFL" secondAttribute="width" id="oQc-Ue-w1Z"/>
+                                    <constraint firstItem="7qS-es-Kv7" firstAttribute="width" secondItem="V95-GQ-MFL" secondAttribute="width" id="tIc-lm-m99"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="V95-GQ-MFL" firstAttribute="centerX" secondItem="4Sk-OK-w2h" secondAttribute="centerX" id="iOP-Y4-gOj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Currency" destination="4j8-bt-CTJ" id="fdZ-S3-7SZ"/>
+                        <outlet property="Date" destination="0tZ-OQ-so9" id="Jd7-WB-mNg"/>
+                        <outlet property="Number" destination="KYu-N2-l2Y" id="94h-Ai-1u5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Dy-b8-ZU6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-507" y="2435"/>
+        </scene>
         <!--Inflation Code-->
         <scene sceneID="t4I-yk-cvU">
             <objects>

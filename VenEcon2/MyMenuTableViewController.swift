@@ -38,7 +38,7 @@ class MyMenuTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-        let labels : [String] = ["Exchange Rates", "Foreign Reserves", "Inflation", "Money Supply", "Minimum Wage", "Oil Prices", "Crude Production", "U.S. Oil", "About"]
+        let labels : [String] = ["Exchange Rates", " • Calculator", "Foreign Reserves", "Inflation", "Money Supply", "Minimum Wage", "Oil Prices", "Crude Production", "U.S. Oil", "About"]
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -93,24 +93,27 @@ class MyMenuTableViewController: UITableViewController {
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXViewController")
             break
         case 1:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ReservesViewController")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXCalcViewController")
             break
         case 2:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("InflationViewController")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ReservesViewController")
             break
         case 3:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("M2ViewController")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("InflationViewController")
             break
         case 4:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MinWageViewController")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("M2ViewController")
             break
         case 5:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("OilViewController")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MinWageViewController")
             break
         case 6:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("CrudeProductionViewController")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("OilViewController")
             break
         case 7:
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("CrudeProductionViewController")
+            break
+        case 8:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("USOilViewController")
             break
         case (labels.count-1):

@@ -311,7 +311,14 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     }
     
     
-
+/*This is how you switch to another View Controller
+    @IBAction func Calculator(sender: AnyObject) {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        var destViewController : UIViewController
+        destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXCalcViewController")
+        sideMenuController()?.setContentViewController(destViewController)
+        
+    }*/
     
 func enablePanningAndZoomingOnAxis(axis: SChartAxis) {
     axis.enableGesturePanning = true
