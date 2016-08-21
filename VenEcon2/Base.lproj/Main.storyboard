@@ -1424,6 +1424,213 @@
             </objects>
             <point key="canvasLocation" x="185" y="2418"/>
         </scene>
+        <!--Crude Production Code-->
+        <scene sceneID="H2S-fV-VPj">
+            <objects>
+                <viewController storyboardIdentifier="CrudeProductionViewController" id="lTQ-Fn-c8z" customClass="CrudeProductionCode" customModule="VenEcon2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RZR-GX-OHg"/>
+                        <viewControllerLayoutGuide type="bottom" id="0CO-Gd-bCa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tco-v2-TQk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crude Production" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wva-T6-wol">
+                                <rect key="frame" x="203" y="40" width="195" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="E0g-rU-g7j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoE-Jy-klK">
+                                <rect key="frame" x="125" y="110" width="350" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="VbP-Mm-VVP">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="150"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direct Comm. with OPEC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oat-0E-E5Q">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DirectVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1O-ak-yus">
+                                                <rect key="frame" x="0.0" y="32" width="175" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" misplaced="YES" text="USexportsTwoYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWD-q0-WUu">
+                                                <rect key="frame" x="0.0" y="69" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" misplaced="YES" text="USexportsThreeYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSZ-5i-zcI">
+                                                <rect key="frame" x="0.0" y="101" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" misplaced="YES" text="USexportsFourYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lno-Hi-RJ8">
+                                                <rect key="frame" x="0.0" y="133" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="175" id="Cbl-Uc-Xrv"/>
+                                            <constraint firstAttribute="height" constant="150" id="X3V-QA-9EL"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="KZI-8d-Rvr">
+                                        <rect key="frame" x="175" y="0.0" width="175" height="150"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secondary Sources" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gE-yR-Ad6">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SecVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggW-TF-pQg">
+                                                <rect key="frame" x="0.0" y="22" width="175" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USimportsTwoYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jO3-3H-pbR">
+                                                <rect key="frame" x="0.0" y="47" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USimportsThreeYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fet-L6-ka5">
+                                                <rect key="frame" x="0.0" y="69" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USimportsFourYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRe-mv-ACi">
+                                                <rect key="frame" x="0.0" y="90" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USimportsFiveYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K23-5Z-XiA">
+                                                <rect key="frame" x="0.0" y="112" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USimportsSixYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3t-6q-dSW">
+                                                <rect key="frame" x="0.0" y="133" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="EsS-l8-NqS"/>
+                                            <constraint firstAttribute="width" constant="175" id="t9C-bP-q21"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xC1-N2-gQS">
+                                <rect key="frame" x="20" y="300" width="560" height="300"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tUy-zn-1Y0">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="H4m-6e-3C8"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="15 years"/>
+                                            <segment title="12 years"/>
+                                            <segment title="9 years"/>
+                                            <segment title="6 years"/>
+                                            <segment title="3 years"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="RangeControl:" destination="vLn-Rh-y4A" eventType="valueChanged" id="8SD-AJ-XGf"/>
+                                            <action selector="RangeControl:" destination="zDY-Lm-TOB" eventType="valueChanged" id="Q2P-vL-b0Q"/>
+                                            <action selector="RangeControl:" destination="lTQ-Fn-c8z" eventType="valueChanged" id="XIC-Cg-nYe"/>
+                                            <action selector="RangeControl:" destination="7Xw-Wz-ddH" eventType="valueChanged" id="ZoG-sc-0eW"/>
+                                            <action selector="RangeControl:" destination="Vxj-qb-Qs8" eventType="valueChanged" id="mOs-So-ggY"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Wi-fN-Tee" customClass="ShinobiChart">
+                                        <rect key="frame" x="0.0" y="33" width="560" height="267"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2Wi-fN-Tee" firstAttribute="top" secondItem="tUy-zn-1Y0" secondAttribute="bottom" constant="5" id="MRl-yv-CrA"/>
+                                    <constraint firstAttribute="height" constant="300" id="Yw2-ke-mgj"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PT-Sj-8uv">
+                                <rect key="frame" x="20" y="40" width="30" height="30"/>
+                                <state key="normal" title="&gt;&gt;&gt;">
+                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShowMenu:" destination="Exs-EA-6CP" eventType="touchUpInside" id="2F6-OZ-jjG"/>
+                                    <action selector="ShowMenu:" destination="vLn-Rh-y4A" eventType="touchUpInside" id="C8u-wz-jGz"/>
+                                    <action selector="ShowMenu:" destination="zDY-Lm-TOB" eventType="touchUpInside" id="E5f-Mw-0gN"/>
+                                    <action selector="ShowMenu:" destination="lTQ-Fn-c8z" eventType="touchUpInside" id="PTx-cJ-3mz"/>
+                                    <action selector="ShowMenu:" destination="soc-3U-efR" eventType="touchUpInside" id="UNu-81-qEd"/>
+                                    <action selector="ShowMenu:" destination="hlm-kR-DaP" eventType="touchUpInside" id="b8J-bs-QfP"/>
+                                    <action selector="ShowMenu:" destination="7Xw-Wz-ddH" eventType="touchUpInside" id="bsq-FH-c5n"/>
+                                    <action selector="ShowMenu:" destination="Vxj-qb-Qs8" eventType="touchUpInside" id="pa1-V5-dER"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wva-T6-wol" firstAttribute="top" secondItem="Tco-v2-TQk" secondAttribute="topMargin" constant="40" id="0IE-bh-GDE"/>
+                            <constraint firstItem="xC1-N2-gQS" firstAttribute="leading" secondItem="Tco-v2-TQk" secondAttribute="leadingMargin" id="0g1-9Q-E10"/>
+                            <constraint firstItem="xC1-N2-gQS" firstAttribute="top" secondItem="Tco-v2-TQk" secondAttribute="topMargin" constant="300" id="3kQ-cl-ExD"/>
+                            <constraint firstItem="0CO-Gd-bCa" firstAttribute="top" secondItem="xC1-N2-gQS" secondAttribute="bottom" id="D0g-Cc-iew"/>
+                            <constraint firstItem="zoE-Jy-klK" firstAttribute="top" secondItem="Wva-T6-wol" secondAttribute="bottom" constant="40" id="FL2-EJ-1TT"/>
+                            <constraint firstItem="zoE-Jy-klK" firstAttribute="centerX" secondItem="Tco-v2-TQk" secondAttribute="centerX" id="HK4-Aa-sWg"/>
+                            <constraint firstItem="Wva-T6-wol" firstAttribute="centerX" secondItem="Tco-v2-TQk" secondAttribute="centerX" id="Mr5-Vi-6N7"/>
+                            <constraint firstItem="2PT-Sj-8uv" firstAttribute="leading" secondItem="Tco-v2-TQk" secondAttribute="leadingMargin" id="U1F-ca-xWc"/>
+                            <constraint firstItem="xC1-N2-gQS" firstAttribute="top" secondItem="zoE-Jy-klK" secondAttribute="bottom" constant="40" id="cfp-DI-Y3m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xC1-N2-gQS" secondAttribute="trailing" id="ikb-CC-bTu"/>
+                            <constraint firstItem="2PT-Sj-8uv" firstAttribute="bottom" secondItem="Wva-T6-wol" secondAttribute="bottom" id="ytS-3Q-grJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="AllText" destination="zoE-Jy-klK" id="9ie-MY-zNB"/>
+                        <outlet property="ChartSVHeight" destination="Yw2-ke-mgj" id="0xG-lv-F7J"/>
+                        <outlet property="ChartSVToTop" destination="3kQ-cl-ExD" id="Fsg-By-gLv"/>
+                        <outlet property="DirectFourYear" destination="Lno-Hi-RJ8" id="e9A-RO-IBc"/>
+                        <outlet property="DirectThreeYear" destination="RSZ-5i-zcI" id="nvu-Pt-4l2"/>
+                        <outlet property="DirectTwoYear" destination="lWD-q0-WUu" id="SCA-an-480"/>
+                        <outlet property="DirectVal" destination="l1O-ak-yus" id="bGU-PV-rV3"/>
+                        <outlet property="DistanceBetweenAllTextAndChartSV" destination="cfp-DI-Y3m" id="ioi-Nk-9Rv"/>
+                        <outlet property="Header" destination="Wva-T6-wol" id="ksi-3O-uuU"/>
+                        <outlet property="RangeController" destination="tUy-zn-1Y0" id="L1W-OA-F1v"/>
+                        <outlet property="SecondaryFiveYear" destination="K23-5Z-XiA" id="0rB-Ia-XuK"/>
+                        <outlet property="SecondaryFourYear" destination="WRe-mv-ACi" id="pai-rr-uql"/>
+                        <outlet property="SecondarySixYear" destination="c3t-6q-dSW" id="xDY-FR-8kL"/>
+                        <outlet property="SecondaryThreeYear" destination="Fet-L6-ka5" id="WTo-SU-Fqp"/>
+                        <outlet property="SecondaryTwoYear" destination="jO3-3H-pbR" id="C67-pc-kJn"/>
+                        <outlet property="SecondaryVal" destination="ggW-TF-pQg" id="LJE-8r-tIC"/>
+                        <outlet property="ShowMenuButton" destination="2PT-Sj-8uv" id="ln7-5e-wKV"/>
+                        <outlet property="chart" destination="2Wi-fN-Tee" id="YVv-p4-urk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qi0-aJ-BQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="883" y="2452"/>
+        </scene>
         <!--Min Wage Code-->
         <scene sceneID="AhG-ID-3rJ">
             <objects>
