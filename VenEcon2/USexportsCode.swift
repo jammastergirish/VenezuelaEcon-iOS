@@ -8,13 +8,15 @@
 
 import UIKit
 
-class USexportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
+class USOilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     //Variables to hold data
     var USexports = [String: Double]()
+    var USimports = [String: Double]()
     
     //Variables to hold chart data
     var DataUSexports: [SChartDataPoint] = []
+    var DataUSimports: [SChartDataPoint] = []
     
     @IBOutlet var Header: UILabel!
     
@@ -123,7 +125,7 @@ class USexportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_USexports&format=json&start=2001-01-01")!
+        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_US&format=json&start=2001-01-01")!
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             
@@ -180,7 +182,7 @@ class USexportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 let xAxis = SChartDiscontinuousDateTimeAxis()
                 let yAxis = SChartNumberAxis()
                 xAxis.title = "Date"
-                yAxis.title = "U.S. Imports (billion barrels / year)"
+                yAxis.title = "U.S. Imports/Exports (billion barrels / year)"
                 self.enablePanningAndZoomingOnAxis(xAxis)
                 self.enablePanningAndZoomingOnAxis(yAxis)
                 xAxis.style.lineColor = UIColor.whiteColor()
@@ -193,7 +195,7 @@ class USexportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 xAxis.style.majorGridLineStyle.showMajorGridLines = false
                 xAxis.style.lineWidth = 1
                 yAxis.style.lineWidth = 1
-                yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.USexports.values.maxElement()!/1000)
+                yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.USimports.values.maxElement()!/1000)
                 
                 self.chart.xAxis = xAxis
                 self.chart.yAxis = yAxis
@@ -262,12 +264,12 @@ class USexportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     func Data(json : [[String : AnyObject]]) {
         
-        // for dataPoint in JSONDatac.f.File("ve_fx") {
         for dataPoint in json {
             
             guard let
                 dateString = dataPoint["date"] as? String,
-                USexportsVal = dataPoint["exp"] as? String
+                USexportsVal = dataPoint["exp"] as? String,
+                USimportsVal = dataPoint["imp"] as? String
                 else {
                     print("Data is JSON but not the JSON variables expected")
                     return
@@ -284,13 +286,22 @@ class USexportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 DataUSexports.append(DataPointUSexports)
             }
             
+            if (USimportsVal != "0")
+            {
+                USimports[dateString] = Double(USimportsVal) // Adds to my dictionary
+                let DataPointUSimports = SChartDataPoint() // Adds to graph data
+                DataPointUSimports.xValue = date
+                DataPointUSimports.yValue = Double(USimportsVal)!/1000
+                DataUSimports.append(DataPointUSimports)
+            }
+            
             
         }
     }
     
     
     func numberOfSeriesInSChart(chart: ShinobiChart) -> Int {
-        return 1
+        return 2
     }
     
     
@@ -301,8 +312,8 @@ class USexportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         lineSeries.animationEnabled = false
         lineSeries.crosshairEnabled = true
         
-        let titles : [String] = ["US exports (billion barrels/year)"]
-        let colors : [UIColor] = [UIColor.redColor()]
+        let titles : [String] = ["US exports (billion barrels/year)", "US imports (billion barrels/year)"]
+        let colors : [UIColor] = [UIColor.redColor(), UIColor.redColor()]
         
         lineSeries.title = titles[index]
         lineSeries.style().lineColor = colors[index]
@@ -315,7 +326,7 @@ class USexportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     func sChart(chart: ShinobiChart, numberOfDataPointsForSeriesAtIndex seriesIndex: Int) -> Int {
         
-        let counts : [Int] = [DataUSexports.count]
+        let counts : [Int] = [DataUSexports.count, DataUSimports.count]
         
         return counts[seriesIndex]
         
@@ -326,6 +337,10 @@ class USexportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         if seriesIndex == 0
         {
             return DataUSexports[dataIndex]
+        }
+        if seriesIndex == 1
+        {
+            return DataUSimports[dataIndex]
         }
         else { return DataUSexports[dataIndex] }
     }

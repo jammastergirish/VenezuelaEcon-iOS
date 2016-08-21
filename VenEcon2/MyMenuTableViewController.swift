@@ -38,7 +38,7 @@ class MyMenuTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-        let labels : [String] = ["Exchange Rates", "Foreign Reserves", "Inflation", "Money Supply", "Minimum Wage", "Oil Prices", "U.S. Oil Imports", "U.S. Oil Exports", "About"]
+        let labels : [String] = ["Exchange Rates", "Foreign Reserves", "Inflation", "Money Supply", "Minimum Wage", "Oil Prices", "U.S. Oil", "About"]
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -108,10 +108,7 @@ class MyMenuTableViewController: UITableViewController {
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("OilViewController")
             break
         case 6:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("USimportsViewController")
-            break
-        case 7:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("USexportsViewController")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("USOilViewController")
             break
         case (labels.count-1):
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("AboutViewController")

@@ -220,7 +220,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             self.chart.canvas.backgroundColor = UIColor.blueColor()
             self.chart.plotAreaBackgroundColor = UIColor.blackColor()
             
-            self.chart.legend.placement = .OutsidePlotArea
+            self.chart.legend.placement = .InsidePlotArea
             self.chart.legend.position = .BottomMiddle
             self.chart.legend.style.areaColor = UIColor.blackColor()
             self.chart.legend.style.fontColor = UIColor.whiteColor()
