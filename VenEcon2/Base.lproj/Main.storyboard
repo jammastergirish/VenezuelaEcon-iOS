@@ -1214,65 +1214,121 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="U.S. Oil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzU-0z-Bic">
-                                <rect key="frame" x="182" y="40" width="236" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="U.S. Oil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzU-0z-Bic">
+                                <rect key="frame" x="259" y="40" width="83" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0h9-hN-tQ4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="R2N-bQ-iKc">
-                                <rect key="frame" x="213" y="110" width="175" height="150"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwm-BT-hpB">
+                                <rect key="frame" x="125" y="110" width="350" height="150"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USexportsVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVA-jI-j09">
-                                        <rect key="frame" x="0.0" y="0.0" width="175" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USexportsTwoYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSN-5w-RU9">
-                                        <rect key="frame" x="0.0" y="26" width="175" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USexportsThreeYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUq-Dl-yrK">
-                                        <rect key="frame" x="0.0" y="47" width="175" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USexportsFourYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOG-1N-oL3">
-                                        <rect key="frame" x="0.0" y="69" width="175" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USexportsFiveYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hem-Ex-C9v">
-                                        <rect key="frame" x="0.0" y="90" width="175" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USexportsSixYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnu-bB-Ij2">
-                                        <rect key="frame" x="0.0" y="112" width="175" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USexportsSevenYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDq-hN-pfg">
-                                        <rect key="frame" x="0.0" y="133" width="175" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="R2N-bQ-iKc">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="150"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exports to Venezuela" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijg-Gp-k8j">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USexportsVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVA-jI-j09">
+                                                <rect key="frame" x="0.0" y="22" width="175" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USexportsTwoYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSN-5w-RU9">
+                                                <rect key="frame" x="0.0" y="47" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USexportsThreeYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUq-Dl-yrK">
+                                                <rect key="frame" x="0.0" y="69" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USexportsFourYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOG-1N-oL3">
+                                                <rect key="frame" x="0.0" y="90" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USexportsFiveYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hem-Ex-C9v">
+                                                <rect key="frame" x="0.0" y="112" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USexportsSixYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnu-bB-Ij2">
+                                                <rect key="frame" x="0.0" y="133" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="175" id="Hta-4R-kbr"/>
+                                            <constraint firstAttribute="height" constant="150" id="aTD-xe-TXB"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="j3t-eD-pjS">
+                                        <rect key="frame" x="175" y="0.0" width="175" height="150"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imports from Venezuela" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biM-sa-Ogr">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USimportsVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHe-ya-5de">
+                                                <rect key="frame" x="0.0" y="22" width="175" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USimportsTwoYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRa-qF-s6V">
+                                                <rect key="frame" x="0.0" y="47" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USimportsThreeYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrA-Kc-kcL">
+                                                <rect key="frame" x="0.0" y="69" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USimportsFourYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tn1-sR-dEo">
+                                                <rect key="frame" x="0.0" y="90" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USimportsFiveYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9G-Dn-RuD">
+                                                <rect key="frame" x="0.0" y="112" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="USimportsSixYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfe-fg-rzc">
+                                                <rect key="frame" x="0.0" y="133" width="175" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="1PH-M0-5pE"/>
+                                            <constraint firstAttribute="width" constant="175" id="4eD-ts-J8Y"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="Hta-4R-kbr"/>
-                                    <constraint firstAttribute="height" constant="150" id="aTD-xe-TXB"/>
-                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="aUn-aU-erx">
                                 <rect key="frame" x="20" y="300" width="560" height="300"/>
@@ -1327,32 +1383,37 @@
                         <constraints>
                             <constraint firstItem="qD9-4L-5wl" firstAttribute="bottom" secondItem="OzU-0z-Bic" secondAttribute="bottom" id="83m-AM-R3C"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aUn-aU-erx" secondAttribute="trailing" id="BmY-xR-qeu"/>
-                            <constraint firstItem="R2N-bQ-iKc" firstAttribute="centerX" secondItem="Y82-u4-e7c" secondAttribute="centerX" id="L9W-1s-Riv"/>
+                            <constraint firstItem="zwm-BT-hpB" firstAttribute="centerX" secondItem="Y82-u4-e7c" secondAttribute="centerX" id="MtU-zR-2Mb"/>
+                            <constraint firstItem="zwm-BT-hpB" firstAttribute="top" secondItem="OzU-0z-Bic" secondAttribute="bottom" constant="40" id="UhD-oQ-nUo"/>
                             <constraint firstItem="OzU-0z-Bic" firstAttribute="centerX" secondItem="Y82-u4-e7c" secondAttribute="centerX" id="XX1-pE-O78"/>
                             <constraint firstItem="ZXn-FH-vIH" firstAttribute="top" secondItem="aUn-aU-erx" secondAttribute="bottom" id="drY-aY-cUX"/>
-                            <constraint firstItem="aUn-aU-erx" firstAttribute="top" secondItem="R2N-bQ-iKc" secondAttribute="bottom" constant="40" id="gjw-FO-KZm"/>
+                            <constraint firstItem="aUn-aU-erx" firstAttribute="top" secondItem="zwm-BT-hpB" secondAttribute="bottom" constant="40" id="lGu-zb-c76"/>
                             <constraint firstItem="OzU-0z-Bic" firstAttribute="top" secondItem="Y82-u4-e7c" secondAttribute="topMargin" constant="40" id="mOT-Np-Dd9"/>
                             <constraint firstItem="aUn-aU-erx" firstAttribute="top" secondItem="QQ0-Fx-gar" secondAttribute="bottom" constant="280" id="sUl-Az-nhz"/>
                             <constraint firstItem="aUn-aU-erx" firstAttribute="leading" secondItem="Y82-u4-e7c" secondAttribute="leadingMargin" id="uae-Ka-9ur"/>
                             <constraint firstItem="qD9-4L-5wl" firstAttribute="leading" secondItem="Y82-u4-e7c" secondAttribute="leadingMargin" id="wgq-0K-m34"/>
-                            <constraint firstItem="R2N-bQ-iKc" firstAttribute="top" secondItem="OzU-0z-Bic" secondAttribute="bottom" constant="40" id="xd8-w5-b1y"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="AllText" destination="R2N-bQ-iKc" id="8y0-Yu-94K"/>
+                        <outlet property="AllText" destination="zwm-BT-hpB" id="GkR-kn-vdF"/>
                         <outlet property="ChartSVHeight" destination="mgA-Nd-GJ6" id="NU6-Yj-7qk"/>
                         <outlet property="ChartSVToTop" destination="sUl-Az-nhz" id="tuX-xK-E0G"/>
-                        <outlet property="DistanceBetweenAllTextAndChartSV" destination="gjw-FO-KZm" id="Zxa-Oo-9i3"/>
+                        <outlet property="DistanceBetweenAllTextAndChartSV" destination="lGu-zb-c76" id="2PQ-h1-UuG"/>
                         <outlet property="Header" destination="OzU-0z-Bic" id="5W6-Zg-dTb"/>
                         <outlet property="RangeController" destination="Iqu-VB-Pzo" id="DxU-U1-Mei"/>
                         <outlet property="ShowMenuButton" destination="qD9-4L-5wl" id="AcY-Uu-pJW"/>
                         <outlet property="USexportsFiveYear" destination="hem-Ex-C9v" id="39B-Vx-uR2"/>
                         <outlet property="USexportsFourYear" destination="tOG-1N-oL3" id="RGj-lI-2La"/>
-                        <outlet property="USexportsSevenYear" destination="HDq-hN-pfg" id="D7r-KY-yzz"/>
                         <outlet property="USexportsSixYear" destination="hnu-bB-Ij2" id="UPw-n7-Y81"/>
                         <outlet property="USexportsThreeYear" destination="fUq-Dl-yrK" id="oZH-4c-rZ7"/>
                         <outlet property="USexportsTwoYear" destination="DSN-5w-RU9" id="N1v-t4-5Ow"/>
                         <outlet property="USexportsVal" destination="JVA-jI-j09" id="tze-n8-Aa2"/>
+                        <outlet property="USimportsFiveYear" destination="R9G-Dn-RuD" id="MYa-lY-Khr"/>
+                        <outlet property="USimportsFourYear" destination="tn1-sR-dEo" id="J72-tj-0rK"/>
+                        <outlet property="USimportsSixYear" destination="yfe-fg-rzc" id="lv3-bp-1UM"/>
+                        <outlet property="USimportsThreeYear" destination="SrA-Kc-kcL" id="obn-iG-RtZ"/>
+                        <outlet property="USimportsTwoYear" destination="XRa-qF-s6V" id="Oeu-Iz-ggR"/>
+                        <outlet property="USimportsVal" destination="QHe-ya-5de" id="6Nx-Dd-jZy"/>
                         <outlet property="chart" destination="64u-ub-OMu" id="cgP-LR-NAp"/>
                     </connections>
                 </viewController>

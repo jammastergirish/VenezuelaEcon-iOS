@@ -50,6 +50,7 @@ class USOilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     //Labels for main values
     @IBOutlet var USexportsVal: UILabel!
+    @IBOutlet var USimportsVal: UILabel!
     
     //Labels for variation text
     @IBOutlet var USexportsTwoYear: UILabel!
@@ -57,7 +58,11 @@ class USOilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     @IBOutlet var USexportsFourYear: UILabel!
     @IBOutlet var USexportsFiveYear: UILabel!
     @IBOutlet var USexportsSixYear: UILabel!
-    @IBOutlet var USexportsSevenYear: UILabel!
+    @IBOutlet var USimportsTwoYear: UILabel!
+    @IBOutlet var USimportsThreeYear: UILabel!
+    @IBOutlet var USimportsFourYear: UILabel!
+    @IBOutlet var USimportsFiveYear: UILabel!
+    @IBOutlet var USimportsSixYear: UILabel!
     
     //Chart
     @IBOutlet var chart: ShinobiChart!
@@ -155,13 +160,26 @@ class USOilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                //var comparison : Double = Utils.shared.YearsAgo(GetLatestNonZeroValue(self.USexports, date: Yesterday)
+                 text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.USimports, date: Utils.shared.Today())/1000)! + " <font size=2>billion barrels / year</font></font>"
+                 encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                 attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.USimportsVal.attributedText = attributedString
+                    
+                } catch _ {}
+                
+
                 Utils.shared.Compare(self.USexports, date: Utils.shared.YearsAgo(2), label: self.USexportsTwoYear, type: nil)
                 Utils.shared.Compare(self.USexports, date: Utils.shared.YearsAgo(3), label: self.USexportsThreeYear, type: nil)
                 Utils.shared.Compare(self.USexports, date: Utils.shared.YearsAgo(4), label: self.USexportsFourYear, type: nil)
                 Utils.shared.Compare(self.USexports, date: Utils.shared.YearsAgo(5), label: self.USexportsFiveYear, type: nil)
                 Utils.shared.Compare(self.USexports, date: Utils.shared.YearsAgo(6), label: self.USexportsSixYear, type: nil)
-                Utils.shared.Compare(self.USexports, date: Utils.shared.YearsAgo(7), label: self.USexportsSevenYear, type: nil)
+                Utils.shared.Compare(self.USimports, date: Utils.shared.YearsAgo(2), label: self.USimportsTwoYear, type: nil)
+                Utils.shared.Compare(self.USimports, date: Utils.shared.YearsAgo(3), label: self.USimportsThreeYear, type: nil)
+                Utils.shared.Compare(self.USimports, date: Utils.shared.YearsAgo(4), label: self.USimportsFourYear, type: nil)
+                Utils.shared.Compare(self.USimports, date: Utils.shared.YearsAgo(5), label: self.USimportsFiveYear, type: nil)
+                Utils.shared.Compare(self.USimports, date: Utils.shared.YearsAgo(6), label: self.USimportsSixYear, type: nil)
                 
                 //DRAW THE GRAPHS
                 self.chart.canvasAreaBackgroundColor = UIColor.blackColor()
@@ -189,7 +207,7 @@ class USOilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 yAxis.style.lineColor = UIColor.whiteColor()
                 xAxis.style.titleStyle.textColor = UIColor.whiteColor()
                 yAxis.style.titleStyle.textColor = UIColor.whiteColor()
-                xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
+                xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
                 yAxis.rangePaddingLow = 1
                 yAxis.rangePaddingHigh = 1
                 xAxis.style.majorGridLineStyle.showMajorGridLines = false
@@ -313,7 +331,7 @@ class USOilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         lineSeries.crosshairEnabled = true
         
         let titles : [String] = ["US exports (billion barrels/year)", "US imports (billion barrels/year)"]
-        let colors : [UIColor] = [UIColor.redColor(), UIColor.redColor()]
+        let colors : [UIColor] = [UIColor.greenColor(), UIColor.redColor()]
         
         lineSeries.title = titles[index]
         lineSeries.style().lineColor = colors[index]
