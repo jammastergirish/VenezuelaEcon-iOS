@@ -63,7 +63,7 @@ class MyMenuTableViewController: UITableViewController {
         
         if (indexPath.row==(labels.count-1))
         {
-            cell!.textLabel?.textColor = UIColor.grayColor()
+            cell!.textLabel?.textColor = UIColor.lightGrayColor()
         }
 
          cell!.textLabel!.text = labels[indexPath.row]
