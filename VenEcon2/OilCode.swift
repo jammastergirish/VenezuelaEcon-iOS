@@ -239,7 +239,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 yAxis.style.lineColor = UIColor.whiteColor()
                 xAxis.style.titleStyle.textColor = UIColor.whiteColor()
                 yAxis.style.titleStyle.textColor = UIColor.whiteColor()
-                xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
+                xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
                 yAxis.rangePaddingLow = 1
                 yAxis.rangePaddingHigh = 1
                 xAxis.style.majorGridLineStyle.showMajorGridLines = false
