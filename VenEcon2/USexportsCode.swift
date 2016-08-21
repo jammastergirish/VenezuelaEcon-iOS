@@ -176,30 +176,26 @@ class USexportsCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.crosshair?.style.lineColor = UIColor.whiteColor()
                 self.chart.crosshair?.style.lineWidth = 1
                 
-                // X Axis
+                // Axes
                 let xAxis = SChartDiscontinuousDateTimeAxis()
-                xAxis.title = "Date"
-                self.enablePanningAndZoomingOnAxis(xAxis)
-                xAxis.style.lineColor = UIColor.whiteColor()
-                xAxis.style.titleStyle.textColor = UIColor.whiteColor()
-                //xAxis.labelFormatter!.dateFormatter().dateStyle = .MediumStyle
-                xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
-                self.chart.xAxis = xAxis
-                
-                // Y Axis
                 let yAxis = SChartNumberAxis()
-                yAxis.title = "U.S. Exports (billion barrels/year)"
+                xAxis.title = "Date"
+                yAxis.title = "U.S. Imports (billion barrels / year)"
+                self.enablePanningAndZoomingOnAxis(xAxis)
                 self.enablePanningAndZoomingOnAxis(yAxis)
+                xAxis.style.lineColor = UIColor.whiteColor()
+                yAxis.style.lineColor = UIColor.whiteColor()
+                xAxis.style.titleStyle.textColor = UIColor.whiteColor()
+                yAxis.style.titleStyle.textColor = UIColor.whiteColor()
+                xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
                 yAxis.rangePaddingLow = 1
                 yAxis.rangePaddingHigh = 1
-                yAxis.style.lineColor = UIColor.whiteColor()
-                yAxis.style.titleStyle.textColor = UIColor.whiteColor()
-                xAxis.style.majorGridLineStyle.lineWidth = 1
-                xAxis.style.majorGridLineStyle.lineColor = UIColor.darkGrayColor()
-                xAxis.style.majorGridLineStyle.showMajorGridLines = true
-                yAxis.style.majorGridLineStyle.lineWidth = 1
-                yAxis.style.majorGridLineStyle.lineColor = UIColor.darkGrayColor()
-                yAxis.style.majorGridLineStyle.showMajorGridLines = true
+                xAxis.style.majorGridLineStyle.showMajorGridLines = false
+                xAxis.style.lineWidth = 1
+                yAxis.style.lineWidth = 1
+                yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.USexports.values.maxElement()!/1000)
+                
+                self.chart.xAxis = xAxis
                 self.chart.yAxis = yAxis
                 
                 self.chart.datasource = self
