@@ -28,6 +28,8 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
         BlackMarketVal.text = "..."
         SIMADIVal.text = "..."
         DIPROVal.text = "..."
+        Val.text = ""
+
         
         
         Number.becomeFirstResponder()
@@ -77,16 +79,19 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
 }
     
 @IBAction func NumberChanged(sender: AnyObject) {
-        if Double(Number.text!) != nil
+        if (Double(Number.text!) != nil)&&(Double(Number.text!) != 0)
         {
             print("Is number\n")
-            
             Calculate()
             
         }
         else
         {
-            print("Isn't number\n")
+            print("Isn't number or is zero\n")
+            BlackMarketVal.text = "..."
+            SIMADIVal.text = "..."
+            DIPROVal.text = "..."
+            Val.text = ""
         }
     }
     
@@ -95,7 +100,6 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
     }
 
     func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
 
@@ -105,6 +109,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
     {
         if Currency.selectedSegmentIndex == 0
         {
+            Val.text = Utils.shared.CurrencyFormatter.stringFromNumber(Double(Number.text!)!)
             //Initial value was dollar
             BlackMarketVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double(Number.text!)!*Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))! + " BsF"
             SIMADIVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double(Number.text!)!*Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))! + " BsF"
@@ -112,6 +117,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
         }
         else if Currency.selectedSegmentIndex == 1
         {
+            Val.text = Utils.shared.NumberFormatter.stringFromNumber(Double(Number.text!)!)! + " BsF"
             //Initial value was BsF
             BlackMarketVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double(Number.text!)!/Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))!
             SIMADIVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double(Number.text!)!/Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))!

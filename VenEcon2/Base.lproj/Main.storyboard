@@ -1061,7 +1061,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="V95-GQ-MFL">
-                                <rect key="frame" x="30" y="120" width="540" height="47"/>
+                                <rect key="frame" x="30" y="120" width="540" height="68"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7qS-es-Kv7">
                                         <rect key="frame" x="0.0" y="0.0" width="316" height="47"/>
@@ -1092,9 +1092,17 @@
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Val" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06o-CT-DFy">
+                                        <rect key="frame" x="0.0" y="47" width="241" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="06o-CT-DFy" firstAttribute="top" secondItem="KYu-N2-l2Y" secondAttribute="bottom" constant="2" id="4FI-30-wpQ"/>
                                     <constraint firstAttribute="width" constant="350" id="8qw-8l-q2h"/>
+                                    <constraint firstItem="06o-CT-DFy" firstAttribute="trailing" secondItem="KYu-N2-l2Y" secondAttribute="trailing" id="Ypr-3U-QxV"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1102,7 +1110,7 @@
                                     </mask>
                                 </variation>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="O83-mA-Ezw">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="O83-mA-Ezw">
                                 <rect key="frame" x="70" y="217" width="138" height="41"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Black Market" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJ2-k3-J6Q">
@@ -1119,7 +1127,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="f4C-ED-rbL">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="f4C-ED-rbL">
                                 <rect key="frame" x="70" y="275" width="93" height="41"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIMADI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNY-9T-lch">
@@ -1136,7 +1144,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="cGt-MC-4W4">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="cGt-MC-4W4">
                                 <rect key="frame" x="70" y="335" width="86" height="41"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIPRO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ca-el-e7h">
@@ -1180,6 +1188,7 @@
                         <outlet property="Number" destination="KYu-N2-l2Y" id="94h-Ai-1u5"/>
                         <outlet property="SIMADIVal" destination="MlS-9g-SnQ" id="QRk-u2-G6z"/>
                         <outlet property="ShowMenuButton" destination="8iu-71-Ikb" id="riU-ES-5ja"/>
+                        <outlet property="Val" destination="06o-CT-DFy" id="kjh-xQ-kwl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Dy-b8-ZU6" userLabel="First Responder" sceneMemberID="firstResponder"/>
