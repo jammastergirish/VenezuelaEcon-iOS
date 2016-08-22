@@ -28,7 +28,6 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
         BlackMarketVal.text = "..."
         SIMADIVal.text = "..."
         DIPROVal.text = "..."
-        Val.text = ""
         
         
         Number.becomeFirstResponder()
