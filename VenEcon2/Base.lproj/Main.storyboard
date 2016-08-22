@@ -1882,7 +1882,7 @@
                         <constraints>
                             <constraint firstItem="Wva-T6-wol" firstAttribute="top" secondItem="Tco-v2-TQk" secondAttribute="topMargin" constant="40" id="0IE-bh-GDE"/>
                             <constraint firstItem="xC1-N2-gQS" firstAttribute="leading" secondItem="Tco-v2-TQk" secondAttribute="leadingMargin" id="0g1-9Q-E10"/>
-                            <constraint firstItem="xC1-N2-gQS" firstAttribute="top" secondItem="Tco-v2-TQk" secondAttribute="topMargin" constant="300" id="3kQ-cl-ExD"/>
+                            <constraint firstItem="xC1-N2-gQS" firstAttribute="top" secondItem="RZR-GX-OHg" secondAttribute="bottom" constant="280" id="2Ry-c2-LhG"/>
                             <constraint firstItem="0CO-Gd-bCa" firstAttribute="top" secondItem="xC1-N2-gQS" secondAttribute="bottom" id="D0g-Cc-iew"/>
                             <constraint firstItem="zoE-Jy-klK" firstAttribute="top" secondItem="Wva-T6-wol" secondAttribute="bottom" constant="40" id="FL2-EJ-1TT"/>
                             <constraint firstItem="zoE-Jy-klK" firstAttribute="centerX" secondItem="Tco-v2-TQk" secondAttribute="centerX" id="HK4-Aa-sWg"/>
@@ -1896,7 +1896,7 @@
                     <connections>
                         <outlet property="AllText" destination="zoE-Jy-klK" id="9ie-MY-zNB"/>
                         <outlet property="ChartSVHeight" destination="Yw2-ke-mgj" id="0xG-lv-F7J"/>
-                        <outlet property="ChartSVToTop" destination="3kQ-cl-ExD" id="Fsg-By-gLv"/>
+                        <outlet property="ChartSVToTop" destination="2Ry-c2-LhG" id="fg2-6G-ao0"/>
                         <outlet property="DirectFourYear" destination="Lno-Hi-RJ8" id="e9A-RO-IBc"/>
                         <outlet property="DirectOneYear" destination="3Za-Q0-D7s" id="L2F-Ho-jHG"/>
                         <outlet property="DirectThreeYear" destination="RSZ-5i-zcI" id="nvu-Pt-4l2"/>
