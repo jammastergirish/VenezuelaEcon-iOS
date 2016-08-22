@@ -79,20 +79,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
 }
     
 @IBAction func NumberChanged(sender: AnyObject) {
-        if (Double(Number.text!) != nil)&&(Double(Number.text!) != 0)
-        {
-            print("Is number\n")
-            Calculate()
-            
-        }
-        else
-        {
-            print("Isn't number or is zero\n")
-            BlackMarketVal.text = "..."
-            SIMADIVal.text = "..."
-            DIPROVal.text = "..."
-            Val.text = ""
-        }
+        Calculate()
     }
     
     @IBAction func CurrencySwapped(sender: AnyObject) {
@@ -107,21 +94,34 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
     
     func Calculate()
     {
-        if Currency.selectedSegmentIndex == 0
+        if (Double(Number.text!) != nil)&&(Double(Number.text!) != 0)
         {
-            Val.text = Utils.shared.CurrencyFormatter.stringFromNumber(Double(Number.text!)!)
-            //Initial value was dollar
-            BlackMarketVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double(Number.text!)!*Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))! + " BsF"
-            SIMADIVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double(Number.text!)!*Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))! + " BsF"
-            DIPROVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double(Number.text!)!*Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))! + " BsF"
+            print("Is number\n")
+            if Currency.selectedSegmentIndex == 0
+            {
+                Val.text = Utils.shared.CurrencyFormatter.stringFromNumber(Double(Number.text!)!)
+                //Initial value was dollar
+                BlackMarketVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double(Number.text!)!*Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))! + " BsF"
+                SIMADIVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double(Number.text!)!*Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))! + " BsF"
+                DIPROVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double(Number.text!)!*Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))! + " BsF"
+            }
+            else if Currency.selectedSegmentIndex == 1
+            {
+                Val.text = Utils.shared.NumberFormatter.stringFromNumber(Double(Number.text!)!)! + " BsF"
+                //Initial value was BsF
+                BlackMarketVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double(Number.text!)!/Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))!
+                SIMADIVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double(Number.text!)!/Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))!
+                DIPROVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double(Number.text!)!/Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))!
+            }
+            
         }
-        else if Currency.selectedSegmentIndex == 1
+        else
         {
-            Val.text = Utils.shared.NumberFormatter.stringFromNumber(Double(Number.text!)!)! + " BsF"
-            //Initial value was BsF
-            BlackMarketVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double(Number.text!)!/Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))!
-            SIMADIVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double(Number.text!)!/Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))!
-            DIPROVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double(Number.text!)!/Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))!
+            print("Isn't number or is zero\n")
+            BlackMarketVal.text = "..."
+            SIMADIVal.text = "..."
+            DIPROVal.text = "..."
+            Val.text = ""
         }
     }
     
