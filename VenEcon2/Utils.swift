@@ -258,6 +258,24 @@ class Utils
         
     }
     
+    
+    
+    func JSONDataFromFile(fileName: String) -> [[String : AnyObject]] {
+        guard let
+            filePath = NSBundle.mainBundle().pathForResource(fileName, ofType: "json"),
+            jsonData = NSData(contentsOfFile: filePath),
+            json = try? NSJSONSerialization.JSONObjectWithData(
+                jsonData,
+                options: NSJSONReadingOptions.AllowFragments
+                ) as! [[String : AnyObject]]
+            else {
+                print("Problem loading JSON file.")
+                return []
+        }
+        
+        return json
+    }
+    
 
     
 }

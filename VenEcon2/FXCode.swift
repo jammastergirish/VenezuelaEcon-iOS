@@ -142,8 +142,11 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.ShowMenuButton.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
+        //Very nice addition on 20160823!
+        loadLocalChartData()
+        
         //Added this bit with Pat on 20160804, to download the file
-        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=1999-01-01")!
+        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=2016-07-31")!
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             
@@ -323,6 +326,101 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
 func enablePanningAndZoomingOnAxis(axis: SChartAxis) {
     axis.enableGesturePanning = true
     axis.enableGestureZooming = true
+}
+    
+    
+//LOCAL LOADING
+func loadLocalChartData() {
+    
+for dataPoint in Utils.shared.JSONDataFromFile("FXdata") {
+            
+    guard let
+        dateString = dataPoint["date"] as? String,
+        OfficialVal = dataPoint["official"] as? String,
+        BMVal = dataPoint["bm"] as? String,
+        SimadiVal = dataPoint["simadi"] as? String,
+        SitmeVal = dataPoint["sitme"] as? String,
+        Sicad1Val = dataPoint["sicad1"] as? String,
+        Sicad2Val = dataPoint["sicad2"] as? String,
+        SuppVal = dataPoint["sicad2"] as? String,
+        M2_ResVal = dataPoint["m2_res"] as? String
+        else {
+            print("Data is JSON but not the JSON variables expected")
+            return
+    }
+    
+    let date = dateFormatter.dateFromString(dateString)
+    
+    if (BMVal != "0")
+    {
+        BM[dateString] = Double(BMVal) // Adds to my dictionary
+        let DataPointBM = SChartDataPoint() // Adds to graph data
+        DataPointBM.xValue = date
+        DataPointBM.yValue = Double(BMVal)
+        DataBM.append(DataPointBM)
+    }
+    
+    if (OfficialVal != "0")
+    {
+        Official[dateString] = Double(OfficialVal)
+        let DataPointOfficial = SChartDataPoint()
+        DataPointOfficial.xValue = date
+        DataPointOfficial.yValue = Double(OfficialVal)
+        DataOfficial.append(DataPointOfficial)
+    }
+    
+    if (SimadiVal != "0")
+    {
+        Simadi[dateString] = Double(SimadiVal)
+        let DataPointSimadi = SChartDataPoint()
+        DataPointSimadi.xValue = date
+        DataPointSimadi.yValue = Double(SimadiVal)
+        DataSimadi.append(DataPointSimadi)
+    }
+    
+    if (M2_ResVal != "0")
+    {
+        M2_Res[dateString] = Double(M2_ResVal)
+        let DataPointM2_Res = SChartDataPoint()
+        DataPointM2_Res.xValue = date
+        DataPointM2_Res.yValue = Double(M2_ResVal)
+        DataM2_Res.append(DataPointM2_Res)
+    }
+    
+    if (SitmeVal != "0")
+    {
+        let DataPointSitme = SChartDataPoint()
+        DataPointSitme.xValue = date
+        DataPointSitme.yValue = Double(SitmeVal)
+        DataSitme.append(DataPointSitme)
+    }
+    
+    if (Sicad1Val != "0")
+    {
+        let DataPointSicad1 = SChartDataPoint()
+        DataPointSicad1.xValue = date
+        DataPointSicad1.yValue = Double(Sicad1Val)
+        DataSicad1.append(DataPointSicad1)
+    }
+    
+    if (Sicad2Val != "0")
+    {
+        let DataPointSicad2 = SChartDataPoint()
+        DataPointSicad2.xValue = date
+        DataPointSicad2.yValue = Double(Sicad2Val)
+        DataSicad2.append(DataPointSicad2)
+    }
+    
+    if (SuppVal != "0")
+    {
+        let DataPointSupp = SChartDataPoint()
+        DataPointSupp.xValue = date
+        DataPointSupp.yValue = Double(SuppVal)
+        DataSupp.append(DataPointSupp)
+    }
+    
+    }
+
 }
 
     

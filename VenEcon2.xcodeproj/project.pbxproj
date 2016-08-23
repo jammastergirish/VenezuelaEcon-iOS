@@ -14,6 +14,7 @@
 		685D86B01D629DA500F7FC42 /* OilCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685D86AF1D629DA500F7FC42 /* OilCode.swift */; };
 		68652D411D67DB9500049CBC /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68652D401D67DB9500049CBC /* Notes.swift */; };
 		68814A151D67180A002B88AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68814A141D67180A002B88AF /* Images.xcassets */; };
+		68B1BF031D6C47C800DC02C5 /* FXdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B1BF021D6C47C800DC02C5 /* FXdata.json */; };
 		68B867E61D63B73800309C56 /* M2Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E51D63B73800309C56 /* M2Code.swift */; };
 		68B867E81D63C0B500309C56 /* MinWageCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E71D63C0B500309C56 /* MinWageCode.swift */; };
 		68B867EA1D63D0A600309C56 /* InflationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E91D63D0A600309C56 /* InflationCode.swift */; };
@@ -50,6 +51,7 @@
 		685D86AF1D629DA500F7FC42 /* OilCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilCode.swift; sourceTree = "<group>"; };
 		68652D401D67DB9500049CBC /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		68814A141D67180A002B88AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		68B1BF021D6C47C800DC02C5 /* FXdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FXdata.json; sourceTree = "<group>"; };
 		68B867E51D63B73800309C56 /* M2Code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M2Code.swift; sourceTree = "<group>"; };
 		68B867E71D63C0B500309C56 /* MinWageCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinWageCode.swift; sourceTree = "<group>"; };
 		68B867E91D63D0A600309C56 /* InflationCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflationCode.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				68D3DB961D593AA600F42648 /* AppDelegate.swift */,
 				68589DC21D65563400ECBC3E /* Utils.swift */,
 				68D3DB981D593AA600F42648 /* FXCode.swift */,
+				68B1BF021D6C47C800DC02C5 /* FXdata.json */,
 				6839E79D1D610DC5005ED3FA /* ReservesCode.swift */,
 				685D86AF1D629DA500F7FC42 /* OilCode.swift */,
 				68B867E91D63D0A600309C56 /* InflationCode.swift */,
@@ -234,6 +237,7 @@
 				68814A151D67180A002B88AF /* Images.xcassets in Resources */,
 				68D3DBA11D593AA600F42648 /* LaunchScreen.storyboard in Resources */,
 				68D3DB9C1D593AA600F42648 /* Main.storyboard in Resources */,
+				68B1BF031D6C47C800DC02C5 /* FXdata.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
