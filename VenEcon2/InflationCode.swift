@@ -29,6 +29,8 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     //Variables to hold data
     var Inflation = [String: Double]()
+    var Monthly = [String: Double]()
+    var Annual = [String: Double]()
     
     //Variables to hold chart data
     var DataInflation: [SChartDataPoint] = []
@@ -146,10 +148,10 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         //Very nice addition on 20160823!
-       // loadLocalChartData()
+        loadLocalChartData()
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_inf&format=json")!
+        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_inf2&format=json&start=2015-12-31")!
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             
@@ -167,7 +169,25 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 
-                self.Data(json)
+               self.Data(json)
+                
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.Annual, date: Utils.shared.Today()))! + "<font size=2>%</font></font>"
+                var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.AnnualInflationVal.attributedText = attributedString
+                    
+                } catch _ {}
+                
+                 text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.Monthly, date: Utils.shared.Today()))! + "<font size=2>%</font></font>"
+                 encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                 attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.MonthlyInflationVal.attributedText = attributedString
+                    
+                } catch _ {}
                 
                 
                 Utils.shared.GetLatestNonZeroValue(self.Inflation, date: Utils.shared.Today())
@@ -281,14 +301,16 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     
     
-    func Data(json : [[String : AnyObject]]) {
+    //LOCAL LOADING
+    func loadLocalChartData() {
         
-        // for dataPoint in JSONDatac.f.File("ve_fx") {
-        for dataPoint in json {
+        for dataPoint in Utils.shared.JSONDataFromFile("InfData") {
             
             guard let
                 dateString = dataPoint["date"] as? String,
-                InflationVal = dataPoint["inf"] as? String
+                InflationVal = dataPoint["inf"] as? String,
+                MonthlyVal = dataPoint["monthly"] as? String,
+                AnnualVal = dataPoint["annual"] as? String
                 else {
                     print("Data is JSON but not the JSON variables expected")
                     return
@@ -304,6 +326,65 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 DataPointInflation.yValue = Double(InflationVal)!/100
                 DataInflation.append(DataPointInflation)
             }
+            
+            if (MonthlyVal != "0")
+            {
+                Monthly[dateString] = Double(MonthlyVal)! // Adds to my dictionary
+            }
+            
+            if (AnnualVal != "0")
+            {
+                Annual[dateString] = Double(AnnualVal)! // Adds to my dictionary
+            }
+            
+            
+            
+            
+            
+        }
+        
+        
+    }
+    
+    
+    func Data(json : [[String : AnyObject]]) {
+        
+        // for dataPoint in JSONDatac.f.File("ve_fx") {
+        for dataPoint in json {
+            
+            guard let
+                dateString = dataPoint["date"] as? String,
+                InflationVal = dataPoint["inf"] as? String,
+                MonthlyVal = dataPoint["monthly"] as? String,
+                AnnualVal = dataPoint["annual"] as? String
+                else {
+                    print("Data is JSON but not the JSON variables expected")
+                    return
+            }
+            
+            let date = dateFormatter.dateFromString(dateString)
+            
+            if (InflationVal != "0")
+            {
+                Inflation[dateString] = Double(InflationVal)! // Adds to my dictionary
+                let DataPointInflation = SChartDataPoint() // Adds to graph data
+                DataPointInflation.xValue = date
+                DataPointInflation.yValue = Double(InflationVal)!/100
+                DataInflation.append(DataPointInflation)
+            }
+            
+            if (MonthlyVal != "0")
+            {
+                Monthly[dateString] = Double(MonthlyVal)! // Adds to my dictionary
+            }
+            
+            if (AnnualVal != "0")
+            {
+                Annual[dateString] = Double(AnnualVal)! // Adds to my dictionary
+            }
+            
+            
+
             
             
         }

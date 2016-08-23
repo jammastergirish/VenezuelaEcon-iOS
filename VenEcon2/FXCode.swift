@@ -265,7 +265,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             self.ShowMenuButton.hidden = false
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             
-            self.RangeControl(4)
+            self.RangeControl(2)
                                 
                                 
             })
