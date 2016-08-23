@@ -221,6 +221,11 @@
 					68D3DB921D593AA600F42648 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 82R2WDARJW;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					68D3DBA61D593AA700F42648 = {
 						CreatedOnToolsVersion = 7.3.1;

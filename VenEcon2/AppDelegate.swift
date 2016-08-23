@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+                registerForPushNotifications(application)
+        
+        /* if let notification = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? [String: AnyObject] {
+         //let aps = notification["aps"] as! [String: AnyObject]
+         // Notificaion and app was opened new. Don't really want to do anything.
+         
+         }*/
         return true
     }
 
@@ -39,6 +46,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    
+    func registerForPushNotifications(application: UIApplication) {
+        let notificationSettings = UIUserNotificationSettings(
+            forTypes: [.Badge, .Sound, .Alert], categories: nil)
+        application.registerUserNotificationSettings(notificationSettings)
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        if notificationSettings.types != .None {
+            application.registerForRemoteNotifications()
+        }
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
+        var tokenString = ""
+        
+        for i in 0..<deviceToken.length {
+            tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
+        }
+        
+        print("Device Token:", tokenString)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(tokenString, forKey: "DeviceToken")
+        
+        
+        
+        
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("Failed to register:", error)
+    }
+    
+    
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        // Received a notification and app was open/open in background so need to run viewDidLoad() in each view controller
+        /*
+         let FX = FXCode()
+         FX.viewDidLoad()
+         
+         let Reserves = ReservesCode()
+         Reserves.viewDidLoad()
+         
+         let Oil = OilCode()
+         Oil.viewDidLoad()
+         
+         let Inf = InfCode()
+         Inf.Main() */
+        
     }
 
 
