@@ -138,9 +138,11 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.ShowMenuButton.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
+        //Very nice addition on 20160823!
+        loadLocalChartData()
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_oil&format=json&start=2000-01-01")!
+        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_oil&format=json&start=2016-07-31")!
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             
@@ -311,6 +313,67 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         axis.enableGesturePanning = true
         axis.enableGestureZooming = true
     }
+    
+    
+    //LOCAL LOADING
+    func loadLocalChartData() {
+        
+        for dataPoint in Utils.shared.JSONDataFromFile("OilData") {
+            
+            guard let
+                dateString = dataPoint["date"] as? String,
+                WTIVal = dataPoint["wti"] as? String,
+                BrentVal = dataPoint["brent"] as? String,
+                VenVal = dataPoint["ven"] as? String,
+                OPECVal = dataPoint["opec"] as? String
+                else {
+                    print("Data is JSON but not the JSON variables expected")
+                    return
+            }
+            
+            let date = dateFormatter.dateFromString(dateString)
+            
+            if (WTIVal != "0")
+            {
+                WTI[dateString] = Double(WTIVal) // Adds to my dictionary
+                let DataPointWTI = SChartDataPoint() // Adds to graph data
+                DataPointWTI.xValue = date
+                DataPointWTI.yValue = Double(WTIVal)
+                DataWTI.append(DataPointWTI)
+            }
+            
+            if (BrentVal != "0")
+            {
+                Brent[dateString] = Double(BrentVal)
+                let DataPointBrent = SChartDataPoint()
+                DataPointBrent.xValue = date
+                DataPointBrent.yValue = Double(BrentVal)
+                DataBrent.append(DataPointBrent)
+            }
+            
+            if (VenVal != "0")
+            {
+                Ven[dateString] = Double(VenVal)
+                let DataPointVen = SChartDataPoint()
+                DataPointVen.xValue = date
+                DataPointVen.yValue = Double(VenVal)
+                DataVen.append(DataPointVen)
+            }
+            
+            if (OPECVal != "0")
+            {
+                OPEC[dateString] = Double(OPECVal)
+                let DataPointOPEC = SChartDataPoint()
+                DataPointOPEC.xValue = date
+                DataPointOPEC.yValue = Double(OPECVal)
+                DataOPEC.append(DataPointOPEC)
+            }
+            
+        }
+
+        
+    }
+
     
     
     

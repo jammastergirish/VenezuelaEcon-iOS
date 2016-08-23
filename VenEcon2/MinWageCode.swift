@@ -121,6 +121,9 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.ShowMenuButton.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
+        //Very nice addition on 20160823!
+       // loadLocalChartData()
+        
         //Added this bit with Pat on 20160804, to download the file
         let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_mw&format=json&start=2011-01-01")!
         let request = NSURLRequest(URL: url)

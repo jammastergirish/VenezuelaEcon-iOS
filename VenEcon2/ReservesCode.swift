@@ -122,8 +122,11 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.ShowMenuButton.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
+        //Very nice addition on 20160823!
+        loadLocalChartData()
+        
         //Added this bit with Pat on 20160804, to download the file
-        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_res&format=json&start=2000-01-01")!
+        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_res&format=json&start=2016-07-31")!
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             
@@ -257,6 +260,38 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         axis.enableGesturePanning = true
         axis.enableGestureZooming = true
     }
+    
+    
+    
+    //LOCAL LOADING
+    func loadLocalChartData() {
+        
+    for dataPoint in Utils.shared.JSONDataFromFile("ResData") {
+            
+            guard let
+                dateString = dataPoint["date"] as? String,
+                ReservesVal = dataPoint["res"] as? String
+                else {
+                    print("Data is JSON but not the JSON variables expected")
+                    return
+            }
+            
+            let date = dateFormatter.dateFromString(dateString)
+            
+            if (ReservesVal != "0")
+            {
+                Reserves[dateString] = Double(ReservesVal) // Adds to my dictionary
+                let DataPointReserves = SChartDataPoint() // Adds to graph data
+                DataPointReserves.xValue = date
+                DataPointReserves.yValue = Double(ReservesVal)!/1000
+                DataReserves.append(DataPointReserves)
+            }
+            
+            
+        }
+        
+    }
+    
     
     
     

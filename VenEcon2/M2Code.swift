@@ -121,8 +121,11 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.ShowMenuButton.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
+        //Very nice addition on 20160823!
+        loadLocalChartData()
+        
         //Added this bit with Pat on 20160804, to download the file
-        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_m2&format=json&start=1999-01-01")!
+        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_m2&format=json&start=2016-07-31")!
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             
@@ -256,6 +259,37 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
     func enablePanningAndZoomingOnAxis(axis: SChartAxis) {
         axis.enableGesturePanning = true
         axis.enableGestureZooming = true
+    }
+    
+    
+    //LOCAL LOADING
+    func loadLocalChartData() {
+        
+        for dataPoint in Utils.shared.JSONDataFromFile("M2Data") {
+            
+            guard let
+                dateString = dataPoint["date"] as? String,
+                M2Val = dataPoint["m2"] as? String
+                else {
+                    print("Data is JSON but not the JSON variables expected")
+                    return
+            }
+            
+            let date = dateFormatter.dateFromString(dateString)
+            
+            if (M2Val != "0")
+            {
+                M2[dateString] = Double(M2Val)! // Adds to my dictionary
+                let DataPointM2 = SChartDataPoint() // Adds to graph data
+                DataPointM2.xValue = date
+                DataPointM2.yValue = Double(M2Val)!/1000000
+                DataM2.append(DataPointM2)
+            }
+            
+            
+        }
+        
+        
     }
     
     
