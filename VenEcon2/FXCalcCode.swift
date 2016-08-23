@@ -22,8 +22,15 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
     @IBOutlet var BlackMarketVal: UILabel!
     @IBOutlet var SIMADIVal: UILabel!
     @IBOutlet var DIPROVal: UILabel!
+    
+    
+    var DataDownloaded : Bool = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         BlackMarketVal.text = "..."
         SIMADIVal.text = "..."
@@ -60,12 +67,14 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
                 return
             }
             
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in // Does this bit need to be in main thread? Much quicker if so
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 
                 self.Data(json)
                 
 
-                
+                self.DataDownloaded = true
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                self.Calculate()
                 
             })
             
@@ -94,6 +103,8 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
     
     func Calculate()
     {
+        if DataDownloaded
+        {
         if (Double(Number.text!) != nil)&&(Double(Number.text!) != 0)
         {
             print("Is number\n")
@@ -122,6 +133,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
             SIMADIVal.text = "..."
             DIPROVal.text = "..."
             Val.text = ""
+        }
         }
     }
     
