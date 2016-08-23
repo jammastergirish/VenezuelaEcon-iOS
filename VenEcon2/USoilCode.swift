@@ -129,8 +129,11 @@ class USOilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.ShowMenuButton.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
+        //Very nice addition on 20160823!
+        loadLocalChartData()
+        
         //Added this bit with Pat on 20160804, to download the file
-        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_US&format=json&start=2001-01-01")!
+        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_US&format=json&start=2016-07-31")!
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             
@@ -278,6 +281,47 @@ class USOilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         axis.enableGestureZooming = true
     }
     
+    
+    //LOCAL LOADING
+    func loadLocalChartData() {
+        
+        for dataPoint in Utils.shared.JSONDataFromFile("USOilData") {
+            
+            guard let
+                dateString = dataPoint["date"] as? String,
+                USexportsVal = dataPoint["exp"] as? String,
+                USimportsVal = dataPoint["imp"] as? String
+                else {
+                    print("Data is JSON but not the JSON variables expected")
+                    return
+            }
+            
+            let date = dateFormatter.dateFromString(dateString)
+            
+            if (USexportsVal != "0")
+            {
+                USexports[dateString] = Double(USexportsVal) // Adds to my dictionary
+                let DataPointUSexports = SChartDataPoint() // Adds to graph data
+                DataPointUSexports.xValue = date
+                DataPointUSexports.yValue = Double(USexportsVal)!/1000
+                DataUSexports.append(DataPointUSexports)
+            }
+            
+            if (USimportsVal != "0")
+            {
+                USimports[dateString] = Double(USimportsVal) // Adds to my dictionary
+                let DataPointUSimports = SChartDataPoint() // Adds to graph data
+                DataPointUSimports.xValue = date
+                DataPointUSimports.yValue = Double(USimportsVal)!/1000
+                DataUSimports.append(DataPointUSimports)
+            }
+            
+            
+        }
+    }
+    
+
+
     
     
     func Data(json : [[String : AnyObject]]) {

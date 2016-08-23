@@ -126,8 +126,11 @@ class CrudeProductionCode: UIViewController, ENSideMenuDelegate, SChartDatasourc
         self.ShowMenuButton.hidden = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
+        //Very nice addition on 20160823!
+        loadLocalChartData()
+        
         //Added this bit with Pat on 20160804, to download the file
-        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_crudeproduction&format=json&start=2001-01-01")!
+        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_crudeproduction&format=json&start=2016-07-31")!
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             
@@ -273,6 +276,46 @@ class CrudeProductionCode: UIViewController, ENSideMenuDelegate, SChartDatasourc
         axis.enableGesturePanning = true
         axis.enableGestureZooming = true
     }
+    
+    //LOCAL LOADING
+    func loadLocalChartData() {
+        
+        for dataPoint in Utils.shared.JSONDataFromFile("CrudeProductionData") {
+            
+            guard let
+                dateString = dataPoint["date"] as? String,
+                DirectVal = dataPoint["direct"] as? String,
+                SecondaryVal = dataPoint["secondary"] as? String
+                else {
+                    print("Data is JSON but not the JSON variables expected")
+                    return
+            }
+            
+            let date = dateFormatter.dateFromString(dateString)
+            
+            if (DirectVal != "0")
+            {
+                Direct[dateString] = Double(DirectVal) // Adds to my dictionary
+                let DataPointDirect = SChartDataPoint() // Adds to graph data
+                DataPointDirect.xValue = date
+                DataPointDirect.yValue = Double(DirectVal)!/1000
+                DataDirect.append(DataPointDirect)
+            }
+            
+            if (SecondaryVal != "0")
+            {
+                Secondary[dateString] = Double(SecondaryVal) // Adds to my dictionary
+                let DataPointSecondary = SChartDataPoint() // Adds to graph data
+                DataPointSecondary.xValue = date
+                DataPointSecondary.yValue = Double(SecondaryVal)!/1000
+                DataSecondary.append(DataPointSecondary)
+            }
+            
+            
+        }
+    }
+
+
     
     
     
