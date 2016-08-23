@@ -448,7 +448,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         lineSeries.crosshairEnabled = true
         
         let titles : [String] = ["WTI", "Brent", "Venezuela", "OPEC"]
-        let colors : [UIColor] = [UIColor.blueColor(), UIColor.purpleColor(), UIColor.redColor(), UIColor.greenColor()]
+        let colors : [UIColor] = [UIColor.orangeColor(), UIColor.blueColor(), UIColor.greenColor(), UIColor.purpleColor()]
         
         lineSeries.title = titles[index]
         lineSeries.style().lineColor = colors[index]
