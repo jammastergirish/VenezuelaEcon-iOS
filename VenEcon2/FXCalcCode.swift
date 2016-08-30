@@ -105,24 +105,25 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
     {
         if DataDownloaded
         {
-        if (Double(Number.text!) != nil)&&(Double(Number.text!) != 0)
+        //if (Double(Number.text!) != nil)
+            if Utils.shared.NumberFormatter.numberFromString(((Number.text!))) != nil
         {
             print("Is number\n")
             if Currency.selectedSegmentIndex == 0
             {
-                Val.text = Utils.shared.CurrencyFormatter.stringFromNumber(Double(Number.text!)!)
+                Val.text = Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.NumberFormatter.numberFromString(((Number.text!)))!)
                 //Initial value was dollar
-                BlackMarketVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double(Number.text!)!*Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))! + " BsF"
-                SIMADIVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double(Number.text!)!*Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))! + " BsF"
-                DIPROVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double(Number.text!)!*Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))! + " BsF"
+                BlackMarketVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double((Utils.shared.NumberFormatter.numberFromString(((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))! + " BsF"
+                SIMADIVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double((Utils.shared.NumberFormatter.numberFromString(((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))! + " BsF"
+                DIPROVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double((Utils.shared.NumberFormatter.numberFromString(((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))! + " BsF"
             }
             else if Currency.selectedSegmentIndex == 1
             {
-                Val.text = Utils.shared.NumberFormatter.stringFromNumber(Double(Number.text!)!)! + " BsF"
+                Val.text = Utils.shared.NumberFormatter.stringFromNumber(Utils.shared.NumberFormatter.numberFromString(((Number.text!)))!)! + " BsF"
                 //Initial value was BsF
-                BlackMarketVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double(Number.text!)!/Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))!
-                SIMADIVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double(Number.text!)!/Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))!
-                DIPROVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double(Number.text!)!/Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))!
+                BlackMarketVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double((Utils.shared.NumberFormatter.numberFromString(((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))!
+                SIMADIVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double((Utils.shared.NumberFormatter.numberFromString(((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))!
+                DIPROVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double((Utils.shared.NumberFormatter.numberFromString(((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))!
             }
             
         }
