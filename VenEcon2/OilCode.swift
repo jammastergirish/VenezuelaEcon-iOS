@@ -208,19 +208,19 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                Utils.shared.Compare(self.WTI, date: Utils.shared.OneWeekAgo(), label: self.WTIWeek, type: nil)
+                Utils.shared.Compare(self.WTI, date: Utils.shared.OneMonthAgo(), label: self.WTIWeek, type: nil)
                 Utils.shared.Compare(self.WTI, date: Utils.shared.YearsAgo(1), label: self.WTIYear, type: nil)
                 Utils.shared.Compare(self.WTI, date: Utils.shared.YearsAgo(2), label: self.WTITwoYear, type: nil)
                 
-                Utils.shared.Compare(self.Brent, date: Utils.shared.OneWeekAgo(), label: self.BrentWeek, type: nil)
+                Utils.shared.Compare(self.Brent, date: Utils.shared.OneMonthAgo(), label: self.BrentWeek, type: nil)
                 Utils.shared.Compare(self.Brent, date: Utils.shared.YearsAgo(1), label: self.BrentYear, type: nil)
                 Utils.shared.Compare(self.Brent, date: Utils.shared.YearsAgo(2), label: self.BrentTwoYear, type: nil)
                 
-                Utils.shared.Compare(self.Ven, date: Utils.shared.OneWeekAgo(), label: self.VenWeek, type: nil)
+                Utils.shared.Compare(self.Ven, date: Utils.shared.OneMonthAgo(), label: self.VenWeek, type: nil)
                 Utils.shared.Compare(self.Ven, date: Utils.shared.YearsAgo(1), label: self.VenYear, type: nil)
                 Utils.shared.Compare(self.Ven, date: Utils.shared.YearsAgo(2), label: self.VenTwoYear, type: nil)
                 
-                Utils.shared.Compare(self.OPEC, date: Utils.shared.OneWeekAgo(), label: self.OPECWeek, type: nil)
+                Utils.shared.Compare(self.OPEC, date: Utils.shared.OneMonthAgo(), label: self.OPECWeek, type: nil)
                 Utils.shared.Compare(self.OPEC, date: Utils.shared.YearsAgo(1), label: self.OPECYear, type: nil)
                 Utils.shared.Compare(self.OPEC, date: Utils.shared.YearsAgo(2), label: self.OPECTwoYear, type: nil)
                 
