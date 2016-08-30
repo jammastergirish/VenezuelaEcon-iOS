@@ -22,6 +22,10 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     var DataVen: [SChartDataPoint] = []
     var DataOPEC: [SChartDataPoint] = []
     
+    //Axes
+    let xAxis = SChartDiscontinuousDateTimeAxis()
+    let yAxis = SChartNumberAxis()
+    
     //Layouts
     @IBOutlet var AllText: UIStackView!
     @IBOutlet var DistanceBetweenAllTextAndChartSV: NSLayoutConstraint!
@@ -86,19 +90,24 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     //Range Controller and Range Control functions
     @IBOutlet var RangeController: UISegmentedControl!
     @IBAction func RangeControl(sender: AnyObject) {
-        var Start : String = Utils.shared.YearsAgo(5)
+        var Start : String = Utils.shared.YearsAgo(16)
         switch RangeController.selectedSegmentIndex
         {
         case 0:
             Start = Utils.shared.YearsAgo(16)
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         case 1:
             Start = Utils.shared.YearsAgo(8)
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         case 2:
             Start = Utils.shared.YearsAgo(4)
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         case 3:
             Start = Utils.shared.YearsAgo(2)
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
         case 4:
             Start = Utils.shared.YearsAgo(1)
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
         default:
             break;
         }
@@ -231,26 +240,26 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.crosshair?.style.lineWidth = 1
                 
                 // Axes
-                let xAxis = SChartDiscontinuousDateTimeAxis()
-                let yAxis = SChartNumberAxis()
-                xAxis.title = "Date"
-                yAxis.title = "Oil Price ($ / barrel)"
-                self.enablePanningAndZoomingOnAxis(xAxis)
-                self.enablePanningAndZoomingOnAxis(yAxis)
-                xAxis.style.lineColor = UIColor.whiteColor()
-                yAxis.style.lineColor = UIColor.whiteColor()
-                xAxis.style.titleStyle.textColor = UIColor.whiteColor()
-                yAxis.style.titleStyle.textColor = UIColor.whiteColor()
-                xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
-                yAxis.rangePaddingLow = 1
-                yAxis.rangePaddingHigh = 1
-                xAxis.style.majorGridLineStyle.showMajorGridLines = false
-                xAxis.style.lineWidth = 1
-                yAxis.style.lineWidth = 1
-                yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.WTI.values.maxElement()!)
+                self.xAxis.title = "Date"
+                self.yAxis.title = "Oil Price ($ / barrel)"
+                self.enablePanningAndZoomingOnAxis(self.xAxis)
+                self.enablePanningAndZoomingOnAxis(self.yAxis)
+                self.xAxis.style.lineColor = UIColor.whiteColor()
+                self.yAxis.style.lineColor = UIColor.whiteColor()
+                self.xAxis.style.titleStyle.textColor = UIColor.whiteColor()
+                self.yAxis.style.titleStyle.textColor = UIColor.whiteColor()
+                self.xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
+                self.yAxis.rangePaddingLow = 1
+                self.yAxis.rangePaddingHigh = 1
+                self.xAxis.style.majorGridLineStyle.showMajorGridLines = false
+                self.xAxis.style.lineWidth = 1
+                self.yAxis.style.lineWidth = 1
+                self.yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.WTI.values.maxElement()!)
                 
-                self.chart.xAxis = xAxis
-                self.chart.yAxis = yAxis
+                self.chart.xAxis = self.xAxis
+                self.chart.yAxis = self.yAxis
+                
+                self.chart.clipsToBounds = false
                 
                 self.chart.datasource = self
                 self.chart.positionLegend()
@@ -262,6 +271,8 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.hidden = false
                 self.ShowMenuButton.hidden = false
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                
+                self.RangeControl(0)
                 
             })
             

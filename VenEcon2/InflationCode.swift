@@ -35,6 +35,10 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     //Variables to hold chart data
     var DataInflation: [SChartDataPoint] = []
     
+    //Axes
+    let xAxis = SChartDiscontinuousDateTimeAxis()
+    let yAxis = SChartNumberAxis()
+    
     //Layouts
     @IBOutlet var AllText: UIStackView!
     @IBOutlet var DistanceBetweenAllTextAndChartSV: NSLayoutConstraint!
@@ -99,14 +103,19 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         {
         case 0:
             Start = Utils.shared.YearsAgo(5)
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         case 1:
             Start = Utils.shared.YearsAgo(4)
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         case 2:
             Start = Utils.shared.YearsAgo(3)
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
         case 3:
             Start = Utils.shared.YearsAgo(2)
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
         case 4:
             Start = Utils.shared.YearsAgo(1)
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
         default:
             break;
         }
@@ -216,26 +225,26 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.crosshair?.style.lineWidth = 1
                 
                 // Axes
-                let xAxis = SChartDiscontinuousDateTimeAxis()
-                let yAxis = SChartNumberAxis()
-                xAxis.title = "Date"
-                yAxis.title = "Inflation (2007 = 1)"
-                self.enablePanningAndZoomingOnAxis(xAxis)
-                self.enablePanningAndZoomingOnAxis(yAxis)
-                xAxis.style.lineColor = UIColor.whiteColor()
-                yAxis.style.lineColor = UIColor.whiteColor()
-                xAxis.style.titleStyle.textColor = UIColor.whiteColor()
-                yAxis.style.titleStyle.textColor = UIColor.whiteColor()
-                xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
-                yAxis.rangePaddingLow = 1
-                yAxis.rangePaddingHigh = 1
-                xAxis.style.majorGridLineStyle.showMajorGridLines = false
-                xAxis.style.lineWidth = 1
-                yAxis.style.lineWidth = 1
-                yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.Inflation.values.maxElement()!/100)
+                self.xAxis.title = "Date"
+                self.yAxis.title = "Inflation (2007 = 1)"
+                self.enablePanningAndZoomingOnAxis(self.xAxis)
+                self.enablePanningAndZoomingOnAxis(self.yAxis)
+                self.xAxis.style.lineColor = UIColor.whiteColor()
+                self.yAxis.style.lineColor = UIColor.whiteColor()
+                self.xAxis.style.titleStyle.textColor = UIColor.whiteColor()
+                self.yAxis.style.titleStyle.textColor = UIColor.whiteColor()
+                self.xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
+                self.yAxis.rangePaddingLow = 1
+                self.yAxis.rangePaddingHigh = 1
+                self.xAxis.style.majorGridLineStyle.showMajorGridLines = false
+                self.xAxis.style.lineWidth = 1
+                self.yAxis.style.lineWidth = 1
+                self.yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.Inflation.values.maxElement()!/100)
                 
-                self.chart.xAxis = xAxis
-                self.chart.yAxis = yAxis
+                self.chart.xAxis = self.xAxis
+                self.chart.yAxis = self.yAxis
+                
+                self.chart.clipsToBounds = false
                 
                 self.chart.datasource = self
                 self.chart.positionLegend()
@@ -247,6 +256,8 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.hidden = false
                 self.ShowMenuButton.hidden = false
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                
+                self.RangeControl(0)
                 
             })
             

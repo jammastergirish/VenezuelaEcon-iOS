@@ -26,7 +26,7 @@ class Utils
     let NumberFormatter : NSNumberFormatter = {
         let NumberFormatter = NSNumberFormatter()
         NumberFormatter.numberStyle = .DecimalStyle
-        NumberFormatter.maximumFractionDigits = 1
+        NumberFormatter.maximumFractionDigits = 2
         return NumberFormatter
     } ()
     
@@ -41,19 +41,6 @@ class Utils
     
     
     //Could make these functions or computed variables, says Pat on 20160817
-    /*
-    func DateHistory(let To : String, let From : String?) -> String
-    {
-        if (To=="Today")
-        {
-            return dateFormatter.stringFromDate(NSDate())
-        }
-        
-        if (From==nil)
-        {
-            From = DateHi
-        }
-    }*/
     
     func Today() -> String
     {
