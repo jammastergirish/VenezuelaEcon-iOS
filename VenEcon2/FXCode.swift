@@ -176,7 +176,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             self.Data(json)
             
             //Set all the text.
-            var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(self.Simadi[Utils.shared.Today()]!)! + " <font size=2>BsF/$</font></font>"
+            var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.Simadi, date: Utils.shared.Today()))! + " <font size=2>BsF/$</font></font>"
             var encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
             var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
             do {
@@ -200,7 +200,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
             } catch _ {}
 
-             text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(self.Official[Utils.shared.Today()]!)! + " <font size=2>BsF/$</font></font>"
+             text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.Official, date: Utils.shared.Today()))! + " <font size=2>BsF/$</font></font>"
              encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
              attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
             do {
@@ -209,7 +209,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
             } catch _ {}
 
-            text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(self.BM[Utils.shared.Today()]!)! + " <font size=2>BsF/$</font></font>"
+            text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.stringFromNumber(Utils.shared.GetLatestNonZeroValue(self.BM, date: Utils.shared.Today()))! + " <font size=2>BsF/$</font></font>"
             encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
             attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
             do {

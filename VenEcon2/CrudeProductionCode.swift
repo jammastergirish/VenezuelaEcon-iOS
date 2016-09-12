@@ -139,7 +139,7 @@ class CrudeProductionCode: UIViewController, ENSideMenuDelegate, SChartDatasourc
         loadLocalChartData()
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_crudeproduction&format=json&start=2016-07-31")!
+        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_crudeproduction&format=json&start=2016-06-14")!
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             
@@ -381,7 +381,7 @@ class CrudeProductionCode: UIViewController, ENSideMenuDelegate, SChartDatasourc
         lineSeries.crosshairEnabled = true
         
         let titles : [String] = ["Crude Production (million barrels/day)", "Crude Production (million barrels/day)"]
-        let colors : [UIColor] = [UIColor.blueColor(), UIColor.redColor()]
+        let colors : [UIColor] = [UIColor.greenColor(), UIColor.redColor()]
         
         lineSeries.title = titles[index]
         lineSeries.style().lineColor = colors[index]
