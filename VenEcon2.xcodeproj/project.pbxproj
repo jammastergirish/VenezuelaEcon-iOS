@@ -21,6 +21,9 @@
 		68B1BF111D6C53EA00DC02C5 /* InfData.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B1BF101D6C53EA00DC02C5 /* InfData.json */; };
 		68B1BF131D6C6C6B00DC02C5 /* CrudeProductionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B1BF121D6C6C6B00DC02C5 /* CrudeProductionData.json */; };
 		68B1BF151D6C6D9200DC02C5 /* USOilData.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B1BF141D6C6D9200DC02C5 /* USOilData.json */; };
+		68B48B241DE63DA6002D3574 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68B48B261DE63DA6002D3574 /* Localizable.strings */; };
+		68B48B291DE63DA7002D3574 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68B48B2B1DE63DA7002D3574 /* InfoPlist.strings */; };
+		68B48B2E1DE63DA8002D3574 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68B48B301DE63DA8002D3574 /* InfoPlist.strings */; };
 		68B867E61D63B73800309C56 /* M2Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E51D63B73800309C56 /* M2Code.swift */; };
 		68B867E81D63C0B500309C56 /* MinWageCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E71D63C0B500309C56 /* MinWageCode.swift */; };
 		68B867EA1D63D0A600309C56 /* InflationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E91D63D0A600309C56 /* InflationCode.swift */; };
@@ -64,6 +67,12 @@
 		68B1BF101D6C53EA00DC02C5 /* InfData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = InfData.json; sourceTree = "<group>"; };
 		68B1BF121D6C6C6B00DC02C5 /* CrudeProductionData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CrudeProductionData.json; sourceTree = "<group>"; };
 		68B1BF141D6C6D9200DC02C5 /* USOilData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = USOilData.json; sourceTree = "<group>"; };
+		68B48B1F1DE62CEE002D3574 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		68B48B201DE62CEF002D3574 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		68B48B211DE63B40002D3574 /* VenEcon2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VenEcon2.entitlements; sourceTree = "<group>"; };
+		68B48B251DE63DA6002D3574 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		68B48B2A1DE63DA7002D3574 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		68B48B2F1DE63DA8002D3574 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		68B867E51D63B73800309C56 /* M2Code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M2Code.swift; sourceTree = "<group>"; };
 		68B867E71D63C0B500309C56 /* MinWageCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinWageCode.swift; sourceTree = "<group>"; };
 		68B867E91D63D0A600309C56 /* InflationCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflationCode.swift; sourceTree = "<group>"; };
@@ -129,6 +138,9 @@
 		68D3DB951D593AA600F42648 /* VenEcon2 */ = {
 			isa = PBXGroup;
 			children = (
+				68B48B301DE63DA8002D3574 /* InfoPlist.strings */,
+				68B48B261DE63DA6002D3574 /* Localizable.strings */,
+				68B48B211DE63B40002D3574 /* VenEcon2.entitlements */,
 				68652D401D67DB9500049CBC /* Notes.swift */,
 				68D3DB961D593AA600F42648 /* AppDelegate.swift */,
 				68589DC21D65563400ECBC3E /* Utils.swift */,
@@ -164,6 +176,7 @@
 		68D3DBAA1D593AA700F42648 /* VenEcon2Tests */ = {
 			isa = PBXGroup;
 			children = (
+				68B48B2B1DE63DA7002D3574 /* InfoPlist.strings */,
 				68D3DBAB1D593AA700F42648 /* VenEcon2Tests.swift */,
 				68D3DBAD1D593AA700F42648 /* Info.plist */,
 			);
@@ -260,7 +273,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				68B1BF151D6C6D9200DC02C5 /* USOilData.json in Resources */,
+				68B48B2E1DE63DA8002D3574 /* InfoPlist.strings in Resources */,
 				68814A151D67180A002B88AF /* Images.xcassets in Resources */,
+				68B48B241DE63DA6002D3574 /* Localizable.strings in Resources */,
 				68D3DBA11D593AA600F42648 /* LaunchScreen.storyboard in Resources */,
 				68D3DB9C1D593AA600F42648 /* Main.storyboard in Resources */,
 				68B1BF031D6C47C800DC02C5 /* FXdata.json in Resources */,
@@ -276,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68B48B291DE63DA7002D3574 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,10 +341,35 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		68B48B261DE63DA6002D3574 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68B48B251DE63DA6002D3574 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		68B48B2B1DE63DA7002D3574 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68B48B2A1DE63DA7002D3574 /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		68B48B301DE63DA8002D3574 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68B48B2F1DE63DA8002D3574 /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		68D3DB9A1D593AA600F42648 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				68D3DB9B1D593AA600F42648 /* Base */,
+				68B48B1F1DE62CEE002D3574 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -337,6 +378,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				68D3DBA01D593AA600F42648 /* Base */,
+				68B48B201DE62CEF002D3574 /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -348,6 +390,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -397,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -440,6 +484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VenEcon2/VenEcon2.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -458,6 +503,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VenEcon2/VenEcon2.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

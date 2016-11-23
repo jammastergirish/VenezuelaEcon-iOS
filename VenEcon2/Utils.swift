@@ -122,19 +122,19 @@ class Utils
         
         if (date==Yesterday())
         {
-            ComparisonString = "yesterday"
+            ComparisonString = NSLocalizedString("yesterday", comment: "Comment to help translator")
         }
         if (date==OneWeekAgo())
         {
-            ComparisonString = "a week"
+            ComparisonString = NSLocalizedString("a week", comment: "Comment to help translator")
         }
         if (date==OneMonthAgo())
         {
-            ComparisonString = "a month"
+            ComparisonString = NSLocalizedString("a month", comment: "Comment to help translator")
         }
         if (date==YearsAgo(1))
         {
-            ComparisonString = "a year"
+            ComparisonString = NSLocalizedString("a year", comment: "Comment to help translator")
         }
         if (date==YearsAgo(2))
         {

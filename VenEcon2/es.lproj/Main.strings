@@ -1,0 +1,546 @@
+/* Class = "UIButton"; normalTitle = ">>>"; ObjectID = "0SM-R0-YuW"; */
+"0SM-R0-YuW.normalTitle" = ">>>";
+
+/* Class = "UILabel"; text = "M2 / Reserves"; ObjectID = "0U3-u9-xyv"; */
+"0U3-u9-xyv.text" = "M2 / Reservas";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "0i3-KG-nbz"; */
+"0i3-KG-nbz.text" = "Información";
+
+/* Class = "UILabel"; text = "BlackMarketTwoYear"; ObjectID = "0mC-eX-t4r"; */
+"0mC-eX-t4r.text" = "BlackMarketTwoYear";
+
+/* Class = "UILabel"; text = "2014"; ObjectID = "1bG-2z-WnT"; */
+"1bG-2z-WnT.text" = "2014";
+
+/* Class = "UILabel"; text = "Money Supply"; ObjectID = "1es-2u-m1V"; */
+"1es-2u-m1V.text" = "Money Supply";
+
+/* Class = "UILabel"; text = "- Organization of the Petroleum Exporting Countries"; ObjectID = "2DM-gi-JYF"; */
+"2DM-gi-JYF.text" = "- Organization of the Petroleum Exporting Countries";
+
+/* Class = "UIButton"; normalTitle = ">>>"; ObjectID = "2PT-Sj-8uv"; */
+"2PT-Sj-8uv.normalTitle" = ">>>";
+
+/* Class = "UILabel"; text = "Secondary Sources"; ObjectID = "2gE-yR-Ad6"; */
+"2gE-yR-Ad6.text" = "Secondary Sources";
+
+/* Class = "UILabel"; text = "Receive notifications"; ObjectID = "02q-iR-ofp"; */
+"02q-iR-ofp.text" = "Receive notifications";
+
+/* Class = "UILabel"; text = "M2TwoYear"; ObjectID = "2vK-ue-uUB"; */
+"2vK-ue-uUB.text" = "M2TwoYear";
+
+/* Class = "UIButton"; normalTitle = ">>>"; ObjectID = "3Cp-O8-Bdb"; */
+"3Cp-O8-Bdb.normalTitle" = ">>>";
+
+/* Class = "UILabel"; text = "USexportsOneYear"; ObjectID = "3Za-Q0-D7s"; */
+"3Za-Q0-D7s.text" = "USexportsOneYear";
+
+/* Class = "UILabel"; text = "DIPRO"; ObjectID = "4ca-el-e7h"; */
+"4ca-el-e7h.text" = "DIPRO";
+
+/* Class = "UILabel"; text = "WTI"; ObjectID = "4hF-kV-L5P"; */
+"4hF-kV-L5P.text" = "WTI";
+
+/* Class = "UISegmentedControl"; 4j8-bt-CTJ.segmentTitles[0] = "$"; ObjectID = "4j8-bt-CTJ"; */
+"4j8-bt-CTJ.segmentTitles[0]" = "$";
+
+/* Class = "UISegmentedControl"; 4j8-bt-CTJ.segmentTitles[1] = "BsF"; ObjectID = "4j8-bt-CTJ"; */
+"4j8-bt-CTJ.segmentTitles[1]" = "BsF";
+
+/* Class = "UIButton"; normalTitle = ">>>"; ObjectID = "4yK-P1-E0B"; */
+"4yK-P1-E0B.normalTitle" = ">>>";
+
+/* Class = "UILabel"; text = "Val"; ObjectID = "06o-CT-DFy"; */
+"06o-CT-DFy.text" = "Val";
+
+/* Class = "UITextView"; text = "This app was created by Girish Gupta, a Caracas-based journalist. In real time, data from various sources is compiled into an online database from which your device pulls data. Notifications are fully automated and so very fast and accurate."; ObjectID = "6oX-5M-Wkd"; */
+"6oX-5M-Wkd.text" = "This app was created by Girish Gupta, a Caracas-based journalist. In real time, data from various sources is compiled into an online database from which your device pulls data. Notifications are fully automated and so very fast and accurate.";
+
+/* Class = "UILabel"; text = "VenVal"; ObjectID = "7GQ-Jq-rQe"; */
+"7GQ-Jq-rQe.text" = "VenVal";
+
+/* Class = "UILabel"; text = "Exchange Rates"; ObjectID = "7It-mU-p5V"; */
+"7It-mU-p5V.text" = "Exchange Rates";
+
+/* Class = "UILabel"; text = "VenWeek"; ObjectID = "7TP-hJ-A5t"; */
+"7TP-hJ-A5t.text" = "VenWeek";
+
+/* Class = "UILabel"; text = "- Central Bank of Venezuela"; ObjectID = "7vQ-bZ-Wlk"; */
+"7vQ-bZ-Wlk.text" = "- Central Bank of Venezuela";
+
+/* Class = "UIButton"; normalTitle = ">>>"; ObjectID = "8bP-Dt-75D"; */
+"8bP-Dt-75D.normalTitle" = ">>>";
+
+/* Class = "UIButton"; normalTitle = ">>>"; ObjectID = "8iu-71-Ikb"; */
+"8iu-71-Ikb.normalTitle" = ">>>";
+
+/* Class = "UILabel"; text = "DIPROVal"; ObjectID = "29o-Gd-D8A"; */
+"29o-Gd-D8A.text" = "DIPROVal";
+
+/* Class = "UILabel"; text = "FX Calculator"; ObjectID = "63N-YO-JjB"; */
+"63N-YO-JjB.text" = "FX Calculator";
+
+/* Class = "UILabel"; text = "Foreign Reserves"; ObjectID = "63q-MY-4hB"; */
+"63q-MY-4hB.text" = "Foreign Reserves";
+
+/* Class = "UILabel"; text = "BlackMarketFourYear"; ObjectID = "BpK-6D-uiX"; */
+"BpK-6D-uiX.text" = "BlackMarketFourYear";
+
+/* Class = "UILabel"; text = "USexportsTwoYear"; ObjectID = "DSN-5w-RU9"; */
+"DSN-5w-RU9.text" = "USexportsTwoYear";
+
+/* Class = "UIButton"; normalTitle = ">>>"; ObjectID = "DY6-Ez-Ksd"; */
+"DY6-Ez-Ksd.normalTitle" = ">>>";
+
+/* Class = "UIButton"; normalTitle = "Send comments..."; ObjectID = "E6c-EY-3PH"; */
+"E6c-EY-3PH.normalTitle" = "Send comments...";
+
+/* Class = "UILabel"; text = "- U.S. Energy Information Administration"; ObjectID = "ElQ-X6-E9s"; */
+"ElQ-X6-E9s.text" = "- U.S. Energy Information Administration";
+
+/* Class = "UILabel"; text = "ForeignReservesVal"; ObjectID = "FbI-Sh-lWP"; */
+"FbI-Sh-lWP.text" = "ForeignReservesVal";
+
+/* Class = "UILabel"; text = "USimportsThreeYear"; ObjectID = "Fet-L6-ka5"; */
+"Fet-L6-ka5.text" = "USimportsThreeYear";
+
+/* Class = "UILabel"; text = "M2FiveYear"; ObjectID = "G61-CS-gaR"; */
+"G61-CS-gaR.text" = "M2FiveYear";
+
+/* Class = "UILabel"; text = "OPECWeek"; ObjectID = "Gb8-bU-lcZ"; */
+"Gb8-bU-lcZ.text" = "OPECWeek";
+
+/* Class = "UILabel"; text = "M2Month"; ObjectID = "HM1-3c-hxj"; */
+"HM1-3c-hxj.text" = "M2Month";
+
+/* Class = "UILabel"; text = "WTIYear"; ObjectID = "HSR-jn-QOQ"; */
+"HSR-jn-QOQ.text" = "WTIYear";
+
+/* Class = "UILabel"; text = "DIPROVal"; ObjectID = "HcC-lD-RFg"; */
+"HcC-lD-RFg.text" = "DIPROVal";
+
+/* Class = "UIButton"; normalTitle = "Go to iPhone settings to allow notifications"; ObjectID = "I7A-G7-oxD"; */
+"I7A-G7-oxD.normalTitle" = "Go to iPhone settings to allow notifications";
+
+/* Class = "UISegmentedControl"; Iqu-VB-Pzo.segmentTitles[0] = "15 years"; ObjectID = "Iqu-VB-Pzo"; */
+"Iqu-VB-Pzo.segmentTitles[0]" = "15 years";
+
+/* Class = "UISegmentedControl"; Iqu-VB-Pzo.segmentTitles[1] = "12 years"; ObjectID = "Iqu-VB-Pzo"; */
+"Iqu-VB-Pzo.segmentTitles[1]" = "12 years";
+
+/* Class = "UISegmentedControl"; Iqu-VB-Pzo.segmentTitles[2] = "9 years"; ObjectID = "Iqu-VB-Pzo"; */
+"Iqu-VB-Pzo.segmentTitles[2]" = "9 years";
+
+/* Class = "UISegmentedControl"; Iqu-VB-Pzo.segmentTitles[3] = "6 years"; ObjectID = "Iqu-VB-Pzo"; */
+"Iqu-VB-Pzo.segmentTitles[3]" = "6 years";
+
+/* Class = "UISegmentedControl"; Iqu-VB-Pzo.segmentTitles[4] = "3 years"; ObjectID = "Iqu-VB-Pzo"; */
+"Iqu-VB-Pzo.segmentTitles[4]" = "3 years";
+
+/* Class = "UISegmentedControl"; JBu-Fb-eYq.segmentTitles[0] = "16 years"; ObjectID = "JBu-Fb-eYq"; */
+"JBu-Fb-eYq.segmentTitles[0]" = "16 years";
+
+/* Class = "UISegmentedControl"; JBu-Fb-eYq.segmentTitles[1] = "8 years"; ObjectID = "JBu-Fb-eYq"; */
+"JBu-Fb-eYq.segmentTitles[1]" = "8 years";
+
+/* Class = "UISegmentedControl"; JBu-Fb-eYq.segmentTitles[2] = "4 years"; ObjectID = "JBu-Fb-eYq"; */
+"JBu-Fb-eYq.segmentTitles[2]" = "4 years";
+
+/* Class = "UISegmentedControl"; JBu-Fb-eYq.segmentTitles[3] = "2 years"; ObjectID = "JBu-Fb-eYq"; */
+"JBu-Fb-eYq.segmentTitles[3]" = "2 years";
+
+/* Class = "UISegmentedControl"; JBu-Fb-eYq.segmentTitles[4] = "1 year"; ObjectID = "JBu-Fb-eYq"; */
+"JBu-Fb-eYq.segmentTitles[4]" = "1 year";
+
+/* Class = "UISegmentedControl"; JIR-Ze-I2l.segmentTitles[0] = "16 years"; ObjectID = "JIR-Ze-I2l"; */
+"JIR-Ze-I2l.segmentTitles[0]" = "16 years";
+
+/* Class = "UISegmentedControl"; JIR-Ze-I2l.segmentTitles[1] = "8 years"; ObjectID = "JIR-Ze-I2l"; */
+"JIR-Ze-I2l.segmentTitles[1]" = "8 years";
+
+/* Class = "UISegmentedControl"; JIR-Ze-I2l.segmentTitles[2] = "4 years"; ObjectID = "JIR-Ze-I2l"; */
+"JIR-Ze-I2l.segmentTitles[2]" = "4 years";
+
+/* Class = "UISegmentedControl"; JIR-Ze-I2l.segmentTitles[3] = "2 years"; ObjectID = "JIR-Ze-I2l"; */
+"JIR-Ze-I2l.segmentTitles[3]" = "2 years";
+
+/* Class = "UISegmentedControl"; JIR-Ze-I2l.segmentTitles[4] = "1 year"; ObjectID = "JIR-Ze-I2l"; */
+"JIR-Ze-I2l.segmentTitles[4]" = "1 year";
+
+/* Class = "UILabel"; text = "USexportsVal"; ObjectID = "JVA-jI-j09"; */
+"JVA-jI-j09.text" = "USexportsVal";
+
+/* Class = "UITextField"; placeholder = "Enter a value..."; ObjectID = "KYu-N2-l2Y"; */
+"KYu-N2-l2Y.placeholder" = "Enter a value...";
+
+/* Class = "UILabel"; text = "Inflation"; ObjectID = "L5c-2w-Xj6"; */
+"L5c-2w-Xj6.text" = "Inflation";
+
+/* Class = "UILabel"; text = "ForeignReservesThreeYear"; ObjectID = "LfD-2V-Cgn"; */
+"LfD-2V-Cgn.text" = "ForeignReservesThreeYear";
+
+/* Class = "UILabel"; text = "USexportsFourYear"; ObjectID = "Lno-Hi-RJ8"; */
+"Lno-Hi-RJ8.text" = "USexportsFourYear";
+
+/* Class = "UILabel"; text = "M2TwoYear"; ObjectID = "Lwj-Qn-vMm"; */
+"Lwj-Qn-vMm.text" = "M2TwoYear";
+
+/* Class = "UILabel"; text = "BrentVal"; ObjectID = "M7f-KQ-YZt"; */
+"M7f-KQ-YZt.text" = "BrentVal";
+
+/* Class = "UILabel"; text = "SIMADIVal"; ObjectID = "MlS-9g-SnQ"; */
+"MlS-9g-SnQ.text" = "SIMADIVal";
+
+/* Class = "UILabel"; text = "BlackMarketYesterday"; ObjectID = "N6i-oJ-slI"; */
+"N6i-oJ-slI.text" = "BlackMarketYesterday";
+
+/* Class = "UILabel"; text = "2009"; ObjectID = "ORW-p4-p0z"; */
+"ORW-p4-p0z.text" = "2009";
+
+/* Class = "UILabel"; text = "Direct Comm. with OPEC"; ObjectID = "Oat-0E-E5Q"; */
+"Oat-0E-E5Q.text" = "Direct Comm. with OPEC";
+
+/* Class = "UILabel"; text = "- Venezuela's Ministry of Oil and Mining"; ObjectID = "Oly-tu-M95"; */
+"Oly-tu-M95.text" = "- Venezuela's Ministry of Oil and Mining";
+
+/* Class = "UILabel"; text = "2015"; ObjectID = "Oup-qL-vVd"; */
+"Oup-qL-vVd.text" = "2015";
+
+/* Class = "UILabel"; text = "U.S. Oil"; ObjectID = "OzU-0z-Bic"; */
+"OzU-0z-Bic.text" = "U.S. Oil";
+
+/* Class = "UILabel"; text = "VenTwoYear"; ObjectID = "PTf-dG-0oZ"; */
+"PTf-dG-0oZ.text" = "VenTwoYear";
+
+/* Class = "UILabel"; text = "USimportsVal"; ObjectID = "QHe-ya-5de"; */
+"QHe-ya-5de.text" = "USimportsVal";
+
+/* Class = "UILabel"; text = "M2FourYear"; ObjectID = "QTK-ol-W9b"; */
+"QTK-ol-W9b.text" = "M2FourYear";
+
+/* Class = "UILabel"; text = "USimportsOneYear"; ObjectID = "QgI-v2-YBb"; */
+"QgI-v2-YBb.text" = "USimportsOneYear";
+
+/* Class = "UILabel"; text = "OPECYear"; ObjectID = "QvL-oh-rEl"; */
+"QvL-oh-rEl.text" = "OPECYear";
+
+/* Class = "UILabel"; text = "USimportsFiveYear"; ObjectID = "R9G-Dn-RuD"; */
+"R9G-Dn-RuD.text" = "USimportsFiveYear";
+
+/* Class = "UILabel"; text = "USexportsThreeYear"; ObjectID = "RSZ-5i-zcI"; */
+"RSZ-5i-zcI.text" = "USexportsThreeYear";
+
+/* Class = "UILabel"; text = "OPECVal"; ObjectID = "Rua-Jd-lqk"; */
+"Rua-Jd-lqk.text" = "OPECVal";
+
+/* Class = "UILabel"; text = "2013"; ObjectID = "RxP-dj-U4V"; */
+"RxP-dj-U4V.text" = "2013";
+
+/* Class = "UILabel"; text = "Black Market"; ObjectID = "SJ2-k3-J6Q"; */
+"SJ2-k3-J6Q.text" = "Black Market";
+
+/* Class = "UILabel"; text = "USimportsThreeYear"; ObjectID = "SrA-Kc-kcL"; */
+"SrA-Kc-kcL.text" = "USimportsThreeYear";
+
+/* Class = "UILabel"; text = "ForeignReservesTwoYear"; ObjectID = "TkC-A0-ISy"; */
+"TkC-A0-ISy.text" = "ForeignReservesTwoYear";
+
+/* Class = "UILabel"; text = "Data compiled and updated live from:"; ObjectID = "Tke-ou-nXB"; */
+"Tke-ou-nXB.text" = "Data compiled and updated live from:";
+
+/* Class = "UILabel"; text = "BrentWeek"; ObjectID = "UF3-8M-JT3"; */
+"UF3-8M-JT3.text" = "BrentWeek";
+
+/* Class = "UISegmentedControl"; UMZ-00-2VQ.segmentTitles[0] = "16 years"; ObjectID = "UMZ-00-2VQ"; */
+"UMZ-00-2VQ.segmentTitles[0]" = "16 years";
+
+/* Class = "UISegmentedControl"; UMZ-00-2VQ.segmentTitles[1] = "8 years"; ObjectID = "UMZ-00-2VQ"; */
+"UMZ-00-2VQ.segmentTitles[1]" = "8 years";
+
+/* Class = "UISegmentedControl"; UMZ-00-2VQ.segmentTitles[2] = "4 years"; ObjectID = "UMZ-00-2VQ"; */
+"UMZ-00-2VQ.segmentTitles[2]" = "4 years";
+
+/* Class = "UISegmentedControl"; UMZ-00-2VQ.segmentTitles[3] = "2 years"; ObjectID = "UMZ-00-2VQ"; */
+"UMZ-00-2VQ.segmentTitles[3]" = "2 years";
+
+/* Class = "UISegmentedControl"; UMZ-00-2VQ.segmentTitles[4] = "1 year"; ObjectID = "UMZ-00-2VQ"; */
+"UMZ-00-2VQ.segmentTitles[4]" = "1 year";
+
+/* Class = "UILabel"; text = "ForeignReservesYesterday"; ObjectID = "V7o-By-iQV"; */
+"V7o-By-iQV.text" = "ForeignReservesYesterday";
+
+/* Class = "UILabel"; text = "SIMADIYesterday"; ObjectID = "V9e-4V-T1d"; */
+"V9e-4V-T1d.text" = "SIMADIYesterday";
+
+/* Class = "UILabel"; text = "VersionLabel"; ObjectID = "VbT-dg-zzp"; */
+"VbT-dg-zzp.text" = "VersionLabel";
+
+/* Class = "UILabel"; text = "VenYear"; ObjectID = "VkW-rH-8Op"; */
+"VkW-rH-8Op.text" = "VenYear";
+
+/* Class = "UILabel"; text = "M2_ResVal"; ObjectID = "WEL-or-DUD"; */
+"WEL-or-DUD.text" = "M2_ResVal";
+
+/* Class = "UILabel"; text = "USimportsFourYear"; ObjectID = "WRe-mv-ACi"; */
+"WRe-mv-ACi.text" = "USimportsFourYear";
+
+/* Class = "UILabel"; text = "ForeignReservesYear"; ObjectID = "WSK-CH-OEF"; */
+"WSK-CH-OEF.text" = "ForeignReservesYear";
+
+/* Class = "UILabel"; text = "Crude Production"; ObjectID = "Wva-T6-wol"; */
+"Wva-T6-wol.text" = "Crude Production";
+
+/* Class = "UILabel"; text = "M2Year"; ObjectID = "XGT-HW-8cS"; */
+"XGT-HW-8cS.text" = "M2Year";
+
+/* Class = "UILabel"; text = "VenYear"; ObjectID = "XNf-2d-TJH"; */
+"XNf-2d-TJH.text" = "VenYear";
+
+/* Class = "UISegmentedControl"; XPF-rr-eEv.segmentTitles[0] = "16 years"; ObjectID = "XPF-rr-eEv"; */
+"XPF-rr-eEv.segmentTitles[0]" = "16 years";
+
+/* Class = "UISegmentedControl"; XPF-rr-eEv.segmentTitles[1] = "8 years"; ObjectID = "XPF-rr-eEv"; */
+"XPF-rr-eEv.segmentTitles[1]" = "8 years";
+
+/* Class = "UISegmentedControl"; XPF-rr-eEv.segmentTitles[2] = "4 years"; ObjectID = "XPF-rr-eEv"; */
+"XPF-rr-eEv.segmentTitles[2]" = "4 years";
+
+/* Class = "UISegmentedControl"; XPF-rr-eEv.segmentTitles[3] = "2 years"; ObjectID = "XPF-rr-eEv"; */
+"XPF-rr-eEv.segmentTitles[3]" = "2 years";
+
+/* Class = "UISegmentedControl"; XPF-rr-eEv.segmentTitles[4] = "1 year"; ObjectID = "XPF-rr-eEv"; */
+"XPF-rr-eEv.segmentTitles[4]" = "1 year";
+
+/* Class = "UILabel"; text = "USimportsTwoYear"; ObjectID = "XRa-qF-s6V"; */
+"XRa-qF-s6V.text" = "USimportsTwoYear";
+
+/* Class = "UILabel"; text = "BlackMarketVal"; ObjectID = "YBR-b9-zoQ"; */
+"YBR-b9-zoQ.text" = "BlackMarketVal";
+
+/* Class = "UILabel"; text = "M2ThreeYear"; ObjectID = "Ynu-hx-rjn"; */
+"Ynu-hx-rjn.text" = "M2ThreeYear";
+
+/* Class = "UILabel"; text = "BrentYear"; ObjectID = "Z33-wq-3el"; */
+"Z33-wq-3el.text" = "BrentYear";
+
+/* Class = "UILabel"; text = "OPECTwoYear"; ObjectID = "aK8-2d-foi"; */
+"aK8-2d-foi.text" = "OPECTwoYear";
+
+/* Class = "UILabel"; text = "M2Val"; ObjectID = "bMZ-Gx-c7y"; */
+"bMZ-Gx-c7y.text" = "M2Val";
+
+/* Class = "UILabel"; text = "Imports from Venezuela"; ObjectID = "biM-sa-Ogr"; */
+"biM-sa-Ogr.text" = "Imports from Venezuela";
+
+/* Class = "UILabel"; text = "M2ThreeYear"; ObjectID = "cKL-Y7-lhh"; */
+"cKL-Y7-lhh.text" = "M2ThreeYear";
+
+/* Class = "UISegmentedControl"; cgo-QI-xrY.segmentTitles[0] = "5 years"; ObjectID = "cgo-QI-xrY"; */
+"cgo-QI-xrY.segmentTitles[0]" = "5 years";
+
+/* Class = "UISegmentedControl"; cgo-QI-xrY.segmentTitles[1] = "4 years"; ObjectID = "cgo-QI-xrY"; */
+"cgo-QI-xrY.segmentTitles[1]" = "4 years";
+
+/* Class = "UISegmentedControl"; cgo-QI-xrY.segmentTitles[2] = "3 years"; ObjectID = "cgo-QI-xrY"; */
+"cgo-QI-xrY.segmentTitles[2]" = "3 years";
+
+/* Class = "UISegmentedControl"; cgo-QI-xrY.segmentTitles[3] = "2 years"; ObjectID = "cgo-QI-xrY"; */
+"cgo-QI-xrY.segmentTitles[3]" = "2 years";
+
+/* Class = "UISegmentedControl"; cgo-QI-xrY.segmentTitles[4] = "1 year"; ObjectID = "cgo-QI-xrY"; */
+"cgo-QI-xrY.segmentTitles[4]" = "1 year";
+
+/* Class = "UILabel"; text = "WTIVal"; ObjectID = "coO-6k-T7P"; */
+"coO-6k-T7P.text" = "WTIVal";
+
+/* Class = "UILabel"; text = "Brent"; ObjectID = "d8k-96-4Bb"; */
+"d8k-96-4Bb.text" = "Brent";
+
+/* Class = "UILabel"; text = "2011"; ObjectID = "d51-z2-vNI"; */
+"d51-z2-vNI.text" = "2011";
+
+/* Class = "UILabel"; text = "MinWageVal"; ObjectID = "djT-14-sAM"; */
+"djT-14-sAM.text" = "MinWageVal";
+
+/* Class = "UILabel"; text = "VenTwoYear"; ObjectID = "dsi-nb-9iK"; */
+"dsi-nb-9iK.text" = "VenTwoYear";
+
+/* Class = "UILabel"; text = "M2FourYear"; ObjectID = "etF-zO-Clq"; */
+"etF-zO-Clq.text" = "M2FourYear";
+
+/* Class = "UILabel"; text = "USexportsThreeYear"; ObjectID = "fUq-Dl-yrK"; */
+"fUq-Dl-yrK.text" = "USexportsThreeYear";
+
+/* Class = "UILabel"; text = "- DolarToday"; ObjectID = "fh0-p2-lgA"; */
+"fh0-p2-lgA.text" = "- DolarToday";
+
+/* Class = "UILabel"; text = "SecVal"; ObjectID = "ggW-TF-pQg"; */
+"ggW-TF-pQg.text" = "SecVal";
+
+/* Class = "UILabel"; text = "SIMADIVal"; ObjectID = "h8Q-iV-nYK"; */
+"h8Q-iV-nYK.text" = "SIMADIVal";
+
+/* Class = "UILabel"; text = "USexportsFiveYear"; ObjectID = "hem-Ex-C9v"; */
+"hem-Ex-C9v.text" = "USexportsFiveYear";
+
+/* Class = "UILabel"; text = "USexportsSixYear"; ObjectID = "hnu-bB-Ij2"; */
+"hnu-bB-Ij2.text" = "USexportsSixYear";
+
+/* Class = "UILabel"; text = "BlackMarketMonth"; ObjectID = "hsZ-D8-rqB"; */
+"hsZ-D8-rqB.text" = "BlackMarketMonth";
+
+/* Class = "UILabel"; text = "Exports to Venezuela"; ObjectID = "ijg-Gp-k8j"; */
+"ijg-Gp-k8j.text" = "Exports to Venezuela";
+
+/* Class = "UILabel"; text = "Minimum Wage"; ObjectID = "irI-ol-7Hg"; */
+"irI-ol-7Hg.text" = "Minimum Wage";
+
+/* Class = "UILabel"; text = "VenTwoYear"; ObjectID = "irZ-1g-jHK"; */
+"irZ-1g-jHK.text" = "VenTwoYear";
+
+/* Class = "UILabel"; text = "USimportsTwoYear"; ObjectID = "jO3-3H-pbR"; */
+"jO3-3H-pbR.text" = "USimportsTwoYear";
+
+/* Class = "UILabel"; text = "Venezuela"; ObjectID = "kwk-gR-fc2"; */
+"kwk-gR-fc2.text" = "Venezuela";
+
+/* Class = "UILabel"; text = "DirectVal"; ObjectID = "l1O-ak-yus"; */
+"l1O-ak-yus.text" = "DirectVal";
+
+/* Class = "UILabel"; text = "SIMADI"; ObjectID = "lG2-Jf-fh1"; */
+"lG2-Jf-fh1.text" = "SIMADI";
+
+/* Class = "UILabel"; text = "USexportsTwoYear"; ObjectID = "lWD-q0-WUu"; */
+"lWD-q0-WUu.text" = "USexportsTwoYear";
+
+/* Class = "UILabel"; text = "Oil Prices"; ObjectID = "m9i-CZ-ZXB"; */
+"m9i-CZ-ZXB.text" = "Oil Prices";
+
+/* Class = "UILabel"; text = "BrentTwoYear"; ObjectID = "mGe-iq-b4r"; */
+"mGe-iq-b4r.text" = "BrentTwoYear";
+
+/* Class = "UILabel"; text = "OPEC"; ObjectID = "mgs-WQ-Qfa"; */
+"mgs-WQ-Qfa.text" = "OPEC";
+
+/* Class = "UILabel"; text = "VenTwoYear"; ObjectID = "ocj-KD-oRi"; */
+"ocj-KD-oRi.text" = "VenTwoYear";
+
+/* Class = "UIButton"; normalTitle = ">>>"; ObjectID = "qD9-4L-5wl"; */
+"qD9-4L-5wl.normalTitle" = ">>>";
+
+/* Class = "UILabel"; text = "AnnualInflationVal"; ObjectID = "s3g-c8-nr6"; */
+"s3g-c8-nr6.text" = "AnnualInflationVal";
+
+/* Class = "UILabel"; text = "BlackMarketThreeYear"; ObjectID = "sI4-ig-7CF"; */
+"sI4-ig-7CF.text" = "BlackMarketThreeYear";
+
+/* Class = "UILabel"; text = "SIMADI"; ObjectID = "sNY-9T-lch"; */
+"sNY-9T-lch.text" = "SIMADI";
+
+/* Class = "UILabel"; text = "ForeignReservesMonth"; ObjectID = "sZc-So-dZh"; */
+"sZc-So-dZh.text" = "ForeignReservesMonth";
+
+/* Class = "UILabel"; text = "MonthlyInflationVal"; ObjectID = "swV-bB-bSY"; */
+"swV-bB-bSY.text" = "MonthlyInflationVal";
+
+/* Class = "UILabel"; text = "DIPRO"; ObjectID = "t85-OQ-UKY"; */
+"t85-OQ-UKY.text" = "DIPRO";
+
+/* Class = "UILabel"; text = "USexportsFourYear"; ObjectID = "tOG-1N-oL3"; */
+"tOG-1N-oL3.text" = "USexportsFourYear";
+
+/* Class = "UILabel"; text = "Annual"; ObjectID = "tOd-zs-U4i"; */
+"tOd-zs-U4i.text" = "Annual";
+
+/* Class = "UILabel"; text = "VenTwoYear"; ObjectID = "tTU-gS-O0L"; */
+"tTU-gS-O0L.text" = "VenTwoYear";
+
+/* Class = "UISegmentedControl"; tUy-zn-1Y0.segmentTitles[0] = "15 years"; ObjectID = "tUy-zn-1Y0"; */
+"tUy-zn-1Y0.segmentTitles[0]" = "15 years";
+
+/* Class = "UISegmentedControl"; tUy-zn-1Y0.segmentTitles[1] = "12 years"; ObjectID = "tUy-zn-1Y0"; */
+"tUy-zn-1Y0.segmentTitles[1]" = "12 years";
+
+/* Class = "UISegmentedControl"; tUy-zn-1Y0.segmentTitles[2] = "9 years"; ObjectID = "tUy-zn-1Y0"; */
+"tUy-zn-1Y0.segmentTitles[2]" = "9 years";
+
+/* Class = "UISegmentedControl"; tUy-zn-1Y0.segmentTitles[3] = "6 years"; ObjectID = "tUy-zn-1Y0"; */
+"tUy-zn-1Y0.segmentTitles[3]" = "6 years";
+
+/* Class = "UISegmentedControl"; tUy-zn-1Y0.segmentTitles[4] = "3 years"; ObjectID = "tUy-zn-1Y0"; */
+"tUy-zn-1Y0.segmentTitles[4]" = "3 years";
+
+/* Class = "UILabel"; text = "VenTwoYear"; ObjectID = "tfh-8B-Ycr"; */
+"tfh-8B-Ycr.text" = "VenTwoYear";
+
+/* Class = "UILabel"; text = "USimportsFourYear"; ObjectID = "tn1-sR-dEo"; */
+"tn1-sR-dEo.text" = "USimportsFourYear";
+
+/* Class = "UILabel"; text = "VenWeek"; ObjectID = "uYk-FQ-TfC"; */
+"uYk-FQ-TfC.text" = "VenWeek";
+
+/* Class = "UILabel"; text = "2010"; ObjectID = "un4-oW-HiX"; */
+"un4-oW-HiX.text" = "2010";
+
+/* Class = "UIButton"; normalTitle = ">>>"; ObjectID = "urp-mc-yPO"; */
+"urp-mc-yPO.normalTitle" = ">>>";
+
+/* Class = "UILabel"; text = "M2Year"; ObjectID = "wCJ-D1-e8L"; */
+"wCJ-D1-e8L.text" = "M2Year";
+
+/* Class = "UILabel"; text = "SIMADIYear"; ObjectID = "wXU-HU-rAf"; */
+"wXU-HU-rAf.text" = "SIMADIYear";
+
+/* Class = "UILabel"; text = "Monthly"; ObjectID = "wbA-q7-IKG"; */
+"wbA-q7-IKG.text" = "Monthly";
+
+/* Class = "UISegmentedControl"; woQ-ZR-LOG.segmentTitles[0] = "5 years"; ObjectID = "woQ-ZR-LOG"; */
+"woQ-ZR-LOG.segmentTitles[0]" = "5 years";
+
+/* Class = "UISegmentedControl"; woQ-ZR-LOG.segmentTitles[1] = "4 years"; ObjectID = "woQ-ZR-LOG"; */
+"woQ-ZR-LOG.segmentTitles[1]" = "4 years";
+
+/* Class = "UISegmentedControl"; woQ-ZR-LOG.segmentTitles[2] = "3 years"; ObjectID = "woQ-ZR-LOG"; */
+"woQ-ZR-LOG.segmentTitles[2]" = "3 years";
+
+/* Class = "UISegmentedControl"; woQ-ZR-LOG.segmentTitles[3] = "2 years"; ObjectID = "woQ-ZR-LOG"; */
+"woQ-ZR-LOG.segmentTitles[3]" = "2 years";
+
+/* Class = "UISegmentedControl"; woQ-ZR-LOG.segmentTitles[4] = "1 year"; ObjectID = "woQ-ZR-LOG"; */
+"woQ-ZR-LOG.segmentTitles[4]" = "1 year";
+
+/* Class = "UILabel"; text = "M2Month"; ObjectID = "xCK-pj-npX"; */
+"xCK-pj-npX.text" = "M2Month";
+
+/* Class = "UILabel"; text = "BlackMarketVal"; ObjectID = "xD6-5O-FTX"; */
+"xD6-5O-FTX.text" = "BlackMarketVal";
+
+/* Class = "UILabel"; text = "WTITwoYear"; ObjectID = "xKn-X9-rKe"; */
+"xKn-X9-rKe.text" = "WTITwoYear";
+
+/* Class = "UILabel"; text = "Black Market"; ObjectID = "xaf-R8-Zdq"; */
+"xaf-R8-Zdq.text" = "Black Market";
+
+/* Class = "UILabel"; text = "WTIWeek"; ObjectID = "xpX-F1-lbk"; */
+"xpX-F1-lbk.text" = "WTIWeek";
+
+/* Class = "UILabel"; text = "BlackMarketYear"; ObjectID = "y73-0R-Qxq"; */
+"y73-0R-Qxq.text" = "BlackMarketYear";
+
+/* Class = "UILabel"; text = "SIMADIMonth"; ObjectID = "yak-ra-zmo"; */
+"yak-ra-zmo.text" = "SIMADIMonth";
+
+/* Class = "UILabel"; text = "2012"; ObjectID = "ybN-5M-U9e"; */
+"ybN-5M-U9e.text" = "2012";
+
+/* Class = "UILabel"; text = "USimportsSixYear"; ObjectID = "yfe-fg-rzc"; */
+"yfe-fg-rzc.text" = "USimportsSixYear";
+
+/* Class = "UILabel"; text = "ForeignReservesFourYear"; ObjectID = "z6M-t0-9cl"; */
+"z6M-t0-9cl.text" = "ForeignReservesFourYear";
+
+/* Class = "UIButton"; normalTitle = ">>>"; ObjectID = "zUX-Sh-PI5"; */
+"zUX-Sh-PI5.normalTitle" = ">>>";
+
