@@ -10,7 +10,7 @@ import MessageUI
 class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMenuDelegate {
     
     
-    let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+    let session = URLSession(configuration: URLSessionConfiguration.default)
     
     @IBOutlet weak var Switch: UISwitch!
     @IBOutlet weak var NotificationsButton: UIButton!
@@ -20,7 +20,7 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
     
     @IBOutlet weak var VersionLabel: UILabel!
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         viewDidLoad();
     }
     
@@ -28,7 +28,7 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
     
     func version() -> String {
         //http://stackoverflow.com/questions/24501288/getting-version-and-build-info-with-swift
-        let dictionary = NSBundle.mainBundle().infoDictionary!
+        let dictionary = Bundle.main.infoDictionary!
         let version = dictionary["CFBundleShortVersionString"] as! String
         let build = dictionary["CFBundleVersion"] as! String
         return "\(version) (\(build))"
@@ -39,62 +39,62 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        NotificationsButton.hidden = true
+        NotificationsButton.isHidden = true
         
-        VersionLabel.text = "Version: " + version() + " on " + UIDevice.currentDevice().model
-        
-        
-        Switch.addTarget(self, action: #selector(AboutCode.switchIsChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        VersionLabel.text = "Version: " + version() + " on " + UIDevice.current.model
         
         
-        let notificationType = UIApplication.sharedApplication().currentUserNotificationSettings()!.types
+        Switch.addTarget(self, action: #selector(AboutCode.switchIsChanged(_:)), for: UIControlEvents.valueChanged)
+        
+        
+        let notificationType = UIApplication.shared.currentUserNotificationSettings!.types
         // Does user have iPhone notifications enabled for this app
-        if notificationType == UIUserNotificationType.None
+        if notificationType == UIUserNotificationType()
         { // NO
-            Switch.on = false
-            Switch.enabled = false
+            Switch.isOn = false
+            Switch.isEnabled = false
             print("You need to allow notifications in Settings.")
-            ReceiveNotificationsLabel.textColor = UIColor.lightGrayColor()
-            NotificationsButton.hidden = false
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            ReceiveNotificationsLabel.textColor = UIColor.lightGray
+            NotificationsButton.isHidden = false
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
         else
         { // YES
             
-            ReceiveNotificationsLabel.textColor = UIColor.whiteColor()
+            ReceiveNotificationsLabel.textColor = UIColor.white
             
-            let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+            let session = URLSession(configuration: URLSessionConfiguration.default)
             
-            let defaults = NSUserDefaults.standardUserDefaults()
-            let Token = defaults.stringForKey("DeviceToken")
+            let defaults = UserDefaults.standard
+            let Token = defaults.string(forKey: "DeviceToken")
             
-            let url = NSURL(string: "https://www.venezuelaecon.com/app/notifications.php?todo=check&id=" + Token!)!
-            let request = NSURLRequest(URL: url)
-            let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            let url = URL(string: "https://www.venezuelaecon.com/app/notifications.php?todo=check&id=" + Token!)!
+            let request = URLRequest(url: url)
+            let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
                 
                 guard let data = data else {
                     print("No internet connection")
-                    self.Switch.enabled = false
+                    self.Switch.isEnabled = false
                     return
                 }
                 
-                if let response = String(data: data, encoding: NSUTF8StringEncoding)
+                if let response = String(data: data, encoding: String.Encoding.utf8)
                 {
                     print(response)
                     
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    DispatchQueue.main.async(execute: { () -> Void in
                         if(Int(response)==1)
                         {
-                            self.Switch.on = true
-                            self.Switch.enabled = true
+                            self.Switch.isOn = true
+                            self.Switch.isEnabled = true
                             //Receiving notifications
                         }
                         else
                         {
-                            self.Switch.on = false
-                            self.Switch.enabled = true
+                            self.Switch.isOn = false
+                            self.Switch.isEnabled = true
                             //Not receiving notifications but can
                         }
                     })
@@ -104,10 +104,10 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
                     print("Couldn't do")
                 }
                 
-            }
+            }) 
             
             task.resume()
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
         
         
@@ -116,65 +116,65 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
     }
     
     
-    @IBAction func AllowNotifications(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+    @IBAction func AllowNotifications(_ sender: AnyObject) {
+        UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
     }
     
-    func switchIsChanged(mySwitch: UISwitch) {
+    func switchIsChanged(_ mySwitch: UISwitch) {
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        if mySwitch.on {
+        if mySwitch.isOn {
             
             
-            let notificationType = UIApplication.sharedApplication().currentUserNotificationSettings()!.types
-            if notificationType == UIUserNotificationType.None
+            let notificationType = UIApplication.shared.currentUserNotificationSettings!.types
+            if notificationType == UIUserNotificationType()
             {
                 //This case should never happen as it's checked for above and the button will be disabled.
-                self.Switch.on = false
+                self.Switch.isOn = false
                 print("You need to allow notifications in Settings (but should never see this).")
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 
             }
             else
             {
                 
-                let defaults = NSUserDefaults.standardUserDefaults()
-                let Token = defaults.stringForKey("DeviceToken")
+                let defaults = UserDefaults.standard
+                let Token = defaults.string(forKey: "DeviceToken")
                 
                 print("User wants notifications, device token is " + Token!)
                 
                 
                 
                 
-                let url = NSURL(string: "https://www.venezuelaecon.com/app/notifications.php?todo=add&id=" + Token!)!
-                let request = NSURLRequest(URL: url)
-                let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+                let url = URL(string: "https://www.venezuelaecon.com/app/notifications.php?todo=add&id=" + Token!)!
+                let request = URLRequest(url: url)
+                let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
                     
                     guard let data = data else {
                         print("No internet connection")
-                        self.Switch.on = false
+                        self.Switch.isOn = false
                         return
                     }
                     
-                    if let response = String(data: data, encoding: NSUTF8StringEncoding)
+                    if let response = String(data: data, encoding: String.Encoding.utf8)
                     {
                         
                         // data.writeToFile("/Users/girish/testing.txt", atomically: true)
                         
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        DispatchQueue.main.async(execute: { () -> Void in
                             print(response)
-                            self.Switch.on = true
-                            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                            self.Switch.isOn = true
+                            UIApplication.shared.isNetworkActivityIndicatorVisible = false
                         })
                         
                         
                     } else {
                         print("Couldn't do")
-                        self.Switch.on = false
+                        self.Switch.isOn = false
                     }
                     
-                }
+                }) 
                 
                 task.resume()
                 //print("Done")
@@ -198,40 +198,40 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
             
             
             
-            let defaults = NSUserDefaults.standardUserDefaults()
-            let Token = defaults.stringForKey("DeviceToken")
+            let defaults = UserDefaults.standard
+            let Token = defaults.string(forKey: "DeviceToken")
             
             
             
             
-            let url = NSURL(string: "https://www.venezuelaecon.com/app/notifications.php?todo=remove&id=" + Token!)!
-            let request = NSURLRequest(URL: url)
-            let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            let url = URL(string: "https://www.venezuelaecon.com/app/notifications.php?todo=remove&id=" + Token!)!
+            let request = URLRequest(url: url)
+            let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
                 
                 guard let data = data else {
                     print("didnt download data")
-                    self.Switch.on = true
+                    self.Switch.isOn = true
                     return
                 }
                 
-                if let response = String(data: data, encoding: NSUTF8StringEncoding)
+                if let response = String(data: data, encoding: String.Encoding.utf8)
                 {
                     
                     // data.writeToFile("/Users/girish/testing.txt", atomically: true)
                     
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    DispatchQueue.main.async(execute: { () -> Void in
                         print(response)
-                        self.Switch.on = false
-                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                        self.Switch.isOn = false
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     })
                     
                     
                 } else {
                     print("Couldn't do")
-                    self.Switch.on = true
+                    self.Switch.isOn = true
                 }
                 
-            }
+            }) 
             
             task.resume()
             
@@ -260,26 +260,26 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
 
     
     
-    @IBAction func GoToSettings(sender: AnyObject) {
-           UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+    @IBAction func GoToSettings(_ sender: AnyObject) {
+           UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
     }
     
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
     
     
     
-    @IBAction func EmailButton(sender: AnyObject) {
+    @IBAction func EmailButton(_ sender: AnyObject) {
         if MFMailComposeViewController.canSendMail() {
             let picker = MFMailComposeViewController()
             picker.mailComposeDelegate = self
             picker.setToRecipients(["girish@girish-gupta.com"])
-            picker.setSubject("Venezuela Econ " + version() + " on " + UIDevice.currentDevice().model)
+            picker.setSubject("Venezuela Econ " + version() + " on " + UIDevice.current.model)
             //   picker.setMessageBody(body.text, isHTML: false)
             
             
-            presentViewController(picker, animated: true, completion: nil)
+            present(picker, animated: true, completion: nil)
         }
     }
     
@@ -287,7 +287,7 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
     
     @IBOutlet var ShowMenuButton: UIButton!
     
-    @IBAction func ShowMenu(sender: AnyObject) {
+    @IBAction func ShowMenu(_ sender: AnyObject) {
         toggleSideMenuView()
     }
     

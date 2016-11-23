@@ -30,7 +30,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         BlackMarketVal.text = "..."
         SIMADIVal.text = "..."
@@ -43,43 +43,43 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
         //Date.setValue(UIColor.orangeColor(), forKeyPath: "textColor")
         //Date.maximumDate = NSDate()
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FXCalcCode.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         
         //Internet download session
-        let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        let session = URLSession(configuration: URLSessionConfiguration.default)
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = NSURL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=2016-08-01")!
-        let request = NSURLRequest(URL: url)
-        let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+        let url = URL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=2016-08-01")!
+        let request = URLRequest(url: url)
+        let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             
-            guard let data = data where error == nil else {
+            guard let data = data , error == nil else {
                 print("Didn't download properly")
                 return
             }
             
-            guard let optionalJSON = try? NSJSONSerialization.JSONObjectWithData(data, options: []) as? [[String: AnyObject]],
-                json = optionalJSON else
+            guard let optionalJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: AnyObject]],
+                let json = optionalJSON else
             {
                 print("Did download but the data doesn't look like JSON")
                 return
             }
             
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            DispatchQueue.main.async(execute: { () -> Void in
                 
                 self.Data(json)
                 
 
                 self.DataDownloaded = true
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.Calculate()
                 
             })
             
             
-        }
+        }) 
         task.resume()
 
         
@@ -87,11 +87,11 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
         
 }
     
-@IBAction func NumberChanged(sender: AnyObject) {
+@IBAction func NumberChanged(_ sender: AnyObject) {
         Calculate()
     }
     
-    @IBAction func CurrencySwapped(sender: AnyObject) {
+    @IBAction func CurrencySwapped(_ sender: AnyObject) {
         Calculate()
     }
 
@@ -106,24 +106,24 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
         if DataDownloaded
         {
         //if (Double(Number.text!) != nil)
-            if Utils.shared.NumberFormatter.numberFromString(((Number.text!))) != nil
+            if Utils.shared.NumberFormatter.number(from: ((Number.text!))) != nil
         {
             print("Is number\n")
             if Currency.selectedSegmentIndex == 0
             {
-                Val.text = Utils.shared.CurrencyFormatter.stringFromNumber(Utils.shared.NumberFormatter.numberFromString(((Number.text!)))!)
+                Val.text = Utils.shared.CurrencyFormatter.string(from: Utils.shared.NumberFormatter.number(from: ((Number.text!)))!)
                 //Initial value was dollar
-                BlackMarketVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double((Utils.shared.NumberFormatter.numberFromString(((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))! + " BsF"
-                SIMADIVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double((Utils.shared.NumberFormatter.numberFromString(((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))! + " BsF"
-                DIPROVal.text = Utils.shared.NumberFormatter.stringFromNumber((Double((Utils.shared.NumberFormatter.numberFromString(((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))! + " BsF"
+                BlackMarketVal.text = Utils.shared.NumberFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))! + " BsF"
+                SIMADIVal.text = Utils.shared.NumberFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))! + " BsF"
+                DIPROVal.text = Utils.shared.NumberFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))! + " BsF"
             }
             else if Currency.selectedSegmentIndex == 1
             {
-                Val.text = Utils.shared.NumberFormatter.stringFromNumber(Utils.shared.NumberFormatter.numberFromString(((Number.text!)))!)! + " BsF"
+                Val.text = Utils.shared.NumberFormatter.string(from: Utils.shared.NumberFormatter.number(from: ((Number.text!)))!)! + " BsF"
                 //Initial value was BsF
-                BlackMarketVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double((Utils.shared.NumberFormatter.numberFromString(((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))!
-                SIMADIVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double((Utils.shared.NumberFormatter.numberFromString(((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))!
-                DIPROVal.text = Utils.shared.CurrencyFormatter.stringFromNumber((Double((Utils.shared.NumberFormatter.numberFromString(((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))!
+                BlackMarketVal.text = Utils.shared.CurrencyFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))!
+                SIMADIVal.text = Utils.shared.CurrencyFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))!
+                DIPROVal.text = Utils.shared.CurrencyFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))!
             }
             
         }
@@ -139,15 +139,15 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
     }
     
     
-    func Data(json : [[String : AnyObject]]) {
+    func Data(_ json : [[String : AnyObject]]) {
         
         for dataPoint in json {
             
             guard let
                 dateString = dataPoint["date"] as? String,
-                OfficialVal = dataPoint["official"] as? String,
-                BMVal = dataPoint["bm"] as? String,
-                SimadiVal = dataPoint["simadi"] as? String
+                let OfficialVal = dataPoint["official"] as? String,
+                let BMVal = dataPoint["bm"] as? String,
+                let SimadiVal = dataPoint["simadi"] as? String
                 else {
                     print("Data is JSON but not the JSON variables expected")
                     return
@@ -175,7 +175,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
     
     @IBOutlet var ShowMenuButton: UIButton!
     
-    @IBAction func ShowMenu(sender: AnyObject) {
+    @IBAction func ShowMenu(_ sender: AnyObject) {
         toggleSideMenuView()
     }
     

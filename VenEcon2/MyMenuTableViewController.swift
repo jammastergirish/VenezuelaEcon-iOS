@@ -14,23 +14,23 @@ class MyMenuTableViewController: UITableViewController {
         super.viewDidLoad()
         
         
-        var label = UILabel(frame: CGRectMake(0, 0, 200, 21))
-        label.center = CGPointMake(108, -25)
-        label.textAlignment = NSTextAlignment.Left
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+        label.center = CGPoint(x: 108, y: -25)
+        label.textAlignment = NSTextAlignment.left
         label.text = "VENEZUELA ECON"
-        label.textColor = UIColor.whiteColor()
+        label.textColor = UIColor.white
         self.view.addSubview(label)
         
         // Customize apperance of table view
         tableView.contentInset = UIEdgeInsetsMake(64.0, 0, 0, 0)
-        tableView.separatorStyle = .None
-        tableView.backgroundColor = UIColor.clearColor()
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor.clear
         tableView.scrollsToTop = false
         
         // Preserve selection between presentations
         self.clearsSelectionOnViewWillAppear = false
         //animated: true/false? changed. scrollpostiion?
-        tableView.selectRowAtIndexPath(NSIndexPath(forRow: selectedMenuItem, inSection: 0), animated: true, scrollPosition: .Middle)
+        tableView.selectRow(at: IndexPath(row: selectedMenuItem, section: 0), animated: true, scrollPosition: .middle)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,87 +40,87 @@ class MyMenuTableViewController: UITableViewController {
     
         let labels : [String] = ["Exchange Rates", " • Calculator", "Foreign Reserves", "Inflation", "Money Supply", "Minimum Wage", "Oil Prices", "Crude Production", "U.S. Oil", "About"]
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return labels.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("CELL")
+        var cell = tableView.dequeueReusableCell(withIdentifier: "CELL")
         
         if (cell == nil) {
-            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "CELL")
-            cell!.backgroundColor = UIColor.clearColor()
-            cell!.textLabel?.textColor = UIColor.orangeColor()
-            let selectedBackgroundView = UIView(frame: CGRectMake(0, 0, cell!.frame.size.width, cell!.frame.size.height))
-            selectedBackgroundView.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.2)
+            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "CELL")
+            cell!.backgroundColor = UIColor.clear
+            cell!.textLabel?.textColor = UIColor.orange
+            let selectedBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: cell!.frame.size.width, height: cell!.frame.size.height))
+            selectedBackgroundView.backgroundColor = UIColor.gray.withAlphaComponent(0.2)
             cell!.selectedBackgroundView = selectedBackgroundView
         }
         
-        if (indexPath.row==(labels.count-1))
+        if ((indexPath as NSIndexPath).row==(labels.count-1))
         {
-            cell!.textLabel?.textColor = UIColor.lightGrayColor()
+            cell!.textLabel?.textColor = UIColor.lightGray
         }
 
-         cell!.textLabel!.text = labels[indexPath.row]
+         cell!.textLabel!.text = labels[(indexPath as NSIndexPath).row]
         
         return cell!
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50.0
     }
 
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("did select row: \(indexPath.row)")
+        print("did select row: \((indexPath as NSIndexPath).row)")
         
-        if (indexPath.row == selectedMenuItem) {
+        if ((indexPath as NSIndexPath).row == selectedMenuItem) {
             return
         }
         
-        selectedMenuItem = indexPath.row
+        selectedMenuItem = (indexPath as NSIndexPath).row
         
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         var destViewController : UIViewController
-        switch (indexPath.row) {
+        switch ((indexPath as NSIndexPath).row) {
         case 0:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXViewController")
+            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "FXViewController")
             break
         case 1:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXCalcViewController")
+            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "FXCalcViewController")
             break
         case 2:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ReservesViewController")
+            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "ReservesViewController")
             break
         case 3:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("InflationViewController")
+            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "InflationViewController")
             break
         case 4:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("M2ViewController")
+            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "M2ViewController")
             break
         case 5:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MinWageViewController")
+            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "MinWageViewController")
             break
         case 6:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("OilViewController")
+            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "OilViewController")
             break
         case 7:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("CrudeProductionViewController")
+            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "CrudeProductionViewController")
             break
         case 8:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("USOilViewController")
+            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "USOilViewController")
             break
         case (labels.count-1):
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("AboutViewController")
+            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "AboutViewController")
             break
         default:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FXViewController")
+            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "FXViewController")
             break
         }
         sideMenuController()?.setContentViewController(destViewController)

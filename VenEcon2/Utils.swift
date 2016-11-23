@@ -14,25 +14,25 @@ class Utils
 {
     static let shared = Utils()
     
-    let userCalendar = NSCalendar.currentCalendar()
+    let userCalendar = Calendar.current
     
-    let dateFormatter : NSDateFormatter = {
-        let dateFormatter = NSDateFormatter()
+    let dateFormatter : DateFormatter = {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter
     } ()
     
     
-    let NumberFormatter : NSNumberFormatter = {
-        let NumberFormatter = NSNumberFormatter()
-        NumberFormatter.numberStyle = .DecimalStyle
+    let NumberFormatter : Foundation.NumberFormatter = {
+        let NumberFormatter = Foundation.NumberFormatter()
+        NumberFormatter.numberStyle = .decimal
         NumberFormatter.maximumFractionDigits = 2
         return NumberFormatter
     } ()
     
-    let CurrencyFormatter : NSNumberFormatter = {
-        let CurrencyFormatter = NSNumberFormatter()
-        CurrencyFormatter.numberStyle = .CurrencyStyle
+    let CurrencyFormatter : Foundation.NumberFormatter = {
+        let CurrencyFormatter = Foundation.NumberFormatter()
+        CurrencyFormatter.numberStyle = .currency
         CurrencyFormatter.currencySymbol = "$"
         return CurrencyFormatter
     } ()
@@ -44,17 +44,17 @@ class Utils
     
     func Today() -> String
     {
-        return dateFormatter.stringFromDate(NSDate())
+        return dateFormatter.string(from: Date())
     }
     
     func Yesterday() -> String
     {
-        return dateFormatter.stringFromDate(userCalendar.dateByAddingUnit([.Day], value: -1, toDate: NSDate(), options: [])!)
+        return dateFormatter.string(from: (userCalendar as NSCalendar).date(byAdding: [.day], value: -1, to: Date(), options: [])!)
     }
     
     func OneWeekAgo() -> String
     {
-        return dateFormatter.stringFromDate(userCalendar.dateByAddingUnit([.Day], value: -7, toDate: NSDate(), options: [])!)
+        return dateFormatter.string(from: (userCalendar as NSCalendar).date(byAdding: [.day], value: -7, to: Date(), options: [])!)
     }
     
     func FirstOfThisMonth() -> String
@@ -64,30 +64,30 @@ class Utils
     
     func OneMonthAgo() -> String
     {
-        return dateFormatter.stringFromDate(userCalendar.dateByAddingUnit([.Day], value: -30, toDate: NSDate(), options: [])!)
+        return dateFormatter.string(from: (userCalendar as NSCalendar).date(byAdding: [.day], value: -30, to: Date(), options: [])!)
     }
 
-    func YearsAgo(let number : Int) -> String
+    func YearsAgo(_ number : Int) -> String
     {
-        return dateFormatter.stringFromDate(userCalendar.dateByAddingUnit([.Day], value: -(365*number), toDate: NSDate(), options: [])!)
+        return dateFormatter.string(from: (userCalendar as NSCalendar).date(byAdding: [.day], value: -(365*number), to: Date(), options: [])!)
     }
     
     //I could put the other global functions into this class and call it Utilities or something.
     
-    func DevalPerc(let old : Double, let new : Double) -> Double
+    func DevalPerc(_ old : Double, new : Double) -> Double
     {
         return 100*((1/old)-(1/new))/(1/old)
     }
     
     
-    func PercDiff(let old : Double, let new : Double) -> Double
+    func PercDiff(_ old : Double, new : Double) -> Double
     {
         return 100*(old-new)/old
     }
     
     
     // Wrote this function on 20160810.
-    func GetLatestNonZeroValue(let dict : [String: Double], let date : String) -> Double
+    func GetLatestNonZeroValue(_ dict : [String: Double], date : String) -> Double
     {
         var value : Double? = dict[date]
         if ((value != 0) && (value != nil))
@@ -96,15 +96,15 @@ class Utils
         }
         else
         {
-            let DayBeforeDate = userCalendar.dateByAddingUnit([.Day], value: -1, toDate: dateFormatter.dateFromString(date)!, options: [])
-            value = dict[dateFormatter.stringFromDate(DayBeforeDate!)]
+            let DayBeforeDate = (userCalendar as NSCalendar).date(byAdding: [.day], value: -1, to: dateFormatter.date(from: date)!, options: [])
+            value = dict[dateFormatter.string(from: DayBeforeDate!)]
             if ((value != 0) && (value != nil))
             {
                 return value!
             }
             else
             {
-                return GetLatestNonZeroValue(dict, date: dateFormatter.stringFromDate(DayBeforeDate!))
+                return GetLatestNonZeroValue(dict, date: dateFormatter.string(from: DayBeforeDate!))
             }
         }
     }
@@ -115,7 +115,7 @@ class Utils
     
     
     //Written early 20160815
-    func Compare(let dict : [String: Double], let date : String, let label : UILabel, let type : String?)
+    func Compare(_ dict : [String: Double], date : String, label : UILabel, type : String?)
     {
         
         var ComparisonString : String = ""
@@ -169,7 +169,7 @@ class Utils
             {
                 let text = "<font face=\"Trebuchet MS\" color=#808080>Same as "+ComparisonString+"</font>"
                 
-                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let encodedData = text.data(using: String.Encoding.utf8)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
                     let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
@@ -179,9 +179,9 @@ class Utils
             }
             else if (GetLatestNonZeroValue(dict, date: Today())>comparison)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% in "+ComparisonString+"</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.string(for: abs(DevalPerc(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% in "+ComparisonString+"</font>"
                 
-                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let encodedData = text.data(using: String.Encoding.utf8)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
                     let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
@@ -191,9 +191,9 @@ class Utils
             }
             else if (GetLatestNonZeroValue(dict, date: Today())<comparison)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(DevalPerc(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% in "+ComparisonString+"</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.string(for: abs(DevalPerc(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% in "+ComparisonString+"</font>"
                 
-                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let encodedData = text.data(using: String.Encoding.utf8)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
                     let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
@@ -208,7 +208,7 @@ class Utils
             {
                 let text = "<font face=\"Trebuchet MS\" color=#808080>Same as "+ComparisonString+"</font>"
                 
-                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let encodedData = text.data(using: String.Encoding.utf8)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
                     let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
@@ -218,9 +218,9 @@ class Utils
             }
             else if (GetLatestNonZeroValue(dict, date: Today())>comparison)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% in "+ComparisonString+"</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.string(for: abs(PercDiff(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% in "+ComparisonString+"</font>"
                 
-                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let encodedData = text.data(using: String.Encoding.utf8)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
                     let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
@@ -230,9 +230,9 @@ class Utils
             }
             else if (GetLatestNonZeroValue(dict, date: Today())<comparison)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.stringFromNumber(abs(PercDiff(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% in "+ComparisonString+"</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.string(for: abs(PercDiff(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% in "+ComparisonString+"</font>"
                 
-                let encodedData = text.dataUsingEncoding(NSUTF8StringEncoding)!
+                let encodedData = text.data(using: String.Encoding.utf8)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
                     let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
@@ -247,13 +247,13 @@ class Utils
     
     
     
-    func JSONDataFromFile(fileName: String) -> [[String : AnyObject]] {
+    func JSONDataFromFile(_ fileName: String) -> [[String : AnyObject]] {
         guard let
-            filePath = NSBundle.mainBundle().pathForResource(fileName, ofType: "json"),
-            jsonData = NSData(contentsOfFile: filePath),
-            json = try? NSJSONSerialization.JSONObjectWithData(
-                jsonData,
-                options: NSJSONReadingOptions.AllowFragments
+            filePath = Bundle.main.path(forResource: fileName, ofType: "json"),
+            let jsonData = try? Data(contentsOf: URL(fileURLWithPath: filePath)),
+            let json = try? JSONSerialization.jsonObject(
+                with: jsonData,
+                options: JSONSerialization.ReadingOptions.allowFragments
                 ) as! [[String : AnyObject]]
             else {
                 print("Problem loading JSON file.")
