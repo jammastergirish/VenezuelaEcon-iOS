@@ -155,7 +155,7 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.Data(json)
                 
                 //Set all the text.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.MinWage, date: Utils.shared.Today()))! + " <font size=2>BsF/month</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.MinWage, date: Utils.shared.Today()))! + " <font size=2>BsF/"+NSLocalizedString("month", comment: "")+"</font></font>"
                 var encodedData = text.data(using: String.Encoding.utf8)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -186,8 +186,8 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.crosshair?.style.lineWidth = 1
                 
                 // Axes
-                self.xAxis.title = "Date"
-                self.yAxis.title = "Minimum Wage (BsF / month)"
+                self.xAxis.title = NSLocalizedString("Date", comment: "")
+                self.yAxis.title = ""+NSLocalizedString("Minimum Wage", comment: "")+" (BsF / "+NSLocalizedString("month", comment: "")+")"
                 self.enablePanningAndZoomingOnAxis(self.xAxis)
                 self.enablePanningAndZoomingOnAxis(self.yAxis)
                 self.xAxis.style.lineColor = UIColor.white

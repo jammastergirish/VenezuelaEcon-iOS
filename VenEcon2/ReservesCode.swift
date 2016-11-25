@@ -156,7 +156,7 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.Data(json)
                 
                 //Set all the text.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.string(for: self.Reserves[Utils.shared.Today()]!/1000)! + " <font size=2>billion</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.string(for: self.Reserves[Utils.shared.Today()]!/1000)! + " <font size=2>"+NSLocalizedString("billion", comment: "")+"</font></font>"
                 var encodedData = text.data(using: String.Encoding.utf8)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -189,8 +189,8 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.crosshair?.style.lineWidth = 1
                 
                 // Axes
-                self.xAxis.title = "Date"
-                self.yAxis.title = "Foreign Reserves ($ billion)"
+                self.xAxis.title = NSLocalizedString("Date", comment: "")
+                self.yAxis.title = ""+NSLocalizedString("Foreign Reserves", comment: "")+" ($ "+NSLocalizedString("billion", comment: "")+")"
                 self.enablePanningAndZoomingOnAxis(self.xAxis)
                 self.enablePanningAndZoomingOnAxis(self.yAxis)
                 self.xAxis.style.lineColor = UIColor.white

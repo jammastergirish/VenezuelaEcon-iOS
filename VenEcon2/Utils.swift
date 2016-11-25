@@ -122,43 +122,43 @@ class Utils
         
         if (date==Yesterday())
         {
-            ComparisonString = NSLocalizedString("yesterday", comment: "Comment to help translator")
+            ComparisonString = NSLocalizedString("yesterday", comment: "")
         }
         if (date==OneWeekAgo())
         {
-            ComparisonString = NSLocalizedString("a week", comment: "Comment to help translator")
+            ComparisonString = NSLocalizedString("a week", comment: "")
         }
         if (date==OneMonthAgo())
         {
-            ComparisonString = NSLocalizedString("a month", comment: "Comment to help translator")
+            ComparisonString = NSLocalizedString("a month", comment: "")
         }
         if (date==YearsAgo(1))
         {
-            ComparisonString = NSLocalizedString("a year", comment: "Comment to help translator")
+            ComparisonString = NSLocalizedString("a year", comment: "")
         }
         if (date==YearsAgo(2))
         {
-            ComparisonString = "2 years"
+            ComparisonString = NSLocalizedString("2 years", comment: "")
         }
         if (date==YearsAgo(3))
         {
-            ComparisonString = "3 years"
+            ComparisonString = NSLocalizedString("3 years", comment: "")
         }
         if (date==YearsAgo(4))
         {
-            ComparisonString = "4 years"
+            ComparisonString = NSLocalizedString("4 years", comment: "")
         }
         if (date==YearsAgo(5))
         {
-            ComparisonString = "5 years"
+            ComparisonString = NSLocalizedString("5 years", comment: "")
         }
         if (date==YearsAgo(6))
         {
-            ComparisonString = "6 years"
+            ComparisonString = NSLocalizedString("6 years", comment: "")
         }
         if (date==YearsAgo(7))
         {
-            ComparisonString = "7 years"
+            ComparisonString = NSLocalizedString("7 years", comment: "")
         }
         
         let comparison : Double = GetLatestNonZeroValue(dict, date: date)
@@ -179,7 +179,7 @@ class Utils
             }
             else if (GetLatestNonZeroValue(dict, date: Today())>comparison)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.string(for: abs(DevalPerc(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% in "+ComparisonString+"</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.string(for: abs(DevalPerc(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% " + NSLocalizedString("in", comment: "") + " "+ComparisonString+"</font>"
                 
                 let encodedData = text.data(using: String.Encoding.utf8)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -191,7 +191,7 @@ class Utils
             }
             else if (GetLatestNonZeroValue(dict, date: Today())<comparison)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.string(for: abs(DevalPerc(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% in "+ComparisonString+"</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.string(for: abs(DevalPerc(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% " + NSLocalizedString("in", comment: "") + " "+ComparisonString+"</font>"
                 
                 let encodedData = text.data(using: String.Encoding.utf8)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -218,7 +218,7 @@ class Utils
             }
             else if (GetLatestNonZeroValue(dict, date: Today())>comparison)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.string(for: abs(PercDiff(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% in "+ComparisonString+"</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.string(for: abs(PercDiff(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% " + NSLocalizedString("in", comment: "") + " "+ComparisonString+"</font>"
                 
                 let encodedData = text.data(using: String.Encoding.utf8)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -230,7 +230,7 @@ class Utils
             }
             else if (GetLatestNonZeroValue(dict, date: Today())<comparison)
             {
-                let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.string(for: abs(PercDiff(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% in "+ComparisonString+"</font>"
+                let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.string(for: abs(PercDiff(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% " + NSLocalizedString("in", comment: "") + " "+ComparisonString+"</font>"
                 
                 let encodedData = text.data(using: String.Encoding.utf8)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]

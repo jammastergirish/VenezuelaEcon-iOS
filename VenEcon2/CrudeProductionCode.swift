@@ -160,7 +160,7 @@ class CrudeProductionCode: UIViewController, ENSideMenuDelegate, SChartDatasourc
                 self.Data(json)
                 
                 //Set all the text.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Direct, date: Utils.shared.Today())/1000)! + " <font size=2>million barrels / day</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Direct, date: Utils.shared.Today())/1000)! + " <font size=2>"+NSLocalizedString("million", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("day", comment: "")+"</font></font>"
                 var encodedData = text.data(using: String.Encoding.utf8)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -169,7 +169,7 @@ class CrudeProductionCode: UIViewController, ENSideMenuDelegate, SChartDatasourc
                     
                 } catch _ {}
                 
-                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Secondary, date: Utils.shared.Today())/1000)! + " <font size=2>million barrels / day</font></font>"
+                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Secondary, date: Utils.shared.Today())/1000)! + " <font size=2>"+NSLocalizedString("million", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("day", comment: "")+"</font></font>"
                 encodedData = text.data(using: String.Encoding.utf8)!
                 attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -205,8 +205,8 @@ class CrudeProductionCode: UIViewController, ENSideMenuDelegate, SChartDatasourc
                 self.chart.crosshair?.style.lineWidth = 1
                 
                 // Axes
-                self.xAxis.title = "Date"
-                self.yAxis.title = "Crude Production (million barrels/day)"
+                self.xAxis.title = NSLocalizedString("Date", comment: "")
+                self.yAxis.title = ""+NSLocalizedString("Crude Production", comment: "")+" ("+NSLocalizedString("million", comment: "")+" "+NSLocalizedString("barrels", comment: "")+"/"+NSLocalizedString("day", comment: "")+")"
                 self.enablePanningAndZoomingOnAxis(self.xAxis)
                 self.enablePanningAndZoomingOnAxis(self.yAxis)
                 self.xAxis.style.lineColor = UIColor.white

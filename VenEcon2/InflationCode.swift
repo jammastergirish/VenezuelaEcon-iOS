@@ -225,8 +225,8 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.crosshair?.style.lineWidth = 1
                 
                 // Axes
-                self.xAxis.title = "Date"
-                self.yAxis.title = "Inflation (2007 = 1)"
+                self.xAxis.title = NSLocalizedString("Date", comment: "")
+                self.yAxis.title = ""+NSLocalizedString("Inflation", comment: "")+" (2007 = 1)"
                 self.enablePanningAndZoomingOnAxis(self.xAxis)
                 self.enablePanningAndZoomingOnAxis(self.yAxis)
                 self.xAxis.style.lineColor = UIColor.white

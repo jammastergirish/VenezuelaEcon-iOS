@@ -77,6 +77,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     @IBOutlet var BlackMarketTwoYear: UILabel!
     @IBOutlet var BlackMarketThreeYear: UILabel!
     @IBOutlet var BlackMarketFourYear: UILabel!
+    @IBOutlet var BlackMarketFiveYear: UILabel!
     @IBOutlet var SIMADIMonth: UILabel!
     @IBOutlet var SIMADIYesterday: UILabel!
     @IBOutlet var SIMADIYear: UILabel!
@@ -186,7 +187,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             } catch _ {}
             
             
-            Utils.shared.Compare(self.Simadi, date: Utils.shared.Yesterday(), label: self.SIMADIYesterday, type: "FX")
+            //Utils.shared.Compare(self.Simadi, date: Utils.shared.Yesterday(), label: self.SIMADIYesterday, type: "FX")
             Utils.shared.Compare(self.Simadi, date: Utils.shared.OneMonthAgo(), label: self.SIMADIMonth, type: "FX")
             Utils.shared.Compare(self.Simadi, date: Utils.shared.YearsAgo(1), label: self.SIMADIYear, type: "FX")
             
@@ -219,12 +220,13 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             } catch _ {}
             
             
-            Utils.shared.Compare(self.BM, date: Utils.shared.Yesterday(), label: self.BlackMarketYesterday, type: "FX")
+            //Utils.shared.Compare(self.BM, date: Utils.shared.Yesterday(), label: self.BlackMarketYesterday, type: "FX")
             Utils.shared.Compare(self.BM, date: Utils.shared.OneMonthAgo(), label: self.BlackMarketMonth, type: "FX")
             Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(1), label: self.BlackMarketYear, type: "FX")
             Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(2), label: self.BlackMarketTwoYear, type: "FX")
             Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(3), label: self.BlackMarketThreeYear, type: "FX")
             Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(4), label: self.BlackMarketFourYear, type: "FX")
+            Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(5), label: self.BlackMarketFiveYear, type: "FX")
 
             //DRAW THE GRAPHS
             self.chart.canvasAreaBackgroundColor = UIColor.black
@@ -242,7 +244,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             self.chart.crosshair?.style.lineWidth = 1
             
             // Axes
-            self.xAxis.title = "Date"
+            self.xAxis.title = NSLocalizedString("Date", comment: "")
             self.yAxis.title = "Exchange Rate (" + units + ")"
             self.enablePanningAndZoomingOnAxis(self.xAxis)
             self.enablePanningAndZoomingOnAxis(self.yAxis)
@@ -539,7 +541,7 @@ func sChart(_ chart: ShinobiChart, seriesAt index: Int) -> SChartSeries {
     lineSeries.animationEnabled = false
     lineSeries.crosshairEnabled = true
     
-    let titles : [String] = ["Black Market", "DIPRO", "Simadi", "M2/Reserves", "Site", "Sicad I", "Sicad II", "Supplementary"]
+    let titles : [String] = [NSLocalizedString("Black Market", comment: ""), "DIPRO", "Simadi", NSLocalizedString("M2/Reserves", comment: ""), "Sitme", "Sicad I", "Sicad II", NSLocalizedString("Supplementary", comment: "")]
     let colors : [UIColor] = [UIColor.red, UIColor.green, UIColor.orange, UIColor.white, UIColor.blue, UIColor.purple, UIColor.gray, UIColor.lightGray]
     
     lineSeries.title = titles[index]

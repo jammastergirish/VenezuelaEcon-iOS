@@ -165,7 +165,7 @@ class USOilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 //Set all the text.
                 let number = Utils.shared.GetLatestNonZeroValue(self.USexports, date: Utils.shared.Today())
                 let numberString = Utils.shared.NumberFormatter.string(for: number/1000)
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + numberString! + " <font size=2>billion barrels / year</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + numberString! + " <font size=2>"+NSLocalizedString("billion", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("year", comment: "")+"</font></font>"
                 var encodedData = text.data(using: String.Encoding.utf8)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -174,7 +174,7 @@ class USOilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                 text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.USimports, date: Utils.shared.Today())/1000)! + " <font size=2>billion barrels / year</font></font>"
+                 text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.USimports, date: Utils.shared.Today())/1000)! + " <font size=2>"+NSLocalizedString("billion", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("year", comment: "")+"</font></font>"
                  encodedData = text.data(using: String.Encoding.utf8)!
                  attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -211,8 +211,8 @@ class USOilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.crosshair?.style.lineWidth = 1
                 
                 // Axes
-                self.xAxis.title = "Date"
-                self.yAxis.title = "U.S. Imports/Exports (billion barrels / year)"
+                self.xAxis.title = NSLocalizedString("Date", comment: "")
+                self.yAxis.title = ""+NSLocalizedString("U.S. Imports/Exports", comment: "")+" ("+NSLocalizedString("billion", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("year", comment: "")+")"
                 self.enablePanningAndZoomingOnAxis(self.xAxis)
                 self.enablePanningAndZoomingOnAxis(self.yAxis)
                 self.xAxis.style.lineColor = UIColor.white
