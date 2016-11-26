@@ -165,7 +165,9 @@ class USOilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 //Set all the text.
                 let number = Utils.shared.GetLatestNonZeroValue(self.USexports, date: Utils.shared.Today())
                 let numberString = Utils.shared.NumberFormatter.string(for: number/1000)
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + numberString! + " <font size=2>"+NSLocalizedString("billion", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("year", comment: "")+"</font></font>"
+                var text1 = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + numberString! + " <font size=2>"+NSLocalizedString("billion", comment: "")+" "
+                var text2 = NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("year", comment: "")+"</font></font>"
+                var text = text1+text2
                 var encodedData = text.data(using: String.Encoding.utf8)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {

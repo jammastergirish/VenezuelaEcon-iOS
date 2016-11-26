@@ -14,19 +14,19 @@
 "1bG-2z-WnT.text" = "2014";
 
 /* Class = "UILabel"; text = "Money Supply"; ObjectID = "1es-2u-m1V"; */
-"1es-2u-m1V.text" = "Money Supply";
+"1es-2u-m1V.text" = "Liquidez Monetaria";
 
 /* Class = "UILabel"; text = "- Organization of the Petroleum Exporting Countries"; ObjectID = "2DM-gi-JYF"; */
-"2DM-gi-JYF.text" = "- Organization of the Petroleum Exporting Countries";
+"2DM-gi-JYF.text" = "- Organización de Países Exportadores de Petróleo";
 
 /* Class = "UIButton"; normalTitle = ">>>"; ObjectID = "2PT-Sj-8uv"; */
 "2PT-Sj-8uv.normalTitle" = ">>>";
 
 /* Class = "UILabel"; text = "Secondary Sources"; ObjectID = "2gE-yR-Ad6"; */
-"2gE-yR-Ad6.text" = "Secondary Sources";
+"2gE-yR-Ad6.text" = "Fuentes Secundarias";
 
 /* Class = "UILabel"; text = "Receive notifications"; ObjectID = "02q-iR-ofp"; */
-"02q-iR-ofp.text" = "Receive notifications";
+"02q-iR-ofp.text" = "Recibir Notificaciones";
 
 /* Class = "UILabel"; text = "M2TwoYear"; ObjectID = "2vK-ue-uUB"; */
 "2vK-ue-uUB.text" = "M2TwoYear";
@@ -56,19 +56,19 @@
 "06o-CT-DFy.text" = "Val";
 
 /* Class = "UITextView"; text = "This app was created by Girish Gupta, a Caracas-based journalist. In real time, data from various sources is compiled into an online database from which your device pulls data. Notifications are fully automated and so very fast and accurate."; ObjectID = "6oX-5M-Wkd"; */
-"6oX-5M-Wkd.text" = "This app was created by Girish Gupta, a Caracas-based journalist. In real time, data from various sources is compiled into an online database from which your device pulls data. Notifications are fully automated and so very fast and accurate.";
+"6oX-5M-Wkd.text" = "Esta aplicación fue creada por Girish Gupta, un periodista en Caracas. En tiempo real, datos de diversas fuentes se compilan en una base de datos en línea a partir del cual su dispositivo toma los datos.";
 
 /* Class = "UILabel"; text = "VenVal"; ObjectID = "7GQ-Jq-rQe"; */
 "7GQ-Jq-rQe.text" = "VenVal";
 
 /* Class = "UILabel"; text = "Exchange Rates"; ObjectID = "7It-mU-p5V"; */
-"7It-mU-p5V.text" = "Exchange Rates";
+"7It-mU-p5V.text" = "Tasas de Cambio";
 
 /* Class = "UILabel"; text = "VenWeek"; ObjectID = "7TP-hJ-A5t"; */
 "7TP-hJ-A5t.text" = "VenWeek";
 
 /* Class = "UILabel"; text = "- Central Bank of Venezuela"; ObjectID = "7vQ-bZ-Wlk"; */
-"7vQ-bZ-Wlk.text" = "- Central Bank of Venezuela";
+"7vQ-bZ-Wlk.text" = "- Banco Central de Venezuela";
 
 /* Class = "UIButton"; normalTitle = ">>>"; ObjectID = "8bP-Dt-75D"; */
 "8bP-Dt-75D.normalTitle" = ">>>";
@@ -80,10 +80,10 @@
 "29o-Gd-D8A.text" = "DIPROVal";
 
 /* Class = "UILabel"; text = "FX Calculator"; ObjectID = "63N-YO-JjB"; */
-"63N-YO-JjB.text" = "FX Calculator";
+"63N-YO-JjB.text" = "Calculadora";
 
 /* Class = "UILabel"; text = "Foreign Reserves"; ObjectID = "63q-MY-4hB"; */
-"63q-MY-4hB.text" = "Foreign Reserves";
+"63q-MY-4hB.text" = "Reservas Internacionales";
 
 /* Class = "UILabel"; text = "BlackMarketFourYear"; ObjectID = "BpK-6D-uiX"; */
 "BpK-6D-uiX.text" = "BlackMarketFourYear";
@@ -95,10 +95,10 @@
 "DY6-Ez-Ksd.normalTitle" = ">>>";
 
 /* Class = "UIButton"; normalTitle = "Send comments..."; ObjectID = "E6c-EY-3PH"; */
-"E6c-EY-3PH.normalTitle" = "Send comments...";
+"E6c-EY-3PH.normalTitle" = "Enviar comentarios...";
 
 /* Class = "UILabel"; text = "- U.S. Energy Information Administration"; ObjectID = "ElQ-X6-E9s"; */
-"ElQ-X6-E9s.text" = "- U.S. Energy Information Administration";
+"ElQ-X6-E9s.text" = "- Administración de Información de Energía";
 
 /* Class = "UILabel"; text = "ForeignReservesVal"; ObjectID = "FbI-Sh-lWP"; */
 "FbI-Sh-lWP.text" = "ForeignReservesVal";
@@ -122,61 +122,61 @@
 "HcC-lD-RFg.text" = "DIPROVal";
 
 /* Class = "UIButton"; normalTitle = "Go to iPhone settings to allow notifications"; ObjectID = "I7A-G7-oxD"; */
-"I7A-G7-oxD.normalTitle" = "Go to iPhone settings to allow notifications";
+"I7A-G7-oxD.normalTitle" = "Ir a la configuración del iPhone para permitir notificaciones";
 
 /* Class = "UISegmentedControl"; Iqu-VB-Pzo.segmentTitles[0] = "15 years"; ObjectID = "Iqu-VB-Pzo"; */
-"Iqu-VB-Pzo.segmentTitles[0]" = "15 years";
+"Iqu-VB-Pzo.segmentTitles[0]" = "15 años";
 
 /* Class = "UISegmentedControl"; Iqu-VB-Pzo.segmentTitles[1] = "12 years"; ObjectID = "Iqu-VB-Pzo"; */
-"Iqu-VB-Pzo.segmentTitles[1]" = "12 years";
+"Iqu-VB-Pzo.segmentTitles[1]" = "12 años";
 
 /* Class = "UISegmentedControl"; Iqu-VB-Pzo.segmentTitles[2] = "9 years"; ObjectID = "Iqu-VB-Pzo"; */
-"Iqu-VB-Pzo.segmentTitles[2]" = "9 years";
+"Iqu-VB-Pzo.segmentTitles[2]" = "9 años";
 
 /* Class = "UISegmentedControl"; Iqu-VB-Pzo.segmentTitles[3] = "6 years"; ObjectID = "Iqu-VB-Pzo"; */
-"Iqu-VB-Pzo.segmentTitles[3]" = "6 years";
+"Iqu-VB-Pzo.segmentTitles[3]" = "6 años";
 
 /* Class = "UISegmentedControl"; Iqu-VB-Pzo.segmentTitles[4] = "3 years"; ObjectID = "Iqu-VB-Pzo"; */
-"Iqu-VB-Pzo.segmentTitles[4]" = "3 years";
+"Iqu-VB-Pzo.segmentTitles[4]" = "3 años";
 
 /* Class = "UISegmentedControl"; JBu-Fb-eYq.segmentTitles[0] = "16 years"; ObjectID = "JBu-Fb-eYq"; */
-"JBu-Fb-eYq.segmentTitles[0]" = "16 years";
+"JBu-Fb-eYq.segmentTitles[0]" = "16 años";
 
 /* Class = "UISegmentedControl"; JBu-Fb-eYq.segmentTitles[1] = "8 years"; ObjectID = "JBu-Fb-eYq"; */
-"JBu-Fb-eYq.segmentTitles[1]" = "8 years";
+"JBu-Fb-eYq.segmentTitles[1]" = "8 años";
 
 /* Class = "UISegmentedControl"; JBu-Fb-eYq.segmentTitles[2] = "4 years"; ObjectID = "JBu-Fb-eYq"; */
-"JBu-Fb-eYq.segmentTitles[2]" = "4 years";
+"JBu-Fb-eYq.segmentTitles[2]" = "4 años";
 
 /* Class = "UISegmentedControl"; JBu-Fb-eYq.segmentTitles[3] = "2 years"; ObjectID = "JBu-Fb-eYq"; */
-"JBu-Fb-eYq.segmentTitles[3]" = "2 years";
+"JBu-Fb-eYq.segmentTitles[3]" = "2 años";
 
 /* Class = "UISegmentedControl"; JBu-Fb-eYq.segmentTitles[4] = "1 year"; ObjectID = "JBu-Fb-eYq"; */
-"JBu-Fb-eYq.segmentTitles[4]" = "1 year";
+"JBu-Fb-eYq.segmentTitles[4]" = "1 año";
 
 /* Class = "UISegmentedControl"; JIR-Ze-I2l.segmentTitles[0] = "16 years"; ObjectID = "JIR-Ze-I2l"; */
-"JIR-Ze-I2l.segmentTitles[0]" = "16 years";
+"JIR-Ze-I2l.segmentTitles[0]" = "16 años";
 
 /* Class = "UISegmentedControl"; JIR-Ze-I2l.segmentTitles[1] = "8 years"; ObjectID = "JIR-Ze-I2l"; */
-"JIR-Ze-I2l.segmentTitles[1]" = "8 years";
+"JIR-Ze-I2l.segmentTitles[1]" = "8 años";
 
 /* Class = "UISegmentedControl"; JIR-Ze-I2l.segmentTitles[2] = "4 years"; ObjectID = "JIR-Ze-I2l"; */
-"JIR-Ze-I2l.segmentTitles[2]" = "4 years";
+"JIR-Ze-I2l.segmentTitles[2]" = "4 años";
 
 /* Class = "UISegmentedControl"; JIR-Ze-I2l.segmentTitles[3] = "2 years"; ObjectID = "JIR-Ze-I2l"; */
-"JIR-Ze-I2l.segmentTitles[3]" = "2 years";
+"JIR-Ze-I2l.segmentTitles[3]" = "2 años";
 
 /* Class = "UISegmentedControl"; JIR-Ze-I2l.segmentTitles[4] = "1 year"; ObjectID = "JIR-Ze-I2l"; */
-"JIR-Ze-I2l.segmentTitles[4]" = "1 year";
+"JIR-Ze-I2l.segmentTitles[4]" = "1 año";
 
 /* Class = "UILabel"; text = "USexportsVal"; ObjectID = "JVA-jI-j09"; */
 "JVA-jI-j09.text" = "USexportsVal";
 
 /* Class = "UITextField"; placeholder = "Enter a value..."; ObjectID = "KYu-N2-l2Y"; */
-"KYu-N2-l2Y.placeholder" = "Enter a value...";
+"KYu-N2-l2Y.placeholder" = "Introduzca un valor...";
 
 /* Class = "UILabel"; text = "Inflation"; ObjectID = "L5c-2w-Xj6"; */
-"L5c-2w-Xj6.text" = "Inflation";
+"L5c-2w-Xj6.text" = "Inflación";
 
 /* Class = "UILabel"; text = "ForeignReservesThreeYear"; ObjectID = "LfD-2V-Cgn"; */
 "LfD-2V-Cgn.text" = "ForeignReservesThreeYear";
@@ -200,16 +200,16 @@
 "ORW-p4-p0z.text" = "2009";
 
 /* Class = "UILabel"; text = "Direct Comm. with OPEC"; ObjectID = "Oat-0E-E5Q"; */
-"Oat-0E-E5Q.text" = "Direct Comm. with OPEC";
+"Oat-0E-E5Q.text" = "Com. Directa con OPEP";
 
 /* Class = "UILabel"; text = "- Venezuela's Ministry of Oil and Mining"; ObjectID = "Oly-tu-M95"; */
-"Oly-tu-M95.text" = "- Venezuela's Ministry of Oil and Mining";
+"Oly-tu-M95.text" = "- Ministerio de Petróleo y Minería";
 
 /* Class = "UILabel"; text = "2015"; ObjectID = "Oup-qL-vVd"; */
 "Oup-qL-vVd.text" = "2015";
 
 /* Class = "UILabel"; text = "U.S. Oil"; ObjectID = "OzU-0z-Bic"; */
-"OzU-0z-Bic.text" = "U.S. Oil";
+"OzU-0z-Bic.text" = "Intercambio Petrolero";
 
 /* Class = "UILabel"; text = "VenTwoYear"; ObjectID = "PTf-dG-0oZ"; */
 "PTf-dG-0oZ.text" = "VenTwoYear";
@@ -239,7 +239,7 @@
 "RxP-dj-U4V.text" = "2013";
 
 /* Class = "UILabel"; text = "Black Market"; ObjectID = "SJ2-k3-J6Q"; */
-"SJ2-k3-J6Q.text" = "Black Market";
+"SJ2-k3-J6Q.text" = "Tasa Paralela";
 
 /* Class = "UILabel"; text = "USimportsThreeYear"; ObjectID = "SrA-Kc-kcL"; */
 "SrA-Kc-kcL.text" = "USimportsThreeYear";
@@ -248,25 +248,25 @@
 "TkC-A0-ISy.text" = "ForeignReservesTwoYear";
 
 /* Class = "UILabel"; text = "Data compiled and updated live from:"; ObjectID = "Tke-ou-nXB"; */
-"Tke-ou-nXB.text" = "Data compiled and updated live from:";
+"Tke-ou-nXB.text" = "Los datos están compilados e actualizados en vivo desde:";
 
 /* Class = "UILabel"; text = "BrentWeek"; ObjectID = "UF3-8M-JT3"; */
 "UF3-8M-JT3.text" = "BrentWeek";
 
 /* Class = "UISegmentedControl"; UMZ-00-2VQ.segmentTitles[0] = "16 years"; ObjectID = "UMZ-00-2VQ"; */
-"UMZ-00-2VQ.segmentTitles[0]" = "16 years";
+"UMZ-00-2VQ.segmentTitles[0]" = "16 años";
 
 /* Class = "UISegmentedControl"; UMZ-00-2VQ.segmentTitles[1] = "8 years"; ObjectID = "UMZ-00-2VQ"; */
-"UMZ-00-2VQ.segmentTitles[1]" = "8 years";
+"UMZ-00-2VQ.segmentTitles[1]" = "8 años";
 
 /* Class = "UISegmentedControl"; UMZ-00-2VQ.segmentTitles[2] = "4 years"; ObjectID = "UMZ-00-2VQ"; */
-"UMZ-00-2VQ.segmentTitles[2]" = "4 years";
+"UMZ-00-2VQ.segmentTitles[2]" = "4 años";
 
 /* Class = "UISegmentedControl"; UMZ-00-2VQ.segmentTitles[3] = "2 years"; ObjectID = "UMZ-00-2VQ"; */
-"UMZ-00-2VQ.segmentTitles[3]" = "2 years";
+"UMZ-00-2VQ.segmentTitles[3]" = "2 años";
 
 /* Class = "UISegmentedControl"; UMZ-00-2VQ.segmentTitles[4] = "1 year"; ObjectID = "UMZ-00-2VQ"; */
-"UMZ-00-2VQ.segmentTitles[4]" = "1 year";
+"UMZ-00-2VQ.segmentTitles[4]" = "1 años";
 
 /* Class = "UILabel"; text = "ForeignReservesYesterday"; ObjectID = "V7o-By-iQV"; */
 "V7o-By-iQV.text" = "ForeignReservesYesterday";
@@ -290,7 +290,7 @@
 "WSK-CH-OEF.text" = "ForeignReservesYear";
 
 /* Class = "UILabel"; text = "Crude Production"; ObjectID = "Wva-T6-wol"; */
-"Wva-T6-wol.text" = "Crude Production";
+"Wva-T6-wol.text" = "Producción de Crudo";
 
 /* Class = "UILabel"; text = "M2Year"; ObjectID = "XGT-HW-8cS"; */
 "XGT-HW-8cS.text" = "M2Year";
@@ -299,19 +299,19 @@
 "XNf-2d-TJH.text" = "VenYear";
 
 /* Class = "UISegmentedControl"; XPF-rr-eEv.segmentTitles[0] = "16 years"; ObjectID = "XPF-rr-eEv"; */
-"XPF-rr-eEv.segmentTitles[0]" = "16 years";
+"XPF-rr-eEv.segmentTitles[0]" = "16 años";
 
 /* Class = "UISegmentedControl"; XPF-rr-eEv.segmentTitles[1] = "8 years"; ObjectID = "XPF-rr-eEv"; */
-"XPF-rr-eEv.segmentTitles[1]" = "8 years";
+"XPF-rr-eEv.segmentTitles[1]" = "8 años";
 
 /* Class = "UISegmentedControl"; XPF-rr-eEv.segmentTitles[2] = "4 years"; ObjectID = "XPF-rr-eEv"; */
-"XPF-rr-eEv.segmentTitles[2]" = "4 years";
+"XPF-rr-eEv.segmentTitles[2]" = "4 años";
 
 /* Class = "UISegmentedControl"; XPF-rr-eEv.segmentTitles[3] = "2 years"; ObjectID = "XPF-rr-eEv"; */
-"XPF-rr-eEv.segmentTitles[3]" = "2 years";
+"XPF-rr-eEv.segmentTitles[3]" = "2 años";
 
 /* Class = "UISegmentedControl"; XPF-rr-eEv.segmentTitles[4] = "1 year"; ObjectID = "XPF-rr-eEv"; */
-"XPF-rr-eEv.segmentTitles[4]" = "1 year";
+"XPF-rr-eEv.segmentTitles[4]" = "1 año";
 
 /* Class = "UILabel"; text = "USimportsTwoYear"; ObjectID = "XRa-qF-s6V"; */
 "XRa-qF-s6V.text" = "USimportsTwoYear";
@@ -332,25 +332,25 @@
 "bMZ-Gx-c7y.text" = "M2Val";
 
 /* Class = "UILabel"; text = "Imports from Venezuela"; ObjectID = "biM-sa-Ogr"; */
-"biM-sa-Ogr.text" = "Imports from Venezuela";
+"biM-sa-Ogr.text" = "EE.UU. Importaciones desde Venezuela";
 
 /* Class = "UILabel"; text = "M2ThreeYear"; ObjectID = "cKL-Y7-lhh"; */
 "cKL-Y7-lhh.text" = "M2ThreeYear";
 
 /* Class = "UISegmentedControl"; cgo-QI-xrY.segmentTitles[0] = "5 years"; ObjectID = "cgo-QI-xrY"; */
-"cgo-QI-xrY.segmentTitles[0]" = "5 years";
+"cgo-QI-xrY.segmentTitles[0]" = "5 años";
 
 /* Class = "UISegmentedControl"; cgo-QI-xrY.segmentTitles[1] = "4 years"; ObjectID = "cgo-QI-xrY"; */
-"cgo-QI-xrY.segmentTitles[1]" = "4 years";
+"cgo-QI-xrY.segmentTitles[1]" = "4 años";
 
 /* Class = "UISegmentedControl"; cgo-QI-xrY.segmentTitles[2] = "3 years"; ObjectID = "cgo-QI-xrY"; */
-"cgo-QI-xrY.segmentTitles[2]" = "3 years";
+"cgo-QI-xrY.segmentTitles[2]" = "3 años";
 
 /* Class = "UISegmentedControl"; cgo-QI-xrY.segmentTitles[3] = "2 years"; ObjectID = "cgo-QI-xrY"; */
-"cgo-QI-xrY.segmentTitles[3]" = "2 years";
+"cgo-QI-xrY.segmentTitles[3]" = "2 años";
 
 /* Class = "UISegmentedControl"; cgo-QI-xrY.segmentTitles[4] = "1 year"; ObjectID = "cgo-QI-xrY"; */
-"cgo-QI-xrY.segmentTitles[4]" = "1 year";
+"cgo-QI-xrY.segmentTitles[4]" = "1 años";
 
 /* Class = "UILabel"; text = "WTIVal"; ObjectID = "coO-6k-T7P"; */
 "coO-6k-T7P.text" = "WTIVal";
@@ -392,10 +392,10 @@
 "hsZ-D8-rqB.text" = "BlackMarketMonth";
 
 /* Class = "UILabel"; text = "Exports to Venezuela"; ObjectID = "ijg-Gp-k8j"; */
-"ijg-Gp-k8j.text" = "Exports to Venezuela";
+"ijg-Gp-k8j.text" = "EE.UU. Exportaciones a Venezuela";
 
 /* Class = "UILabel"; text = "Minimum Wage"; ObjectID = "irI-ol-7Hg"; */
-"irI-ol-7Hg.text" = "Minimum Wage";
+"irI-ol-7Hg.text" = "Salario Minimo";
 
 /* Class = "UILabel"; text = "VenTwoYear"; ObjectID = "irZ-1g-jHK"; */
 "irZ-1g-jHK.text" = "VenTwoYear";
@@ -416,7 +416,7 @@
 "lWD-q0-WUu.text" = "USexportsTwoYear";
 
 /* Class = "UILabel"; text = "Oil Prices"; ObjectID = "m9i-CZ-ZXB"; */
-"m9i-CZ-ZXB.text" = "Oil Prices";
+"m9i-CZ-ZXB.text" = "Precios del Petroleo";
 
 /* Class = "UILabel"; text = "BrentTwoYear"; ObjectID = "mGe-iq-b4r"; */
 "mGe-iq-b4r.text" = "BrentTwoYear";
@@ -458,19 +458,19 @@
 "tTU-gS-O0L.text" = "VenTwoYear";
 
 /* Class = "UISegmentedControl"; tUy-zn-1Y0.segmentTitles[0] = "15 years"; ObjectID = "tUy-zn-1Y0"; */
-"tUy-zn-1Y0.segmentTitles[0]" = "15 years";
+"tUy-zn-1Y0.segmentTitles[0]" = "15 años";
 
 /* Class = "UISegmentedControl"; tUy-zn-1Y0.segmentTitles[1] = "12 years"; ObjectID = "tUy-zn-1Y0"; */
-"tUy-zn-1Y0.segmentTitles[1]" = "12 years";
+"tUy-zn-1Y0.segmentTitles[1]" = "12 años";
 
 /* Class = "UISegmentedControl"; tUy-zn-1Y0.segmentTitles[2] = "9 years"; ObjectID = "tUy-zn-1Y0"; */
-"tUy-zn-1Y0.segmentTitles[2]" = "9 years";
+"tUy-zn-1Y0.segmentTitles[2]" = "9 años";
 
 /* Class = "UISegmentedControl"; tUy-zn-1Y0.segmentTitles[3] = "6 years"; ObjectID = "tUy-zn-1Y0"; */
-"tUy-zn-1Y0.segmentTitles[3]" = "6 years";
+"tUy-zn-1Y0.segmentTitles[3]" = "6 años";
 
 /* Class = "UISegmentedControl"; tUy-zn-1Y0.segmentTitles[4] = "3 years"; ObjectID = "tUy-zn-1Y0"; */
-"tUy-zn-1Y0.segmentTitles[4]" = "3 years";
+"tUy-zn-1Y0.segmentTitles[4]" = "3 años";
 
 /* Class = "UILabel"; text = "VenTwoYear"; ObjectID = "tfh-8B-Ycr"; */
 "tfh-8B-Ycr.text" = "VenTwoYear";
@@ -494,22 +494,22 @@
 "wXU-HU-rAf.text" = "SIMADIYear";
 
 /* Class = "UILabel"; text = "Monthly"; ObjectID = "wbA-q7-IKG"; */
-"wbA-q7-IKG.text" = "Monthly";
+"wbA-q7-IKG.text" = "Mensual";
 
 /* Class = "UISegmentedControl"; woQ-ZR-LOG.segmentTitles[0] = "5 years"; ObjectID = "woQ-ZR-LOG"; */
-"woQ-ZR-LOG.segmentTitles[0]" = "5 years";
+"woQ-ZR-LOG.segmentTitles[0]" = "5 años";
 
 /* Class = "UISegmentedControl"; woQ-ZR-LOG.segmentTitles[1] = "4 years"; ObjectID = "woQ-ZR-LOG"; */
-"woQ-ZR-LOG.segmentTitles[1]" = "4 years";
+"woQ-ZR-LOG.segmentTitles[1]" = "4 años";
 
 /* Class = "UISegmentedControl"; woQ-ZR-LOG.segmentTitles[2] = "3 years"; ObjectID = "woQ-ZR-LOG"; */
-"woQ-ZR-LOG.segmentTitles[2]" = "3 years";
+"woQ-ZR-LOG.segmentTitles[2]" = "3 años";
 
 /* Class = "UISegmentedControl"; woQ-ZR-LOG.segmentTitles[3] = "2 years"; ObjectID = "woQ-ZR-LOG"; */
-"woQ-ZR-LOG.segmentTitles[3]" = "2 years";
+"woQ-ZR-LOG.segmentTitles[3]" = "2 años";
 
 /* Class = "UISegmentedControl"; woQ-ZR-LOG.segmentTitles[4] = "1 year"; ObjectID = "woQ-ZR-LOG"; */
-"woQ-ZR-LOG.segmentTitles[4]" = "1 year";
+"woQ-ZR-LOG.segmentTitles[4]" = "1 año";
 
 /* Class = "UILabel"; text = "M2Month"; ObjectID = "xCK-pj-npX"; */
 "xCK-pj-npX.text" = "M2Month";
@@ -521,7 +521,7 @@
 "xKn-X9-rKe.text" = "WTITwoYear";
 
 /* Class = "UILabel"; text = "Black Market"; ObjectID = "xaf-R8-Zdq"; */
-"xaf-R8-Zdq.text" = "Black Market";
+"xaf-R8-Zdq.text" = "Tasa Paralela";
 
 /* Class = "UILabel"; text = "WTIWeek"; ObjectID = "xpX-F1-lbk"; */
 "xpX-F1-lbk.text" = "WTIWeek";

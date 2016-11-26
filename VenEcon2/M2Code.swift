@@ -120,7 +120,7 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.navigationController?.isNavigationBarHidden = true
         
         //Telling what units we're using. Hopefully will be able to shift all this later
-        var units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
+        //var units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
         
         //Hide everything on loading
         self.Header.isHidden = true

@@ -1,6 +1,21 @@
 
+/* Class = "WKInterfaceLabel"; text = "Foreign Reserves"; ObjectID = "C51-b2-9TX"; */
+"C51-b2-9TX.text" = "Reservas Internacionales";
+
 /* Class = "WKInterfaceLabel"; text = "Alert Label"; ObjectID = "IdU-wH-bcW"; */
 "IdU-wH-bcW.text" = "Alert Label";
 
-/* Class = "WKInterfaceLabel"; text = "Black Market Echange Rate"; ObjectID = "qv9-il-Gvg"; */
-"qv9-il-Gvg.text" = "Black Market Echange Rate";
+/* Class = "WKInterfaceLabel"; text = "--"; ObjectID = "LpB-VK-FxK"; */
+"LpB-VK-FxK.text" = "--";
+
+/* Class = "WKInterfaceLabel"; text = "SIMADI"; ObjectID = "UBN-Jl-mHI"; */
+"UBN-Jl-mHI.text" = "SIMADI";
+
+/* Class = "WKInterfaceLabel"; text = "--"; ObjectID = "VAX-LK-AXw"; */
+"VAX-LK-AXw.text" = "--";
+
+/* Class = "WKInterfaceLabel"; text = "Black Market"; ObjectID = "qv9-il-Gvg"; */
+"qv9-il-Gvg.text" = "Tasa Palalela";
+
+/* Class = "WKInterfaceLabel"; text = "--"; ObjectID = "z1F-19-hF9"; */
+"z1F-19-hF9.text" = "--";

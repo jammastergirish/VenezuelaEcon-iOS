@@ -142,7 +142,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.navigationController?.isNavigationBarHidden = true
         
         //Telling what units we're using. Hopefully will be able to shift all this later
-        var units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
+        let units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
         
         //Hide everything while loading
         self.Header.isHidden = true
@@ -245,7 +245,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             // Axes
             self.xAxis.title = NSLocalizedString("Date", comment: "")
-            self.yAxis.title = "Exchange Rate (" + units + ")"
+            self.yAxis.title = NSLocalizedString("Exchange Rate", comment: "")+" (" + units + ")"
             self.enablePanningAndZoomingOnAxis(self.xAxis)
             self.enablePanningAndZoomingOnAxis(self.yAxis)
             self.xAxis.style.lineColor = UIColor.white

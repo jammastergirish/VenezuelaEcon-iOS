@@ -137,7 +137,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.navigationController?.isNavigationBarHidden = true
         
         //Telling what units we're using. Hopefully will be able to shift all this later
-        var units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
+        //var units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
         
         //Loading so everything hidden. I can't seem to add other stuff to this. Better way to hide/show everything?
         self.Header.isHidden = true
