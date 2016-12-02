@@ -227,6 +227,9 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(3), label: self.BlackMarketThreeYear, type: "FX")
             Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(4), label: self.BlackMarketFourYear, type: "FX")
             Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(5), label: self.BlackMarketFiveYear, type: "FX")
+            
+         
+
 
             //DRAW THE GRAPHS
             self.chart.canvasAreaBackgroundColor = UIColor.black
@@ -234,15 +237,18 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             self.chart.canvas.backgroundColor = UIColor.blue
             self.chart.plotAreaBackgroundColor = UIColor.black
             
+          
             self.chart.legend.placement = .insidePlotArea
             self.chart.legend.position = .bottomMiddle
             self.chart.legend.style.areaColor = UIColor.black
             self.chart.legend.style.fontColor = UIColor.white
             self.chart.legend.isHidden = true
             
+            
             self.chart.crosshair?.style.lineColor = UIColor.white
             self.chart.crosshair?.style.lineWidth = 1
             
+        
             // Axes
             self.xAxis.title = NSLocalizedString("Date", comment: "")
             self.yAxis.title = NSLocalizedString("Exchange Rate", comment: "")+" (" + units + ")"
@@ -267,7 +273,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             self.chart.datasource = self
             self.chart.positionLegend()
-            
+    
             //All set to make everything visible again!
             self.Header.isHidden = false
             self.AllText.isHidden = false
@@ -277,8 +283,10 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
             self.RangeControl(2 as AnyObject)
+         /////
 
-                                
+
+            
             })
    
             
@@ -360,7 +368,13 @@ for dataPoint in Utils.shared.JSONDataFromFile("FXdata") {
             return
     }
     
-    let date = dateFormatter.date(from: dateString)
+    //let date = dateFormatter.date(from: dateString)
+    
+    guard let date = dateFormatter.date(from: dateString) else
+    {
+        print(dateString)
+        continue
+    }
     
     if (BMVal != "0")
     {
@@ -455,7 +469,13 @@ func Data(_ json : [[String : AnyObject]]) {
                 return
         }
         
-        let date = dateFormatter.date(from: dateString)
+        //let date = dateFormatter.date(from: dateString)
+        
+        guard let date = dateFormatter.date(from: dateString) else
+        {
+            print(dateString)
+            continue
+        }
         
         if (BMVal != "0")
         {

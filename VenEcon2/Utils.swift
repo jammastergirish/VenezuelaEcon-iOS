@@ -44,7 +44,8 @@ class Utils
     
     func Today() -> String
     {
-        return dateFormatter.string(from: Date())
+        //return dateFormatter.string(from: Date())
+        return "2016-12-01"
     }
     
     func Yesterday() -> String
@@ -165,7 +166,8 @@ class Utils
         
         if (type=="FX")
         {
-            if (dict[Today()]!==comparison)
+            //if let todaysvalueofFX = dict[Today()], todaysvalueofFX == comparison
+            if (GetLatestNonZeroValue(dict, date: Today())==comparison)
             {
                 let text = "<font face=\"Trebuchet MS\" color=#808080>Same as "+ComparisonString+"</font>"
                 
