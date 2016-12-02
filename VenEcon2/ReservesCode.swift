@@ -156,7 +156,7 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.Data(json)
                 
                 //Set all the text.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.string(for: self.Reserves[Utils.shared.Today()]!/1000)! + " <font size=2>"+NSLocalizedString("billion", comment: "")+"</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + Utils.shared.NumberFormatter.string(for: self.Reserves[Utils.shared.Today()]!/1000)! + " <font size=2>"+NSLocalizedString("billion", comment: "")+"</font></font>"
                 var encodedData = text.data(using: String.Encoding.utf8)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {

@@ -283,6 +283,18 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
         }
     }
     
+    @IBAction func TwitterButton(_ sender: Any) {
+        let twUrl: NSURL = NSURL(string: "twitter://user?screen_name=VenezuelaEcon")!
+        let twUrlWeb: NSURL = NSURL(string: "https://twitter.com/VenezuelaEcon")!
+        
+        if(UIApplication.shared.canOpenURL(twUrl as URL)) {
+            // If user twitter installed
+            UIApplication.shared.openURL(twUrl as URL)
+        } else {
+            // If user does not have twitter installed
+            UIApplication.shared.openURL(twUrlWeb as URL)
+        }
+    }
     
     
     @IBOutlet var ShowMenuButton: UIButton!

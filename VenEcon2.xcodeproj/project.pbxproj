@@ -103,6 +103,7 @@
 
 /* Begin PBXFileReference section */
 		6812F2191DE64F430013E7F7 /* DownloadMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadMan.swift; sourceTree = "<group>"; };
+		6822A1C21DEA7E69009EDC80 /* VenEcon2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VenEcon2.entitlements; sourceTree = "<group>"; };
 		68315B391D6A561600BE7036 /* AboutCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCode.swift; sourceTree = "<group>"; };
 		68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXCalcCode.swift; sourceTree = "<group>"; };
 		6839E79D1D610DC5005ED3FA /* ReservesCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservesCode.swift; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		685D86AF1D629DA500F7FC42 /* OilCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilCode.swift; sourceTree = "<group>"; };
 		68652D401D67DB9500049CBC /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		686B725E1DE99526008F182E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Interface.strings; sourceTree = "<group>"; };
+		687C97001DEA34DE00C67FD0 /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		68814A141D67180A002B88AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		68B1BF021D6C47C800DC02C5 /* FXdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FXdata.json; sourceTree = "<group>"; };
 		68B1BF041D6C4BC300DC02C5 /* ResData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ResData.json; sourceTree = "<group>"; };
@@ -120,7 +122,6 @@
 		68B1BF141D6C6D9200DC02C5 /* USOilData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = USOilData.json; sourceTree = "<group>"; };
 		68B48B1F1DE62CEE002D3574 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		68B48B201DE62CEF002D3574 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		68B48B211DE63B40002D3574 /* VenEcon2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VenEcon2.entitlements; sourceTree = "<group>"; };
 		68B48B251DE63DA6002D3574 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		68B48B2A1DE63DA7002D3574 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		68B48B2F1DE63DA8002D3574 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 		68B48B441DE641F2002D3574 /* Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				687C97001DEA34DE00C67FD0 /* Watch Extension.entitlements */,
 				6812F2191DE64F430013E7F7 /* DownloadMan.swift */,
 				68B48B5D1DE64AA2002D3574 /* ComplicationController.swift */,
 				68B48B471DE641F2002D3574 /* InterfaceController.swift */,
@@ -245,9 +247,9 @@
 		68D3DB951D593AA600F42648 /* VenEcon2 */ = {
 			isa = PBXGroup;
 			children = (
+				6822A1C21DEA7E69009EDC80 /* VenEcon2.entitlements */,
 				68B48B301DE63DA8002D3574 /* InfoPlist.strings */,
 				68B48B261DE63DA6002D3574 /* Localizable.strings */,
-				68B48B211DE63B40002D3574 /* VenEcon2.entitlements */,
 				68652D401D67DB9500049CBC /* Notes.swift */,
 				68D3DB961D593AA600F42648 /* AppDelegate.swift */,
 				68589DC21D65563400ECBC3E /* Utils.swift */,
@@ -383,6 +385,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 82R2WDARJW;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					68D3DB921D593AA600F42648 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -390,6 +397,9 @@
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};

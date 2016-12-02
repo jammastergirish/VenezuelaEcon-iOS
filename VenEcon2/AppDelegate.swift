@@ -15,13 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         // Override point for customization after application launch.
-        //registerForPushNotifications(application)
+        registerForPushNotifications(application: application) // 20161126 Spent forever thinking something up with capabilities/provisioning profiles etc. But hadn't uncommented this line!
         
-//        if let notification = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? [String: AnyObject] {
-//            let aps = notification["aps"] as! [String: AnyObject]
-//            Notificaion and app was opened new. Don't really want to do anything.
-//            
-//        }
+        //if let notification = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? [String: AnyObject] {
+         //   let aps = notification["aps"] as! [String: AnyObject]
+            //Notificaion and app was opened new. Don't really want to do anything.
+            
+        //}
         return true
     }
 
@@ -69,15 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Device Token:", tokenString)
         
         let defaults = UserDefaults.standard
-        defaults.set(tokenString, forKey: "DeviceToken")
-        
-        
-        
-        
-
-        
-        
-        
+        defaults.set(tokenString, forKey: "DeviceToken")        
         
     }
     

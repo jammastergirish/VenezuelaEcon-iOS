@@ -65,6 +65,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     private func createTemplate(for complication: CLKComplication) -> CLKComplicationTemplate? {
         
         let defaults = UserDefaults.standard
+        //Need to use something like self.NumberFormatter.string(for: ((XXXX)))! here as I'm now going from string to number to string
         let Val = defaults.string(forKey: "BlackMarketSavedValue") ?? "--" // logic here is saying if Val="" then set val = "--"
 
         

@@ -172,7 +172,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.Data(json)
                 
                 //Set all the text.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.WTI, date: Utils.shared.Today()))! + " <font size=2> / "+NSLocalizedString("barrel", comment: "")+"</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.WTI, date: Utils.shared.Today()))! + " <font size=2> / "+NSLocalizedString("barrel", comment: "")+"</font></font>"
                 var encodedData = text.data(using: String.Encoding.utf8)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -181,7 +181,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Brent, date: Utils.shared.Today()))! + " <font size=2> / "+NSLocalizedString("barrel", comment: "")+"</font></font>"
+                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Brent, date: Utils.shared.Today()))! + " <font size=2> / "+NSLocalizedString("barrel", comment: "")+"</font></font>"
                  encodedData = text.data(using: String.Encoding.utf8)!
                  attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -190,7 +190,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Ven, date: Utils.shared.Today()))! + " <font size=2> / "+NSLocalizedString("barrel", comment: "")+"</font></font>"
+                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Ven, date: Utils.shared.Today()))! + " <font size=2> / "+NSLocalizedString("barrel", comment: "")+"</font></font>"
                 encodedData = text.data(using: String.Encoding.utf8)!
                 attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -199,7 +199,7 @@ class OilCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.CurrencyFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.OPEC, date: Utils.shared.Today()))! + " <font size=2> / "+NSLocalizedString("barrel", comment: "")+"</font></font>"
+                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.OPEC, date: Utils.shared.Today()))! + " <font size=2> / "+NSLocalizedString("barrel", comment: "")+"</font></font>"
                 encodedData = text.data(using: String.Encoding.utf8)!
                 attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {

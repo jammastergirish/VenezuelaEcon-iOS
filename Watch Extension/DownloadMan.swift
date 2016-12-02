@@ -14,12 +14,20 @@ class DownloadMan
     
     let session = URLSession(configuration: URLSessionConfiguration.default)
     
-    func download(completionblock: @escaping (String?, String?, String?) -> Void)
+    
+    let NumberFormatter : Foundation.NumberFormatter = {
+        let NumberFormatter = Foundation.NumberFormatter()
+        NumberFormatter.numberStyle = .decimal
+        NumberFormatter.maximumFractionDigits = 2
+        return NumberFormatter
+    } ()
+    
+    
+    
+    func download(completionblock: @escaping (Int?, Int?, Double?) -> Void)
     {
         
-        // Configure interface objects here.
         let url = URL(string: "https://www.venezuelaecon.com/app/watch.php")!
-        
         
         let task = session.dataTask(with: url) { (data, response, error) in
             guard let data = data , error == nil else {
@@ -33,11 +41,15 @@ class DownloadMan
                 let response = String(data: data, encoding: String.Encoding.utf8)
                 
                 let arrayresponse = (response?.components(separatedBy: "X"))
+                
+                let BM : Int = Int((self.NumberFormatter.number(from: ((arrayresponse?[0]))!))!)
+                let SIMADI : Int = Int((self.NumberFormatter.number(from: ((arrayresponse?[1]))!))!)
+                let Reserves : Double = Double((self.NumberFormatter.number(from: ((arrayresponse?[2]))!))!)
                
-                completionblock(arrayresponse?[0], arrayresponse?[1], arrayresponse?[2])
+                completionblock(BM, SIMADI, Reserves)
                 
                 let defaults = UserDefaults.standard
-                defaults.set(arrayresponse?[0], forKey: "BlackMarketSavedValue")
+                defaults.set(BM, forKey: "BlackMarketSavedValue")
                 
             })
         }
