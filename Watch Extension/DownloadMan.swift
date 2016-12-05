@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ClockKit
 
 class DownloadMan
 {
@@ -51,9 +52,22 @@ class DownloadMan
                 let defaults = UserDefaults.standard
                 defaults.set(BM, forKey: "BlackMarketSavedValue")
                 
+                self.reloadComplications()
+                
             })
         }
         
         task.resume()
+    }
+    
+    func reloadComplications() {
+        
+        let server=CLKComplicationServer.sharedInstance()
+        
+        if let activeComplications = server.activeComplications {
+            for comp in activeComplications {
+                server.reloadTimeline(for: comp)
+            }
+        }
     }
 }

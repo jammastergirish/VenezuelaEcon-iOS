@@ -48,7 +48,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WK6-gD-Vfg">
-                                <rect key="frame" x="37.5" y="130" width="300" height="230"/>
+                                <rect key="frame" x="38" y="130" width="300" height="230"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="c7D-TO-AeX">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="160"/>
@@ -216,19 +216,38 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SM-R0-YuW">
-                                <rect key="frame" x="16" y="60" width="30" height="30"/>
-                                <state key="normal" title="&gt;&gt;&gt;">
-                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="16" y="65" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="K9C-Tz-Fo5"/>
+                                    <constraint firstAttribute="width" constant="25" id="Xww-J6-1uF"/>
+                                </constraints>
+                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Hamburger">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="ShowMenu:" destination="zDY-Lm-TOB" eventType="touchUpInside" id="lCd-5F-VwY"/>
-                                    <action selector="ShowMenu:" destination="soc-3U-efR" eventType="touchUpInside" id="yFG-YT-Dph"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCD-BD-5tg">
+                                <rect key="frame" x="329" y="64" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Eaf-5L-hto"/>
+                                    <constraint firstAttribute="height" constant="30" id="TTO-yb-6KI"/>
+                                </constraints>
+                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Share">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShareButton:" destination="zDY-Lm-TOB" eventType="touchUpInside" id="eUq-Jn-zMr"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7It-mU-p5V" firstAttribute="top" secondItem="2cC-yP-Aup" secondAttribute="topMargin" constant="40" id="139-hs-m5W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nCD-BD-5tg" secondAttribute="trailing" constant="10" id="3h1-8f-KRe"/>
                             <constraint firstItem="bG9-c0-XZJ" firstAttribute="top" secondItem="pPl-ad-7UV" secondAttribute="bottom" constant="336" id="665-Jy-x3p"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bG9-c0-XZJ" secondAttribute="trailing" id="B6Q-ko-hdL"/>
                             <constraint firstItem="dql-nS-G3N" firstAttribute="top" secondItem="bG9-c0-XZJ" secondAttribute="bottom" id="D1u-ox-yP2"/>
@@ -237,6 +256,7 @@
                             <constraint firstItem="0SM-R0-YuW" firstAttribute="leading" secondItem="2cC-yP-Aup" secondAttribute="leadingMargin" id="XQI-CW-Y1y"/>
                             <constraint firstItem="0U3-u9-xyv" firstAttribute="centerX" secondItem="2cC-yP-Aup" secondAttribute="centerX" id="aMX-fz-3QF"/>
                             <constraint firstItem="bG9-c0-XZJ" firstAttribute="top" secondItem="WK6-gD-Vfg" secondAttribute="bottom" constant="40" id="bFb-rH-IbK"/>
+                            <constraint firstItem="nCD-BD-5tg" firstAttribute="top" secondItem="7It-mU-p5V" secondAttribute="top" id="g6P-js-vxR"/>
                             <constraint firstItem="WK6-gD-Vfg" firstAttribute="top" secondItem="7It-mU-p5V" secondAttribute="bottom" constant="40" id="hUr-qu-PCR"/>
                             <constraint firstItem="WK6-gD-Vfg" firstAttribute="centerX" secondItem="2cC-yP-Aup" secondAttribute="centerX" id="k5a-Tf-oD4"/>
                             <constraint firstItem="0SM-R0-YuW" firstAttribute="bottom" secondItem="7It-mU-p5V" secondAttribute="bottom" id="sgk-fT-b5W"/>
@@ -263,6 +283,7 @@
                         <outlet property="SIMADIMonth" destination="yak-ra-zmo" id="g6S-V7-Odm"/>
                         <outlet property="SIMADIVal" destination="h8Q-iV-nYK" id="1ec-EX-zKd"/>
                         <outlet property="SIMADIYear" destination="wXU-HU-rAf" id="7SS-BY-T2O"/>
+                        <outlet property="ShareButton" destination="nCD-BD-5tg" id="d3T-6E-nS5"/>
                         <outlet property="ShowMenuButton" destination="0SM-R0-YuW" id="sut-jZ-ovL"/>
                         <outlet property="chart" destination="OeS-VE-e7o" id="gQN-NJ-fTl"/>
                     </connections>
@@ -375,9 +396,13 @@
                                     <constraint firstItem="rJg-6d-ngH" firstAttribute="top" secondItem="XPF-rr-eEv" secondAttribute="bottom" constant="5" id="GAv-Ed-GVD"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bP-Dt-75D">
-                                <rect key="frame" x="20" y="40" width="30" height="30"/>
-                                <state key="normal" title="&gt;&gt;&gt;">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bP-Dt-75D">
+                                <rect key="frame" x="13" y="33" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="9sP-br-Qdm"/>
+                                    <constraint firstAttribute="width" constant="25" id="ADT-x4-6EF"/>
+                                </constraints>
+                                <state key="normal" image="Hamburger">
                                     <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -387,6 +412,21 @@
                                     <action selector="ShowMenu:" destination="7Xw-Wz-ddH" eventType="touchUpInside" id="rft-Gx-ds7"/>
                                     <action selector="ShowMenu:" destination="vLn-Rh-y4A" eventType="touchUpInside" id="whm-ZE-vah"/>
                                     <action selector="ShowMenu:" destination="Exs-EA-6CP" eventType="touchUpInside" id="xCj-rk-CRF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBk-hx-tce">
+                                <rect key="frame" x="339" y="40" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="U8k-i8-lBI"/>
+                                    <constraint firstAttribute="height" constant="30" id="YuE-zx-6H6"/>
+                                </constraints>
+                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Share">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShareButton:" destination="zDY-Lm-TOB" eventType="touchUpInside" id="E7H-vA-r8j"/>
+                                    <action selector="ShareButton:" destination="vLn-Rh-y4A" eventType="touchUpInside" id="mM3-Kt-p0B"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -402,6 +442,8 @@
                             <constraint firstItem="vKc-Aw-B06" firstAttribute="leading" secondItem="cNb-nx-Xdn" secondAttribute="leadingMargin" id="Tam-0f-rgz"/>
                             <constraint firstItem="V1U-ni-8ia" firstAttribute="top" secondItem="1es-2u-m1V" secondAttribute="bottom" constant="40" id="Tbd-aZ-aCp"/>
                             <constraint firstItem="1es-2u-m1V" firstAttribute="top" secondItem="cNb-nx-Xdn" secondAttribute="topMargin" constant="40" id="pFe-WN-f7Q"/>
+                            <constraint firstAttribute="trailing" secondItem="BBk-hx-tce" secondAttribute="trailing" constant="10" id="pXO-Rs-8JJ"/>
+                            <constraint firstItem="BBk-hx-tce" firstAttribute="top" secondItem="1es-2u-m1V" secondAttribute="top" id="st7-fA-8Qd"/>
                             <constraint firstItem="1es-2u-m1V" firstAttribute="centerX" secondItem="cNb-nx-Xdn" secondAttribute="centerX" id="veA-Sb-Hju"/>
                         </constraints>
                     </view>
@@ -419,6 +461,7 @@
                         <outlet property="M2Val" destination="bMZ-Gx-c7y" id="DwZ-EX-aoh"/>
                         <outlet property="M2Year" destination="XGT-HW-8cS" id="nQx-Bp-yjo"/>
                         <outlet property="RangeController" destination="XPF-rr-eEv" id="bRB-9V-Jwy"/>
+                        <outlet property="ShareButton" destination="BBk-hx-tce" id="izq-Dx-5sI"/>
                         <outlet property="ShowMenuButton" destination="8bP-Dt-75D" id="sns-6i-aoq"/>
                         <outlet property="chart" destination="rJg-6d-ngH" id="RYP-QZ-mb6"/>
                     </connections>
@@ -530,15 +573,35 @@
                                     <constraint firstItem="Bte-vU-Sar" firstAttribute="top" secondItem="UMZ-00-2VQ" secondAttribute="bottom" constant="5" id="xkF-if-iPM"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yK-P1-E0B">
-                                <rect key="frame" x="20" y="40" width="30" height="30"/>
-                                <state key="normal" title="&gt;&gt;&gt;">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yK-P1-E0B">
+                                <rect key="frame" x="13" y="33" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="CdV-wX-Aef"/>
+                                    <constraint firstAttribute="height" constant="25" id="Oq4-FR-Nya"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Hamburger">
                                     <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="ShowMenu:" destination="7Xw-Wz-ddH" eventType="touchUpInside" id="BRM-HD-cbd"/>
                                     <action selector="ShowMenu:" destination="zDY-Lm-TOB" eventType="touchUpInside" id="X69-Bq-lKp"/>
                                     <action selector="ShowMenu:" destination="soc-3U-efR" eventType="touchUpInside" id="bq4-ob-h9w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXP-gA-E6R">
+                                <rect key="frame" x="345" y="49" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="GmJ-Tq-qAt"/>
+                                    <constraint firstAttribute="height" constant="30" id="ICY-T0-ckD"/>
+                                </constraints>
+                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Share">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShareButton:" destination="7Xw-Wz-ddH" eventType="touchUpInside" id="HRr-ui-NWf"/>
+                                    <action selector="ShareButton:" destination="zDY-Lm-TOB" eventType="touchUpInside" id="flf-m3-qC7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -548,6 +611,8 @@
                             <constraint firstItem="Qwb-eu-4B7" firstAttribute="top" secondItem="63q-MY-4hB" secondAttribute="bottom" constant="40" id="A6u-82-yl4"/>
                             <constraint firstItem="xrT-Gd-YI8" firstAttribute="top" secondItem="0U6-lm-kFW" secondAttribute="bottom" constant="280" id="B1u-RY-fDI"/>
                             <constraint firstItem="4yK-P1-E0B" firstAttribute="leading" secondItem="Rxc-q4-qwm" secondAttribute="leadingMargin" id="CVz-LK-86k"/>
+                            <constraint firstAttribute="trailing" secondItem="AXP-gA-E6R" secondAttribute="trailing" constant="10" id="Tyy-l4-e3F"/>
+                            <constraint firstItem="AXP-gA-E6R" firstAttribute="top" secondItem="63q-MY-4hB" secondAttribute="top" id="YIN-s1-K84"/>
                             <constraint firstItem="63q-MY-4hB" firstAttribute="centerX" secondItem="Rxc-q4-qwm" secondAttribute="centerX" id="aTs-pu-8bY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xrT-Gd-YI8" secondAttribute="trailing" id="cmz-fD-eP3"/>
                             <constraint firstItem="Qwb-eu-4B7" firstAttribute="centerX" secondItem="Rxc-q4-qwm" secondAttribute="centerX" id="eJL-AN-Mgi"/>
@@ -571,6 +636,7 @@
                         <outlet property="ReservesVal" destination="FbI-Sh-lWP" id="Jc5-0o-RWP"/>
                         <outlet property="ReservesYear" destination="WSK-CH-OEF" id="Y3z-Uk-yZQ"/>
                         <outlet property="ReservesYesterday" destination="V7o-By-iQV" id="fhF-zK-VpU"/>
+                        <outlet property="ShareButton" destination="AXP-gA-E6R" id="6Vq-gb-g00"/>
                         <outlet property="ShowMenuButton" destination="4yK-P1-E0B" id="gUW-nM-qal"/>
                         <outlet property="chart" destination="Bte-vU-Sar" id="i1T-pX-47E"/>
                     </connections>
@@ -799,13 +865,31 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DY6-Ez-Ksd">
-                                <rect key="frame" x="20" y="40" width="30" height="30"/>
-                                <state key="normal" title="&gt;&gt;&gt;">
-                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <rect key="frame" x="13" y="33" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="ZtK-bj-LOp"/>
+                                    <constraint firstAttribute="height" constant="25" id="hye-7T-liz"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Hamburger"/>
                                 <connections>
                                     <action selector="ShowMenu:" destination="zDY-Lm-TOB" eventType="touchUpInside" id="qce-Zu-tJQ"/>
                                     <action selector="ShowMenu:" destination="soc-3U-efR" eventType="touchUpInside" id="wKl-ca-Gp2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K91-lm-YsC">
+                                <rect key="frame" x="335" y="40" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="isR-ez-eCw"/>
+                                    <constraint firstAttribute="width" constant="30" id="yi5-Sc-DNx"/>
+                                </constraints>
+                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Share">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShareButton:" destination="zDY-Lm-TOB" eventType="touchUpInside" id="hIe-Zs-cOV"/>
+                                    <action selector="ShareButton:" destination="soc-3U-efR" eventType="touchUpInside" id="lCM-v1-sUE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -817,6 +901,8 @@
                             <constraint firstItem="qpe-TA-zWS" firstAttribute="top" secondItem="m9i-CZ-ZXB" secondAttribute="bottom" constant="40" id="Eli-OM-tqr"/>
                             <constraint firstItem="Bah-DE-eha" firstAttribute="top" secondItem="X8A-EN-BJ9" secondAttribute="bottom" id="RS2-CP-1FM"/>
                             <constraint firstItem="DY6-Ez-Ksd" firstAttribute="bottom" secondItem="m9i-CZ-ZXB" secondAttribute="bottom" id="RcW-Om-fc7"/>
+                            <constraint firstAttribute="trailing" secondItem="K91-lm-YsC" secondAttribute="trailing" constant="10" id="Rep-Ri-ldO"/>
+                            <constraint firstItem="K91-lm-YsC" firstAttribute="top" secondItem="m9i-CZ-ZXB" secondAttribute="top" id="UrE-sz-4qM"/>
                             <constraint firstItem="X8A-EN-BJ9" firstAttribute="leading" secondItem="F4Y-Ww-ZOR" secondAttribute="leadingMargin" id="WUr-5y-Wut"/>
                             <constraint firstItem="X8A-EN-BJ9" firstAttribute="top" secondItem="qpe-TA-zWS" secondAttribute="bottom" constant="40" id="aLG-PU-Zug"/>
                             <constraint firstItem="X8A-EN-BJ9" firstAttribute="top" secondItem="cyA-SV-GLA" secondAttribute="bottom" constant="340" id="bNS-u5-PuO"/>
@@ -839,6 +925,7 @@
                         <outlet property="OPECWeek" destination="Gb8-bU-lcZ" id="UtI-Y6-g7B"/>
                         <outlet property="OPECYear" destination="QvL-oh-rEl" id="fvN-zu-Mqo"/>
                         <outlet property="RangeController" destination="JBu-Fb-eYq" id="JAb-LM-5kU"/>
+                        <outlet property="ShareButton" destination="K91-lm-YsC" id="Hsr-om-Lhx"/>
                         <outlet property="ShowMenuButton" destination="DY6-Ez-Ksd" id="TKU-aH-y29"/>
                         <outlet property="VenTwoYear" destination="dsi-nb-9iK" id="ugz-J8-B5A"/>
                         <outlet property="VenVal" destination="7GQ-Jq-rQe" id="ctQ-Dl-snz"/>
@@ -876,9 +963,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUX-Sh-PI5">
-                                <rect key="frame" x="16" y="40" width="30" height="30"/>
-                                <state key="normal" title="&gt;&gt;&gt;">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUX-Sh-PI5">
+                                <rect key="frame" x="16" y="26" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="ZX8-G5-bJN"/>
+                                    <constraint firstAttribute="height" constant="25" id="skK-Pr-fXR"/>
+                                </constraints>
+                                <state key="normal" image="Hamburger">
                                     <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -903,7 +994,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6c-EY-3PH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6c-EY-3PH">
                                 <rect key="frame" x="26" y="244" width="166" height="34"/>
                                 <state key="normal" title="Send comments...">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -934,8 +1025,8 @@
                                     <action selector="GoToSettings:" destination="RtX-C2-xsx" eventType="touchUpInside" id="HZX-Vl-ZkZ"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="3Ge-36-kjn">
-                                <rect key="frame" x="30.5" y="422" width="314.5" height="90"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="3Ge-36-kjn">
+                                <rect key="frame" x="31" y="422" width="315" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data compiled and updated live from:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tke-ou-nXB">
                                         <rect key="frame" x="0.0" y="0.0" width="229.5" height="15"/>
@@ -1002,7 +1093,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9tg-PK-0Gd" firstAttribute="top" secondItem="E6c-EY-3PH" secondAttribute="bottom" constant="39" id="3zq-33-v5C"/>
                             <constraint firstItem="I7A-G7-oxD" firstAttribute="top" secondItem="9tg-PK-0Gd" secondAttribute="bottom" constant="13" id="EKE-sg-HxM"/>
                             <constraint firstItem="zUX-Sh-PI5" firstAttribute="bottom" secondItem="0i3-KG-nbz" secondAttribute="bottom" id="L4i-gd-UR4"/>
                             <constraint firstItem="6oX-5M-Wkd" firstAttribute="top" secondItem="0i3-KG-nbz" secondAttribute="bottom" constant="36" id="OzI-Pf-E4F"/>
@@ -1010,16 +1100,18 @@
                             <constraint firstItem="I7A-G7-oxD" firstAttribute="centerX" secondItem="9tg-PK-0Gd" secondAttribute="centerX" id="RVE-Mx-n9E"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VbT-dg-zzp" secondAttribute="trailing" constant="20" id="TbL-ug-EjK"/>
                             <constraint firstItem="E6c-EY-3PH" firstAttribute="top" secondItem="6oX-5M-Wkd" secondAttribute="bottom" constant="19" id="URE-Uu-OeF"/>
-                            <constraint firstItem="3Ge-36-kjn" firstAttribute="top" secondItem="I7A-G7-oxD" secondAttribute="bottom" constant="42" id="V6M-TZ-RiQ"/>
                             <constraint firstItem="zUX-Sh-PI5" firstAttribute="leading" secondItem="qjL-D2-mKH" secondAttribute="leadingMargin" id="Vul-cK-Ao0"/>
+                            <constraint firstItem="VbT-dg-zzp" firstAttribute="top" secondItem="3Ge-36-kjn" secondAttribute="bottom" constant="50" id="Wzi-6v-jXw"/>
                             <constraint firstItem="zUX-Sh-PI5" firstAttribute="bottom" secondItem="0i3-KG-nbz" secondAttribute="bottom" id="f0a-MG-a4g"/>
-                            <constraint firstItem="3Ge-36-kjn" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="fzT-Qj-lb3"/>
+                            <constraint firstItem="3Ge-36-kjn" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" constant="1" id="fzT-Qj-lb3"/>
                             <constraint firstItem="0i3-KG-nbz" firstAttribute="top" secondItem="qjL-D2-mKH" secondAttribute="topMargin" constant="40" id="gQ2-BQ-eX3"/>
                             <constraint firstItem="9tg-PK-0Gd" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="iv9-yu-wq8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jfr-cx-agp" secondAttribute="trailing" constant="9" id="jau-O1-f5e"/>
                             <constraint firstItem="Qeo-0r-rq7" firstAttribute="top" secondItem="VbT-dg-zzp" secondAttribute="bottom" constant="20" id="k3W-Ds-Opz"/>
                             <constraint firstItem="E6c-EY-3PH" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" constant="-78.5" id="lzn-bq-jCo"/>
                             <constraint firstItem="9tg-PK-0Gd" firstAttribute="width" secondItem="6oX-5M-Wkd" secondAttribute="width" id="qoK-Cv-mHD"/>
+                            <constraint firstItem="E6c-EY-3PH" firstAttribute="centerY" secondItem="jfr-cx-agp" secondAttribute="centerY" id="rnW-ci-SBR"/>
+                            <constraint firstItem="02q-iR-ofp" firstAttribute="top" secondItem="E6c-EY-3PH" secondAttribute="bottom" constant="35" id="w1Y-sk-iAB"/>
                             <constraint firstItem="jfr-cx-agp" firstAttribute="top" secondItem="E6c-EY-3PH" secondAttribute="top" constant="2" id="wGS-qJ-uMr"/>
                             <constraint firstItem="6oX-5M-Wkd" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="wem-XR-cIk"/>
                             <constraint firstItem="E6c-EY-3PH" firstAttribute="leading" secondItem="qjL-D2-mKH" secondAttribute="leadingMargin" constant="10" id="yiL-Uj-TfL"/>
@@ -1059,9 +1151,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iu-71-Ikb">
-                                <rect key="frame" x="20" y="40" width="30" height="30"/>
-                                <state key="normal" title="&gt;&gt;&gt;">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iu-71-Ikb">
+                                <rect key="frame" x="13" y="33" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="r4T-0h-TVJ"/>
+                                    <constraint firstAttribute="height" constant="25" id="zKj-m6-Pul"/>
+                                </constraints>
+                                <state key="normal" image="Hamburger">
                                     <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -1176,10 +1272,25 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqz-iQ-qGd">
+                                <rect key="frame" x="339" y="33" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="NQv-de-anF"/>
+                                    <constraint firstAttribute="height" constant="30" id="rWj-bG-6Ck"/>
+                                </constraints>
+                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Share">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShareButton:" destination="qjl-bd-12C" eventType="touchUpInside" id="KcJ-fv-UNI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="V95-GQ-MFL" firstAttribute="top" secondItem="63N-YO-JjB" secondAttribute="bottom" constant="50" id="2Mt-Dy-mt5"/>
+                            <constraint firstAttribute="trailing" secondItem="cqz-iQ-qGd" secondAttribute="trailing" constant="10" id="2TF-cL-Jd2"/>
                             <constraint firstItem="63N-YO-JjB" firstAttribute="top" secondItem="4Sk-OK-w2h" secondAttribute="topMargin" constant="40" id="3FI-ge-d7s"/>
                             <constraint firstItem="8iu-71-Ikb" firstAttribute="leading" secondItem="4Sk-OK-w2h" secondAttribute="leadingMargin" id="5qG-pb-TBC"/>
                             <constraint firstItem="63N-YO-JjB" firstAttribute="centerX" secondItem="4Sk-OK-w2h" secondAttribute="centerX" id="99X-wp-AVI"/>
@@ -1192,6 +1303,7 @@
                             <constraint firstItem="8iu-71-Ikb" firstAttribute="bottom" secondItem="63N-YO-JjB" secondAttribute="bottom" id="bJD-8e-mpF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="V95-GQ-MFL" secondAttribute="trailing" constant="10" id="bn6-eG-u6d"/>
                             <constraint firstItem="V95-GQ-MFL" firstAttribute="centerX" secondItem="4Sk-OK-w2h" secondAttribute="centerX" id="iOP-Y4-gOj"/>
+                            <constraint firstItem="cqz-iQ-qGd" firstAttribute="top" secondItem="63N-YO-JjB" secondAttribute="top" id="wK6-hv-hkS"/>
                             <constraint firstItem="f4C-ED-rbL" firstAttribute="leading" secondItem="O83-mA-Ezw" secondAttribute="leading" id="yb6-Js-ZhS"/>
                             <constraint firstItem="cGt-MC-4W4" firstAttribute="leading" secondItem="f4C-ED-rbL" secondAttribute="leading" id="zmV-hL-qun"/>
                         </constraints>
@@ -1202,6 +1314,7 @@
                         <outlet property="DIPROVal" destination="HcC-lD-RFg" id="6r1-Pg-t8Y"/>
                         <outlet property="Number" destination="KYu-N2-l2Y" id="94h-Ai-1u5"/>
                         <outlet property="SIMADIVal" destination="MlS-9g-SnQ" id="QRk-u2-G6z"/>
+                        <outlet property="ShareButton" destination="cqz-iQ-qGd" id="QLj-ya-DWl"/>
                         <outlet property="ShowMenuButton" destination="8iu-71-Ikb" id="riU-ES-5ja"/>
                         <outlet property="Val" destination="06o-CT-DFy" id="kjh-xQ-kwl"/>
                     </connections>
@@ -1446,9 +1559,13 @@
                                     <constraint firstItem="Kdq-eY-Lij" firstAttribute="top" secondItem="cgo-QI-xrY" secondAttribute="bottom" constant="5" id="lum-BZ-VLB"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cp-O8-Bdb">
-                                <rect key="frame" x="20" y="40" width="30" height="30"/>
-                                <state key="normal" title="&gt;&gt;&gt;">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cp-O8-Bdb">
+                                <rect key="frame" x="13" y="33" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="2s7-vm-g6k"/>
+                                    <constraint firstAttribute="height" constant="25" id="kDB-BO-80K"/>
+                                </constraints>
+                                <state key="normal" image="Hamburger">
                                     <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -1456,6 +1573,20 @@
                                     <action selector="ShowMenu:" destination="7Xw-Wz-ddH" eventType="touchUpInside" id="OEn-T1-q1S"/>
                                     <action selector="ShowMenu:" destination="Exs-EA-6CP" eventType="touchUpInside" id="OPi-C9-h8e"/>
                                     <action selector="ShowMenu:" destination="soc-3U-efR" eventType="touchUpInside" id="fqx-zQ-WgC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clu-aw-Lbc">
+                                <rect key="frame" x="345" y="40" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="N1Z-pN-1Yk"/>
+                                    <constraint firstAttribute="height" constant="30" id="YRX-HQ-1Le"/>
+                                </constraints>
+                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Share">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShareButton:" destination="Exs-EA-6CP" eventType="touchUpInside" id="ljM-ym-h8i"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1466,8 +1597,10 @@
                             <constraint firstItem="s0g-yn-Xge" firstAttribute="top" secondItem="L5c-2w-Xj6" secondAttribute="bottom" constant="40" id="Hr1-3U-pEu"/>
                             <constraint firstItem="3Cp-O8-Bdb" firstAttribute="leading" secondItem="M71-42-jWx" secondAttribute="leadingMargin" id="M4K-6U-8kT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e0z-b7-WiK" secondAttribute="trailing" id="NZV-C6-ctU"/>
+                            <constraint firstAttribute="trailing" secondItem="clu-aw-Lbc" secondAttribute="trailing" constant="10" id="S1T-ju-CEg"/>
                             <constraint firstItem="e0z-b7-WiK" firstAttribute="top" secondItem="s0g-yn-Xge" secondAttribute="bottom" constant="40" id="VWE-Jf-49q"/>
                             <constraint firstItem="e2U-aN-P4P" firstAttribute="top" secondItem="e0z-b7-WiK" secondAttribute="bottom" id="afg-xV-E1o"/>
+                            <constraint firstItem="clu-aw-Lbc" firstAttribute="top" secondItem="L5c-2w-Xj6" secondAttribute="top" id="bRS-ay-EFQ"/>
                             <constraint firstItem="3Cp-O8-Bdb" firstAttribute="bottom" secondItem="L5c-2w-Xj6" secondAttribute="bottom" id="g3J-IB-Lt9"/>
                             <constraint firstItem="e0z-b7-WiK" firstAttribute="leading" secondItem="M71-42-jWx" secondAttribute="leadingMargin" id="pyD-Eh-4kJ"/>
                             <constraint firstItem="L5c-2w-Xj6" firstAttribute="centerX" secondItem="M71-42-jWx" secondAttribute="centerX" id="rct-no-qkk"/>
@@ -1490,6 +1623,7 @@
                         <outlet property="Label2015" destination="uYk-FQ-TfC" id="HiM-Lc-vMx"/>
                         <outlet property="MonthlyInflationVal" destination="swV-bB-bSY" id="oE9-Dk-kFg"/>
                         <outlet property="RangeController" destination="cgo-QI-xrY" id="B7H-gX-rUS"/>
+                        <outlet property="ShareButton" destination="clu-aw-Lbc" id="IhI-Ia-V4p"/>
                         <outlet property="ShowMenuButton" destination="3Cp-O8-Bdb" id="LQh-Ie-wI6"/>
                         <outlet property="chart" destination="Kdq-eY-Lij" id="Mso-Sp-vnF"/>
                     </connections>
@@ -1659,9 +1793,13 @@
                                     <constraint firstAttribute="height" constant="300" id="mgA-Nd-GJ6"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qD9-4L-5wl">
-                                <rect key="frame" x="20" y="40" width="30" height="30"/>
-                                <state key="normal" title="&gt;&gt;&gt;">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qD9-4L-5wl">
+                                <rect key="frame" x="11" y="31" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="K3r-7Y-hBz"/>
+                                    <constraint firstAttribute="width" constant="25" id="cmB-10-abJ"/>
+                                </constraints>
+                                <state key="normal" image="Hamburger">
                                     <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -1674,17 +1812,33 @@
                                     <action selector="ShowMenu:" destination="hlm-kR-DaP" eventType="touchUpInside" id="uaa-md-djH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N62-gw-z37">
+                                <rect key="frame" x="345" y="40" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6pP-Aq-5Fn"/>
+                                    <constraint firstAttribute="width" constant="30" id="W5Y-OV-6iV"/>
+                                </constraints>
+                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Share">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShareButton:" destination="Vxj-qb-Qs8" eventType="touchUpInside" id="V73-xs-6pL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qD9-4L-5wl" firstAttribute="bottom" secondItem="OzU-0z-Bic" secondAttribute="bottom" id="83m-AM-R3C"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aUn-aU-erx" secondAttribute="trailing" id="BmY-xR-qeu"/>
+                            <constraint firstAttribute="trailing" secondItem="N62-gw-z37" secondAttribute="trailing" constant="10" id="HXU-sX-Gal"/>
                             <constraint firstItem="zwm-BT-hpB" firstAttribute="centerX" secondItem="Y82-u4-e7c" secondAttribute="centerX" id="MtU-zR-2Mb"/>
                             <constraint firstItem="zwm-BT-hpB" firstAttribute="top" secondItem="OzU-0z-Bic" secondAttribute="bottom" constant="40" id="UhD-oQ-nUo"/>
                             <constraint firstItem="OzU-0z-Bic" firstAttribute="centerX" secondItem="Y82-u4-e7c" secondAttribute="centerX" id="XX1-pE-O78"/>
                             <constraint firstItem="ZXn-FH-vIH" firstAttribute="top" secondItem="aUn-aU-erx" secondAttribute="bottom" id="drY-aY-cUX"/>
                             <constraint firstItem="aUn-aU-erx" firstAttribute="top" secondItem="zwm-BT-hpB" secondAttribute="bottom" constant="40" id="lGu-zb-c76"/>
                             <constraint firstItem="OzU-0z-Bic" firstAttribute="top" secondItem="Y82-u4-e7c" secondAttribute="topMargin" constant="40" id="mOT-Np-Dd9"/>
+                            <constraint firstItem="N62-gw-z37" firstAttribute="top" secondItem="OzU-0z-Bic" secondAttribute="top" id="mu2-rb-JXz"/>
                             <constraint firstItem="aUn-aU-erx" firstAttribute="top" secondItem="QQ0-Fx-gar" secondAttribute="bottom" constant="280" id="sUl-Az-nhz"/>
                             <constraint firstItem="aUn-aU-erx" firstAttribute="leading" secondItem="Y82-u4-e7c" secondAttribute="leadingMargin" id="uae-Ka-9ur"/>
                             <constraint firstItem="qD9-4L-5wl" firstAttribute="leading" secondItem="Y82-u4-e7c" secondAttribute="leadingMargin" id="wgq-0K-m34"/>
@@ -1697,6 +1851,7 @@
                         <outlet property="DistanceBetweenAllTextAndChartSV" destination="lGu-zb-c76" id="2PQ-h1-UuG"/>
                         <outlet property="Header" destination="OzU-0z-Bic" id="5W6-Zg-dTb"/>
                         <outlet property="RangeController" destination="Iqu-VB-Pzo" id="DxU-U1-Mei"/>
+                        <outlet property="ShareButton" destination="N62-gw-z37" id="rVR-Ut-ddk"/>
                         <outlet property="ShowMenuButton" destination="qD9-4L-5wl" id="AcY-Uu-pJW"/>
                         <outlet property="USexportsFiveYear" destination="hem-Ex-C9v" id="39B-Vx-uR2"/>
                         <outlet property="USexportsFourYear" destination="tOG-1N-oL3" id="RGj-lI-2La"/>
@@ -1867,9 +2022,13 @@
                                     <constraint firstAttribute="height" constant="300" id="Yw2-ke-mgj"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PT-Sj-8uv">
-                                <rect key="frame" x="20" y="40" width="30" height="30"/>
-                                <state key="normal" title="&gt;&gt;&gt;">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PT-Sj-8uv">
+                                <rect key="frame" x="13" y="33" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="XDU-Vs-CIx"/>
+                                    <constraint firstAttribute="width" constant="25" id="ihy-Oq-oq5"/>
+                                </constraints>
+                                <state key="normal" image="Hamburger">
                                     <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -1883,6 +2042,20 @@
                                     <action selector="ShowMenu:" destination="Vxj-qb-Qs8" eventType="touchUpInside" id="pa1-V5-dER"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2B-IA-Biv">
+                                <rect key="frame" x="345" y="40" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1Np-pO-Hhh"/>
+                                    <constraint firstAttribute="width" constant="30" id="Va0-ef-r1h"/>
+                                </constraints>
+                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Share">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShareButton:" destination="lTQ-Fn-c8z" eventType="touchUpInside" id="rAu-Rj-kqL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1894,8 +2067,10 @@
                             <constraint firstItem="zoE-Jy-klK" firstAttribute="centerX" secondItem="Tco-v2-TQk" secondAttribute="centerX" id="HK4-Aa-sWg"/>
                             <constraint firstItem="Wva-T6-wol" firstAttribute="centerX" secondItem="Tco-v2-TQk" secondAttribute="centerX" id="Mr5-Vi-6N7"/>
                             <constraint firstItem="2PT-Sj-8uv" firstAttribute="leading" secondItem="Tco-v2-TQk" secondAttribute="leadingMargin" id="U1F-ca-xWc"/>
+                            <constraint firstAttribute="trailing" secondItem="N2B-IA-Biv" secondAttribute="trailing" constant="10" id="aze-0W-ls1"/>
                             <constraint firstItem="xC1-N2-gQS" firstAttribute="top" secondItem="zoE-Jy-klK" secondAttribute="bottom" constant="40" id="cfp-DI-Y3m"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xC1-N2-gQS" secondAttribute="trailing" id="ikb-CC-bTu"/>
+                            <constraint firstItem="N2B-IA-Biv" firstAttribute="top" secondItem="Wva-T6-wol" secondAttribute="top" id="rUl-Nh-wym"/>
                             <constraint firstItem="2PT-Sj-8uv" firstAttribute="bottom" secondItem="Wva-T6-wol" secondAttribute="bottom" id="ytS-3Q-grJ"/>
                         </constraints>
                     </view>
@@ -1916,7 +2091,7 @@
                         <outlet property="SecondaryThreeYear" destination="Fet-L6-ka5" id="WTo-SU-Fqp"/>
                         <outlet property="SecondaryTwoYear" destination="jO3-3H-pbR" id="C67-pc-kJn"/>
                         <outlet property="SecondaryVal" destination="ggW-TF-pQg" id="LJE-8r-tIC"/>
-                        <outlet property="ShowMenuButton" destination="2PT-Sj-8uv" id="ln7-5e-wKV"/>
+                        <outlet property="ShareButton" destination="N2B-IA-Biv" id="3VY-s7-6wZ"/>
                         <outlet property="chart" destination="2Wi-fN-Tee" id="YVv-p4-urk"/>
                     </connections>
                 </viewController>
@@ -2023,9 +2198,13 @@
                                     <constraint firstItem="fja-W5-XV6" firstAttribute="top" secondItem="woQ-ZR-LOG" secondAttribute="bottom" constant="5" id="jQE-V4-sOv"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urp-mc-yPO">
-                                <rect key="frame" x="20" y="40" width="30" height="30"/>
-                                <state key="normal" title="&gt;&gt;&gt;">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urp-mc-yPO">
+                                <rect key="frame" x="13" y="33" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="JP4-bI-afE"/>
+                                    <constraint firstAttribute="height" constant="25" id="Zvh-uI-YhM"/>
+                                </constraints>
+                                <state key="normal" image="Hamburger">
                                     <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -2034,6 +2213,20 @@
                                     <action selector="ShowMenu:" destination="soc-3U-efR" eventType="touchUpInside" id="Ehe-DP-uJN"/>
                                     <action selector="ShowMenu:" destination="Exs-EA-6CP" eventType="touchUpInside" id="ZLT-aZ-NCR"/>
                                     <action selector="ShowMenu:" destination="7Xw-Wz-ddH" eventType="touchUpInside" id="wBe-aN-nWJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zsy-uH-8Jx">
+                                <rect key="frame" x="345" y="40" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Xi3-k2-mGq"/>
+                                    <constraint firstAttribute="width" constant="30" id="mIj-bT-3eB"/>
+                                </constraints>
+                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Share">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShareButton:" destination="hlm-kR-DaP" eventType="touchUpInside" id="0r0-rU-b2V"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2048,7 +2241,9 @@
                             <constraint firstItem="eX0-wo-1dX" firstAttribute="top" secondItem="eWc-kL-4Of" secondAttribute="bottom" id="Rw2-HC-jFi"/>
                             <constraint firstItem="urp-mc-yPO" firstAttribute="bottom" secondItem="irI-ol-7Hg" secondAttribute="bottom" id="ahB-gy-bux"/>
                             <constraint firstItem="KpQ-u1-q65" firstAttribute="centerX" secondItem="eNp-o3-72m" secondAttribute="centerX" id="en3-4i-HXc"/>
+                            <constraint firstAttribute="trailing" secondItem="Zsy-uH-8Jx" secondAttribute="trailing" constant="10" id="f42-fG-5Gg"/>
                             <constraint firstItem="eWc-kL-4Of" firstAttribute="top" secondItem="KpQ-u1-q65" secondAttribute="bottom" constant="40" id="icM-4T-OFR"/>
+                            <constraint firstItem="Zsy-uH-8Jx" firstAttribute="top" secondItem="irI-ol-7Hg" secondAttribute="top" id="rWf-dm-POQ"/>
                             <constraint firstItem="eWc-kL-4Of" firstAttribute="leading" secondItem="eNp-o3-72m" secondAttribute="leadingMargin" id="tem-hz-DOE"/>
                         </constraints>
                     </view>
@@ -2065,6 +2260,7 @@
                         <outlet property="MinWageVal" destination="djT-14-sAM" id="Iks-AM-EB7"/>
                         <outlet property="MinWageYear" destination="wCJ-D1-e8L" id="vfr-aG-SWl"/>
                         <outlet property="RangeController" destination="woQ-ZR-LOG" id="qx1-A4-87g"/>
+                        <outlet property="ShareButton" destination="Zsy-uH-8Jx" id="Tkj-Rn-4oC"/>
                         <outlet property="ShowMenuButton" destination="urp-mc-yPO" id="rQf-xa-9dq"/>
                         <outlet property="chart" destination="fja-W5-XV6" id="8Lf-im-MXT"/>
                     </connections>
@@ -2074,4 +2270,8 @@
             <point key="canvasLocation" x="1030" y="1713"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Hamburger" width="44" height="44"/>
+        <image name="Share" width="44" height="44"/>
+    </resources>
 </document>

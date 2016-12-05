@@ -44,8 +44,7 @@ class Utils
     
     func Today() -> String
     {
-        //return dateFormatter.string(from: Date())
-        return "2016-12-01"
+        return dateFormatter.string(from: Date())
     }
     
     func Yesterday() -> String
@@ -264,11 +263,24 @@ class Utils
         
         return json
     }
-    
 
+    
+    
     
 }
 
+
+public extension UIView {
+    
+    public func snapshotImage(afterScreenUpdates: Bool) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, 0)
+        drawHierarchy(in: bounds, afterScreenUpdates: afterScreenUpdates)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
+}
 
 
 
