@@ -120,8 +120,6 @@
 		68B1BF101D6C53EA00DC02C5 /* InfData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = InfData.json; sourceTree = "<group>"; };
 		68B1BF121D6C6C6B00DC02C5 /* CrudeProductionData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CrudeProductionData.json; sourceTree = "<group>"; };
 		68B1BF141D6C6D9200DC02C5 /* USOilData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = USOilData.json; sourceTree = "<group>"; };
-		68B48B1F1DE62CEE002D3574 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
-		68B48B201DE62CEF002D3574 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		68B48B251DE63DA6002D3574 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		68B48B2A1DE63DA7002D3574 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		68B48B2F1DE63DA8002D3574 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -140,6 +138,7 @@
 		68B867E51D63B73800309C56 /* M2Code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M2Code.swift; sourceTree = "<group>"; };
 		68B867E71D63C0B500309C56 /* MinWageCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinWageCode.swift; sourceTree = "<group>"; };
 		68B867E91D63D0A600309C56 /* InflationCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflationCode.swift; sourceTree = "<group>"; };
+		68C3E4661DF77306006EF52C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		68D3DB931D593AA600F42648 /* VenEcon2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenEcon2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D3DB961D593AA600F42648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68D3DB981D593AA600F42648 /* FXCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXCode.swift; sourceTree = "<group>"; };
@@ -584,7 +583,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				68D3DB9B1D593AA600F42648 /* Base */,
-				68B48B1F1DE62CEE002D3574 /* es */,
+				68C3E4661DF77306006EF52C /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -593,7 +592,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				68D3DBA01D593AA600F42648 /* Base */,
-				68B48B201DE62CEF002D3574 /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
