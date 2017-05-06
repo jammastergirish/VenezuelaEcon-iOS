@@ -143,6 +143,7 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             guard let data = data , error == nil else {
                 print("Didn't download properly")
+                self.viewDidLoad() 
                 return
             }
             

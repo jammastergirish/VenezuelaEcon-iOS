@@ -96,7 +96,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         case .modularLarge:
             let template = CLKComplicationTemplateModularLargeTallBody()
             template.headerTextProvider = CLKTextProvider.localizableTextProvider(withStringsFileTextKey: "Black Market")
-            template.bodyTextProvider = CLKTextProvider.localizableTextProvider(withStringsFileTextKey: (Val+" BsF/$+"))
+            template.bodyTextProvider = CLKTextProvider.localizableTextProvider(withStringsFileTextKey: (Val+" BsF/$"))
             return template
 //
 //        case .utilitarianSmall:
@@ -109,7 +109,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 //
         case .utilitarianSmallFlat:
             let template = CLKComplicationTemplateUtilitarianSmallFlat()
-            template.textProvider = CLKTextProvider.localizableTextProvider(withStringsFileTextKey: (Val+" BsF+"))
+            template.textProvider = CLKTextProvider.localizableTextProvider(withStringsFileTextKey: (Val+" BsF/$"))
             return template
 
         case .utilitarianLarge:

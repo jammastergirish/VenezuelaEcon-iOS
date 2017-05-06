@@ -57,6 +57,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
             
             guard let data = data , error == nil else {
                 print("Didn't download properly")
+                self.viewDidLoad() 
                 return
             }
             

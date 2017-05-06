@@ -143,6 +143,7 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             guard let data = data , error == nil else {
                 print("Didn't download properly")
+                self.viewDidLoad() 
                 return
             }
             
@@ -158,7 +159,7 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.Data(json)
                 
                 //Set all the text. There must be a way of doing this without using so many repetetive lines of code? I mean the attributed text rather than my if statements.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.M2, date: Utils.shared.Today())/1000000)! + " <font size=2>billion BsF</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.M2, date: Utils.shared.Today())/1000000000)! + " <font size=2>"+NSLocalizedString("trillion", comment: "")+" BsF</font></font>"
                 var encodedData = text.data(using: String.Encoding.utf8)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -191,7 +192,7 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 // Axes
                 self.xAxis.title = NSLocalizedString("Date", comment: "")
-                self.yAxis.title = ""+NSLocalizedString("Money Supply", comment: "")+" ("+NSLocalizedString("billion", comment: "")+" BsF)"
+                self.yAxis.title = ""+NSLocalizedString("Money Supply", comment: "")+" ("+NSLocalizedString("trillion", comment: "")+" BsF)"
                 self.enablePanningAndZoomingOnAxis(self.xAxis)
                 self.enablePanningAndZoomingOnAxis(self.yAxis)
                 self.xAxis.style.lineColor = UIColor.white
@@ -204,7 +205,7 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.xAxis.style.majorGridLineStyle.showMajorGridLines = false
                 self.xAxis.style.lineWidth = 1
                 self.yAxis.style.lineWidth = 1
-                self.yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: NSNumber(floatLiteral: self.M2.values.max()!/1000000))
+                self.yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: NSNumber(floatLiteral: self.M2.values.max()!/1000000000))
                 
                 self.chart.xAxis = self.xAxis
                 self.chart.yAxis = self.yAxis
@@ -307,7 +308,7 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 M2[dateString] = Double(M2Val)! // Adds to my dictionary
                 let DataPointM2 = SChartDataPoint() // Adds to graph data
                 DataPointM2.xValue = date
-                DataPointM2.yValue = Double(M2Val)!/1000000
+                DataPointM2.yValue = Double(M2Val)!/1000000000
                 DataM2.append(DataPointM2)
             }
             
@@ -339,7 +340,7 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 M2[dateString] = Double(M2Val)! // Adds to my dictionary
                 let DataPointM2 = SChartDataPoint() // Adds to graph data
                 DataPointM2.xValue = date
-                DataPointM2.yValue = Double(M2Val)!/1000000
+                DataPointM2.yValue = Double(M2Val)!/1000000000
                 DataM2.append(DataPointM2)
             }
             

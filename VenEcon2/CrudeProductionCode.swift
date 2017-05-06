@@ -148,6 +148,7 @@ class CrudeProductionCode: UIViewController, ENSideMenuDelegate, SChartDatasourc
             
             guard let data = data , error == nil else {
                 print("Didn't download properly")
+                self.viewDidLoad() 
                 return
             }
             
