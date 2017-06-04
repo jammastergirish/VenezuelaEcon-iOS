@@ -35,7 +35,7 @@ class InterfaceController: WKInterfaceController {
     
     
     @IBOutlet var BlackMarketValue: WKInterfaceLabel!
-    @IBOutlet var SIMADIValue: WKInterfaceLabel!
+    @IBOutlet var DICOMValue: WKInterfaceLabel!
     @IBOutlet var ForeignReservesValue: WKInterfaceLabel!
     
     override func willActivate() {
@@ -47,7 +47,7 @@ class InterfaceController: WKInterfaceController {
         
         
         
-        DownloadMan.shared.download { (BlackMarketVal, SIMADIVal, ReservesVal) in
+        DownloadMan.shared.download { (BlackMarketVal, DICOMVal, ReservesVal) in
             
             var text = "<font face=\"Trebuchet MS\" size=5 color=#FFFFFF>" + self.NumberFormatter.string(for: ((BlackMarketVal)))! + " <font size=1>BsF/$</font></font>"
             var encodedData = text.data(using: String.Encoding.utf8)!
@@ -58,12 +58,12 @@ class InterfaceController: WKInterfaceController {
                 
             } catch _ {}
             
-            text = "<font face=\"Trebuchet MS\" size=5 color=#FFFFFF>" + self.NumberFormatter.string(for: ((SIMADIVal)))! + " <font size=1>BsF/$</font></font>"
+            text = "<font face=\"Trebuchet MS\" size=5 color=#FFFFFF>" + self.NumberFormatter.string(for: ((DICOMVal)))! + " <font size=1>BsF/$</font></font>"
             encodedData = text.data(using: String.Encoding.utf8)!
             attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
             do {
                 let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-                self.SIMADIValue.setAttributedText(attributedString)
+                self.DICOMValue.setAttributedText(attributedString)
                 
             } catch _ {}
             

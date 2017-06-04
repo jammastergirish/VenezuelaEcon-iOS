@@ -44,10 +44,10 @@ class DownloadMan
                 let arrayresponse = (response?.components(separatedBy: "X"))
                 
                 let BM : Int = Int((self.NumberFormatter.number(from: ((arrayresponse?[0]))!))!)
-                let SIMADI : Int = Int((self.NumberFormatter.number(from: ((arrayresponse?[1]))!))!)
+                let DICOM : Int = Int((self.NumberFormatter.number(from: ((arrayresponse?[1]))!))!)
                 let Reserves : Double = Double((self.NumberFormatter.number(from: ((arrayresponse?[2]))!))!)
                
-                completionblock(BM, SIMADI, Reserves)
+                completionblock(BM, DICOM, Reserves)
                 
                 let defaults = UserDefaults.standard
                 defaults.set(BM, forKey: "BlackMarketSavedValue")

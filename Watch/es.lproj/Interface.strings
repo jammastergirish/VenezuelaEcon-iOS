@@ -9,7 +9,7 @@
 "LpB-VK-FxK.text" = "--";
 
 /* Class = "WKInterfaceLabel"; text = "SIMADI"; ObjectID = "UBN-Jl-mHI"; */
-"UBN-Jl-mHI.text" = "SIMADI";
+"UBN-Jl-mHI.text" = "DICOM";
 
 /* Class = "WKInterfaceLabel"; text = "--"; ObjectID = "VAX-LK-AXw"; */
 "VAX-LK-AXw.text" = "--";
