@@ -17,12 +17,14 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     var BM = [String: Double]()
     var Official = [String: Double]()
     var Simadi = [String: Double]()
+    var Dicom = [String: Double]()
     var M2_Res = [String: Double]()
     
     //Variables to hold chart data
     var DataBM: [SChartDataPoint] = []
     var DataOfficial: [SChartDataPoint] = []
     var DataSimadi: [SChartDataPoint] = []
+    var DataDicom: [SChartDataPoint] = []
     var DataSupp: [SChartDataPoint] = []
     var DataSitme: [SChartDataPoint] = []
     var DataSicad1: [SChartDataPoint] = []
@@ -68,7 +70,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     //Labels for main values
     @IBOutlet var BlackMarketVal: UILabel!
-    @IBOutlet var SIMADIVal: UILabel!
+    @IBOutlet var DicomVal: UILabel!
     @IBOutlet var DIPROVal: UILabel!
     @IBOutlet var M2_ResVal: UILabel!
     
@@ -80,9 +82,9 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     @IBOutlet var BlackMarketThreeYear: UILabel!
     @IBOutlet var BlackMarketFourYear: UILabel!
     @IBOutlet var BlackMarketFiveYear: UILabel!
-    @IBOutlet var SIMADIMonth: UILabel!
-    @IBOutlet var SIMADIYesterday: UILabel!
-    @IBOutlet var SIMADIYear: UILabel!
+    @IBOutlet var DicomMonth: UILabel!
+    @IBOutlet var DicomYesterday: UILabel!
+    @IBOutlet var DicomYear: UILabel!
     
     //Chart
     @IBOutlet var chart: ShinobiChart!
@@ -159,7 +161,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         loadLocalChartData()
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = URL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=2017-02-18")!
+        let url = URL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=2017-06-01")!
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             
@@ -181,19 +183,19 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             self.Data(json)
             
             //Set all the text.
-            var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Simadi, date: Utils.shared.Today()))! + " <font size=2>BsF/$</font></font>"
+            var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Dicom, date: Utils.shared.Today()))! + " <font size=2>BsF/$</font></font>"
             var encodedData = text.data(using: String.Encoding.utf8)!
             var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
             do {
                 let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-                self.SIMADIVal.attributedText = attributedString
+                self.DicomVal.attributedText = attributedString
                 
             } catch _ {}
             
             
-            //Utils.shared.Compare(self.Simadi, date: Utils.shared.Yesterday(), label: self.SIMADIYesterday, type: "FX")
-            Utils.shared.Compare(self.Simadi, date: Utils.shared.OneMonthAgo(), label: self.SIMADIMonth, type: "FX")
-            Utils.shared.Compare(self.Simadi, date: Utils.shared.YearsAgo(1), label: self.SIMADIYear, type: "FX")
+            //Utils.shared.Compare(self.Dicom, date: Utils.shared.Yesterday(), label: self.DicomYesterday, type: "FX")
+            //Utils.shared.Compare(self.Dicom, date: Utils.shared.OneMonthAgo(), label: self.DicomMonth, type: "FX")
+            //Utils.shared.Compare(self.Dicom, date: Utils.shared.YearsAgo(1), label: self.DicomYear, type: "FX")
             
 
              text = "<CENTER><font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.M2_Res, date: Utils.shared.Today()))! + " <font size=2>BsF/$</font></font></CENTER>"
@@ -281,6 +283,8 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             //All set to make everything visible again!
             self.Header.isHidden = false
             self.AllText.isHidden = false
+            self.DicomMonth.isHidden = true
+            self.DicomYear.isHidden = true
             self.RangeController.isHidden = false
             self.chart.isHidden = false
             self.ShowMenuButton.isHidden = false
@@ -376,6 +380,7 @@ for dataPoint in Utils.shared.JSONDataFromFile("FXdata") {
         let OfficialVal = dataPoint["official"] as? String,
         let BMVal = dataPoint["bm"] as? String,
         let SimadiVal = dataPoint["simadi"] as? String,
+        let DicomVal = dataPoint["dicom"] as? String,
         let SitmeVal = dataPoint["sitme"] as? String,
         let Sicad1Val = dataPoint["sicad1"] as? String,
         let Sicad2Val = dataPoint["sicad2"] as? String,
@@ -419,6 +424,15 @@ for dataPoint in Utils.shared.JSONDataFromFile("FXdata") {
         DataPointSimadi.xValue = date
         DataPointSimadi.yValue = Double(SimadiVal)
         DataSimadi.append(DataPointSimadi)
+    }
+    
+    if (DicomVal != "0")
+    {
+        Dicom[dateString] = Double(DicomVal)
+        let DataPointDicom = SChartDataPoint()
+        DataPointDicom.xValue = date
+        DataPointDicom.yValue = Double(DicomVal)
+        DataDicom.append(DataPointDicom)
     }
     
     if (M2_ResVal != "0")
@@ -477,6 +491,7 @@ func Data(_ json : [[String : AnyObject]]) {
             let OfficialVal = dataPoint["official"] as? String,
             let BMVal = dataPoint["bm"] as? String,
             let SimadiVal = dataPoint["simadi"] as? String,
+            let DicomVal = dataPoint["dicom"] as? String,
             let SitmeVal = dataPoint["sitme"] as? String,
             let Sicad1Val = dataPoint["sicad1"] as? String,
             let Sicad2Val = dataPoint["sicad2"] as? String,
@@ -520,6 +535,15 @@ func Data(_ json : [[String : AnyObject]]) {
             DataPointSimadi.xValue = date
             DataPointSimadi.yValue = Double(SimadiVal)
             DataSimadi.append(DataPointSimadi)
+        }
+        
+        if (DicomVal != "0")
+        {
+            Dicom[dateString] = Double(DicomVal)
+            let DataPointDicom = SChartDataPoint()
+            DataPointDicom.xValue = date
+            DataPointDicom.yValue = Double(DicomVal)
+            DataDicom.append(DataPointDicom)
         }
         
         if (M2_ResVal != "0")
@@ -579,8 +603,8 @@ func sChart(_ chart: ShinobiChart, seriesAt index: Int) -> SChartSeries {
     lineSeries.animationEnabled = false
     lineSeries.crosshairEnabled = true
     
-    let titles : [String] = [NSLocalizedString("Black Market", comment: ""), "DIPRO", "Simadi", NSLocalizedString("M2/Reserves", comment: ""), "Sitme", "Sicad I", "Sicad II", NSLocalizedString("Supplementary", comment: "")]
-    let colors : [UIColor] = [UIColor.red, UIColor.green, UIColor.orange, UIColor.white, UIColor.blue, UIColor.purple, UIColor.gray, UIColor.lightGray]
+    let titles : [String] = [NSLocalizedString("Black Market", comment: ""), "DIPRO", "SIMADI", "DICOM", NSLocalizedString("M2/Reserves", comment: ""), "Sitme", "Sicad I", "Sicad II", NSLocalizedString("Supplementary", comment: "")]
+    let colors : [UIColor] = [UIColor.red, UIColor.green, UIColor.brown, UIColor.orange, UIColor.white, UIColor.blue, UIColor.purple, UIColor.gray, UIColor.lightGray]
     
     lineSeries.title = titles[index]
     lineSeries.style().lineColor = colors[index]
@@ -601,7 +625,7 @@ func sChart(_ chart: ShinobiChart, seriesAt index: Int) -> SChartSeries {
     
 func sChart(_ chart: ShinobiChart, numberOfDataPointsForSeriesAt seriesIndex: Int) -> Int {
     
-    let counts : [Int] = [DataBM.count,DataOfficial.count,DataSimadi.count, DataM2_Res.count, DataSitme.count, DataSicad1.count, DataSicad2.count, DataSupp.count]
+    let counts : [Int] = [DataBM.count,DataOfficial.count,DataSimadi.count, DataDicom.count, DataM2_Res.count, DataSitme.count, DataSicad1.count, DataSicad2.count, DataSupp.count]
     
     return counts[seriesIndex]
     
@@ -628,21 +652,25 @@ func sChart(_ chart: ShinobiChart, dataPointAt dataIndex: Int, forSeriesAt serie
     }
     if seriesIndex == 3
     {
-        return DataM2_Res[dataIndex]
+        return DataDicom[dataIndex]
     }
     if seriesIndex == 4
     {
-        return DataSitme[dataIndex]
+        return DataM2_Res[dataIndex]
     }
     if seriesIndex == 5
     {
-        return DataSicad1[dataIndex]
+        return DataSitme[dataIndex]
     }
     if seriesIndex == 6
     {
-        return DataSicad2[dataIndex]
+        return DataSicad1[dataIndex]
     }
     if seriesIndex == 7
+    {
+        return DataSicad2[dataIndex]
+    }
+    if seriesIndex == 8
     {
         return DataSupp[dataIndex]
     }
