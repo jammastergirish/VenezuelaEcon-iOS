@@ -11,7 +11,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
     
     var BM = [String: Double]()
     var Official = [String: Double]()
-    var Simadi = [String: Double]()
+    var Dicom = [String: Double]()
     
     @IBOutlet var Date: UIDatePicker!
     @IBOutlet var Number: UITextField!
@@ -20,7 +20,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
     
     @IBOutlet var Val: UILabel!
     @IBOutlet var BlackMarketVal: UILabel!
-    @IBOutlet var SIMADIVal: UILabel!
+    @IBOutlet var DICOMVal: UILabel!
     @IBOutlet var DIPROVal: UILabel!
     
     
@@ -33,7 +33,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         BlackMarketVal.text = "..."
-        SIMADIVal.text = "..."
+        DICOMVal.text = "..."
         DIPROVal.text = "..."
         Val.text = ""
 
@@ -51,7 +51,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = URL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=2016-08-01")!
+        let url = URL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=2017-06-01")!
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             
@@ -115,7 +115,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
                 Val.text = Utils.shared.CurrencyFormatter.string(from: Utils.shared.NumberFormatter.number(from: ((Number.text!)))!)
                 //Initial value was dollar
                 BlackMarketVal.text = Utils.shared.NumberFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))! + " BsF"
-                SIMADIVal.text = Utils.shared.NumberFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))! + " BsF"
+                DICOMVal.text = Utils.shared.NumberFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(Dicom, date: Utils.shared.Today())))! + " BsF"
                 DIPROVal.text = Utils.shared.NumberFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))! + " BsF"
             }
             else if Currency.selectedSegmentIndex == 1
@@ -123,7 +123,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
                 Val.text = Utils.shared.NumberFormatter.string(from: Utils.shared.NumberFormatter.number(from: ((Number.text!)))!)! + " BsF"
                 //Initial value was BsF
                 BlackMarketVal.text = Utils.shared.CurrencyFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))!
-                SIMADIVal.text = Utils.shared.CurrencyFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(Simadi, date: Utils.shared.Today())))!
+                DICOMVal.text = Utils.shared.CurrencyFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(Dicom, date: Utils.shared.Today())))!
                 DIPROVal.text = Utils.shared.CurrencyFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))!
             }
             
@@ -132,7 +132,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
         {
             print("Isn't number or is zero\n")
             BlackMarketVal.text = "..."
-            SIMADIVal.text = "..."
+            DICOMVal.text = "..."
             DIPROVal.text = "..."
             Val.text = ""
         }
@@ -148,7 +148,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
                 dateString = dataPoint["date"] as? String,
                 let OfficialVal = dataPoint["official"] as? String,
                 let BMVal = dataPoint["bm"] as? String,
-                let SimadiVal = dataPoint["simadi"] as? String
+                let DicomVal = dataPoint["dicom"] as? String
                 else {
                     print("Data is JSON but not the JSON variables expected")
                     return
@@ -164,9 +164,9 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
                 Official[dateString] = Double(OfficialVal)
             }
             
-            if (SimadiVal != "0")
+            if (DicomVal != "0")
             {
-                Simadi[dateString] = Double(SimadiVal)
+                Dicom[dateString] = Double(DicomVal)
             }
             
         }
