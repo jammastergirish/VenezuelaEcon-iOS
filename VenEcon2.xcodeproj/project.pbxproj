@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C7931D71856CAE763B6DDAE /* Pods_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50D398B69A991E56B9E0B99 /* Pods_Watch_Extension.framework */; };
+		0FA02FF5721E214F31BB6A04 /* Pods_Watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339E3DFEB1F09E1BF65C1964 /* Pods_Watch.framework */; };
 		6812F21A1DE64F430013E7F7 /* DownloadMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6812F2191DE64F430013E7F7 /* DownloadMan.swift */; };
 		68315B3A1D6A561600BE7036 /* AboutCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68315B391D6A561600BE7036 /* AboutCode.swift */; };
 		68315B3C1D6A5EEA00BE7036 /* FXCalcCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */; };
@@ -50,6 +52,8 @@
 		68D3DBC11D593E4200F42648 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D3DBC01D593E4200F42648 /* libc++.tbd */; };
 		68E16F861D69157E00CD8DA1 /* USoilCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E16F851D69157E00CD8DA1 /* USoilCode.swift */; };
 		68E505A41D6A054D0017B885 /* CrudeProductionCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E505A31D6A054D0017B885 /* CrudeProductionCode.swift */; };
+		8A9593F23C1CA3ABB3E84773 /* Pods_VenEcon2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7AD33EF818B2D10B8458B2C /* Pods_VenEcon2Tests.framework */; };
+		EDE7BC0464FA51BEA6A86685 /* Pods_VenEcon2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B7B874200F5239FE8E4A8D /* Pods_VenEcon2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +106,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		339E3DFEB1F09E1BF65C1964 /* Pods_Watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		468CD5D85FF29E646B632ECF /* Pods-VenEcon2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenEcon2.release.xcconfig"; path = "Pods/Target Support Files/Pods-VenEcon2/Pods-VenEcon2.release.xcconfig"; sourceTree = "<group>"; };
+		57B7B874200F5239FE8E4A8D /* Pods_VenEcon2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenEcon2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5970EF07C674CA08CE6C9A34 /* Pods-Watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch/Pods-Watch.release.xcconfig"; sourceTree = "<group>"; };
+		5F6AC45266CC529B928DD585 /* Pods-Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		6629ED1FFBB37212F9CE4965 /* Pods-VenEcon2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenEcon2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VenEcon2Tests/Pods-VenEcon2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6812F2191DE64F430013E7F7 /* DownloadMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadMan.swift; sourceTree = "<group>"; };
 		6822A1C21DEA7E69009EDC80 /* VenEcon2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VenEcon2.entitlements; sourceTree = "<group>"; };
 		68315B391D6A561600BE7036 /* AboutCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCode.swift; sourceTree = "<group>"; };
@@ -156,6 +166,12 @@
 		68D3DBC01D593E4200F42648 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		68E16F851D69157E00CD8DA1 /* USoilCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USoilCode.swift; sourceTree = "<group>"; };
 		68E505A31D6A054D0017B885 /* CrudeProductionCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrudeProductionCode.swift; sourceTree = "<group>"; };
+		9F9A45E7EE23C0B0F14A08C6 /* Pods-VenEcon2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenEcon2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VenEcon2Tests/Pods-VenEcon2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A45903EF57C0696ADCC3057D /* Pods-VenEcon2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenEcon2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VenEcon2/Pods-VenEcon2.debug.xcconfig"; sourceTree = "<group>"; };
+		ABD092514357C513B9816868 /* Pods-Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		AE25E1FE1C2239E04C03F8DD /* Pods-Watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watch/Pods-Watch.debug.xcconfig"; sourceTree = "<group>"; };
+		F50D398B69A991E56B9E0B99 /* Pods_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7AD33EF818B2D10B8458B2C /* Pods_VenEcon2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenEcon2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C7931D71856CAE763B6DDAE /* Pods_Watch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +189,7 @@
 			files = (
 				68D3DBC11D593E4200F42648 /* libc++.tbd in Frameworks */,
 				68D3DBBF1D593D4D00F42648 /* ShinobiCharts.framework in Frameworks */,
+				EDE7BC0464FA51BEA6A86685 /* Pods_VenEcon2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,12 +197,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A9593F23C1CA3ABB3E84773 /* Pods_VenEcon2Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9028E29C32E33F16DEC6F5FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FA02FF5721E214F31BB6A04 /* Pods_Watch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		426482B09C0CAB3D3D3D28FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57B7B874200F5239FE8E4A8D /* Pods_VenEcon2.framework */,
+				F7AD33EF818B2D10B8458B2C /* Pods_VenEcon2Tests.framework */,
+				339E3DFEB1F09E1BF65C1964 /* Pods_Watch.framework */,
+				F50D398B69A991E56B9E0B99 /* Pods_Watch_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		68B48B351DE641F2002D3574 /* Watch */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +267,8 @@
 				68B48B441DE641F2002D3574 /* Watch Extension */,
 				68D3DB941D593AA600F42648 /* Products */,
 				68D3DBBE1D593D4D00F42648 /* ShinobiCharts.framework */,
+				F471C0F600463AF7F04588BE /* Pods */,
+				426482B09C0CAB3D3D3D28FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,6 +331,21 @@
 			path = VenEcon2Tests;
 			sourceTree = "<group>";
 		};
+		F471C0F600463AF7F04588BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A45903EF57C0696ADCC3057D /* Pods-VenEcon2.debug.xcconfig */,
+				468CD5D85FF29E646B632ECF /* Pods-VenEcon2.release.xcconfig */,
+				6629ED1FFBB37212F9CE4965 /* Pods-VenEcon2Tests.debug.xcconfig */,
+				9F9A45E7EE23C0B0F14A08C6 /* Pods-VenEcon2Tests.release.xcconfig */,
+				AE25E1FE1C2239E04C03F8DD /* Pods-Watch.debug.xcconfig */,
+				5970EF07C674CA08CE6C9A34 /* Pods-Watch.release.xcconfig */,
+				ABD092514357C513B9816868 /* Pods-Watch Extension.debug.xcconfig */,
+				5F6AC45266CC529B928DD585 /* Pods-Watch Extension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -298,8 +353,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68B48B571DE641F2002D3574 /* Build configuration list for PBXNativeTarget "Watch" */;
 			buildPhases = (
+				FEF0C70DD13B1225AA8B476D /* [CP] Check Pods Manifest.lock */,
 				68B48B321DE641F1002D3574 /* Resources */,
 				68B48B561DE641F2002D3574 /* Embed App Extensions */,
+				9028E29C32E33F16DEC6F5FE /* Frameworks */,
+				E354AD4E46F27F548087663A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -315,9 +373,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68B48B531DE641F2002D3574 /* Build configuration list for PBXNativeTarget "Watch Extension" */;
 			buildPhases = (
+				52284A63CBCE950DC6E4BE65 /* [CP] Check Pods Manifest.lock */,
 				68B48B3C1DE641F2002D3574 /* Sources */,
 				68B48B3D1DE641F2002D3574 /* Frameworks */,
 				68B48B3E1DE641F2002D3574 /* Resources */,
+				6220EA385DB5129F5E7C99E8 /* [CP] Embed Pods Frameworks */,
+				2D605D247A641C5F97028CA3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,10 +393,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68D3DBB01D593AA700F42648 /* Build configuration list for PBXNativeTarget "VenEcon2" */;
 			buildPhases = (
+				6D7FF8CC870227E1FB131EF0 /* [CP] Check Pods Manifest.lock */,
 				68D3DB8F1D593AA600F42648 /* Sources */,
 				68D3DB901D593AA600F42648 /* Frameworks */,
 				68D3DB911D593AA600F42648 /* Resources */,
 				68B48B5A1DE641F2002D3574 /* Embed Watch Content */,
+				08B60FD6604FB4882DD466B4 /* [CP] Embed Pods Frameworks */,
+				4907E70B97994296B53D7C56 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -351,9 +415,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68D3DBB31D593AA700F42648 /* Build configuration list for PBXNativeTarget "VenEcon2Tests" */;
 			buildPhases = (
+				C290D819502F190E8E048CD1 /* [CP] Check Pods Manifest.lock */,
 				68D3DBA31D593AA700F42648 /* Sources */,
 				68D3DBA41D593AA700F42648 /* Frameworks */,
 				68D3DBA51D593AA700F42648 /* Resources */,
+				DAE32A6B4D1A9DA410228305 /* [CP] Embed Pods Frameworks */,
+				96BC6B5F7E3423AE43786983 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -480,6 +547,174 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08B60FD6604FB4882DD466B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VenEcon2/Pods-VenEcon2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D605D247A641C5F97028CA3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4907E70B97994296B53D7C56 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VenEcon2/Pods-VenEcon2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52284A63CBCE950DC6E4BE65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6220EA385DB5129F5E7C99E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D7FF8CC870227E1FB131EF0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		96BC6B5F7E3423AE43786983 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VenEcon2Tests/Pods-VenEcon2Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C290D819502F190E8E048CD1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DAE32A6B4D1A9DA410228305 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VenEcon2Tests/Pods-VenEcon2Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E354AD4E46F27F548087663A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watch/Pods-Watch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEF0C70DD13B1225AA8B476D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		68B48B3C1DE641F2002D3574 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -601,6 +836,7 @@
 /* Begin XCBuildConfiguration section */
 		68B48B541DE641F2002D3574 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABD092514357C513B9816868 /* Pods-Watch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -622,6 +858,7 @@
 		};
 		68B48B551DE641F2002D3574 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F6AC45266CC529B928DD585 /* Pods-Watch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -642,6 +879,7 @@
 		};
 		68B48B581DE641F2002D3574 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE25E1FE1C2239E04C03F8DD /* Pods-Watch.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -665,6 +903,7 @@
 		};
 		68B48B591DE641F2002D3574 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5970EF07C674CA08CE6C9A34 /* Pods-Watch.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -781,6 +1020,7 @@
 		};
 		68D3DBB11D593AA700F42648 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A45903EF57C0696ADCC3057D /* Pods-VenEcon2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = VenEcon2/VenEcon2.entitlements;
@@ -802,6 +1042,7 @@
 		};
 		68D3DBB21D593AA700F42648 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 468CD5D85FF29E646B632ECF /* Pods-VenEcon2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = VenEcon2/VenEcon2.entitlements;
@@ -823,6 +1064,7 @@
 		};
 		68D3DBB41D593AA700F42648 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6629ED1FFBB37212F9CE4965 /* Pods-VenEcon2Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = VenEcon2Tests/Info.plist;
@@ -836,6 +1078,7 @@
 		};
 		68D3DBB51D593AA700F42648 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F9A45E7EE23C0B0F14A08C6 /* Pods-VenEcon2Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = VenEcon2Tests/Info.plist;
