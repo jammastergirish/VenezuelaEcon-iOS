@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="c0c-FT-4u7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="c0c-FT-4u7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1004,28 +1004,6 @@
                                     <action selector="EmailButton:" destination="RtX-C2-xsx" eventType="touchUpInside" id="12c-9z-fzS"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tg-PK-0Gd">
-                                <rect key="frame" x="25" y="313" width="325" height="31"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02q-iR-ofp">
-                                        <rect key="frame" x="0.0" y="0.0" width="276" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eD3-IR-VRk">
-                                        <rect key="frame" x="276" y="0.0" width="51" height="31"/>
-                                    </switch>
-                                </subviews>
-                            </stackView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7A-G7-oxD">
-                                <rect key="frame" x="93" y="357" width="189" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                <state key="normal" title="Go to iPhone settings to allow notifications"/>
-                                <connections>
-                                    <action selector="GoToSettings:" destination="RtX-C2-xsx" eventType="touchUpInside" id="HZX-Vl-ZkZ"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="3Ge-36-kjn">
                                 <rect key="frame" x="31" y="422" width="314.5" height="90"/>
                                 <subviews>
@@ -1094,11 +1072,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="I7A-G7-oxD" firstAttribute="top" secondItem="9tg-PK-0Gd" secondAttribute="bottom" constant="13" id="EKE-sg-HxM"/>
                             <constraint firstItem="zUX-Sh-PI5" firstAttribute="bottom" secondItem="0i3-KG-nbz" secondAttribute="bottom" id="L4i-gd-UR4"/>
                             <constraint firstItem="6oX-5M-Wkd" firstAttribute="top" secondItem="0i3-KG-nbz" secondAttribute="bottom" constant="36" id="OzI-Pf-E4F"/>
                             <constraint firstItem="0i3-KG-nbz" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="QlL-1v-fI2"/>
-                            <constraint firstItem="I7A-G7-oxD" firstAttribute="centerX" secondItem="9tg-PK-0Gd" secondAttribute="centerX" id="RVE-Mx-n9E"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VbT-dg-zzp" secondAttribute="trailing" constant="20" id="TbL-ug-EjK"/>
                             <constraint firstItem="E6c-EY-3PH" firstAttribute="top" secondItem="6oX-5M-Wkd" secondAttribute="bottom" constant="19" id="URE-Uu-OeF"/>
                             <constraint firstItem="zUX-Sh-PI5" firstAttribute="leading" secondItem="qjL-D2-mKH" secondAttribute="leadingMargin" id="Vul-cK-Ao0"/>
@@ -1106,23 +1082,17 @@
                             <constraint firstItem="zUX-Sh-PI5" firstAttribute="bottom" secondItem="0i3-KG-nbz" secondAttribute="bottom" id="f0a-MG-a4g"/>
                             <constraint firstItem="3Ge-36-kjn" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" constant="1" id="fzT-Qj-lb3"/>
                             <constraint firstItem="0i3-KG-nbz" firstAttribute="top" secondItem="qjL-D2-mKH" secondAttribute="topMargin" constant="40" id="gQ2-BQ-eX3"/>
-                            <constraint firstItem="9tg-PK-0Gd" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="iv9-yu-wq8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jfr-cx-agp" secondAttribute="trailing" constant="9" id="jau-O1-f5e"/>
                             <constraint firstItem="Qeo-0r-rq7" firstAttribute="top" secondItem="VbT-dg-zzp" secondAttribute="bottom" constant="20" id="k3W-Ds-Opz"/>
                             <constraint firstItem="E6c-EY-3PH" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" constant="-78.5" id="lzn-bq-jCo"/>
-                            <constraint firstItem="9tg-PK-0Gd" firstAttribute="width" secondItem="6oX-5M-Wkd" secondAttribute="width" id="qoK-Cv-mHD"/>
                             <constraint firstItem="E6c-EY-3PH" firstAttribute="centerY" secondItem="jfr-cx-agp" secondAttribute="centerY" id="rnW-ci-SBR"/>
-                            <constraint firstItem="02q-iR-ofp" firstAttribute="top" secondItem="E6c-EY-3PH" secondAttribute="bottom" constant="35" id="w1Y-sk-iAB"/>
                             <constraint firstItem="jfr-cx-agp" firstAttribute="top" secondItem="E6c-EY-3PH" secondAttribute="top" constant="2" id="wGS-qJ-uMr"/>
                             <constraint firstItem="6oX-5M-Wkd" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="wem-XR-cIk"/>
                             <constraint firstItem="E6c-EY-3PH" firstAttribute="leading" secondItem="qjL-D2-mKH" secondAttribute="leadingMargin" constant="10" id="yiL-Uj-TfL"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="NotificationsButton" destination="I7A-G7-oxD" id="6Uy-o5-Bfx"/>
-                        <outlet property="ReceiveNotificationsLabel" destination="02q-iR-ofp" id="xaK-VF-ulj"/>
                         <outlet property="ShowMenuButton" destination="zUX-Sh-PI5" id="orP-HU-Mcw"/>
-                        <outlet property="Switch" destination="eD3-IR-VRk" id="OZM-dR-EKn"/>
                         <outlet property="TextBox" destination="6oX-5M-Wkd" id="FCa-ij-SJy"/>
                         <outlet property="VersionLabel" destination="VbT-dg-zzp" id="rxQ-o0-mfX"/>
                     </connections>

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0C7931D71856CAE763B6DDAE /* Pods_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50D398B69A991E56B9E0B99 /* Pods_Watch_Extension.framework */; };
 		0FA02FF5721E214F31BB6A04 /* Pods_Watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339E3DFEB1F09E1BF65C1964 /* Pods_Watch.framework */; };
+		68127F671F0C564100C4AC5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68127F661F0C564100C4AC5C /* GoogleService-Info.plist */; };
+		68127F681F0C564100C4AC5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68127F661F0C564100C4AC5C /* GoogleService-Info.plist */; };
+		68127F691F0C564100C4AC5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68127F661F0C564100C4AC5C /* GoogleService-Info.plist */; };
+		68127F6A1F0C564100C4AC5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68127F661F0C564100C4AC5C /* GoogleService-Info.plist */; };
 		6812F21A1DE64F430013E7F7 /* DownloadMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6812F2191DE64F430013E7F7 /* DownloadMan.swift */; };
 		68315B3A1D6A561600BE7036 /* AboutCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68315B391D6A561600BE7036 /* AboutCode.swift */; };
 		68315B3C1D6A5EEA00BE7036 /* FXCalcCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */; };
@@ -112,6 +116,7 @@
 		5970EF07C674CA08CE6C9A34 /* Pods-Watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch/Pods-Watch.release.xcconfig"; sourceTree = "<group>"; };
 		5F6AC45266CC529B928DD585 /* Pods-Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		6629ED1FFBB37212F9CE4965 /* Pods-VenEcon2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenEcon2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VenEcon2Tests/Pods-VenEcon2Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		68127F661F0C564100C4AC5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6812F2191DE64F430013E7F7 /* DownloadMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadMan.swift; sourceTree = "<group>"; };
 		6822A1C21DEA7E69009EDC80 /* VenEcon2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VenEcon2.entitlements; sourceTree = "<group>"; };
 		68315B391D6A561600BE7036 /* AboutCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCode.swift; sourceTree = "<group>"; };
@@ -287,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				6822A1C21DEA7E69009EDC80 /* VenEcon2.entitlements */,
+				68127F661F0C564100C4AC5C /* GoogleService-Info.plist */,
 				68B48B301DE63DA8002D3574 /* InfoPlist.strings */,
 				68B48B261DE63DA6002D3574 /* Localizable.strings */,
 				68652D401D67DB9500049CBC /* Notes.swift */,
@@ -507,6 +513,7 @@
 			files = (
 				68B48B3A1DE641F2002D3574 /* Assets.xcassets in Resources */,
 				68B48B381DE641F2002D3574 /* Interface.storyboard in Resources */,
+				68127F691F0C564100C4AC5C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68B48B4E1DE641F2002D3574 /* Assets.xcassets in Resources */,
+				68127F6A1F0C564100C4AC5C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +530,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68127F671F0C564100C4AC5C /* GoogleService-Info.plist in Resources */,
 				68B1BF151D6C6D9200DC02C5 /* USOilData.json in Resources */,
 				68B48B2E1DE63DA8002D3574 /* InfoPlist.strings in Resources */,
 				68814A151D67180A002B88AF /* Images.xcassets in Resources */,
@@ -542,6 +551,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68B48B291DE63DA7002D3574 /* InfoPlist.strings in Resources */,
+				68127F681F0C564100C4AC5C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
