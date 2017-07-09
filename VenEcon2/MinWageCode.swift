@@ -121,7 +121,7 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.navigationController?.isNavigationBarHidden = true
         
         //Telling what units we're using. Hopefully will be able to shift all this later
-        var units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
+        //var units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
     
         
         //Hide everything on loading
@@ -159,7 +159,7 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.Data(json)
                 
                 //Set all the text.
-                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.MinWage, date: Utils.shared.Today()))! + " <font size=2>BsF/"+NSLocalizedString("month", comment: "")+"</font></font>"
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.MinWage, date: Utils.shared.Today()))! + " <font size=2>/ "+NSLocalizedString("month", comment: "")+"</font></font>"
                 var encodedData = text.data(using: String.Encoding.utf8)!
                 var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
                 do {
@@ -191,7 +191,7 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 // Axes
                 self.xAxis.title = NSLocalizedString("Date", comment: "")
-                self.yAxis.title = ""+NSLocalizedString("Minimum Wage", comment: "")+" (BsF / "+NSLocalizedString("month", comment: "")+")"
+                self.yAxis.title = ""+NSLocalizedString("Minimum Wage", comment: "")+" ($ / "+NSLocalizedString("month", comment: "")+")"
                 self.enablePanningAndZoomingOnAxis(self.xAxis)
                 self.enablePanningAndZoomingOnAxis(self.yAxis)
                 self.xAxis.style.lineColor = UIColor.white
@@ -296,7 +296,7 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             guard let
                 dateString = dataPoint["date"] as? String,
-                let MinWageVal = dataPoint["mw"] as? String
+                let MinWageVal = dataPoint["usd_bm"] as? String
                 else {
                     print("Data is JSON but not the JSON variables expected")
                     return
