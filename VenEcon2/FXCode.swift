@@ -194,7 +194,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             
             //Utils.shared.Compare(self.Dicom, date: Utils.shared.Yesterday(), label: self.DicomYesterday, type: "FX")
-            //Utils.shared.Compare(self.Dicom, date: Utils.shared.OneMonthAgo(), label: self.DicomMonth, type: "FX")
+            Utils.shared.Compare(self.Dicom, date: Utils.shared.OneMonthAgo(), label: self.DicomMonth, type: "FX")
             //Utils.shared.Compare(self.Dicom, date: Utils.shared.YearsAgo(1), label: self.DicomYear, type: "FX")
             
 
@@ -283,7 +283,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             //All set to make everything visible again!
             self.Header.isHidden = false
             self.AllText.isHidden = false
-            self.DicomMonth.isHidden = true
+            self.DicomMonth.isHidden = false
             self.DicomYear.isHidden = true
             self.RangeController.isHidden = false
             self.chart.isHidden = false
