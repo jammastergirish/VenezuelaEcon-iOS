@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
@@ -140,6 +141,34 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         ChartSVHeight.isActive = false
         ChartSVToTop.isActive = false
 
+        
+        
+        //Update the language of notifications 20170715
+        let session_ = URLSession(configuration: URLSessionConfiguration.default)
+        
+        let url_ = URL(string: "https://www.venezuelaecon.com/app/notifications.php?todo=update_lan&id=" + Messaging.messaging().fcmToken! + "&lan=" + (Locale.preferredLanguages.first?.components(separatedBy: "-")[0])!)!
+        let request_ = URLRequest(url: url_)
+        let task_ = session.dataTask(with: request_, completionHandler: { (data, response, error) -> Void in
+            
+            guard let data_ = data else {
+                print("No internet connection")
+                return
+            }
+            
+            if let response_ = String(data: data!, encoding: String.Encoding.utf8)
+            {
+                print(response_)
+                
+            } else {
+                print("Couldn't do")
+            }
+            
+        })
+        
+        task_.resume()
+        
+        
+        
         
         //For menu
         self.sideMenuController()?.sideMenu?.delegate = self

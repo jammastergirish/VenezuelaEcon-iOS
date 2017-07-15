@@ -5,6 +5,9 @@
 
 import UIKit
 import MessageUI
+import Firebase
+//import FirebaseMessaging
+//import UserNotifications
 
 //class AboutCode: UIViewController {
 class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMenuDelegate {
@@ -41,6 +44,11 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
         VersionLabel.text = "Version: " + version() + " on " + UIDevice.current.model
         
         
+     //   print("This is the key: " + (UserDefaults.standard.string(forKey: TokenKey))!)
+    
+        print("FCM token: "+Messaging.messaging().fcmToken!)
+        
+        
     }
 
     
@@ -67,7 +75,7 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
             let picker = MFMailComposeViewController()
             picker.mailComposeDelegate = self
             picker.setToRecipients(["girish@girish-gupta.com"])
-            picker.setSubject("Venezuela Econ " + version() + " on " + UIDevice.current.model)
+            picker.setSubject("Venezuela Econ " + version() + " | " + UIDevice.current.model + " | " + Messaging.messaging().fcmToken!)
             //   picker.setMessageBody(body.text, isHTML: false)
             
             

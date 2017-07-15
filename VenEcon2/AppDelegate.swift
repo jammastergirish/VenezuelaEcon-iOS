@@ -14,6 +14,7 @@ import FirebaseMessaging
 import UserNotifications
 // https://github.com/firebase/quickstart-ios/blob/master/messaging/MessagingExampleSwift/AppDelegate.swift#L40-L55 and https://firebase.google.com/docs/cloud-messaging/ios/client 20170704
 
+//let TokenKey = "TokenKey" //with Pat on 20170715
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -148,11 +149,15 @@ extension AppDelegate : MessagingDelegate {
     // [START refresh_token]
     func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
         print("Firebase registration token: \(fcmToken)")
+        
+        //UserDefaults.standard.set(fcmToken, forKey: TokenKey)
+        
+        
         //Messaging.messaging().subscribe(toTopic: "/topics/all")
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
-        let url = URL(string: "https://www.venezuelaecon.com/app/notifications.php?id=" + fcmToken)!
+        let url = URL(string: "https://www.venezuelaecon.com/app/notifications.php?id=" + fcmToken + "&lan=" + (Locale.preferredLanguages.first?.components(separatedBy: "-")[0])!)!
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             
