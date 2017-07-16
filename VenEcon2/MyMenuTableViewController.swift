@@ -39,6 +39,8 @@ class MyMenuTableViewController: UITableViewController {
     }
     
         let labels : [String] = [NSLocalizedString("Exchange Rates", comment: ""), " • "+NSLocalizedString("Calculator", comment: ""), NSLocalizedString("Foreign Reserves", comment: ""), NSLocalizedString("Inflation", comment: ""), NSLocalizedString("Money Supply", comment: ""), NSLocalizedString("Minimum Wage", comment: ""), NSLocalizedString("Oil Prices", comment: ""), NSLocalizedString("Crude Production", comment: ""), NSLocalizedString("U.S. Oil", comment: ""), NSLocalizedString("About", comment: "")]
+    
+    let labelsForViewControllers = ["FXViewController", "FXCalcViewController", "ReservesViewController", "InflationViewController", "M2ViewController", "MinWageViewController", "OilViewController", "CrudeProductionViewController", "USOilViewController", "AboutViewController"]
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -88,42 +90,48 @@ class MyMenuTableViewController: UITableViewController {
         
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         var destViewController : UIViewController
-        switch ((indexPath as NSIndexPath).row) {
-        case 0:
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "FXViewController")
-            break
-        case 1:
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "FXCalcViewController")
-            break
-        case 2:
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "ReservesViewController")
-            break
-        case 3:
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "InflationViewController")
-            break
-        case 4:
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "M2ViewController")
-            break
-        case 5:
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "MinWageViewController")
-            break
-        case 6:
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "OilViewController")
-            break
-        case 7:
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "CrudeProductionViewController")
-            break
-        case 8:
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "USOilViewController")
-            break
-        case (labels.count-1):
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "AboutViewController")
-            break
-        default:
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "FXViewController")
-            break
-        }
-        sideMenuController()?.setContentViewController(destViewController)
+        
+        GoToViewControllerWithName(name: labelsForViewControllers[indexPath.row])
+        
+//        switch ((indexPath as NSIndexPath).row) {
+        
+
+            
+//        case 0:
+//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "FXViewController")
+//            break
+//        case 1:
+//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "FXCalcViewController")
+//            break
+//        case 2:
+//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "ReservesViewController")
+//            break
+//        case 3:
+//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "InflationViewController")
+//            break
+//        case 4:
+//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "M2ViewController")
+//            break
+//        case 5:
+//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "MinWageViewController")
+//            break
+//        case 6:
+//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "OilViewController")
+//            break
+//        case 7:
+//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "CrudeProductionViewController")
+//            break
+//        case 8:
+//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "USOilViewController")
+//            break
+//        case (labels.count-1):
+//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "AboutViewController")
+//            break
+//        default:
+//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "FXViewController")
+//            break
+//        }
+//        sideMenuController()?.setContentViewController(destViewController)
     }
     
     func GoToViewControllerWithName(name : String)
@@ -131,6 +139,7 @@ class MyMenuTableViewController: UITableViewController {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         let DestViewController = mainStoryboard.instantiateViewController(withIdentifier: name)
         sideMenuController()?.setContentViewController(DestViewController)
+        tableView.selectRow(at: IndexPath(row: labelsForViewControllers.index(of: name)!, section: 0), animated: true, scrollPosition: .middle)
     }
     
 
