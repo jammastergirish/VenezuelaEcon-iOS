@@ -112,7 +112,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        let userInfo = notification.request.content.userInfo
+        let userInfo = notification.request.content.userInfo // hit when app in foreground, receives notification
         
         // With swizzling disabled you must let Messaging know about the message, for Analytics
         // Messaging.messaging().appDidReceiveMessage(userInfo)
@@ -125,7 +125,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         print(userInfo)
         
         // Change this to your preferred presentation option
-        completionHandler([])
+        completionHandler([.alert, .badge, .sound]) // added with Pat on 20170716 to show alert etc when app is open
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
@@ -139,8 +139,14 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         
         // Print full message.
         print(userInfo)
+        //USOilViewController
         
-        completionHandler()
+        if let ViewControllerName = userInfo["ViewToGoTo"] as? String
+        {
+            let NavViewController = window!.rootViewController as! MyNavigationController
+            NavViewController.GoToViewControllerWithName(name: ViewControllerName)
+        }
+        completionHandler() //This breakpoint hit when tapping notification, where in backgrounf or in foreground
     }
 }
 // [END ios_10_message_handling]

@@ -137,6 +137,8 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print ("This thing: " + Messaging.messaging().fcmToken!)
+        
         //Layout
         ChartSVHeight.isActive = false
         ChartSVToTop.isActive = false

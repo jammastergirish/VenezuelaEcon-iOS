@@ -10,10 +10,14 @@ import UIKit
 
 class MyNavigationController: ENSideMenuNavigationController, ENSideMenuDelegate {
 
+    var menuViewController : MyMenuTableViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sideMenu = ENSideMenu(sourceView: self.view, menuViewController: MyMenuTableViewController(), menuPosition:.left)
+        menuViewController = MyMenuTableViewController()
+        
+        sideMenu = ENSideMenu(sourceView: self.view, menuViewController: menuViewController, menuPosition:.left)
         //sideMenu?.delegate = self //optional
         sideMenu?.menuWidth = 180.0 // optional, default is 160
         //sideMenu?.bouncingEnabled = false
@@ -42,6 +46,11 @@ class MyNavigationController: ENSideMenuNavigationController, ENSideMenuDelegate
     
     func sideMenuDidOpen() {
         print("sideMenuDidOpen")
+    }
+    
+    func GoToViewControllerWithName(name : String)
+    {
+        menuViewController.GoToViewControllerWithName(name: name)
     }
 
     /*

@@ -126,6 +126,13 @@ class MyMenuTableViewController: UITableViewController {
         sideMenuController()?.setContentViewController(destViewController)
     }
     
+    func GoToViewControllerWithName(name : String)
+    {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        let DestViewController = mainStoryboard.instantiateViewController(withIdentifier: name)
+        sideMenuController()?.setContentViewController(DestViewController)
+    }
+    
 
     /*
     // MARK: - Navigation
