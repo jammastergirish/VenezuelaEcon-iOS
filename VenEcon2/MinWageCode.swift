@@ -214,6 +214,9 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.datasource = self
                 self.chart.positionLegend()
                 
+               // self.chart.reloadData()
+               // self.chart.redraw()
+                
                 
                 //All set to make everything visible again!
                 self.Header.isHidden = false
