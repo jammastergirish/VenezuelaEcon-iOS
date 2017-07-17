@@ -86,6 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Print full message.
         print(userInfo)
         
+        
         completionHandler(UIBackgroundFetchResult.newData)
     }
     // [END receive_message]

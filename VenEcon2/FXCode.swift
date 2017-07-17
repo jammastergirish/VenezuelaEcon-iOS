@@ -127,8 +127,8 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         
         chart.xAxis!.defaultRange = SChartDateRange(dateMinimum: startDate, andDateMaximum: endDate)
         
-        chart.reloadData()
-        chart.redraw()
+        //chart.reloadData()
+        //chart.redraw()
     }
     
     //Internet download session
