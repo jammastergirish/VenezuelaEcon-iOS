@@ -26,6 +26,7 @@ class Utils
     let NumberFormatter : Foundation.NumberFormatter = {
         let NumberFormatter = Foundation.NumberFormatter()
         NumberFormatter.numberStyle = .decimal
+        NumberFormatter.minimumFractionDigits = 2
         NumberFormatter.maximumFractionDigits = 2
         return NumberFormatter
     } ()

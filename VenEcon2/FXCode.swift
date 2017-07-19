@@ -127,8 +127,8 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         
         chart.xAxis!.defaultRange = SChartDateRange(dateMinimum: startDate, andDateMaximum: endDate)
         
-        //chart.reloadData()
-        //chart.redraw()
+        chart.reloadData()
+        chart.redraw()
     }
     
     //Internet download session
@@ -136,19 +136,22 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print ("This thing: " + Messaging.messaging().fcmToken!)
+    
         
         //Layout
         ChartSVHeight.isActive = false
         ChartSVToTop.isActive = false
 
-        
+        //20170716 Need to work out why this Messeging.messaging().fcmToken doesn't always work
+        if let token : String = InstanceID.instanceID().token() //Messaging.messaging().fcmToken
+        {
+            
+                    print ("This thing: " + token)
         
         //Update the language of notifications 20170715
         let session_ = URLSession(configuration: URLSessionConfiguration.default)
         
-        let url_ = URL(string: "https://www.venezuelaecon.com/app/notifications.php?todo=update_lan&id=" + Messaging.messaging().fcmToken! + "&lan=" + (Locale.preferredLanguages.first?.components(separatedBy: "-")[0])!)!
+        let url_ = URL(string: "https://www.venezuelaecon.com/app/notifications.php?todo=update_lan&id=" + token + "&lan=" + (Locale.preferredLanguages.first?.components(separatedBy: "-")[0])!)!
         let request_ = URLRequest(url: url_)
         let task_ = session.dataTask(with: request_, completionHandler: { (data, response, error) -> Void in
             
@@ -169,7 +172,11 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         
         task_.resume()
         
-        
+        }
+        else
+        {
+            print ("Firebase token not found?")
+        }
         
         
         //For menu
@@ -323,7 +330,6 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
             self.RangeControl(2 as AnyObject)
-         /////
 
 
             
