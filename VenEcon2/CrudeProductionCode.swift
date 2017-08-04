@@ -142,7 +142,7 @@ class CrudeProductionCode: UIViewController, ENSideMenuDelegate, SChartDatasourc
         loadLocalChartData()
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = URL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_crudeproduction&format=json&start=2016-06-14")!
+        let url = URL(string: "https://api.venezuelaecon.com//output.php?table=ve_crudeproduction&format=json&start=2016-06-14")!
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             

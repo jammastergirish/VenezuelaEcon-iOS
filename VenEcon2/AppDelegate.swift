@@ -164,7 +164,7 @@ extension AppDelegate : MessagingDelegate {
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
-        let url = URL(string: "https://www.venezuelaecon.com/app/notifications.php?id=" + fcmToken + "&lan=" + (Locale.preferredLanguages.first?.components(separatedBy: "-")[0])!)!
+        let url = URL(string: "https://api.venezuelaecon.com/notifications.php?id=" + fcmToken + "&lan=" + (Locale.preferredLanguages.first?.components(separatedBy: "-")[0])!)!
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             

@@ -28,7 +28,7 @@ class DownloadMan
     func download(completionblock: @escaping (Int?, Int?, Double?) -> Void)
     {
         
-        let url = URL(string: "https://www.venezuelaecon.com/app/watch.php")!
+        let url = URL(string: "https://api.venezuelaecon.com/watch.php")!
         
         let task = session.dataTask(with: url) { (data, response, error) in
             guard let data = data , error == nil else {

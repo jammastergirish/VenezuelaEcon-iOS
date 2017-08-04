@@ -51,7 +51,7 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = URL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=2017-06-01")!
+        let url = URL(string: "https://api.venezuelaecon.com/output.php?table=ve_fx&format=json&start=2017-06-01")!
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             

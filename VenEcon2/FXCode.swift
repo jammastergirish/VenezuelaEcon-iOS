@@ -151,7 +151,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         //Update the language of notifications 20170715
         let session_ = URLSession(configuration: URLSessionConfiguration.default)
         
-        let url_ = URL(string: "https://www.venezuelaecon.com/app/notifications.php?todo=update_lan&id=" + token + "&lan=" + (Locale.preferredLanguages.first?.components(separatedBy: "-")[0])!)!
+        let url_ = URL(string: "https://api.venezuelaecon.com/app/notifications.php?todo=update_lan&id=" + token + "&lan=" + (Locale.preferredLanguages.first?.components(separatedBy: "-")[0])!)!
         let request_ = URLRequest(url: url_)
         let task_ = session.dataTask(with: request_, completionHandler: { (data, response, error) -> Void in
             
@@ -199,7 +199,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         loadLocalChartData()
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = URL(string: "https://www.venezuelaecon.com/app/output.php?table=ve_fx&format=json&start=2017-06-01")!
+        let url = URL(string: "https://api.venezuelaecon.com/output.php?table=ve_fx&format=json&start=2017-06-01")!
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             
