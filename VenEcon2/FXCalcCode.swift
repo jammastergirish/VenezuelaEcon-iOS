@@ -176,19 +176,8 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
     
     @IBOutlet var ShowMenuButton: UIButton!
     
-    @IBOutlet var ShareButton: UIButton!
     @IBAction func ShowMenu(_ sender: AnyObject) {
         toggleSideMenuView()
-    }
-    
-    @IBAction func ShareButton(_ sender: UIButton) {
-        let objectsToShare = ["Venezuela Econ", view.snapshotImage(afterScreenUpdates: false)!, NSURL(string: "http://appsto.re/gb/LaYucb.i")] as [Any]
-        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-        
-        activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
-        
-        activityVC.popoverPresentationController?.sourceView = sender
-        self.present(activityVC, animated: true, completion: nil)
     }
     
     

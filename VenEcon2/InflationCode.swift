@@ -52,7 +52,6 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             Header.isHidden = false
             DistanceBetweenAllTextAndChartSV.isActive = true
             ShowMenuButton.isHidden = false
-            ShareButton.isHidden = false
             ChartSVToTop.isActive = false
         }
         else
@@ -63,7 +62,6 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             Header.isHidden = true
             DistanceBetweenAllTextAndChartSV.isActive = false
             ShowMenuButton.isHidden = true
-            ShareButton.isHidden = true
             ChartSVToTop.isActive = true
             ChartSVToTop.constant = 0
         }
@@ -156,7 +154,6 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.RangeController.isHidden = true
         self.chart.isHidden = true
         self.ShowMenuButton.isHidden = true
-        self.ShareButton.isHidden = true
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         //Very nice addition on 20160823!
@@ -259,7 +256,6 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.RangeController.isHidden = false
                 self.chart.isHidden = false
                 self.ShowMenuButton.isHidden = false
-                self.ShareButton.isHidden = false
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 
                 self.RangeControl(0 as AnyObject)
@@ -282,18 +278,8 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
 
     
     @IBOutlet var ShowMenuButton: UIButton!
-    @IBOutlet var ShareButton: UIButton!
     @IBAction func ShowMenu(_ sender: AnyObject) {
       toggleSideMenuView()
-    }
-    @IBAction func ShareButton(_ sender: UIButton) {
-        let objectsToShare = ["Venezuela Econ", view.snapshotImage(afterScreenUpdates: false)!, NSURL(string: "http://appsto.re/gb/LaYucb.i")] as [Any]
-        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-        
-        activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
-        
-        activityVC.popoverPresentationController?.sourceView = sender
-        self.present(activityVC, animated: true, completion: nil)
     }
     
     func sideMenuWillOpen() {
