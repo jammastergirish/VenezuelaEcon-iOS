@@ -21,6 +21,8 @@
 		685D86B01D629DA500F7FC42 /* OilCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685D86AF1D629DA500F7FC42 /* OilCode.swift */; };
 		68652D411D67DB9500049CBC /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68652D401D67DB9500049CBC /* Notes.swift */; };
 		68814A151D67180A002B88AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68814A141D67180A002B88AF /* Images.xcassets */; };
+		688640061F3651B8009A0A0F /* TaxRevCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688640051F3651B8009A0A0F /* TaxRevCode.swift */; };
+		688640081F365281009A0A0F /* TaxRevData.json in Resources */ = {isa = PBXBuildFile; fileRef = 688640071F365281009A0A0F /* TaxRevData.json */; };
 		68B1BF031D6C47C800DC02C5 /* FXdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B1BF021D6C47C800DC02C5 /* FXdata.json */; };
 		68B1BF051D6C4BC300DC02C5 /* ResData.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B1BF041D6C4BC300DC02C5 /* ResData.json */; };
 		68B1BF071D6C4CDB00DC02C5 /* OilData.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B1BF061D6C4CDB00DC02C5 /* OilData.json */; };
@@ -129,6 +131,8 @@
 		686B725E1DE99526008F182E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Interface.strings; sourceTree = "<group>"; };
 		687C97001DEA34DE00C67FD0 /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		68814A141D67180A002B88AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		688640051F3651B8009A0A0F /* TaxRevCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxRevCode.swift; sourceTree = "<group>"; };
+		688640071F365281009A0A0F /* TaxRevData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TaxRevData.json; sourceTree = "<group>"; };
 		68B1BF021D6C47C800DC02C5 /* FXdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FXdata.json; sourceTree = "<group>"; };
 		68B1BF041D6C4BC300DC02C5 /* ResData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ResData.json; sourceTree = "<group>"; };
 		68B1BF061D6C4CDB00DC02C5 /* OilData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OilData.json; sourceTree = "<group>"; };
@@ -323,6 +327,8 @@
 				68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */,
 				68D3DB9A1D593AA600F42648 /* Main.storyboard */,
 				68C9FF0A1F35193500BDFE37 /* BitcoinCode.swift */,
+				688640051F3651B8009A0A0F /* TaxRevCode.swift */,
+				688640071F365281009A0A0F /* TaxRevData.json */,
 				68D3DB9F1D593AA600F42648 /* LaunchScreen.storyboard */,
 				68D3DBA21D593AA600F42648 /* Info.plist */,
 				68814A141D67180A002B88AF /* Images.xcassets */,
@@ -546,6 +552,7 @@
 				68B1BF0D1D6C4E2F00DC02C5 /* M2Data.json in Resources */,
 				68B1BF051D6C4BC300DC02C5 /* ResData.json in Resources */,
 				68B1BF131D6C6C6B00DC02C5 /* CrudeProductionData.json in Resources */,
+				688640081F365281009A0A0F /* TaxRevData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,6 +754,7 @@
 			files = (
 				68315B3A1D6A561600BE7036 /* AboutCode.swift in Sources */,
 				68D3DBBB1D593AFF00F42648 /* ENSideMenuNavigationController.swift in Sources */,
+				688640061F3651B8009A0A0F /* TaxRevCode.swift in Sources */,
 				68652D411D67DB9500049CBC /* Notes.swift in Sources */,
 				68D3DBBC1D593AFF00F42648 /* MyMenuTableViewController.swift in Sources */,
 				68D3DBBA1D593AFF00F42648 /* ENSideMenu.swift in Sources */,
