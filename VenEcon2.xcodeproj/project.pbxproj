@@ -57,6 +57,7 @@
 		68D3DBBD1D593AFF00F42648 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */; };
 		68D3DBBF1D593D4D00F42648 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D3DBBE1D593D4D00F42648 /* ShinobiCharts.framework */; };
 		68D3DBC11D593E4200F42648 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D3DBC01D593E4200F42648 /* libc++.tbd */; };
+		68DF1BF61F367055001CE201 /* TaxUnitCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DF1BF51F367055001CE201 /* TaxUnitCode.swift */; };
 		68E16F861D69157E00CD8DA1 /* USoilCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E16F851D69157E00CD8DA1 /* USoilCode.swift */; };
 		68E505A41D6A054D0017B885 /* CrudeProductionCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E505A31D6A054D0017B885 /* CrudeProductionCode.swift */; };
 		8A9593F23C1CA3ABB3E84773 /* Pods_VenEcon2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7AD33EF818B2D10B8458B2C /* Pods_VenEcon2Tests.framework */; };
@@ -175,6 +176,7 @@
 		68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		68D3DBBE1D593D4D00F42648 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiCharts.framework; path = VenEcon2/ShinobiCharts.framework; sourceTree = "<group>"; };
 		68D3DBC01D593E4200F42648 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		68DF1BF51F367055001CE201 /* TaxUnitCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxUnitCode.swift; sourceTree = "<group>"; };
 		68E16F851D69157E00CD8DA1 /* USoilCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USoilCode.swift; sourceTree = "<group>"; };
 		68E505A31D6A054D0017B885 /* CrudeProductionCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrudeProductionCode.swift; sourceTree = "<group>"; };
 		9F9A45E7EE23C0B0F14A08C6 /* Pods-VenEcon2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenEcon2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VenEcon2Tests/Pods-VenEcon2Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				68D3DB9A1D593AA600F42648 /* Main.storyboard */,
 				68C9FF0A1F35193500BDFE37 /* BitcoinCode.swift */,
 				688640051F3651B8009A0A0F /* TaxRevCode.swift */,
+				68DF1BF51F367055001CE201 /* TaxUnitCode.swift */,
 				688640071F365281009A0A0F /* TaxRevData.json */,
 				68D3DB9F1D593AA600F42648 /* LaunchScreen.storyboard */,
 				68D3DBA21D593AA600F42648 /* Info.plist */,
@@ -756,6 +759,7 @@
 				68D3DBBB1D593AFF00F42648 /* ENSideMenuNavigationController.swift in Sources */,
 				688640061F3651B8009A0A0F /* TaxRevCode.swift in Sources */,
 				68652D411D67DB9500049CBC /* Notes.swift in Sources */,
+				68DF1BF61F367055001CE201 /* TaxUnitCode.swift in Sources */,
 				68D3DBBC1D593AFF00F42648 /* MyMenuTableViewController.swift in Sources */,
 				68D3DBBA1D593AFF00F42648 /* ENSideMenu.swift in Sources */,
 				68E16F861D69157E00CD8DA1 /* USoilCode.swift in Sources */,

@@ -2418,6 +2418,162 @@
             </objects>
             <point key="canvasLocation" x="-1055" y="1008"/>
         </scene>
+        <!--Tax Unit Code-->
+        <scene sceneID="wAV-jh-szh">
+            <objects>
+                <viewController storyboardIdentifier="TaxUnitViewController" id="79H-m1-cZV" customClass="TaxUnitCode" customModule="VenEcon2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GTa-7W-k5P"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xcw-be-YhP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1qL-oh-GpV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tax Unit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2V-Gb-THC">
+                                <rect key="frame" x="205" y="40" width="90" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ztK-Z3-fh7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Orb-D1-BHl">
+                                <rect key="frame" x="225" y="110" width="150" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TaxUnitVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoO-YO-XrP">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TaxUnit1Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiJ-T0-1wv">
+                                        <rect key="frame" x="0.0" y="25" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TaxUnit2Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lxa-TW-5rU">
+                                        <rect key="frame" x="0.0" y="46.5" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TaxUnit3Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="918-zO-HUG">
+                                        <rect key="frame" x="0.0" y="68.5" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="TaxRev4Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7T-Cl-ymb">
+                                        <rect key="frame" x="0.0" y="90" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="TaxRev5Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7u-8R-qBr">
+                                        <rect key="frame" x="0.0" y="111.5" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="TaxRev6Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbT-9B-Adx">
+                                        <rect key="frame" x="0.0" y="133" width="150" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="BKN-6V-CXN"/>
+                                    <constraint firstAttribute="height" constant="150" id="zrt-PH-Umv"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Vii-xp-cEr">
+                                <rect key="frame" x="20" y="300" width="343" height="367"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="SWg-op-CWh">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="sjH-7f-iWu"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="20 years"/>
+                                            <segment title="16 years"/>
+                                            <segment title="12 years"/>
+                                            <segment title="8 years"/>
+                                            <segment title="4 years"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="RangeControl:" destination="79H-m1-cZV" eventType="valueChanged" id="BjH-od-onb"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1LU-X0-6WF" customClass="ShinobiChart">
+                                        <rect key="frame" x="0.0" y="33" width="343" height="334"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="TDS-4r-JJp"/>
+                                    <constraint firstItem="1LU-X0-6WF" firstAttribute="top" secondItem="SWg-op-CWh" secondAttribute="bottom" constant="5" id="jQm-pd-sGp"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HjE-wh-I9P">
+                                <rect key="frame" x="13" y="33" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="G08-pH-0i0"/>
+                                    <constraint firstAttribute="width" constant="25" id="IRw-PC-3dc"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Hamburger">
+                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShowMenu:" destination="soc-3U-efR" eventType="touchUpInside" id="onA-1H-PLg"/>
+                                    <action selector="ShowMenu:" destination="79H-m1-cZV" eventType="touchUpInside" id="pVe-sg-JLN"/>
+                                    <action selector="ShowMenu:" destination="zDY-Lm-TOB" eventType="touchUpInside" id="u3D-AJ-ck9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Orb-D1-BHl" firstAttribute="centerX" secondItem="1qL-oh-GpV" secondAttribute="centerX" id="35B-4O-a6C"/>
+                            <constraint firstItem="HjE-wh-I9P" firstAttribute="leading" secondItem="1qL-oh-GpV" secondAttribute="leadingMargin" id="3Qi-hn-77o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vii-xp-cEr" secondAttribute="trailing" id="Itz-Jn-ycl"/>
+                            <constraint firstItem="Vii-xp-cEr" firstAttribute="top" secondItem="GTa-7W-k5P" secondAttribute="bottom" constant="280" id="JS0-Mm-zui"/>
+                            <constraint firstItem="Orb-D1-BHl" firstAttribute="top" secondItem="k2V-Gb-THC" secondAttribute="bottom" constant="40" id="R6D-7B-J7A"/>
+                            <constraint firstItem="Vii-xp-cEr" firstAttribute="top" secondItem="Orb-D1-BHl" secondAttribute="bottom" constant="40" id="YLn-2K-bpp"/>
+                            <constraint firstItem="HjE-wh-I9P" firstAttribute="bottom" secondItem="k2V-Gb-THC" secondAttribute="bottom" id="cUg-ut-eKf"/>
+                            <constraint firstItem="k2V-Gb-THC" firstAttribute="top" secondItem="1qL-oh-GpV" secondAttribute="topMargin" constant="40" id="eFc-Dc-5OQ"/>
+                            <constraint firstItem="Vii-xp-cEr" firstAttribute="leading" secondItem="1qL-oh-GpV" secondAttribute="leadingMargin" id="mfR-S0-8sL"/>
+                            <constraint firstItem="k2V-Gb-THC" firstAttribute="centerX" secondItem="1qL-oh-GpV" secondAttribute="centerX" id="oDd-bs-JaU"/>
+                            <constraint firstItem="Xcw-be-YhP" firstAttribute="top" secondItem="Vii-xp-cEr" secondAttribute="bottom" id="wc5-QW-jqu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="AllText" destination="Orb-D1-BHl" id="zXR-aJ-OUh"/>
+                        <outlet property="ChartSVHeight" destination="TDS-4r-JJp" id="Emz-Vj-Xbo"/>
+                        <outlet property="ChartSVToTop" destination="JS0-Mm-zui" id="KqQ-ZK-24C"/>
+                        <outlet property="DistanceBetweenAllTextAndChartSV" destination="YLn-2K-bpp" id="KKD-XC-Zlw"/>
+                        <outlet property="Header" destination="k2V-Gb-THC" id="y3H-JJ-SKD"/>
+                        <outlet property="RangeController" destination="SWg-op-CWh" id="5vU-j8-fQj"/>
+                        <outlet property="ShowMenuButton" destination="HjE-wh-I9P" id="uUU-Q0-w4z"/>
+                        <outlet property="TaxUnit1Year" destination="NiJ-T0-1wv" id="wiv-PA-MYc"/>
+                        <outlet property="TaxUnit2Year" destination="Lxa-TW-5rU" id="8ve-fi-YkP"/>
+                        <outlet property="TaxUnit3Year" destination="918-zO-HUG" id="cWh-a6-R5D"/>
+                        <outlet property="TaxUnit4Year" destination="x7T-Cl-ymb" id="5Lz-4g-ISX"/>
+                        <outlet property="TaxUnit5Year" destination="u7u-8R-qBr" id="jGp-0p-NXG"/>
+                        <outlet property="TaxUnit6Year" destination="gbT-9B-Adx" id="CAC-JY-lf4"/>
+                        <outlet property="TaxUnitVal" destination="HoO-YO-XrP" id="e7v-BD-9WF"/>
+                        <outlet property="chart" destination="1LU-X0-6WF" id="fOb-Cr-mXg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QcM-m0-Hqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2113" y="1197"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Hamburger" width="44" height="44"/>
