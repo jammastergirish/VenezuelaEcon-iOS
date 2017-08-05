@@ -43,6 +43,7 @@
 		68B867E61D63B73800309C56 /* M2Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E51D63B73800309C56 /* M2Code.swift */; };
 		68B867E81D63C0B500309C56 /* MinWageCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E71D63C0B500309C56 /* MinWageCode.swift */; };
 		68B867EA1D63D0A600309C56 /* InflationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E91D63D0A600309C56 /* InflationCode.swift */; };
+		68C9FF0B1F35193500BDFE37 /* BitcoinCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C9FF0A1F35193500BDFE37 /* BitcoinCode.swift */; };
 		68D3DB971D593AA600F42648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DB961D593AA600F42648 /* AppDelegate.swift */; };
 		68D3DB991D593AA600F42648 /* FXCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DB981D593AA600F42648 /* FXCode.swift */; };
 		68D3DB9C1D593AA600F42648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D3DB9A1D593AA600F42648 /* Main.storyboard */; };
@@ -154,6 +155,7 @@
 		68B867E71D63C0B500309C56 /* MinWageCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinWageCode.swift; sourceTree = "<group>"; };
 		68B867E91D63D0A600309C56 /* InflationCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflationCode.swift; sourceTree = "<group>"; };
 		68C3E4661DF77306006EF52C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		68C9FF0A1F35193500BDFE37 /* BitcoinCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinCode.swift; sourceTree = "<group>"; };
 		68D3DB931D593AA600F42648 /* VenEcon2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenEcon2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D3DB961D593AA600F42648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68D3DB981D593AA600F42648 /* FXCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXCode.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				68D3DBB81D593AFF00F42648 /* MyMenuTableViewController.swift */,
 				68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */,
 				68D3DB9A1D593AA600F42648 /* Main.storyboard */,
+				68C9FF0A1F35193500BDFE37 /* BitcoinCode.swift */,
 				68D3DB9F1D593AA600F42648 /* LaunchScreen.storyboard */,
 				68D3DBA21D593AA600F42648 /* Info.plist */,
 				68814A141D67180A002B88AF /* Images.xcassets */,
@@ -759,6 +762,7 @@
 				68B867E61D63B73800309C56 /* M2Code.swift in Sources */,
 				68D3DB971D593AA600F42648 /* AppDelegate.swift in Sources */,
 				685D86B01D629DA500F7FC42 /* OilCode.swift in Sources */,
+				68C9FF0B1F35193500BDFE37 /* BitcoinCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
