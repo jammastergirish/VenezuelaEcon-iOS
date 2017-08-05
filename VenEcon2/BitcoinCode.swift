@@ -129,22 +129,22 @@ class BitcoinCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         //Very nice addition on 20160823!
-        //loadLocalChartData()
+        loadLocalChartData()
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = URL(string: "https://api.venezuelaecon.com/output.php?table=ve_fx&format=json&start=2013-01-31")!
+        let url = URL(string: "https://api.venezuelaecon.com/output.php?table=ve_fx&format=json&start=2017-07-31")!
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             
             guard let data = data , error == nil else {
-                print("Didn't download properly")
+                print("Didn't download properly 1")
                 return
             }
             
             guard let optionalJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: AnyObject]],
                 let json = optionalJSON else
             {
-                print("Did download but the data doesn't look like JSON")
+                print("Did download but the data doesn't look like JSON 2")
                 return
             }
             
@@ -274,13 +274,13 @@ class BitcoinCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     //LOCAL LOADING
     func loadLocalChartData() {
         
-        for dataPoint in Utils.shared.JSONDataFromFile("FXData") {
+        for dataPoint in Utils.shared.JSONDataFromFile("FXdata") {
             
             guard let
                 dateString = dataPoint["date"] as? String,
                 let BitcoinVal = dataPoint["bitcoin"] as? String
                 else {
-                    print("Data is JSON but not the JSON variables expected")
+                    print("Data is JSON but not the JSON variables expected 3")
                     return
             }
             
@@ -311,7 +311,7 @@ class BitcoinCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 dateString = dataPoint["date"] as? String,
                 let BitcoinVal = dataPoint["bitcoin"] as? String
                 else {
-                    print("Data is JSON but not the JSON variables expected")
+                    print("Data is JSON but not the JSON variables expected 4")
                     return
             }
             
