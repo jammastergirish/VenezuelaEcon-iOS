@@ -74,24 +74,21 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     //Range Controller and Range Control functions
     @IBOutlet var RangeController: UISegmentedControl!
     @IBAction func RangeControl(_ sender: AnyObject) {
-        var Start : String = Utils.shared.YearsAgo(5)
+        var Start : String = Utils.shared.YearsAgo(10)
         switch RangeController.selectedSegmentIndex
         {
         case 0:
-            Start = Utils.shared.YearsAgo(16)
+            Start = Utils.shared.YearsAgo(40)
             xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         case 1:
-            Start = Utils.shared.YearsAgo(8)
+            Start = Utils.shared.YearsAgo(30)
             xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         case 2:
-            Start = Utils.shared.YearsAgo(4)
+            Start = Utils.shared.YearsAgo(20)
             xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         case 3:
-            Start = Utils.shared.YearsAgo(2)
-            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
-        case 4:
-            Start = Utils.shared.YearsAgo(1)
-            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
+            Start = Utils.shared.YearsAgo(10)
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         default:
             break;
         }

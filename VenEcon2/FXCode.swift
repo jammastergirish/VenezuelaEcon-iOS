@@ -100,23 +100,23 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     //Range Controller and Range Control functions
     @IBOutlet var RangeController: UISegmentedControl!
     @IBAction func RangeControl(_ sender: AnyObject) {
-        var Start : String = Utils.shared.YearsAgo(5)
+        var Start : String = Utils.shared.YearsAgo(4)
         switch RangeController.selectedSegmentIndex
         {
         case 0:
-            Start = Utils.shared.YearsAgo(16)
+            Start = Utils.shared.YearsAgo(32)
             xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         case 1:
-            Start = Utils.shared.YearsAgo(8)
+            Start = Utils.shared.YearsAgo(16)
             xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         case 2:
-            Start = Utils.shared.YearsAgo(4)
+            Start = Utils.shared.YearsAgo(8)
             xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         case 3:
-            Start = Utils.shared.YearsAgo(2)
-            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
+            Start = Utils.shared.YearsAgo(4)
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         case 4:
-            Start = Utils.shared.YearsAgo(1)
+            Start = Utils.shared.YearsAgo(2)
             xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
         default:
             break;

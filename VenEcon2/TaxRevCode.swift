@@ -89,7 +89,7 @@ class TaxRevCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         case 3:
             Start = Utils.shared.YearsAgo(4)
-            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         case 4:
             Start = Utils.shared.YearsAgo(2)
             xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"

@@ -82,10 +82,10 @@ class BitcoinCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
         case 1:
             Start = Utils.shared.YearsAgo(3)
-            xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
         case 2:
             Start = Utils.shared.YearsAgo(2)
-            xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
+            xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
         case 3:
             Start = Utils.shared.YearsAgo(1)
             xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"

@@ -188,17 +188,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="bG9-c0-XZJ">
                                 <rect key="frame" x="16" y="400" width="343" height="267"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="JIR-Ze-I2l">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="JIR-Ze-I2l">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="8tI-dS-wvC"/>
                                         </constraints>
                                         <segments>
+                                            <segment title="32 years"/>
                                             <segment title="16 years"/>
                                             <segment title="8 years"/>
                                             <segment title="4 years"/>
                                             <segment title="2 years"/>
-                                            <segment title="1 year"/>
                                         </segments>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
@@ -397,21 +397,6 @@
                                     <action selector="ShowMenu:" destination="Exs-EA-6CP" eventType="touchUpInside" id="xCj-rk-CRF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBk-hx-tce">
-                                <rect key="frame" x="339" y="40" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="U8k-i8-lBI"/>
-                                    <constraint firstAttribute="height" constant="30" id="YuE-zx-6H6"/>
-                                </constraints>
-                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="Share">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="ShareButton:" destination="zDY-Lm-TOB" eventType="touchUpInside" id="E7H-vA-r8j"/>
-                                    <action selector="ShareButton:" destination="vLn-Rh-y4A" eventType="touchUpInside" id="mM3-Kt-p0B"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -425,8 +410,6 @@
                             <constraint firstItem="vKc-Aw-B06" firstAttribute="leading" secondItem="cNb-nx-Xdn" secondAttribute="leadingMargin" id="Tam-0f-rgz"/>
                             <constraint firstItem="V1U-ni-8ia" firstAttribute="top" secondItem="1es-2u-m1V" secondAttribute="bottom" constant="40" id="Tbd-aZ-aCp"/>
                             <constraint firstItem="1es-2u-m1V" firstAttribute="top" secondItem="cNb-nx-Xdn" secondAttribute="topMargin" constant="40" id="pFe-WN-f7Q"/>
-                            <constraint firstAttribute="trailing" secondItem="BBk-hx-tce" secondAttribute="trailing" constant="10" id="pXO-Rs-8JJ"/>
-                            <constraint firstItem="BBk-hx-tce" firstAttribute="top" secondItem="1es-2u-m1V" secondAttribute="top" id="st7-fA-8Qd"/>
                             <constraint firstItem="1es-2u-m1V" firstAttribute="centerX" secondItem="cNb-nx-Xdn" secondAttribute="centerX" id="veA-Sb-Hju"/>
                         </constraints>
                     </view>
@@ -444,7 +427,6 @@
                         <outlet property="M2Val" destination="bMZ-Gx-c7y" id="DwZ-EX-aoh"/>
                         <outlet property="M2Year" destination="XGT-HW-8cS" id="nQx-Bp-yjo"/>
                         <outlet property="RangeController" destination="XPF-rr-eEv" id="bRB-9V-Jwy"/>
-                        <outlet property="ShareButton" destination="BBk-hx-tce" id="izq-Dx-5sI"/>
                         <outlet property="ShowMenuButton" destination="8bP-Dt-75D" id="sns-6i-aoq"/>
                         <outlet property="chart" destination="rJg-6d-ngH" id="RYP-QZ-mb6"/>
                     </connections>
@@ -528,17 +510,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xrT-Gd-YI8">
                                 <rect key="frame" x="20" y="300" width="343" height="367"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UMZ-00-2VQ">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="UMZ-00-2VQ">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="OVl-UG-bfE"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="16 years"/>
-                                            <segment title="8 years"/>
-                                            <segment title="4 years"/>
-                                            <segment title="2 years"/>
-                                            <segment title="1 year"/>
+                                            <segment title="40 years"/>
+                                            <segment title="30 years"/>
+                                            <segment title="20 years"/>
+                                            <segment title="10 years"/>
                                         </segments>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
@@ -2577,6 +2558,5 @@
     </scenes>
     <resources>
         <image name="Hamburger" width="44" height="44"/>
-        <image name="Share" width="44" height="44"/>
     </resources>
 </document>

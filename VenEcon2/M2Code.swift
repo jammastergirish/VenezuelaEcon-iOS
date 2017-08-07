@@ -109,6 +109,7 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
     let session = URLSession(configuration: URLSessionConfiguration.default)
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         //Layout
