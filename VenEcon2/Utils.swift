@@ -22,6 +22,12 @@ class Utils
         return dateFormatter
     } ()
     
+    let dateFormatterText : DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        return dateFormatter
+    } ()
+    
     
     let NumberFormatter : Foundation.NumberFormatter = {
         let NumberFormatter = Foundation.NumberFormatter()
@@ -106,6 +112,31 @@ class Utils
             else
             {
                 return GetLatestNonZeroValue(dict, date: dateFormatter.string(from: DayBeforeDate!))
+            }
+        }
+    }
+    
+    
+    
+    func GetLatestNonZeroKey(_ dict : [String: Double], date : String) -> [String] // 20170809 when realised I needed to get the latest key too. Can use all over
+    {
+        var value : Double? = dict[date]
+        if ((value != 0) && (value != nil))
+        {
+            //return allKeys(dict: dict, val: value!)
+            return (dict as NSDictionary).allKeys(for: value!) as! [String]
+        }
+        else
+        {
+            let DayBeforeDate = (userCalendar as NSCalendar).date(byAdding: [.day], value: -1, to: dateFormatter.date(from: date)!, options: [])
+            value = dict[dateFormatter.string(from: DayBeforeDate!)]
+            if ((value != 0) && (value != nil))
+            {
+                return (dict as NSDictionary).allKeys(for: value!) as! [String]
+            }
+            else
+            {
+                return GetLatestNonZeroKey(dict, date: dateFormatter.string(from: DayBeforeDate!))
             }
         }
     }

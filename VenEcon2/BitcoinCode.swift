@@ -187,7 +187,7 @@ class BitcoinCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 // Axes
                 self.xAxis.title = NSLocalizedString("Date", comment: "")
-                self.yAxis.title = "Bitcoin ("+NSLocalizedString("million", comment: "") + " BsF / BTC))"
+                self.yAxis.title = "Bitcoin ("+NSLocalizedString("million", comment: "") + " BsF / BTC)"
                 self.enablePanningAndZoomingOnAxis(self.xAxis)
                 self.enablePanningAndZoomingOnAxis(self.yAxis)
                 self.xAxis.style.lineColor = UIColor.white
