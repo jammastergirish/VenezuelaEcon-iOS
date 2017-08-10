@@ -59,7 +59,7 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     @IBOutlet var ReservesYear: UILabel!
     @IBOutlet var ReservesTwoYear: UILabel!
     @IBOutlet var ReservesThreeYear: UILabel!
-    @IBOutlet var ReservesFourYear: UILabel!
+    @IBOutlet var ReservesDate: UILabel!
     
     //Chart
     @IBOutlet var chart: ShinobiChart!
@@ -162,13 +162,14 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
+                self.ReservesDate.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.Reserves, date: Utils.shared.Today())[0])!)
+                
                 //var comparison : Double = Utils.shared.YearsAgo(GetLatestNonZeroValue(self.Reserves, date: Yesterday)
                 Utils.shared.Compare(self.Reserves, date: Utils.shared.Yesterday(), label: self.ReservesYesterday, type: nil)
                 Utils.shared.Compare(self.Reserves, date: Utils.shared.OneMonthAgo(), label: self.ReservesMonth, type: nil)
                 Utils.shared.Compare(self.Reserves, date: Utils.shared.YearsAgo(1), label: self.ReservesYear, type: nil)
                 Utils.shared.Compare(self.Reserves, date: Utils.shared.YearsAgo(2), label: self.ReservesTwoYear, type: nil)
                 Utils.shared.Compare(self.Reserves, date: Utils.shared.YearsAgo(3), label: self.ReservesThreeYear, type: nil)
-                Utils.shared.Compare(self.Reserves, date: Utils.shared.YearsAgo(4), label: self.ReservesFourYear, type: nil)
                                 
                 //DRAW THE GRAPHS
                 self.chart.canvasAreaBackgroundColor = UIColor.black
