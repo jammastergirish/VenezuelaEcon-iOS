@@ -59,7 +59,7 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
     @IBOutlet var M2TwoYear: UILabel!
     @IBOutlet var M2ThreeYear: UILabel!
     @IBOutlet var M2FourYear: UILabel!
-    @IBOutlet var M2FiveYear: UILabel!
+    @IBOutlet var M2Date: UILabel!
     
     //Chart
     @IBOutlet var chart: ShinobiChart!
@@ -166,7 +166,8 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
-                Utils.shared.Compare(self.M2, date: Utils.shared.YearsAgo(5), label: self.M2FiveYear, type: nil)
+                self.M2Date.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.M2, date: Utils.shared.Today())[0])!)
+                
                 Utils.shared.Compare(self.M2, date: Utils.shared.OneMonthAgo(), label: self.M2Month, type: nil)
                 Utils.shared.Compare(self.M2, date: Utils.shared.YearsAgo(1), label: self.M2Year, type: nil)
                 Utils.shared.Compare(self.M2, date: Utils.shared.YearsAgo(2), label: self.M2TwoYear, type: nil)
