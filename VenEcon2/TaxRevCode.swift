@@ -60,7 +60,7 @@ class TaxRevCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     @IBOutlet var TaxRev2Year: UILabel!
     @IBOutlet var TaxRev3Year: UILabel!
     @IBOutlet var TaxRev4Year: UILabel!
-    @IBOutlet var TaxRev5Year: UILabel!
+    @IBOutlet var TaxRevDate: UILabel!
     
     //Chart
     @IBOutlet var chart: ShinobiChart!
@@ -166,13 +166,14 @@ class TaxRevCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                     
                 } catch _ {}
                 
+                self.TaxRevDate.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.TaxRev, date: Utils.shared.Today())[0])!)
+                
                 //var comparison : Double = Utils.shared.YearsAgo(GetLatestNonZeroValue(self.TaxRev, date: Yesterday)
                 Utils.shared.Compare(self.TaxRev, date: Utils.shared.OneMonthAgo(), label: self.TaxRevMonth, type: nil)
                 Utils.shared.Compare(self.TaxRev, date: Utils.shared.YearsAgo(1), label: self.TaxRevYear, type: nil)
                 Utils.shared.Compare(self.TaxRev, date: Utils.shared.YearsAgo(2), label: self.TaxRev2Year, type: nil)
                 Utils.shared.Compare(self.TaxRev, date: Utils.shared.YearsAgo(3), label: self.TaxRev3Year, type: nil)
                 Utils.shared.Compare(self.TaxRev, date: Utils.shared.YearsAgo(4), label: self.TaxRev4Year, type: nil)
-                Utils.shared.Compare(self.TaxRev, date: Utils.shared.YearsAgo(5), label: self.TaxRev5Year, type: nil)
                 
                 //DRAW THE GRAPHS
                 self.chart.canvasAreaBackgroundColor = UIColor.black
