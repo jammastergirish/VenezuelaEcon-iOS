@@ -42,6 +42,8 @@
 		68B48B4E1DE641F2002D3574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68B48B4D1DE641F2002D3574 /* Assets.xcassets */; };
 		68B48B521DE641F2002D3574 /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 68B48B341DE641F1002D3574 /* Watch.app */; };
 		68B48B5E1DE64AA2002D3574 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B48B5D1DE64AA2002D3574 /* ComplicationController.swift */; };
+		68B6BE991F3BE635001E0E1E /* GDPCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B6BE981F3BE635001E0E1E /* GDPCode.swift */; };
+		68B6BE9B1F3BE8E2001E0E1E /* GDPData.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B6BE9A1F3BE8E2001E0E1E /* GDPData.json */; };
 		68B867E61D63B73800309C56 /* M2Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E51D63B73800309C56 /* M2Code.swift */; };
 		68B867E81D63C0B500309C56 /* MinWageCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E71D63C0B500309C56 /* MinWageCode.swift */; };
 		68B867EA1D63D0A600309C56 /* InflationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E91D63D0A600309C56 /* InflationCode.swift */; };
@@ -156,6 +158,8 @@
 		68B48B4D1DE641F2002D3574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68B48B4F1DE641F2002D3574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68B48B5D1DE64AA2002D3574 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComplicationController.swift; path = ../Watch/ComplicationController.swift; sourceTree = "<group>"; };
+		68B6BE981F3BE635001E0E1E /* GDPCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDPCode.swift; sourceTree = "<group>"; };
+		68B6BE9A1F3BE8E2001E0E1E /* GDPData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GDPData.json; sourceTree = "<group>"; };
 		68B867E51D63B73800309C56 /* M2Code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M2Code.swift; sourceTree = "<group>"; };
 		68B867E71D63C0B500309C56 /* MinWageCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinWageCode.swift; sourceTree = "<group>"; };
 		68B867E91D63D0A600309C56 /* InflationCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflationCode.swift; sourceTree = "<group>"; };
@@ -328,6 +332,8 @@
 				68D3DBB81D593AFF00F42648 /* MyMenuTableViewController.swift */,
 				68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */,
 				68D3DB9A1D593AA600F42648 /* Main.storyboard */,
+				68B6BE981F3BE635001E0E1E /* GDPCode.swift */,
+				68B6BE9A1F3BE8E2001E0E1E /* GDPData.json */,
 				68C9FF0A1F35193500BDFE37 /* BitcoinCode.swift */,
 				688640051F3651B8009A0A0F /* TaxRevCode.swift */,
 				68DF1BF51F367055001CE201 /* TaxUnitCode.swift */,
@@ -554,6 +560,7 @@
 				68B1BF071D6C4CDB00DC02C5 /* OilData.json in Resources */,
 				68B1BF0D1D6C4E2F00DC02C5 /* M2Data.json in Resources */,
 				68B1BF051D6C4BC300DC02C5 /* ResData.json in Resources */,
+				68B6BE9B1F3BE8E2001E0E1E /* GDPData.json in Resources */,
 				68B1BF131D6C6C6B00DC02C5 /* CrudeProductionData.json in Resources */,
 				688640081F365281009A0A0F /* TaxRevData.json in Resources */,
 			);
@@ -757,6 +764,7 @@
 			files = (
 				68315B3A1D6A561600BE7036 /* AboutCode.swift in Sources */,
 				68D3DBBB1D593AFF00F42648 /* ENSideMenuNavigationController.swift in Sources */,
+				68B6BE991F3BE635001E0E1E /* GDPCode.swift in Sources */,
 				688640061F3651B8009A0A0F /* TaxRevCode.swift in Sources */,
 				68652D411D67DB9500049CBC /* Notes.swift in Sources */,
 				68DF1BF61F367055001CE201 /* TaxUnitCode.swift in Sources */,
