@@ -74,7 +74,7 @@ class GDPCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     //Range Controller and Range Control functions
     @IBOutlet var RangeController: UISegmentedControl!
     @IBAction func RangeControl(_ sender: AnyObject) {
-        var Start : String = Utils.shared.YearsAgo(6)
+        var Start : String = Utils.shared.YearsAgo(9)
         switch RangeController.selectedSegmentIndex
         {
         case 0:
@@ -114,9 +114,6 @@ class GDPCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.sideMenuController()?.sideMenu?.delegate = self
         self.navigationController?.isNavigationBarHidden = true
         
-        //Telling what units we're using. Hopefully will be able to shift all this later
-        var units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
-        
         //Hide everything while loading
         self.Header.isHidden = true
         self.AllText.isHidden = true
@@ -149,24 +146,24 @@ class GDPCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 self.Data(json)
                 
-//                //Set all the text.
-//                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: self.GDP[Utils.shared.Today()]!)! + " <font size=2>"+NSLocalizedString("million", comment: "")+" BsF</font></font>"
-//                var encodedData = text.data(using: String.Encoding.utf8)!
-//                var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-//                do {
-//                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-//                    self.GDPVal.attributedText = attributedString
-//                    
-//                } catch _ {}
+                //Set all the text.
+                var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.GDP, date: Utils.shared.Today()))! + " <font size=2>"+NSLocalizedString("million", comment: "")+" BsF</font></font>"
+                var encodedData = text.data(using: String.Encoding.utf8)!
+                var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.GDPVal.attributedText = attributedString
+                    
+                } catch _ {}
                 
                 self.GDPDate.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.GDP, date: Utils.shared.Today())[0])!)
                 
                 //var comparison : Double = Utils.shared.YearsAgo(GetLatestNonZeroValue(self.GDP, date: Yesterday)
-                Utils.shared.Compare(self.GDP, date: Utils.shared.Yesterday(), label: self.GDPYear, type: nil)
-                Utils.shared.Compare(self.GDP, date: Utils.shared.OneMonthAgo(), label: self.GDP2Year, type: nil)
-                Utils.shared.Compare(self.GDP, date: Utils.shared.YearsAgo(1), label: self.GDP3Year, type: nil)
-                Utils.shared.Compare(self.GDP, date: Utils.shared.YearsAgo(2), label: self.GDP4Year, type: nil)
-                Utils.shared.Compare(self.GDP, date: Utils.shared.YearsAgo(3), label: self.GDP5Year, type: nil)
+                Utils.shared.Compare(self.GDP, date: Utils.shared.YearsAgo(1), label: self.GDPYear, type: nil)
+                Utils.shared.Compare(self.GDP, date: Utils.shared.YearsAgo(2), label: self.GDP2Year, type: nil)
+                Utils.shared.Compare(self.GDP, date: Utils.shared.YearsAgo(3), label: self.GDP3Year, type: nil)
+                Utils.shared.Compare(self.GDP, date: Utils.shared.YearsAgo(4), label: self.GDP4Year, type: nil)
+                Utils.shared.Compare(self.GDP, date: Utils.shared.YearsAgo(5), label: self.GDP5Year, type: nil)
                 
                 //DRAW THE GRAPHS
                 self.chart.canvasAreaBackgroundColor = UIColor.black
@@ -185,7 +182,7 @@ class GDPCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 // Axes
                 self.xAxis.title = NSLocalizedString("Date", comment: "")
-                self.yAxis.title = ""+NSLocalizedString("Foreign GDP", comment: "")+" ($ "+NSLocalizedString("billion", comment: "")+")"
+                self.yAxis.title = ""+NSLocalizedString("GDP", comment: "")+" ($ "+NSLocalizedString("million", comment: "")+" BsF)"
                 self.enablePanningAndZoomingOnAxis(self.xAxis)
                 self.enablePanningAndZoomingOnAxis(self.yAxis)
                 self.xAxis.style.lineColor = UIColor.white
@@ -198,7 +195,7 @@ class GDPCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.xAxis.style.majorGridLineStyle.showMajorGridLines = false
                 self.xAxis.style.lineWidth = 1
                 self.yAxis.style.lineWidth = 1
-                self.yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: NSNumber(floatLiteral: self.GDP.values.max()!/1000))
+                self.yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: NSNumber(floatLiteral: self.GDP.values.max()!/1000000))
                 
                 self.chart.xAxis = self.xAxis
                 self.chart.yAxis = self.yAxis
@@ -286,7 +283,7 @@ class GDPCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             if (GDPVal != "0")
             {
-                GDP[dateString] = Double(GDPVal) // Adds to my dictionary
+                GDP[dateString] = Double(GDPVal)!/1000000.0 // Adds to my dictionary
                 let DataPointGDP = SChartDataPoint() // Adds to graph data
                 DataPointGDP.xValue = date
                 DataPointGDP.yValue = Double(GDPVal)!/1000000
@@ -318,7 +315,7 @@ class GDPCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             if (GDPVal != "0")
             {
-                GDP[dateString] = Double(GDPVal) // Adds to my dictionary
+                GDP[dateString] = Double(GDPVal)!/1000000.0 // Adds to my dictionary
                 let DataPointGDP = SChartDataPoint() // Adds to graph data
                 DataPointGDP.xValue = date
                 DataPointGDP.yValue = Double(GDPVal)!/1000000
@@ -342,7 +339,7 @@ class GDPCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         lineSeries.animationEnabled = false
         lineSeries.crosshairEnabled = true
         
-        let titles : [String] = ["Foreign GDP"]
+        let titles : [String] = ["GDP"]
         let colors : [UIColor] = [UIColor.red]
         
         lineSeries.title = titles[index]

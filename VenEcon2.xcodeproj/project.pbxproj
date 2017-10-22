@@ -23,6 +23,7 @@
 		68814A151D67180A002B88AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68814A141D67180A002B88AF /* Images.xcassets */; };
 		688640061F3651B8009A0A0F /* TaxRevCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688640051F3651B8009A0A0F /* TaxRevCode.swift */; };
 		688640081F365281009A0A0F /* TaxRevData.json in Resources */ = {isa = PBXBuildFile; fileRef = 688640071F365281009A0A0F /* TaxRevData.json */; };
+		68A6E6951F9CE9B1002317FA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A6E6941F9CE9B1002317FA /* StoreKit.framework */; };
 		68B1BF031D6C47C800DC02C5 /* FXdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B1BF021D6C47C800DC02C5 /* FXdata.json */; };
 		68B1BF051D6C4BC300DC02C5 /* ResData.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B1BF041D6C4BC300DC02C5 /* ResData.json */; };
 		68B1BF071D6C4CDB00DC02C5 /* OilData.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B1BF061D6C4CDB00DC02C5 /* OilData.json */; };
@@ -136,6 +137,7 @@
 		68814A141D67180A002B88AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		688640051F3651B8009A0A0F /* TaxRevCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxRevCode.swift; sourceTree = "<group>"; };
 		688640071F365281009A0A0F /* TaxRevData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TaxRevData.json; sourceTree = "<group>"; };
+		68A6E6941F9CE9B1002317FA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		68B1BF021D6C47C800DC02C5 /* FXdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FXdata.json; sourceTree = "<group>"; };
 		68B1BF041D6C4BC300DC02C5 /* ResData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ResData.json; sourceTree = "<group>"; };
 		68B1BF061D6C4CDB00DC02C5 /* OilData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OilData.json; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				68D3DBC11D593E4200F42648 /* libc++.tbd in Frameworks */,
 				68D3DBBF1D593D4D00F42648 /* ShinobiCharts.framework in Frameworks */,
 				EDE7BC0464FA51BEA6A86685 /* Pods_VenEcon2.framework in Frameworks */,
+				68A6E6951F9CE9B1002317FA /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +235,7 @@
 		426482B09C0CAB3D3D3D28FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				68A6E6941F9CE9B1002317FA /* StoreKit.framework */,
 				57B7B874200F5239FE8E4A8D /* Pods_VenEcon2.framework */,
 				F7AD33EF818B2D10B8458B2C /* Pods_VenEcon2Tests.framework */,
 				339E3DFEB1F09E1BF65C1964 /* Pods_Watch.framework */,
@@ -488,6 +492,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 							com.apple.Push = {

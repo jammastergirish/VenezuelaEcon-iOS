@@ -143,6 +143,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         ChartSVToTop.isActive = false
 
         //20170716 Need to work out why this Messeging.messaging().fcmToken doesn't always work
+        //should i be doing this? https://stackoverflow.com/questions/40013764/correct-way-to-retrieve-token-for-fcm-ios-10-swift-3
         if let token : String = InstanceID.instanceID().token() //Messaging.messaging().fcmToken
         {
             
@@ -199,7 +200,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         loadLocalChartData()
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = URL(string: "https://api.venezuelaecon.com/output.php?table=ve_fx&format=json&start=2017-07-31")!
+        let url = URL(string: "https://api.venezuelaecon.com/output.php?table=ve_fx&format=json&start=2017-08-15")!
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             

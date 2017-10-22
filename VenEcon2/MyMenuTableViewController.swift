@@ -40,7 +40,7 @@ class MyMenuTableViewController: UITableViewController {
     
         let labels : [String] = [NSLocalizedString("Exchange Rates", comment: ""), " • "+NSLocalizedString("Calculator", comment: ""), "Bitcoin", NSLocalizedString("Foreign Reserves", comment: ""), NSLocalizedString("Inflation", comment: ""), /*NSLocalizedString("GDP", comment: ""), */NSLocalizedString("Tax Revenue", comment: ""), NSLocalizedString("Money Supply", comment: ""), NSLocalizedString("Minimum Wage", comment: ""), NSLocalizedString("Oil Prices", comment: ""), NSLocalizedString("Crude Production", comment: ""), NSLocalizedString("U.S. Oil", comment: ""), NSLocalizedString("Tax Unit", comment: ""), NSLocalizedString("About", comment: "")]
     
-    let labelsForViewControllers = ["FXViewController", "FXCalcViewController", "BitcoinViewController", "ReservesViewController", "InflationViewController", /*"GDPViewController",*/ "TaxRevViewController", "M2ViewController", "MinWageViewController", "OilViewController", "CrudeProductionViewController", "USOilViewController", "TaxUnitViewController", "AboutViewController"]
+    let labelsForViewControllers = ["FXViewController", "FXCalcViewController", "BitcoinViewController", "ReservesViewController", "InflationViewController",/* "GDPViewController",*/ "TaxRevViewController", "M2ViewController", "MinWageViewController", "OilViewController", "CrudeProductionViewController", "USOilViewController", "TaxUnitViewController", "AboutViewController"]
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -57,7 +57,7 @@ class MyMenuTableViewController: UITableViewController {
         if (cell == nil) {
             cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "CELL")
             cell!.backgroundColor = UIColor.clear
-            cell!.textLabel?.textColor = UIColor.green
+            cell!.textLabel?.textColor = UIColor.orange
             let selectedBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: cell!.frame.size.width, height: cell!.frame.size.height))
             selectedBackgroundView.backgroundColor = UIColor.gray.withAlphaComponent(0.2)
             cell!.selectedBackgroundView = selectedBackgroundView

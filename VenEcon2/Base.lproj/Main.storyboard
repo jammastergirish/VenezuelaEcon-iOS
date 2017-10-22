@@ -915,20 +915,11 @@
                                     <constraint firstAttribute="width" constant="325" id="FnI-rd-x8O"/>
                                     <constraint firstAttribute="height" constant="119" id="VyX-7M-5bu"/>
                                 </constraints>
-                                <string key="text">This app was created by Girish Gupta, a Caracas-based journalist. In real time, data from various sources is compiled into an online database from which your device pulls data. Notifications are fully automated and so very fast and accurate.</string>
+                                <string key="text">This app was created by Girish Gupta, a Venezuela-based journalist, physics graduate, and software developer.  Real time and historical data from various sources is automatically pushed to your device. There is nowhere faster to get data on Venezuela's economy.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6c-EY-3PH">
-                                <rect key="frame" x="26" y="244" width="166" height="34"/>
-                                <state key="normal" title="Send comments...">
-                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="EmailButton:" destination="RtX-C2-xsx" eventType="touchUpInside" id="12c-9z-fzS"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="3Ge-36-kjn">
                                 <rect key="frame" x="31" y="422" width="328" height="135"/>
                                 <subviews>
@@ -1002,36 +993,32 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfr-cx-agp">
-                                <rect key="frame" x="209" y="246" width="141" height="30"/>
-                                <state key="normal" title="@VenezuelaEcon">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOg-4c-lis">
+                                <rect key="frame" x="101" y="315" width="229" height="36"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
+                                <state key="normal" title="www.venezuelaecon.com">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="EmailButton:" destination="RtX-C2-xsx" eventType="touchUpInside" id="SZA-eK-vqo"/>
-                                    <action selector="TwitterButton:" destination="RtX-C2-xsx" eventType="touchUpInside" id="M5D-BE-8zc"/>
+                                    <action selector="GoToWebsite:" destination="RtX-C2-xsx" eventType="touchUpInside" id="iqf-aA-6Qi"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="jOg-4c-lis" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="Kka-Uo-h9J"/>
                             <constraint firstItem="zUX-Sh-PI5" firstAttribute="bottom" secondItem="0i3-KG-nbz" secondAttribute="bottom" id="L4i-gd-UR4"/>
                             <constraint firstItem="6oX-5M-Wkd" firstAttribute="top" secondItem="0i3-KG-nbz" secondAttribute="bottom" constant="36" id="OzI-Pf-E4F"/>
                             <constraint firstItem="0i3-KG-nbz" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="QlL-1v-fI2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VbT-dg-zzp" secondAttribute="trailing" constant="20" id="TbL-ug-EjK"/>
-                            <constraint firstItem="E6c-EY-3PH" firstAttribute="top" secondItem="6oX-5M-Wkd" secondAttribute="bottom" constant="19" id="URE-Uu-OeF"/>
                             <constraint firstItem="zUX-Sh-PI5" firstAttribute="leading" secondItem="qjL-D2-mKH" secondAttribute="leadingMargin" id="Vul-cK-Ao0"/>
                             <constraint firstItem="VbT-dg-zzp" firstAttribute="top" secondItem="3Ge-36-kjn" secondAttribute="bottom" constant="50" id="Wzi-6v-jXw"/>
                             <constraint firstItem="zUX-Sh-PI5" firstAttribute="bottom" secondItem="0i3-KG-nbz" secondAttribute="bottom" id="f0a-MG-a4g"/>
                             <constraint firstItem="3Ge-36-kjn" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" constant="1" id="fzT-Qj-lb3"/>
                             <constraint firstItem="0i3-KG-nbz" firstAttribute="top" secondItem="qjL-D2-mKH" secondAttribute="topMargin" constant="40" id="gQ2-BQ-eX3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jfr-cx-agp" secondAttribute="trailing" constant="9" id="jau-O1-f5e"/>
                             <constraint firstItem="Qeo-0r-rq7" firstAttribute="top" secondItem="VbT-dg-zzp" secondAttribute="bottom" constant="20" id="k3W-Ds-Opz"/>
-                            <constraint firstItem="E6c-EY-3PH" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" constant="-78.5" id="lzn-bq-jCo"/>
-                            <constraint firstItem="E6c-EY-3PH" firstAttribute="centerY" secondItem="jfr-cx-agp" secondAttribute="centerY" id="rnW-ci-SBR"/>
-                            <constraint firstItem="jfr-cx-agp" firstAttribute="top" secondItem="E6c-EY-3PH" secondAttribute="top" constant="2" id="wGS-qJ-uMr"/>
+                            <constraint firstItem="jOg-4c-lis" firstAttribute="top" secondItem="6oX-5M-Wkd" secondAttribute="bottom" constant="93" id="qaH-AF-q8l"/>
                             <constraint firstItem="6oX-5M-Wkd" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="wem-XR-cIk"/>
-                            <constraint firstItem="E6c-EY-3PH" firstAttribute="leading" secondItem="qjL-D2-mKH" secondAttribute="leadingMargin" constant="10" id="yiL-Uj-TfL"/>
                         </constraints>
                     </view>
                     <connections>

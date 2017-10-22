@@ -195,10 +195,13 @@ class Utils
         
         let comparison : Double = GetLatestNonZeroValue(dict, date: date)
         
+        let LatestDateForWhichThereIsVal : String = dateFormatter.string(from: dateFormatter.date(from:GetLatestNonZeroKey(dict, date: Today())[0])!)
+        
         if (type=="FX")
         {
             //if let todaysvalueofFX = dict[Today()], todaysvalueofFX == comparison
-            if (GetLatestNonZeroValue(dict, date: Today())==comparison)
+            
+            if (GetLatestNonZeroValue(dict, date: LatestDateForWhichThereIsVal)==comparison)
             {
                 let text = "<font face=\"Trebuchet MS\" color=#808080>Same as "+ComparisonString+"</font>"
                 
@@ -210,7 +213,7 @@ class Utils
                     
                 } catch _ {}
             }
-            else if (GetLatestNonZeroValue(dict, date: Today())>comparison)
+            else if (GetLatestNonZeroValue(dict, date: LatestDateForWhichThereIsVal)>comparison)
             {
                 let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=red>&#x25BC;</font> " + NumberFormatter.string(for: abs(DevalPerc(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% " + NSLocalizedString("in", comment: "") + " "+ComparisonString+"</font>"
                 
@@ -222,7 +225,7 @@ class Utils
                     
                 } catch _ {}
             }
-            else if (GetLatestNonZeroValue(dict, date: Today())<comparison)
+            else if (GetLatestNonZeroValue(dict, date: LatestDateForWhichThereIsVal)<comparison)
             {
                 let text = "<font face=\"Trebuchet MS\" color=#808080>BsF <font color=green>&#x25B2;</font> " + NumberFormatter.string(for: abs(DevalPerc(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% " + NSLocalizedString("in", comment: "") + " "+ComparisonString+"</font>"
                 
@@ -237,7 +240,7 @@ class Utils
         }
         else
         {
-            if (GetLatestNonZeroValue(dict, date: Today())==comparison)
+            if (GetLatestNonZeroValue(dict, date: LatestDateForWhichThereIsVal)==comparison)
             {
                 let text = "<font face=\"Trebuchet MS\" color=#808080>Same as "+ComparisonString+"</font>"
                 
@@ -249,7 +252,7 @@ class Utils
                     
                 } catch _ {}
             }
-            else if (GetLatestNonZeroValue(dict, date: Today())>comparison)
+            else if (GetLatestNonZeroValue(dict, date: LatestDateForWhichThereIsVal)>comparison)
             {
                 let text = "<font face=\"Trebuchet MS\" color=#808080><font color=green>&#x25B2;</font> " + NumberFormatter.string(for: abs(PercDiff(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% " + NSLocalizedString("in", comment: "") + " "+ComparisonString+"</font>"
                 
@@ -261,7 +264,7 @@ class Utils
                     
                 } catch _ {}
             }
-            else if (GetLatestNonZeroValue(dict, date: Today())<comparison)
+            else if (GetLatestNonZeroValue(dict, date: LatestDateForWhichThereIsVal)<comparison)
             {
                 let text = "<font face=\"Trebuchet MS\" color=#808080><font color=red>&#x25BC;</font> " + NumberFormatter.string(for: abs(PercDiff(comparison, new: GetLatestNonZeroValue(dict, date: Today()))))! + "% " + NSLocalizedString("in", comment: "") + " "+ComparisonString+"</font>"
                 

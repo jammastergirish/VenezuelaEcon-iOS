@@ -96,10 +96,17 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
         }
     }
     
+    
+    @IBAction func GoToWebsite(_ sender: Any) {
+        if let url = URL(string: "https://www.venezuelaecon.com/") {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    
     @IBAction func ShareButton(_ sender: UIButton) {
         let textToShare = "Venezuela Econ iPhone app"
         
-        if let myWebsite = NSURL(string: "http://www.venezuelaecon.com/") {
+        if let myWebsite = NSURL(string: "https://www.venezuelaecon.com/") {
             let objectsToShare = [textToShare, myWebsite] as [Any]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             
