@@ -13,6 +13,8 @@ class MyMenuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(UserUpgraded), name: NSNotification.Name(rawValue: "UserUpgraded"), object: nil) // added 20171022. add this everywhere i want to check if user has subscribed and then the userupgraded function below
+        
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
         label.center = CGPoint(x: 108, y: -25)
@@ -32,22 +34,59 @@ class MyMenuTableViewController: UITableViewController {
         //animated: true/false? changed. scrollpostiion?
         tableView.selectRow(at: IndexPath(row: selectedMenuItem, section: 0), animated: true, scrollPosition: .middle)
     }
+    
+    
+    func UserUpgraded()
+    {
+        //here we just need to reload the table view
+        tableView.reloadData()
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
-        let labels : [String] = [NSLocalizedString("Exchange Rates", comment: ""), " • "+NSLocalizedString("Calculator", comment: ""), "Bitcoin", NSLocalizedString("Foreign Reserves", comment: ""), NSLocalizedString("Inflation", comment: ""), /*NSLocalizedString("GDP", comment: ""), */NSLocalizedString("Tax Revenue", comment: ""), NSLocalizedString("Money Supply", comment: ""), NSLocalizedString("Minimum Wage", comment: ""), NSLocalizedString("Oil Prices", comment: ""), NSLocalizedString("Crude Production", comment: ""), NSLocalizedString("U.S. Oil", comment: ""), NSLocalizedString("Tax Unit", comment: ""), NSLocalizedString("About", comment: "")]
+    func labels() -> [String] // Did same as func LabelsForViewControllers for labels hereon 20171023, a day after doing with Pay
+    {
+        if SubscriptionService.shared.IsSubscriber
+        {
+            return [NSLocalizedString("Exchange Rates", comment: ""), " • "+NSLocalizedString("Calculator", comment: ""), "Bitcoin", NSLocalizedString("Foreign Reserves", comment: ""), NSLocalizedString("Inflation", comment: ""), /*NSLocalizedString("GDP", comment: ""), */NSLocalizedString("Tax Revenue", comment: ""), NSLocalizedString("Money Supply", comment: ""), NSLocalizedString("Minimum Wage", comment: ""), NSLocalizedString("Oil Prices", comment: ""), NSLocalizedString("Crude Production", comment: ""), NSLocalizedString("U.S. Oil", comment: ""), NSLocalizedString("Tax Unit", comment: ""), NSLocalizedString("About", comment: "")]
+        }
+        else
+        {
+            return [NSLocalizedString("Exchange Rates", comment: ""), " • "+NSLocalizedString("Calculator", comment: ""), "🔒 Bitcoin", "🔒 "+NSLocalizedString("Foreign Reserves", comment: ""), "🔒 "+NSLocalizedString("Inflation", comment: ""), /*"🔒 "+NSLocalizedString("GDP", comment: ""), */"🔒 "+NSLocalizedString("Tax Revenue", comment: ""), "🔒 "+NSLocalizedString("Money Supply", comment: ""), "🔒 "+NSLocalizedString("Minimum Wage", comment: ""), "🔒 "+NSLocalizedString("Oil Prices", comment: ""), "🔒 "+NSLocalizedString("Crude Production", comment: ""), "🔒 "+NSLocalizedString("U.S. Oil", comment: ""), "🔒 "+NSLocalizedString("Tax Unit", comment: ""), NSLocalizedString("About", comment: "")]
+        }
+    }
     
-    let labelsForViewControllers = ["FXViewController", "FXCalcViewController", "BitcoinViewController", "ReservesViewController", "InflationViewController",/* "GDPViewController",*/ "TaxRevViewController", "M2ViewController", "MinWageViewController", "OilViewController", "CrudeProductionViewController", "USOilViewController", "TaxUnitViewController", "AboutViewController"]
+    
+//        let labels : [String] = [NSLocalizedString("Exchange Rates", comment: ""), " • "+NSLocalizedString("Calculator", comment: ""), "Bitcoin", NSLocalizedString("Foreign Reserves", comment: ""), NSLocalizedString("Inflation", comment: ""), /*NSLocalizedString("GDP", comment: ""), */NSLocalizedString("Tax Revenue", comment: ""), NSLocalizedString("Money Supply", comment: ""), NSLocalizedString("Minimum Wage", comment: ""), NSLocalizedString("Oil Prices", comment: ""), NSLocalizedString("Crude Production", comment: ""), NSLocalizedString("U.S. Oil", comment: ""), NSLocalizedString("Tax Unit", comment: ""), NSLocalizedString("About", comment: "")]
+    
+    
+
+    func labelsForViewControllers() -> [String] // added for subscription service on 20171022. changed htis to a function rather than a variable/property below
+    {
+        if SubscriptionService.shared.IsSubscriber
+        {
+            return ["FXViewController", "FXCalcViewController", "BitcoinViewController", "ReservesViewController", "InflationViewController",/* "GDPViewController",*/ "TaxRevViewController", "M2ViewController", "MinWageViewController", "OilViewController", "CrudeProductionViewController", "USOilViewController", "TaxUnitViewController", "AboutViewController"]
+        }
+        else
+        {
+            return ["FXViewController", "FXCalcViewController", "BuyViewController", "BuyViewController", "BuyViewController",/* "BuyViewController",*/ "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "AboutViewController"]
+        }
+    }
+    
+    //let labelsForViewControllers = ["FXViewController", "FXCalcViewController", "BitcoinViewController", "ReservesViewController", "InflationViewController",/* "GDPViewController",*/ "TaxRevViewController", "M2ViewController", "MinWageViewController", "OilViewController", "CrudeProductionViewController", "USOilViewController", "TaxUnitViewController", "AboutViewController"]
+
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return labels.count
+        return labels().count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,12 +102,22 @@ class MyMenuTableViewController: UITableViewController {
             cell!.selectedBackgroundView = selectedBackgroundView
         }
         
-        if ((indexPath as NSIndexPath).row==(labels.count-1))
+        if ((indexPath as NSIndexPath).row==(labels().count-1)) // If the last label, then make it grey
         {
             cell!.textLabel?.textColor = UIColor.lightGray
         }
+        
+//        if !SubscriptionService.shared.IsSubscriber // on 20171023 as I do the UI, make it a nice color for those not subscribed rather than just the 🔒
+//        {
+//            var i : Int = 2
+//            while (i<(labels().count-1))
+//            {
+//              cell!.textLabel?.textColor = UIColor.blue
+//              i = i+1
+//            }
+//        }
 
-         cell!.textLabel!.text = labels[(indexPath as NSIndexPath).row]
+         cell!.textLabel!.text = labels()[(indexPath as NSIndexPath).row]
         
         return cell!
     }
@@ -91,7 +140,7 @@ class MyMenuTableViewController: UITableViewController {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         var destViewController : UIViewController
         
-        GoToViewControllerWithName(name: labelsForViewControllers[indexPath.row])
+        GoToViewControllerWithName(name: labelsForViewControllers()[indexPath.row])
         
 //        switch ((indexPath as NSIndexPath).row) {
         
@@ -139,7 +188,7 @@ class MyMenuTableViewController: UITableViewController {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         let DestViewController = mainStoryboard.instantiateViewController(withIdentifier: name)
         sideMenuController()?.setContentViewController(DestViewController)
-        tableView.selectRow(at: IndexPath(row: labelsForViewControllers.index(of: name)!, section: 0), animated: true, scrollPosition: .middle)
+        tableView.selectRow(at: IndexPath(row: labelsForViewControllers().index(of: name)!, section: 0), animated: true, scrollPosition: .middle)
     }
     
 

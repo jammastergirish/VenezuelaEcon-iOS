@@ -12,7 +12,7 @@ import UIKit
 //With Pat on 20160818 and the next morning
 class Utils
 {
-    static let shared = Utils()
+    static let shared = Utils() // this makes it a singleton
     
     let userCalendar = Calendar.current
     
