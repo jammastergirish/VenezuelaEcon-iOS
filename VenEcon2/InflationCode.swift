@@ -13,14 +13,14 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     //Variables to hold data
     var CentralBank = [String: Double]()
     var Ecoanalitica = [String: Double]()
-//    var Ven = [String: Double]()
-//    var OPEC = [String: Double]()
+    var NA = [String: Double]()
+    var BPP = [String: Double]()
     
     //Variables to hold chart data
     var DataCentralBank: [SChartDataPoint] = []
     var DataEcoanalitica: [SChartDataPoint] = []
-//    var DataVen: [SChartDataPoint] = []
-//    var DataOPEC: [SChartDataPoint] = []
+    var DataNA: [SChartDataPoint] = []
+    var DataBPP: [SChartDataPoint] = []
     
     //Axes
     let xAxis = SChartDiscontinuousDateTimeAxis()
@@ -60,22 +60,15 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     //Labels for main values
     @IBOutlet var CentralBankVal: UILabel!
     @IBOutlet var EcoanaliticaVal: UILabel!
-    @IBOutlet var CENDASVal: UILabel!
-//    @IBOutlet var OPECVal: UILabel!
+    @IBOutlet var NAVal: UILabel!
+    @IBOutlet var BPPVal: UILabel!
     
-    //Labels for variation text //Sort these later
+    
+    //Labels for variation text
     @IBOutlet var CentralBankDate: UILabel!
     @IBOutlet var EcoDate: UILabel!
-    @IBOutlet var CENDASDate: UILabel!
-//    @IBOutlet var EcoanaliticaWeek: UILabel!
-//    @IBOutlet var EcoanaliticaYear: UILabel!
-//    @IBOutlet var EcoanaliticaTwoYear: UILabel!
-//    @IBOutlet var VenWeek: UILabel!
-//    @IBOutlet var VenYear: UILabel!
-//    @IBOutlet var VenTwoYear: UILabel!
-//    @IBOutlet var OPECWeek: UILabel!
-//    @IBOutlet var OPECYear: UILabel!
-//    @IBOutlet var OPECTwoYear: UILabel!
+    @IBOutlet var NADate: UILabel!
+    @IBOutlet var BPPDate: UILabel!
     
     //Chart
     @IBOutlet var chart: ShinobiChart!
@@ -90,7 +83,7 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     //Range Controller and Range Control functions
     @IBOutlet var RangeController: UISegmentedControl!
     @IBAction func RangeControl(_ sender: AnyObject) {
-        var Start : String = Utils.shared.YearsAgo(10)
+        var Start : String = Utils.shared.YearsAgo(4)
         switch RangeController.selectedSegmentIndex
         {
         case 0:
@@ -186,6 +179,11 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 self.CentralBankDate.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.CentralBank, date: Utils.shared.Today())[0])!)
                 
+                
+                
+                
+                
+                
                 text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Ecoanalitica, date: Utils.shared.Today()))! + " <font size=2> %</font></font>"
                 encodedData = text.data(using: String.Encoding.utf8)!
                 attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
@@ -196,46 +194,45 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 } catch _ {}
                 
                 
+                
+                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.NA, date: Utils.shared.Today()))! + " <font size=2> %</font></font>"
+                encodedData = text.data(using: String.Encoding.utf8)!
+                attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.NAVal.attributedText = attributedString
+                    
+                } catch _ {}
+                
+                
+                self.NADate.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.NA, date: Utils.shared.Today())[0])!)
+                
+                
+                
+                
+                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.BPP, date: Utils.shared.Today()))! + " <font size=2> %</font></font>"
+                encodedData = text.data(using: String.Encoding.utf8)!
+                attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    self.BPPVal.attributedText = attributedString
+                    
+                } catch _ {}
+                
+                
+                self.BPPDate.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.BPP, date: Utils.shared.Today())[0])!)
+                
+                
+                
+                
                 self.EcoDate.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.Ecoanalitica, date: Utils.shared.Today())[0])!)
                 
-//                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Ven, date: Utils.shared.Today()))! + " <font size=2> / "+NSLocalizedString("barrel", comment: "")+"</font></font>"
-//                encodedData = text.data(using: String.Encoding.utf8)!
-//                attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-//                do {
-//                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-//                    self.VenVal.attributedText = attributedString
-//                    
-//                } catch _ {}
-//                
-//                text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.OPEC, date: Utils.shared.Today()))! + " <font size=2> / "+NSLocalizedString("barrel", comment: "")+"</font></font>"
-//                encodedData = text.data(using: String.Encoding.utf8)!
-//                attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-//                do {
-//                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-//                    self.OPECVal.attributedText = attributedString
-//                    
-//                } catch _ {}
-                
-//                Utils.shared.Compare(self.CentralBank, date: Utils.shared.OneMonthAgo(), label: self.CentralBankWeek, type: nil)
-//                Utils.shared.Compare(self.CentralBank, date: Utils.shared.YearsAgo(1), label: self.CentralBankYear, type: nil)
-//                Utils.shared.Compare(self.CentralBank, date: Utils.shared.YearsAgo(2), label: self.CentralBankTwoYear, type: nil)
-//                
-//                Utils.shared.Compare(self.Ecoanalitica, date: Utils.shared.OneMonthAgo(), label: self.EcoanaliticaWeek, type: nil)
-//                Utils.shared.Compare(self.Ecoanalitica, date: Utils.shared.YearsAgo(1), label: self.EcoanaliticaYear, type: nil)
-//                Utils.shared.Compare(self.Ecoanalitica, date: Utils.shared.YearsAgo(2), label: self.EcoanaliticaTwoYear, type: nil)
-//                
-//                Utils.shared.Compare(self.Ven, date: Utils.shared.OneMonthAgo(), label: self.VenWeek, type: nil)
-//                Utils.shared.Compare(self.Ven, date: Utils.shared.YearsAgo(1), label: self.VenYear, type: nil)
-//                Utils.shared.Compare(self.Ven, date: Utils.shared.YearsAgo(2), label: self.VenTwoYear, type: nil)
-//                
-//                Utils.shared.Compare(self.OPEC, date: Utils.shared.OneMonthAgo(), label: self.OPECWeek, type: nil)
-//                Utils.shared.Compare(self.OPEC, date: Utils.shared.YearsAgo(1), label: self.OPECYear, type: nil)
-//                Utils.shared.Compare(self.OPEC, date: Utils.shared.YearsAgo(2), label: self.OPECTwoYear, type: nil)
+
                 
                 //DRAW THE GRAPHS
                 self.chart.canvasAreaBackgroundColor = UIColor.black
                 self.chart.backgroundColor = UIColor.black
-                self.chart.canvas.backgroundColor = UIColor.blue
+                self.chart.canvas.backgroundColor = UIColor.white
                 self.chart.plotAreaBackgroundColor = UIColor.black
                 
                 self.chart.legend.placement = .outsidePlotArea
@@ -249,7 +246,7 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 // Axes
                 self.xAxis.title = NSLocalizedString("Date", comment: "")
-                self.yAxis.title = ""+NSLocalizedString("Annual Inflation", comment: "")+" (%)"
+                self.yAxis.title = ""+NSLocalizedString("Monthly Inflation", comment: "")+" (%)"
                 self.enablePanningAndZoomingOnAxis(self.xAxis)
                 self.enablePanningAndZoomingOnAxis(self.yAxis)
                 self.xAxis.style.lineColor = UIColor.white
@@ -341,10 +338,10 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             guard let
                 dateString = dataPoint["date"] as? String,
-                let CentralBankVal = dataPoint["annual"] as? String,
-                let EcoanaliticaVal = dataPoint["eco"] as? String //,
-//                let VenVal = dataPoint["ven"] as? String,
-//                let OPECVal = dataPoint["opec"] as? String
+                let CentralBankVal = dataPoint["monthly"] as? String,
+                let EcoanaliticaVal = dataPoint["eco_monthly"] as? String, //,
+                let NAVal = dataPoint["na"] as? String,
+                let BPPVal = dataPoint["bpp"] as? String
                 else {
                     print("Data is JSON but not the JSON variables expected")
                     return
@@ -370,23 +367,23 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 DataEcoanalitica.append(DataPointEcoanalitica)
             }
             
-//            if (VenVal != "0")
-//            {
-//                Ven[dateString] = Double(VenVal)
-//                let DataPointVen = SChartDataPoint()
-//                DataPointVen.xValue = date
-//                DataPointVen.yValue = Double(VenVal)
-//                DataVen.append(DataPointVen)
-//            }
-//            
-//            if (OPECVal != "0")
-//            {
-//                OPEC[dateString] = Double(OPECVal)
-//                let DataPointOPEC = SChartDataPoint()
-//                DataPointOPEC.xValue = date
-//                DataPointOPEC.yValue = Double(OPECVal)
-//                DataOPEC.append(DataPointOPEC)
-//            }
+            if (NAVal != "0")
+            {
+                NA[dateString] = Double(NAVal)
+                let DataPointNA = SChartDataPoint()
+                DataPointNA.xValue = date
+                DataPointNA.yValue = Double(NAVal)
+                DataNA.append(DataPointNA)
+            }
+            
+            if (BPPVal != "0")
+            {
+                BPP[dateString] = Double(BPPVal)
+                let DataPointBPP = SChartDataPoint()
+                DataPointBPP.xValue = date
+                DataPointBPP.yValue = Double(BPPVal)
+                DataBPP.append(DataPointBPP)
+            }
             
         }
         
@@ -403,10 +400,10 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             guard let
                 dateString = dataPoint["date"] as? String,
-                let CentralBankVal = dataPoint["annual"] as? String,
-                let EcoanaliticaVal = dataPoint["eco"] as? String //,
-//                let VenVal = dataPoint["ven"] as? String,
-//                let OPECVal = dataPoint["opec"] as? String
+                let CentralBankVal = dataPoint["monthly"] as? String,
+                let EcoanaliticaVal = dataPoint["eco_monthly"] as? String, //,
+                let NAVal = dataPoint["na"] as? String,
+                let BPPVal = dataPoint["bpp"] as? String
                 else {
                     print("Data is JSON but not the JSON variables expected")
                     return
@@ -432,30 +429,30 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 DataEcoanalitica.append(DataPointEcoanalitica)
             }
             
-//            if (VenVal != "0")
-//            {
-//                Ven[dateString] = Double(VenVal)
-//                let DataPointVen = SChartDataPoint()
-//                DataPointVen.xValue = date
-//                DataPointVen.yValue = Double(VenVal)
-//                DataVen.append(DataPointVen)
-//            }
-//            
-//            if (OPECVal != "0")
-//            {
-//                OPEC[dateString] = Double(OPECVal)
-//                let DataPointOPEC = SChartDataPoint()
-//                DataPointOPEC.xValue = date
-//                DataPointOPEC.yValue = Double(OPECVal)
-//                DataOPEC.append(DataPointOPEC)
-//            }
+            if (NAVal != "0")
+            {
+                NA[dateString] = Double(NAVal)
+                let DataPointNA = SChartDataPoint()
+                DataPointNA.xValue = date
+                DataPointNA.yValue = Double(NAVal)
+                DataNA.append(DataPointNA)
+            }
+            
+            if (BPPVal != "0")
+            {
+                BPP[dateString] = Double(BPPVal)
+                let DataPointBPP = SChartDataPoint()
+                DataPointBPP.xValue = date
+                DataPointBPP.yValue = Double(BPPVal)
+                DataBPP.append(DataPointBPP)
+            }
             
         }
     }
     
     
     func numberOfSeries(inSChart chart: ShinobiChart) -> Int {
-        return 2
+        return 4
     }
     
     
@@ -466,8 +463,8 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         lineSeries.animationEnabled = false
         lineSeries.crosshairEnabled = true
         
-        let titles : [String] = ["CentralBank", "Ecoanalitica", "Venezuela", "OPEC"]
-        let colors : [UIColor] = [UIColor.orange, UIColor.green, UIColor.blue, UIColor.purple]
+        let titles : [String] = ["CentralBank", "Ecoanalitica", "National Assembly", "MIT Billion Prices"]
+        let colors : [UIColor] = [UIColor.orange, UIColor.green, UIColor.white, UIColor.red]
         
         lineSeries.title = titles[index]
         lineSeries.style().lineColor = colors[index]
@@ -480,7 +477,7 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     func sChart(_ chart: ShinobiChart, numberOfDataPointsForSeriesAt seriesIndex: Int) -> Int {
         
-        let counts : [Int] = [DataCentralBank.count,DataEcoanalitica.count/*,DataVen.count, DataOPEC.count*/]
+        let counts : [Int] = [DataCentralBank.count,DataEcoanalitica.count,DataNA.count, DataBPP.count]
         
         return counts[seriesIndex]
         
@@ -496,14 +493,14 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         {
             return DataEcoanalitica[dataIndex]
         }
-//        if seriesIndex == 2
-//        {
-//            return DataVen[dataIndex]
-//        }
-//        if seriesIndex == 3
-//        {
-//            return DataOPEC[dataIndex]
-//        }
+        if seriesIndex == 2
+        {
+            return DataNA[dataIndex]
+        }
+        if seriesIndex == 3
+        {
+            return DataBPP[dataIndex]
+        }
         else { return DataEcoanalitica[dataIndex] }
     }
     

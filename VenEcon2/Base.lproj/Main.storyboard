@@ -2268,8 +2268,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Annual Inflation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N56-jK-4bU">
-                                <rect key="frame" x="248" y="40" width="172" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Monthly Inflation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N56-jK-4bU">
+                                <rect key="frame" x="248" y="40" width="180" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2278,10 +2278,10 @@
                                 <rect key="frame" x="150" y="110" width="300" height="210"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="E4T-tV-xvT">
-                                        <rect key="frame" x="0.0" y="0.0" width="92" height="210"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="210"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="nJ0-Of-4GT">
-                                                <rect key="frame" x="0.0" y="0.0" width="92" height="54.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="119.5" height="54.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Central Bank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTl-LN-Ty1">
                                                         <rect key="frame" x="0.0" y="0.0" width="83" height="17"/>
@@ -2304,22 +2304,22 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="yve-9t-bqd">
-                                                <rect key="frame" x="0.0" y="210" width="92" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="155.5" width="119.5" height="54.5"/>
                                                 <subviews>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CENDAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKQ-fh-Xma">
-                                                        <rect key="frame" x="-37.5" y="-320" width="56" height="0.0"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="National Assembly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKQ-fh-Xma">
+                                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CENDASVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtK-r5-T7Z">
-                                                        <rect key="frame" x="-37.5" y="-320" width="90" height="0.0"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtK-r5-T7Z">
+                                                        <rect key="frame" x="0.0" y="17" width="45.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CENDASDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3O-wb-5Wd">
-                                                        <rect key="frame" x="-37.5" y="-320" width="86.5" height="0.0"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NADate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3O-wb-5Wd">
+                                                        <rect key="frame" x="0.0" y="37.5" width="50" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -2329,10 +2329,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="XDV-vP-i8a">
-                                        <rect key="frame" x="222.5" y="0.0" width="77.5" height="210"/>
+                                        <rect key="frame" x="189.5" y="0.0" width="110.5" height="210"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="hm1-Eu-Fua">
-                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="54.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="110.5" height="54.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ecoanalítica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7i-hK-GqC">
                                                         <rect key="frame" x="0.0" y="0.0" width="77.5" height="17"/>
@@ -2355,22 +2355,22 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="f2C-kY-r6Q">
-                                                <rect key="frame" x="0.0" y="210" width="77.5" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="155.5" width="110.5" height="54.5"/>
                                                 <subviews>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPEC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egb-4k-G2V">
-                                                        <rect key="frame" x="-260" y="-320" width="37.5" height="0.0"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIT Billion Prices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egb-4k-G2V">
+                                                        <rect key="frame" x="0.0" y="0.0" width="110.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPECVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxH-Jv-P2C">
-                                                        <rect key="frame" x="-260" y="-320" width="68" height="0.0"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPPVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxH-Jv-P2C">
+                                                        <rect key="frame" x="0.0" y="17" width="55" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPECWeek" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhR-sn-3HG">
-                                                        <rect key="frame" x="-260" y="-320" width="73.5" height="0.0"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPPVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhR-sn-3HG">
+                                                        <rect key="frame" x="0.0" y="37.5" width="46.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -2396,7 +2396,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="dEF-Vc-XdT">
                                 <rect key="frame" x="20" y="360" width="343" height="307"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Arx-Oc-jLf">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="Arx-Oc-jLf">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="P2I-Qg-Xob"/>
@@ -2455,8 +2455,8 @@
                     </view>
                     <connections>
                         <outlet property="AllText" destination="p3q-Rp-LbG" id="v5O-lh-ng9"/>
-                        <outlet property="CENDASDate" destination="u3O-wb-5Wd" id="ywq-EI-XLZ"/>
-                        <outlet property="CENDASVal" destination="KtK-r5-T7Z" id="rWL-WW-v3x"/>
+                        <outlet property="BPPDate" destination="rhR-sn-3HG" id="2OZ-zB-htl"/>
+                        <outlet property="BPPVal" destination="QxH-Jv-P2C" id="H7T-VS-pgZ"/>
                         <outlet property="CentralBankDate" destination="Jv0-4e-QEH" id="g76-Ht-9a3"/>
                         <outlet property="CentralBankVal" destination="TT1-Wq-Jbn" id="yga-hj-WPH"/>
                         <outlet property="ChartSVHeight" destination="mcd-tx-WSi" id="xHu-99-LzY"/>
@@ -2465,6 +2465,8 @@
                         <outlet property="EcoDate" destination="T1C-GF-WbN" id="AqM-hn-AHN"/>
                         <outlet property="EcoanaliticaVal" destination="oZK-sZ-FOR" id="Zpa-Ww-7An"/>
                         <outlet property="Header" destination="N56-jK-4bU" id="S22-K5-fko"/>
+                        <outlet property="NADate" destination="u3O-wb-5Wd" id="NuB-nt-Zj3"/>
+                        <outlet property="NAVal" destination="KtK-r5-T7Z" id="uQ5-Tj-wKZ"/>
                         <outlet property="RangeController" destination="Arx-Oc-jLf" id="fSl-41-xFg"/>
                         <outlet property="ShowMenuButton" destination="Xah-pa-K98" id="gIR-oJ-wv3"/>
                         <outlet property="chart" destination="zIt-zs-dPn" id="Heu-C2-ce1"/>
