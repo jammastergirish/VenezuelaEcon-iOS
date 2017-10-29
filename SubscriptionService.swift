@@ -23,6 +23,8 @@ class SubscriptionService : NSObject, SKProductsRequestDelegate, SKPaymentTransa
                 //got $$$ unlock all features
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UserUpgraded"), object: nil)
                 SKPaymentQueue.default().finishTransaction(transaction)
+                
+                
                 break
             case .failed:
                 //cancelled, credit card didn't work, whatever. Nothing for me to do to
