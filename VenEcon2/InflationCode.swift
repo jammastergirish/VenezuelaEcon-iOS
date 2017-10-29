@@ -144,7 +144,7 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         //loadLocalChartData()
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = URL(string: "https://api.venezuelaecon.com/output.php?table=ve_inf2&format=json")!
+        let url = URL(string: "https://api.venezuelaecon.com/output.php?table=ve_inf2&format=json&key=" + Utils.shared.APIKey)!
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             

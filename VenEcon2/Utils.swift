@@ -46,6 +46,8 @@ class Utils
 
     let currencies : [String: String] = ["GBP": "£", "USD": "$", "EUR": "€", "COP": "COL$", "VEF": "BsF"]
     
+    let APIKey : String = "jbCHiQDZc2HvBNNYrQrMhQOczT4rB2IynRt"
+    
     
     //Could make these functions or computed variables, says Pat on 20160817
     

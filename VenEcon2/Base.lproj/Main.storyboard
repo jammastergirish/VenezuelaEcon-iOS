@@ -2536,10 +2536,20 @@
                                     <action selector="SideMenu:" destination="Wkt-Os-S7H" eventType="touchUpInside" id="fH7-Wn-SQL"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="HO0-yc-H1j">
-                                <rect key="frame" x="67" y="130" width="240" height="90"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HO0-yc-H1j">
+                                <rect key="frame" x="67" y="130" width="240" height="343"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Get access to more than 20 indicators, real time notifications and historic data going back nearly half a century — with a week-long free trial.</string>
+                                <string key="text">Get access to:
+
+ • Over 20 indicators
+ • Real time notifications
+ • Historic data going back more than half a century
+ • Exciting new features to come
+
+
+Start your free one-week trial by clicking "Upgrade"
+
+Your subscription will allow Venezuela Econ to continue providing clean and fast data.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2737,10 +2747,10 @@
             </objects>
             <point key="canvasLocation" x="1884" y="1556"/>
         </scene>
-        <!--View Controller-->
+        <!--User Upgraded Code-->
         <scene sceneID="Gzs-JM-lAH">
             <objects>
-                <viewController storyboardIdentifier="UserUpgradedViewController" id="lMi-ll-Ght" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserUpgradedViewController" id="lMi-ll-Ght" customClass="UserUpgradedCode" customModule="VenEcon2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JV5-wl-ZcM"/>
                         <viewControllerLayoutGuide type="bottom" id="TXB-oi-z0n"/>
@@ -2749,14 +2759,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6Z-b6-6Ep">
-                                <rect key="frame" x="84" y="521" width="208" height="66"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.97364619009999998" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
-                                <state key="normal" title="Get Going">
-                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsL-iU-C0f">
                                 <rect key="frame" x="130.5" y="60" width="114" height="30"/>
                                 <constraints>
@@ -2775,10 +2777,16 @@
                                 <state key="normal" image="Hamburger">
                                     <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="SideMenu:" destination="lMi-ll-Ght" eventType="touchUpInside" id="dHT-k9-mo5"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Thanks so much for upgrading. Click the menu button or below to get going." textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="9FT-pr-63B">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="9FT-pr-63B">
                                 <rect key="frame" x="67" y="130" width="241" height="90"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Thanks so much for upgrading. 
+
+Click the menu button on the left to get full access.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2795,8 +2803,6 @@
                             <constraint firstItem="9FT-pr-63B" firstAttribute="centerX" secondItem="wsL-iU-C0f" secondAttribute="centerX" id="WjS-sb-Ybk"/>
                             <constraint firstItem="9FT-pr-63B" firstAttribute="leading" secondItem="IG3-wT-S4h" secondAttribute="leadingMargin" constant="51" id="XJX-Ea-bt9"/>
                             <constraint firstItem="Cn9-Uu-gRd" firstAttribute="bottom" secondItem="wsL-iU-C0f" secondAttribute="bottom" id="baJ-2r-O6o"/>
-                            <constraint firstItem="N6Z-b6-6Ep" firstAttribute="centerX" secondItem="IG3-wT-S4h" secondAttribute="centerX" id="cWp-aR-NR0"/>
-                            <constraint firstItem="TXB-oi-z0n" firstAttribute="top" secondItem="N6Z-b6-6Ep" secondAttribute="bottom" constant="80" id="h0U-tP-JH8"/>
                             <constraint firstItem="9FT-pr-63B" firstAttribute="centerY" secondItem="IG3-wT-S4h" secondAttribute="centerY" constant="-158.5" id="lVc-PZ-UKd"/>
                             <constraint firstItem="wsL-iU-C0f" firstAttribute="centerX" secondItem="IG3-wT-S4h" secondAttribute="centerX" id="lcx-Hy-9oq"/>
                             <constraint firstItem="Cn9-Uu-gRd" firstAttribute="leading" secondItem="IG3-wT-S4h" secondAttribute="leadingMargin" id="reN-Ua-Cbh"/>

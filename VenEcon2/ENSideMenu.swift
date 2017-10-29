@@ -4,7 +4,7 @@
 //
 //  Created by Evgeny on 24.07.14.
 //  Copyright (c) 2014 Evgeny Nazarov. All rights reserved.
-//
+// https://github.com/evnaz/ENSwiftSideMenu
 
 import UIKit
 
@@ -19,6 +19,8 @@ import UIKit
 @objc public protocol ENSideMenuProtocol {
     var sideMenu : ENSideMenu? { get }
     func setContentViewController(_ contentViewController: UIViewController)
+    
+    //var contentViewController: UIViewController? { get }  // added with Pat on 20171028. Currently only has method to set current VC. This allows us to get the current VC
 }
 
 public enum ENSideMenuAnimation : Int {

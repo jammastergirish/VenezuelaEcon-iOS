@@ -188,15 +188,18 @@ class MyMenuTableViewController: UITableViewController {
     {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)  // Here's we creating the View Controller that we want to go to. (commented on 20171028)
         let DestViewController = mainStoryboard.instantiateViewController(withIdentifier: name)
-        sideMenuController()?.setContentViewController(DestViewController) // Set up the VC
-        if let index = labelsForViewControllers().index(of: name) // this added on 20171028
-        {
-         tableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .middle)
-        }
-        else if let index = tableView.indexPathForSelectedRow
-        { //if tableview has anything selected, then unselect it
-         tableView.deselectRow(at: index, animated: true)
-        }
+        //if !sideMenuController()?.contentViewController?.isKind(of: DestViewController) // added 20171028 to make sure not changing VC if already showing it
+        //{
+            sideMenuController()?.setContentViewController(DestViewController) // Set up the VC
+            if let index = labelsForViewControllers().index(of: name) // this added on 20171028
+            {
+                tableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .middle)
+            }
+            else if let index = tableView.indexPathForSelectedRow
+            { //if tableview has anything selected, then unselect it
+                tableView.deselectRow(at: index, animated: true)
+            }
+        //}
     }
     
 
