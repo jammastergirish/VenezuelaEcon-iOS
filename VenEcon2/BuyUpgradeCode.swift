@@ -58,6 +58,14 @@ class BuyUpgradeCode: UIViewController {
         print("sideMenuDidOpen")
     }
     
+    
+    @IBAction func GoToPP(_ sender: Any) {
+        if let url = URL(string: "https://web.venezuelaecon.com/appprivacy.php") {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    
+    
     /*
     // MARK: - Navigation
 
