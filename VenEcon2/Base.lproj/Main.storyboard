@@ -2536,7 +2536,7 @@
                                     <action selector="SideMenu:" destination="Wkt-Os-S7H" eventType="touchUpInside" id="fH7-Wn-SQL"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HO0-yc-H1j">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HO0-yc-H1j">
                                 <rect key="frame" x="67" y="130" width="240" height="343"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2566,7 +2566,7 @@ Your subscription will allow Venezuela Econ to continue providing clean and fast
                             <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Hand" translatesAutoresizingMaskIntoConstraints="NO" id="ZJQ-el-mt1">
                                 <rect key="frame" x="67" y="236" width="240" height="253"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cRU-8t-3os">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRU-8t-3os">
                                 <rect key="frame" x="5" y="596" width="365" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="EaG-nI-c8x"/>

@@ -9,9 +9,74 @@
 import Foundation
 import StoreKit
 
+import DTFoundation
+import Kvitto
+
 class SubscriptionService : NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver, ENSideMenuDelegate
 {
+    
+    
+    static let shared = SubscriptionService() // this makes it a singleton. static means that rther than belonging to a specific instance of a class, it belongs to the class itself.
+    
+    
+    
     var PriceAsString : String = ""
+    
+    
+    
+    
+    
+    
+    
+    func receipt() -> Receipt? {
+        guard let receiptURL = Bundle.main.appStoreReceiptURL else {
+            return nil
+        }
+        
+        return Receipt(contentsOfURL: receiptURL)
+    }
+    
+    func isSubscriptionValid() -> Bool {
+        // If they don't have a receipt, they did not subscribe!
+        guard let receipt = receipt() else {
+            return false
+        }
+        
+        // If the receipt doesn't have any IAPs, they did not subscribe!
+        guard let inAppPurchases = receipt.inAppPurchaseReceipts else {
+            return false
+        }
+        
+        // Look through all IAPs for a subscription that hasn't expired
+        let now = Date()
+        for inAppPurchase in inAppPurchases {
+            guard let expirationDate = inAppPurchase.subscriptionExpirationDate else {
+                // Skip to the next IAP if this one doesn't have an expiration data
+                continue
+            }
+            
+            if expirationDate > now {
+                // This subscription expires in the future, so it is currently valid!
+                return true
+            }
+        }
+        
+        // If we reached here, we couldn't find a subscription with an expiration date in the future
+        return false
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         DispatchQueue.main.async { //need to make sure notifiacciton posted in main thread as we're doing UI work with the table view
@@ -42,8 +107,7 @@ class SubscriptionService : NSObject, SKProductsRequestDelegate, SKPaymentTransa
     
 
 
-    
-    static let shared = SubscriptionService() // this makes it a singleton. static means that rther than belonging to a specific instance of a class, it belongs to the class itself.
+
     
     var product : SKProduct? = nil
     

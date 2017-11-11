@@ -52,7 +52,7 @@ class MyMenuTableViewController: UITableViewController {
     
     func labels() -> [String] // Did same as func LabelsForViewControllers for labels hereon 20171023, a day after doing with Pay
     {
-        if SubscriptionService.shared.IsSubscriber
+        if SubscriptionService.shared.isSubscriptionValid()
         {
             return [NSLocalizedString("Exchange Rates", comment: ""), " • "+NSLocalizedString("Calculator", comment: ""), "Bitcoin", NSLocalizedString("Foreign Reserves", comment: ""), NSLocalizedString("Inflation", comment: ""), /*NSLocalizedString("GDP", comment: ""), */NSLocalizedString("Tax Revenue", comment: ""), NSLocalizedString("Money Supply", comment: ""), NSLocalizedString("Minimum Wage", comment: ""), NSLocalizedString("Oil Prices", comment: ""), NSLocalizedString("Crude Production", comment: ""), NSLocalizedString("U.S. Oil", comment: ""), NSLocalizedString("Tax Unit", comment: ""), NSLocalizedString("About", comment: "")]
         }
@@ -69,7 +69,7 @@ class MyMenuTableViewController: UITableViewController {
 
     func labelsForViewControllers() -> [String] // added for subscription service on 20171022. changed htis to a function rather than a variable/property below
     {
-        if SubscriptionService.shared.IsSubscriber
+        if SubscriptionService.shared.isSubscriptionValid()
         {
             return ["FXViewController", "FXCalcViewController", "BitcoinViewController", "ReservesViewController", "InflationViewController",/* "GDPViewController",*/ "TaxRevViewController", "M2ViewController", "MinWageViewController", "OilViewController", "CrudeProductionViewController", "USOilViewController", "TaxUnitViewController", "AboutViewController"]
         }
