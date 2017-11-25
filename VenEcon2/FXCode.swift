@@ -53,6 +53,10 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             ShowMenuButton.isHidden = false
             //self.ShareButton.isHidden = false
             ChartSVToTop.isActive = false
+            if !SubscriptionService.shared.isSubscriptionValid() //20171111
+            {
+                self.Upgrade.isHidden = false
+            }
         }
         else
         {
@@ -65,6 +69,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             //self.ShareButton.isHidden = true
             ChartSVToTop.isActive = true
             ChartSVToTop.constant = 0
+            Upgrade.isHidden = true
         }
     }
 
@@ -195,6 +200,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         self.ShowMenuButton.isHidden = true
         //self.ShareButton.isHidden = true
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        self.Upgrade.isHidden = true
         
         //Very nice addition on 20160823!
         loadLocalChartData()
@@ -297,8 +303,11 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             // Axes
             self.xAxis.title = NSLocalizedString("Date", comment: "")
             self.yAxis.title = NSLocalizedString("Exchange Rate", comment: "")+" (" + units + ")"
-            self.enablePanningAndZoomingOnAxis(self.xAxis)
-            self.enablePanningAndZoomingOnAxis(self.yAxis)
+            if SubscriptionService.shared.isSubscriptionValid() //20171111
+            {
+                self.enablePanningAndZoomingOnAxis(self.xAxis)
+                self.enablePanningAndZoomingOnAxis(self.yAxis)
+            }
             self.xAxis.style.lineColor = UIColor.white
             self.yAxis.style.lineColor = UIColor.white
             self.xAxis.style.titleStyle.textColor = UIColor.white
@@ -318,16 +327,30 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
             self.chart.datasource = self
             self.chart.positionLegend()
+            
+            if !SubscriptionService.shared.isSubscriptionValid() //20171111
+            {
+                var i : Int = 0
+                while (i<(self.RangeController.numberOfSegments-2))
+                {
+                 self.RangeController.setEnabled(false, forSegmentAt: i)
+                 i = i+1
+                }
+            }
     
             //All set to make everything visible again!
             self.Header.isHidden = false
             self.AllText.isHidden = false
-            self.DicomMonth.isHidden = false
+            self.DicomMonth.isHidden = true // 20171111 as never changes any more
             self.DicomYear.isHidden = true
             self.RangeController.isHidden = false
             self.chart.isHidden = false
             self.ShowMenuButton.isHidden = false
             //self.ShareButton.isHidden = false
+            if !SubscriptionService.shared.isSubscriptionValid() //20171111
+            {
+                self.Upgrade.isHidden = false
+            }
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
             self.RangeControl(2 as AnyObject)
@@ -392,6 +415,13 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         print("sideMenuDidOpen")
     }
     
+    @IBOutlet var Upgrade: UIButton!
+    @IBAction func UpgradeButton(_ sender: Any) {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        var destViewController : UIViewController
+        destViewController = mainStoryboard.instantiateViewController(withIdentifier: "BuyViewController")
+        sideMenuController()?.setContentViewController(destViewController)
+    }
     
 /*This is how you switch to another View Controller
     @IBAction func Calculator(sender: AnyObject) {

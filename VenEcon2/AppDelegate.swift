@@ -145,8 +145,12 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         print(userInfo)
         //USOilViewController
         
-        if let ViewControllerName = userInfo["ViewToGoTo"] as? String
+        if var ViewControllerName = userInfo["ViewToGoTo"] as? String
         {
+            if !SubscriptionService.shared.isSubscriptionValid() //20171111 - the person hasn't subscribed so can't go to the right screen, so just default to the FX ViewController
+            {
+                ViewControllerName = "FXViewController"
+            }
             let NavViewController = window!.rootViewController as! MyNavigationController
             NavViewController.GoToViewControllerWithName(name: ViewControllerName)
         }
