@@ -245,6 +245,9 @@
                                     <action selector="UpgradeButton:" destination="zDY-Lm-TOB" eventType="touchUpInside" id="1d0-gm-Xvc"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="B48-pD-AOd">
+                                <rect key="frame" x="16" y="106" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -255,10 +258,12 @@
                             <constraint firstItem="zpH-vj-vd1" firstAttribute="trailing" secondItem="2cC-yP-Aup" secondAttribute="trailingMargin" constant="1" id="NEm-AX-ASQ"/>
                             <constraint firstItem="7It-mU-p5V" firstAttribute="centerX" secondItem="2cC-yP-Aup" secondAttribute="centerX" id="NT9-Rn-uVa"/>
                             <constraint firstItem="WEL-or-DUD" firstAttribute="centerX" secondItem="2cC-yP-Aup" secondAttribute="centerX" id="NgB-vi-Pqn"/>
+                            <constraint firstItem="B48-pD-AOd" firstAttribute="centerX" secondItem="2cC-yP-Aup" secondAttribute="centerX" id="WJw-lB-rUP"/>
                             <constraint firstItem="0SM-R0-YuW" firstAttribute="leading" secondItem="2cC-yP-Aup" secondAttribute="leadingMargin" id="XQI-CW-Y1y"/>
                             <constraint firstItem="0U3-u9-xyv" firstAttribute="centerX" secondItem="2cC-yP-Aup" secondAttribute="centerX" id="aMX-fz-3QF"/>
                             <constraint firstItem="bG9-c0-XZJ" firstAttribute="top" secondItem="WK6-gD-Vfg" secondAttribute="bottom" constant="40" id="bFb-rH-IbK"/>
                             <constraint firstItem="WK6-gD-Vfg" firstAttribute="top" secondItem="7It-mU-p5V" secondAttribute="bottom" constant="40" id="hUr-qu-PCR"/>
+                            <constraint firstItem="B48-pD-AOd" firstAttribute="centerY" secondItem="2cC-yP-Aup" secondAttribute="centerY" id="jIF-YX-lt0"/>
                             <constraint firstItem="WK6-gD-Vfg" firstAttribute="centerX" secondItem="2cC-yP-Aup" secondAttribute="centerX" id="k5a-Tf-oD4"/>
                             <constraint firstItem="zpH-vj-vd1" firstAttribute="top" secondItem="pPl-ad-7UV" secondAttribute="bottom" constant="10" id="sUa-9C-ydV"/>
                             <constraint firstItem="0SM-R0-YuW" firstAttribute="bottom" secondItem="7It-mU-p5V" secondAttribute="bottom" id="sgk-fT-b5W"/>
@@ -267,6 +272,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="wUH-8R-b0q"/>
                     <connections>
+                        <outlet property="Activity" destination="B48-pD-AOd" id="rGF-e4-LNm"/>
                         <outlet property="AllText" destination="WK6-gD-Vfg" id="DPP-jo-ucg"/>
                         <outlet property="BlackMarketFiveYear" destination="BpK-6D-uiX" id="QRf-hD-1sp"/>
                         <outlet property="BlackMarketFourYear" destination="sI4-ig-7CF" id="F2U-kq-zBi"/>
@@ -928,19 +934,21 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oX-5M-Wkd">
-                                <rect key="frame" x="25" y="96" width="325" height="119"/>
+                                <rect key="frame" x="25" y="96" width="325" height="216.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="325" id="FnI-rd-x8O"/>
-                                    <constraint firstAttribute="height" constant="119" id="VyX-7M-5bu"/>
+                                    <constraint firstAttribute="height" constant="216.5" id="VyX-7M-5bu"/>
                                 </constraints>
-                                <string key="text">This app was created by Girish Gupta, a Venezuela-based journalist, physics graduate, and software developer.  Real time and historical data from various sources is automatically pushed to your device. There is nowhere faster to get data on Venezuela's economy.</string>
+                                <string key="text">For the first time, Venezuela-watchers can witness the collapse of the local currency, soaring money supply and falling wages in real time — as well as historic data going back nearly half a century.
+
+Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based journalist, physics graduate, and software developer, wrote code to automate the acquisition, manipulation and storage of the country's economic data.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="3Ge-36-kjn">
-                                <rect key="frame" x="31" y="422" width="328" height="135"/>
+                                <rect key="frame" x="31" y="422" width="328" height="165"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data compiled and updated live from:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tke-ou-nXB">
                                         <rect key="frame" x="0.0" y="0.0" width="229.5" height="15"/>
@@ -949,7 +957,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="MNG-AV-zex">
-                                        <rect key="frame" x="0.0" y="15" width="328" height="120"/>
+                                        <rect key="frame" x="0.0" y="15" width="328" height="150"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Central Bank of Venezuela" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vQ-bZ-Wlk">
                                                 <rect key="frame" x="0.0" y="0.0" width="168.5" height="15"/>
@@ -999,6 +1007,18 @@
                                                 <color key="textColor" red="1" green="0.99438468089999998" blue="0.98976219480000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- MIT's Billion Prices Project" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T43-SJ-vRP">
+                                                <rect key="frame" x="0.0" y="120" width="168" height="15"/>
+                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
+                                                <color key="textColor" red="1" green="0.99438468089999998" blue="0.98976219480000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Venezuela's National Assembly" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyp-QO-WX5">
+                                                <rect key="frame" x="0.0" y="135" width="196" height="15"/>
+                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
+                                                <color key="textColor" red="1" green="0.99438468089999998" blue="0.98976219480000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -1007,7 +1027,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VersionLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbT-dg-zzp">
-                                <rect key="frame" x="266" y="632.5" width="73" height="14.5"/>
+                                <rect key="frame" x="266" y="642.5" width="73" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1022,6 +1042,30 @@
                                     <action selector="GoToWebsite:" destination="RtX-C2-xsx" eventType="touchUpInside" id="iqf-aA-6Qi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPo-8n-bbW">
+                                <rect key="frame" x="111" y="325" width="229" height="36"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
+                                <state key="normal" title="info@venezuelaecon.com">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="EmailButton:" destination="RtX-C2-xsx" eventType="touchUpInside" id="LxU-SZ-kG6"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoJ-kQ-llH">
+                                <rect key="frame" x="73" y="315" width="229" height="36"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
+                                <state key="normal" title="@VenezuelaEcon">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="TwitterButton:" destination="RtX-C2-xsx" eventType="touchUpInside" id="IAk-NC-EiR"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hand" translatesAutoresizingMaskIntoConstraints="NO" id="HVF-BT-YG5">
+                                <rect key="frame" x="113" y="272" width="240" height="253"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1029,15 +1073,18 @@
                             <constraint firstItem="zUX-Sh-PI5" firstAttribute="bottom" secondItem="0i3-KG-nbz" secondAttribute="bottom" id="L4i-gd-UR4"/>
                             <constraint firstItem="6oX-5M-Wkd" firstAttribute="top" secondItem="0i3-KG-nbz" secondAttribute="bottom" constant="36" id="OzI-Pf-E4F"/>
                             <constraint firstItem="0i3-KG-nbz" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="QlL-1v-fI2"/>
+                            <constraint firstItem="CPo-8n-bbW" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="Qsq-nK-X7f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VbT-dg-zzp" secondAttribute="trailing" constant="20" id="TbL-ug-EjK"/>
                             <constraint firstItem="zUX-Sh-PI5" firstAttribute="leading" secondItem="qjL-D2-mKH" secondAttribute="leadingMargin" id="Vul-cK-Ao0"/>
-                            <constraint firstItem="VbT-dg-zzp" firstAttribute="top" secondItem="3Ge-36-kjn" secondAttribute="bottom" constant="50" id="Wzi-6v-jXw"/>
+                            <constraint firstItem="VbT-dg-zzp" firstAttribute="top" secondItem="3Ge-36-kjn" secondAttribute="bottom" constant="20" id="Wzi-6v-jXw"/>
+                            <constraint firstItem="eoJ-kQ-llH" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="axO-bM-Xez"/>
                             <constraint firstItem="zUX-Sh-PI5" firstAttribute="bottom" secondItem="0i3-KG-nbz" secondAttribute="bottom" id="f0a-MG-a4g"/>
                             <constraint firstItem="3Ge-36-kjn" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" constant="1" id="fzT-Qj-lb3"/>
                             <constraint firstItem="0i3-KG-nbz" firstAttribute="top" secondItem="qjL-D2-mKH" secondAttribute="topMargin" constant="10" id="gQ2-BQ-eX3"/>
-                            <constraint firstItem="Qeo-0r-rq7" firstAttribute="top" secondItem="VbT-dg-zzp" secondAttribute="bottom" constant="20" id="k3W-Ds-Opz"/>
-                            <constraint firstItem="jOg-4c-lis" firstAttribute="top" secondItem="6oX-5M-Wkd" secondAttribute="bottom" constant="93" id="qaH-AF-q8l"/>
+                            <constraint firstItem="Qeo-0r-rq7" firstAttribute="top" secondItem="VbT-dg-zzp" secondAttribute="bottom" constant="10" id="k3W-Ds-Opz"/>
+                            <constraint firstItem="jOg-4c-lis" firstAttribute="top" secondItem="6oX-5M-Wkd" secondAttribute="bottom" constant="15" id="qaH-AF-q8l"/>
                             <constraint firstItem="6oX-5M-Wkd" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="wem-XR-cIk"/>
+                            <constraint firstItem="CPo-8n-bbW" firstAttribute="top" secondItem="jOg-4c-lis" secondAttribute="bottom" constant="5" id="zG8-1n-4sI"/>
                         </constraints>
                     </view>
                     <connections>
@@ -2510,11 +2557,13 @@
                                 </constraints>
                                 <string key="text">Get access to:
 
- • Over 20 indicators
+ • More than 20 indicators
  • Historic data going back half a century
+ • No ads
+ • Real time notifications
  • Exciting new features to come
 
-Start your free one-week trial by pressing "Upgrade"</string>
+Start your free trial now!</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

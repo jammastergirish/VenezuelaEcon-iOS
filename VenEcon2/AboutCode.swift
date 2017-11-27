@@ -74,8 +74,8 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
         if MFMailComposeViewController.canSendMail() {
             let picker = MFMailComposeViewController()
             picker.mailComposeDelegate = self
-            picker.setToRecipients(["girish@girish-gupta.com"])
-            picker.setSubject("Venezuela Econ " + version() + " | " + UIDevice.current.model + " | " + Messaging.messaging().fcmToken!)
+            picker.setToRecipients(["info@girish-gupta.com"])
+            picker.setSubject("Venezuela Econ " + version() + " | " + UIDevice.current.model)
             //   picker.setMessageBody(body.text, isHTML: false)
             
             

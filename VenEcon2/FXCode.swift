@@ -8,11 +8,16 @@
 
 import UIKit
 import Firebase
+import GoogleMobileAds
 
-class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
+class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource {
+    
+    var interstitial: GADInterstitial!
     
     // 20160818 Decided not to use the following and just use Utils.shared.XXX
     // let utils = Utils.shared
+    
+    @IBOutlet weak var Activity: UIActivityIndicatorView!
     
     //Variables to hold data
     var BM = [String: Double]()
@@ -141,6 +146,19 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.Activity.startAnimating() // 20171127
+        
+        
+        if !SubscriptionService.shared.isSubscriptionValid()
+        {
+         interstitial = GADInterstitial(adUnitID: "ca-app-pub-7175811277195688/1463700737")
+         //interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+         let requestad = GADRequest()
+         interstitial.load(requestad)
+         //https://developers.google.com/admob/ios/interstitial 20171125
+         //https://apps.admob.com/v2/apps/7903495316/adunits/create?pli=1
+        }
     
         
         //Layout
@@ -206,7 +224,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         loadLocalChartData()
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = URL(string: "https://api.venezuelaecon.com/output.php?table=ve_fx&format=json&start=2017-10-01&key=" + Utils.shared.APIKey)!
+        let url = URL(string: "https://api.venezuelaecon.com/output.php?table=ve_fx&format=json&start=2017-11-15&key=" + Utils.shared.APIKey)!
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             
@@ -339,6 +357,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             }
     
             //All set to make everything visible again!
+            self.Activity.isHidden = true
             self.Header.isHidden = false
             self.AllText.isHidden = false
             self.DicomMonth.isHidden = true // 20171111 as never changes any more
@@ -363,7 +382,17 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
         }) 
         task.resume()
         
-        
+        if !SubscriptionService.shared.isSubscriptionValid()
+        {
+         delay(6)
+         {
+             if self.interstitial.isReady {
+                 self.interstitial.present(fromRootViewController: self)
+             } else {
+                 print("Ad wasn't ready")
+             }
+         }
+        }
 
     }
     
@@ -747,3 +776,12 @@ func sChart(_ chart: ShinobiChart, dataPointAt dataIndex: Int, forSeriesAt serie
 
 
 }
+
+//https://stackoverflow.com/questions/38031137/how-to-program-a-delay-in-swift-3 20171125
+func delay(_ seconds: Double, completion: @escaping () -> ()) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+        completion()
+    }
+}
+
+

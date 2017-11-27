@@ -36,6 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+        //https://firebase.google.com/docs/admob/ios/quick-start 20171125
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-7175811277195688~7903495316")
+        
         Messaging.messaging().delegate = self as! MessagingDelegate
         
         if #available(iOS 10.0, *) {
