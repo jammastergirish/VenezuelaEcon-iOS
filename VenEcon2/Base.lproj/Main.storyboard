@@ -245,7 +245,7 @@
                                     <action selector="UpgradeButton:" destination="zDY-Lm-TOB" eventType="touchUpInside" id="1d0-gm-Xvc"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="B48-pD-AOd">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="B48-pD-AOd">
                                 <rect key="frame" x="16" y="106" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -421,6 +421,9 @@
                                     <action selector="ShowMenu:" destination="vLn-Rh-y4A" eventType="touchUpInside" id="whm-ZE-vah"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ZAh-FX-grk">
+                                <rect key="frame" x="66" y="149" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -433,11 +436,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="vKc-Aw-B06" secondAttribute="trailing" id="JOt-Yb-d5f"/>
                             <constraint firstItem="vKc-Aw-B06" firstAttribute="leading" secondItem="cNb-nx-Xdn" secondAttribute="leadingMargin" id="Tam-0f-rgz"/>
                             <constraint firstItem="V1U-ni-8ia" firstAttribute="top" secondItem="1es-2u-m1V" secondAttribute="bottom" constant="40" id="Tbd-aZ-aCp"/>
+                            <constraint firstItem="ZAh-FX-grk" firstAttribute="centerY" secondItem="cNb-nx-Xdn" secondAttribute="centerY" id="XxU-4e-F4Y"/>
+                            <constraint firstItem="ZAh-FX-grk" firstAttribute="centerX" secondItem="cNb-nx-Xdn" secondAttribute="centerX" id="b8W-XE-PBM"/>
                             <constraint firstItem="1es-2u-m1V" firstAttribute="top" secondItem="cNb-nx-Xdn" secondAttribute="topMargin" constant="10" id="pFe-WN-f7Q"/>
                             <constraint firstItem="1es-2u-m1V" firstAttribute="centerX" secondItem="cNb-nx-Xdn" secondAttribute="centerX" id="veA-Sb-Hju"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Activity" destination="ZAh-FX-grk" id="gG5-YM-mqN"/>
                         <outlet property="AllText" destination="V1U-ni-8ia" id="qQe-ZL-PW1"/>
                         <outlet property="ChartSVHeight" destination="79a-Oa-98e" id="ukA-kM-J2R"/>
                         <outlet property="ChartSVToTop" destination="Am5-PY-qEx" id="v0c-Pe-YKz"/>
@@ -577,6 +583,9 @@
                                     <action selector="ShowMenu:" destination="soc-3U-efR" eventType="touchUpInside" id="bq4-ob-h9w"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="nXu-HO-UAl">
+                                <rect key="frame" x="43" y="109" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -587,13 +596,16 @@
                             <constraint firstItem="63q-MY-4hB" firstAttribute="centerX" secondItem="Rxc-q4-qwm" secondAttribute="centerX" id="aTs-pu-8bY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xrT-Gd-YI8" secondAttribute="trailing" id="cmz-fD-eP3"/>
                             <constraint firstItem="Qwb-eu-4B7" firstAttribute="centerX" secondItem="Rxc-q4-qwm" secondAttribute="centerX" id="eJL-AN-Mgi"/>
+                            <constraint firstItem="nXu-HO-UAl" firstAttribute="centerY" secondItem="Rxc-q4-qwm" secondAttribute="centerY" id="lEv-bK-5He"/>
                             <constraint firstItem="4yK-P1-E0B" firstAttribute="bottom" secondItem="63q-MY-4hB" secondAttribute="bottom" id="luK-aE-fKZ"/>
                             <constraint firstItem="vB0-9u-nBk" firstAttribute="top" secondItem="xrT-Gd-YI8" secondAttribute="bottom" id="oJi-yY-uyc"/>
                             <constraint firstItem="xrT-Gd-YI8" firstAttribute="top" secondItem="Qwb-eu-4B7" secondAttribute="bottom" constant="40" id="skt-Ow-KM7"/>
                             <constraint firstItem="xrT-Gd-YI8" firstAttribute="leading" secondItem="Rxc-q4-qwm" secondAttribute="leadingMargin" id="t16-YG-unw"/>
+                            <constraint firstItem="nXu-HO-UAl" firstAttribute="centerX" secondItem="Rxc-q4-qwm" secondAttribute="centerX" id="tVQ-Bq-oAI"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Activity" destination="nXu-HO-UAl" id="IcW-wZ-GBZ"/>
                         <outlet property="AllText" destination="Qwb-eu-4B7" id="Qrz-ZG-Ugg"/>
                         <outlet property="ChartSVHeight" destination="CIT-VZ-cyb" id="Uhq-W8-mi8"/>
                         <outlet property="ChartSVToTop" destination="B1u-RY-fDI" id="Ta5-rv-kwI"/>
@@ -847,6 +859,9 @@
                                     <action selector="ShowMenu:" destination="soc-3U-efR" eventType="touchUpInside" id="wKl-ca-Gp2"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="fJO-vk-3QZ">
+                                <rect key="frame" x="22" y="107" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -860,10 +875,13 @@
                             <constraint firstItem="X8A-EN-BJ9" firstAttribute="top" secondItem="qpe-TA-zWS" secondAttribute="bottom" constant="40" id="aLG-PU-Zug"/>
                             <constraint firstItem="X8A-EN-BJ9" firstAttribute="top" secondItem="cyA-SV-GLA" secondAttribute="bottom" constant="340" id="bNS-u5-PuO"/>
                             <constraint firstItem="X8A-EN-BJ9" firstAttribute="trailing" secondItem="F4Y-Ww-ZOR" secondAttribute="trailingMargin" id="j1i-es-9sK"/>
+                            <constraint firstItem="fJO-vk-3QZ" firstAttribute="centerX" secondItem="F4Y-Ww-ZOR" secondAttribute="centerX" id="jCU-cc-hgo"/>
+                            <constraint firstItem="fJO-vk-3QZ" firstAttribute="centerY" secondItem="F4Y-Ww-ZOR" secondAttribute="centerY" id="ub9-qp-3vq"/>
                             <constraint firstItem="qpe-TA-zWS" firstAttribute="centerX" secondItem="F4Y-Ww-ZOR" secondAttribute="centerX" id="zha-5L-Qk8"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Activity" destination="fJO-vk-3QZ" id="L1F-EZ-viZ"/>
                         <outlet property="AllText" destination="qpe-TA-zWS" id="UoG-te-XkZ"/>
                         <outlet property="BrentTwoYear" destination="mGe-iq-b4r" id="EpV-dh-5PK"/>
                         <outlet property="BrentVal" destination="M7f-KQ-YZt" id="i0j-eL-s2g"/>
@@ -1451,11 +1469,16 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                     <action selector="ShowMenu:" destination="hlm-kR-DaP" eventType="touchUpInside" id="uaa-md-djH"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="GvW-s0-6dM">
+                                <rect key="frame" x="89" y="141" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="GvW-s0-6dM" firstAttribute="centerX" secondItem="Y82-u4-e7c" secondAttribute="centerX" id="3as-IF-FHT"/>
                             <constraint firstItem="qD9-4L-5wl" firstAttribute="bottom" secondItem="OzU-0z-Bic" secondAttribute="bottom" id="83m-AM-R3C"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aUn-aU-erx" secondAttribute="trailing" id="BmY-xR-qeu"/>
+                            <constraint firstItem="GvW-s0-6dM" firstAttribute="centerY" secondItem="Y82-u4-e7c" secondAttribute="centerY" id="LK4-1H-5Ah"/>
                             <constraint firstItem="zwm-BT-hpB" firstAttribute="centerX" secondItem="Y82-u4-e7c" secondAttribute="centerX" id="MtU-zR-2Mb"/>
                             <constraint firstItem="zwm-BT-hpB" firstAttribute="top" secondItem="OzU-0z-Bic" secondAttribute="bottom" constant="40" id="UhD-oQ-nUo"/>
                             <constraint firstItem="OzU-0z-Bic" firstAttribute="centerX" secondItem="Y82-u4-e7c" secondAttribute="centerX" id="XX1-pE-O78"/>
@@ -1468,6 +1491,7 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Activity" destination="GvW-s0-6dM" id="agu-oT-wRv"/>
                         <outlet property="AllText" destination="zwm-BT-hpB" id="GkR-kn-vdF"/>
                         <outlet property="ChartSVHeight" destination="mgA-Nd-GJ6" id="NU6-Yj-7qk"/>
                         <outlet property="ChartSVToTop" destination="sUl-Az-nhz" id="tuX-xK-E0G"/>
@@ -1657,23 +1681,29 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                     <action selector="ShowMenu:" destination="lTQ-Fn-c8z" eventType="touchUpInside" id="PTx-cJ-3mz"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="dGa-AH-ef4">
+                                <rect key="frame" x="93" y="145" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Wva-T6-wol" firstAttribute="top" secondItem="Tco-v2-TQk" secondAttribute="topMargin" constant="10" id="0IE-bh-GDE"/>
                             <constraint firstItem="xC1-N2-gQS" firstAttribute="leading" secondItem="Tco-v2-TQk" secondAttribute="leadingMargin" id="0g1-9Q-E10"/>
                             <constraint firstItem="xC1-N2-gQS" firstAttribute="top" secondItem="RZR-GX-OHg" secondAttribute="bottom" constant="280" id="2Ry-c2-LhG"/>
+                            <constraint firstItem="dGa-AH-ef4" firstAttribute="centerY" secondItem="Tco-v2-TQk" secondAttribute="centerY" id="2su-ta-ZM6"/>
                             <constraint firstItem="0CO-Gd-bCa" firstAttribute="top" secondItem="xC1-N2-gQS" secondAttribute="bottom" id="D0g-Cc-iew"/>
                             <constraint firstItem="zoE-Jy-klK" firstAttribute="top" secondItem="Wva-T6-wol" secondAttribute="bottom" constant="40" id="FL2-EJ-1TT"/>
                             <constraint firstItem="zoE-Jy-klK" firstAttribute="centerX" secondItem="Tco-v2-TQk" secondAttribute="centerX" id="HK4-Aa-sWg"/>
                             <constraint firstItem="Wva-T6-wol" firstAttribute="centerX" secondItem="Tco-v2-TQk" secondAttribute="centerX" id="Mr5-Vi-6N7"/>
                             <constraint firstItem="2PT-Sj-8uv" firstAttribute="leading" secondItem="Tco-v2-TQk" secondAttribute="leadingMargin" id="U1F-ca-xWc"/>
                             <constraint firstItem="xC1-N2-gQS" firstAttribute="top" secondItem="zoE-Jy-klK" secondAttribute="bottom" constant="40" id="cfp-DI-Y3m"/>
+                            <constraint firstItem="dGa-AH-ef4" firstAttribute="centerX" secondItem="Tco-v2-TQk" secondAttribute="centerX" id="cy2-dr-bjm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xC1-N2-gQS" secondAttribute="trailing" id="ikb-CC-bTu"/>
                             <constraint firstItem="2PT-Sj-8uv" firstAttribute="bottom" secondItem="Wva-T6-wol" secondAttribute="bottom" id="ytS-3Q-grJ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Activity" destination="dGa-AH-ef4" id="COY-97-4F7"/>
                         <outlet property="AllText" destination="zoE-Jy-klK" id="9ie-MY-zNB"/>
                         <outlet property="ChartSVHeight" destination="Yw2-ke-mgj" id="0xG-lv-F7J"/>
                         <outlet property="ChartSVToTop" destination="2Ry-c2-LhG" id="fg2-6G-ao0"/>
@@ -1813,6 +1843,9 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                     <action selector="ShowMenu:" destination="7Xw-Wz-ddH" eventType="touchUpInside" id="wBe-aN-nWJ"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Xht-JA-Agx">
+                                <rect key="frame" x="52" y="117" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1823,13 +1856,16 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                             <constraint firstItem="irI-ol-7Hg" firstAttribute="centerX" secondItem="eNp-o3-72m" secondAttribute="centerX" id="GMX-nl-rqq"/>
                             <constraint firstItem="urp-mc-yPO" firstAttribute="leading" secondItem="eNp-o3-72m" secondAttribute="leadingMargin" id="Q4o-rD-uG8"/>
                             <constraint firstItem="eX0-wo-1dX" firstAttribute="top" secondItem="eWc-kL-4Of" secondAttribute="bottom" id="Rw2-HC-jFi"/>
+                            <constraint firstItem="Xht-JA-Agx" firstAttribute="centerY" secondItem="eNp-o3-72m" secondAttribute="centerY" id="Z8K-ka-dIk"/>
                             <constraint firstItem="urp-mc-yPO" firstAttribute="bottom" secondItem="irI-ol-7Hg" secondAttribute="bottom" id="ahB-gy-bux"/>
+                            <constraint firstItem="Xht-JA-Agx" firstAttribute="centerX" secondItem="eNp-o3-72m" secondAttribute="centerX" id="bfU-g8-nio"/>
                             <constraint firstItem="KpQ-u1-q65" firstAttribute="centerX" secondItem="eNp-o3-72m" secondAttribute="centerX" id="en3-4i-HXc"/>
                             <constraint firstItem="eWc-kL-4Of" firstAttribute="top" secondItem="KpQ-u1-q65" secondAttribute="bottom" constant="40" id="icM-4T-OFR"/>
                             <constraint firstItem="eWc-kL-4Of" firstAttribute="leading" secondItem="eNp-o3-72m" secondAttribute="leadingMargin" id="tem-hz-DOE"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Activity" destination="Xht-JA-Agx" id="PUA-Dk-euK"/>
                         <outlet property="AllText" destination="KpQ-u1-q65" id="Wgg-5l-5ZZ"/>
                         <outlet property="ChartSVHeight" destination="2XB-3Y-wVH" id="mcC-T8-8dJ"/>
                         <outlet property="ChartSVToTop" destination="09X-u0-Pwb" id="qIJ-SO-Q30"/>
@@ -1967,6 +2003,9 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                     <action selector="ShowMenu:" destination="SCD-nJ-gPs" eventType="touchUpInside" id="mKp-fp-YuL"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="QLV-M2-LUd">
+                                <rect key="frame" x="66" y="102" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1974,6 +2013,8 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                             <constraint firstItem="Gih-RZ-jkP" firstAttribute="centerX" secondItem="Bce-ef-i4G" secondAttribute="centerX" id="AVY-o0-LiN"/>
                             <constraint firstItem="E6h-DO-7NP" firstAttribute="top" secondItem="6L3-4X-7yY" secondAttribute="bottom" id="BBf-zg-CDX"/>
                             <constraint firstItem="Jfu-cj-cZB" firstAttribute="centerX" secondItem="Bce-ef-i4G" secondAttribute="centerX" id="BJZ-OM-F27"/>
+                            <constraint firstItem="QLV-M2-LUd" firstAttribute="centerX" secondItem="Bce-ef-i4G" secondAttribute="centerX" id="Fjd-m2-8TS"/>
+                            <constraint firstItem="QLV-M2-LUd" firstAttribute="centerY" secondItem="Bce-ef-i4G" secondAttribute="centerY" id="Ij4-ON-uOK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6L3-4X-7yY" secondAttribute="trailing" id="NfI-AG-RJr"/>
                             <constraint firstItem="6L3-4X-7yY" firstAttribute="top" secondItem="PGN-Q7-9wH" secondAttribute="bottom" constant="280" id="SI7-CR-Fdm"/>
                             <constraint firstItem="Gih-RZ-jkP" firstAttribute="top" secondItem="Jfu-cj-cZB" secondAttribute="bottom" constant="40" id="VoG-VY-PqB"/>
@@ -1984,6 +2025,7 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Activity" destination="QLV-M2-LUd" id="l5A-4C-0Ye"/>
                         <outlet property="AllText" destination="Gih-RZ-jkP" id="l3B-Qk-CYF"/>
                         <outlet property="BitcoinFourYear" destination="I4d-4r-9pF" id="nRC-iE-xQg"/>
                         <outlet property="BitcoinMonth" destination="fes-G5-TtX" id="umx-IY-dzK"/>
@@ -2123,13 +2165,18 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                     <action selector="ShowMenu:" destination="z6Z-WT-TcS" eventType="touchUpInside" id="wPp-m3-ecx"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="AKh-64-9wb">
+                                <rect key="frame" x="101" y="164" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="p0Z-gA-Qp2" firstAttribute="leading" secondItem="Zyq-k7-P6J" secondAttribute="leadingMargin" id="3xT-sa-6oH"/>
                             <constraint firstItem="sPu-WV-OwI" firstAttribute="top" secondItem="p0Z-gA-Qp2" secondAttribute="bottom" id="4dk-nG-Vpr"/>
+                            <constraint firstItem="AKh-64-9wb" firstAttribute="centerX" secondItem="Zyq-k7-P6J" secondAttribute="centerX" id="EjI-0P-f95"/>
                             <constraint firstItem="DCm-na-gYv" firstAttribute="centerX" secondItem="Zyq-k7-P6J" secondAttribute="centerX" id="NJO-Mf-x0X"/>
                             <constraint firstAttribute="trailingMargin" secondItem="p0Z-gA-Qp2" secondAttribute="trailing" id="XwT-7x-KqH"/>
+                            <constraint firstItem="AKh-64-9wb" firstAttribute="centerY" secondItem="Zyq-k7-P6J" secondAttribute="centerY" id="ZFf-U9-Mm8"/>
                             <constraint firstItem="dz6-64-uMX" firstAttribute="leading" secondItem="Zyq-k7-P6J" secondAttribute="leadingMargin" id="dsM-gG-Ev2"/>
                             <constraint firstItem="p0Z-gA-Qp2" firstAttribute="top" secondItem="miW-Pp-yc9" secondAttribute="bottom" constant="280" id="fHJ-N4-SzB"/>
                             <constraint firstItem="p0Z-gA-Qp2" firstAttribute="top" secondItem="DCm-na-gYv" secondAttribute="bottom" constant="40" id="kNA-tK-DDe"/>
@@ -2140,6 +2187,7 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Activity" destination="AKh-64-9wb" id="9Rr-DJ-lV4"/>
                         <outlet property="AllText" destination="DCm-na-gYv" id="JLJ-1D-8fq"/>
                         <outlet property="ChartSVHeight" destination="btO-yy-0aw" id="OS6-XO-d9T"/>
                         <outlet property="ChartSVToTop" destination="fHJ-N4-SzB" id="jF5-pE-96d"/>
@@ -2279,6 +2327,9 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                     <action selector="ShowMenu:" destination="zDY-Lm-TOB" eventType="touchUpInside" id="u3D-AJ-ck9"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="yHG-qC-haC">
+                                <rect key="frame" x="53" y="198" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -2289,13 +2340,16 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                             <constraint firstItem="Orb-D1-BHl" firstAttribute="top" secondItem="k2V-Gb-THC" secondAttribute="bottom" constant="40" id="R6D-7B-J7A"/>
                             <constraint firstItem="Vii-xp-cEr" firstAttribute="top" secondItem="Orb-D1-BHl" secondAttribute="bottom" constant="40" id="YLn-2K-bpp"/>
                             <constraint firstItem="HjE-wh-I9P" firstAttribute="bottom" secondItem="k2V-Gb-THC" secondAttribute="bottom" id="cUg-ut-eKf"/>
+                            <constraint firstItem="yHG-qC-haC" firstAttribute="centerX" secondItem="1qL-oh-GpV" secondAttribute="centerX" id="dqs-rR-lQA"/>
                             <constraint firstItem="k2V-Gb-THC" firstAttribute="top" secondItem="1qL-oh-GpV" secondAttribute="topMargin" constant="10" id="eFc-Dc-5OQ"/>
                             <constraint firstItem="Vii-xp-cEr" firstAttribute="leading" secondItem="1qL-oh-GpV" secondAttribute="leadingMargin" id="mfR-S0-8sL"/>
                             <constraint firstItem="k2V-Gb-THC" firstAttribute="centerX" secondItem="1qL-oh-GpV" secondAttribute="centerX" id="oDd-bs-JaU"/>
+                            <constraint firstItem="yHG-qC-haC" firstAttribute="centerY" secondItem="1qL-oh-GpV" secondAttribute="centerY" id="s2F-HW-ehp"/>
                             <constraint firstItem="Xcw-be-YhP" firstAttribute="top" secondItem="Vii-xp-cEr" secondAttribute="bottom" id="wc5-QW-jqu"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Activity" destination="yHG-qC-haC" id="7NN-n8-Cdl"/>
                         <outlet property="AllText" destination="Orb-D1-BHl" id="zXR-aJ-OUh"/>
                         <outlet property="ChartSVHeight" destination="TDS-4r-JJp" id="Emz-Vj-Xbo"/>
                         <outlet property="ChartSVToTop" destination="JS0-Mm-zui" id="KqQ-ZK-24C"/>
@@ -2498,6 +2552,9 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                     <action selector="ShowMenu:" destination="zDY-Lm-TOB" eventType="touchUpInside" id="TyK-Nh-Gyt"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="cD0-2t-i5p">
+                                <rect key="frame" x="75" y="91" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -2506,6 +2563,8 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                             <constraint firstItem="dEF-Vc-XdT" firstAttribute="top" secondItem="p3q-Rp-LbG" secondAttribute="bottom" constant="40" id="8Ud-nR-nwM"/>
                             <constraint firstItem="dEF-Vc-XdT" firstAttribute="leading" secondItem="lFT-MA-uSV" secondAttribute="leadingMargin" id="Arc-5h-BBg"/>
                             <constraint firstItem="dEF-Vc-XdT" firstAttribute="trailing" secondItem="lFT-MA-uSV" secondAttribute="trailingMargin" id="IGY-U8-LaE"/>
+                            <constraint firstItem="cD0-2t-i5p" firstAttribute="centerX" secondItem="lFT-MA-uSV" secondAttribute="centerX" id="X0M-jh-Rue"/>
+                            <constraint firstItem="cD0-2t-i5p" firstAttribute="centerY" secondItem="lFT-MA-uSV" secondAttribute="centerY" id="cIK-nb-0L4"/>
                             <constraint firstItem="Xah-pa-K98" firstAttribute="bottom" secondItem="N56-jK-4bU" secondAttribute="bottom" id="esm-6a-Kdd"/>
                             <constraint firstItem="dEF-Vc-XdT" firstAttribute="top" secondItem="FfE-5D-VnM" secondAttribute="bottom" constant="340" id="jm9-yq-7ur"/>
                             <constraint firstItem="N56-jK-4bU" firstAttribute="centerX" secondItem="lFT-MA-uSV" secondAttribute="centerX" id="mHS-SY-jE6"/>
@@ -2515,6 +2574,7 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Activity" destination="cD0-2t-i5p" id="39g-Xw-sGf"/>
                         <outlet property="AllText" destination="p3q-Rp-LbG" id="v5O-lh-ng9"/>
                         <outlet property="BPPDate" destination="rhR-sn-3HG" id="2OZ-zB-htl"/>
                         <outlet property="BPPVal" destination="QxH-Jv-P2C" id="H7T-VS-pgZ"/>

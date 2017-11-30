@@ -10,6 +10,7 @@ import UIKit
 
 class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
+    @IBOutlet weak var Activity: UIActivityIndicatorView!
     //Variables to hold data
     var MinWage = [String: Double]()
     
@@ -216,6 +217,7 @@ class MinWageCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 
                 
                 //All set to make everything visible again!
+                self.Activity.isHidden = true
                 self.Header.isHidden = false
                 self.AllText.isHidden = false
                 self.RangeController.isHidden = false

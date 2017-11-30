@@ -10,6 +10,8 @@ import UIKit
 
 class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
+    @IBOutlet weak var Activity: UIActivityIndicatorView!
+    
     //Variables to hold data
     var Reserves = [String: Double]()
     
@@ -212,6 +214,7 @@ class ReservesCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.positionLegend()
                 
                 //All set to make everything visible again!
+                self.Activity.isHidden = true
                 self.Header.isHidden = false
                 self.AllText.isHidden = false
                 self.RangeController.isHidden = false

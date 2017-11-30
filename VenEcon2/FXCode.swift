@@ -147,8 +147,6 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.Activity.startAnimating() // 20171127
-        
         
         if !SubscriptionService.shared.isSubscriptionValid()
         {

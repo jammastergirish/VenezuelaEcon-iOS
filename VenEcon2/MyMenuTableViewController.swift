@@ -58,7 +58,7 @@ class MyMenuTableViewController: UITableViewController {
         }
         else
         {
-            return [NSLocalizedString("Exchange Rates", comment: ""), " • "+NSLocalizedString("Calculator", comment: ""), "🔒 Bitcoin", "🔒 "+NSLocalizedString("Foreign Reserves", comment: ""), "🔒 "+NSLocalizedString("Inflation", comment: ""), /*"🔒 "+NSLocalizedString("GDP", comment: ""), */"🔒 "+NSLocalizedString("Tax Revenue", comment: ""), "🔒 "+NSLocalizedString("Money Supply", comment: ""), "🔒 "+NSLocalizedString("Minimum Wage", comment: ""), "🔒 "+NSLocalizedString("Oil Prices", comment: ""), "🔒 "+NSLocalizedString("Crude Production", comment: ""), "🔒 "+NSLocalizedString("U.S. Oil", comment: ""), "🔒 "+NSLocalizedString("Tax Unit", comment: ""), NSLocalizedString("About", comment: "")]
+            return [NSLocalizedString("Exchange Rates", comment: ""), " • "+NSLocalizedString("Calculator", comment: ""), "Bitcoin", "🔒 "+NSLocalizedString("Foreign Reserves", comment: ""), "🔒 "+NSLocalizedString("Inflation", comment: ""), /*"🔒 "+NSLocalizedString("GDP", comment: ""), */"🔒 "+NSLocalizedString("Tax Revenue", comment: ""), "🔒 "+NSLocalizedString("Money Supply", comment: ""), "🔒 "+NSLocalizedString("Minimum Wage", comment: ""), "🔒 "+NSLocalizedString("Oil Prices", comment: ""), "🔒 "+NSLocalizedString("Crude Production", comment: ""), "🔒 "+NSLocalizedString("U.S. Oil", comment: ""), "🔒 "+NSLocalizedString("Tax Unit", comment: ""), NSLocalizedString("About", comment: "")]
         }
     }
     
@@ -69,13 +69,13 @@ class MyMenuTableViewController: UITableViewController {
 
     func labelsForViewControllers() -> [String] // added for subscription service on 20171022. changed htis to a function rather than a variable/property below
     {
-        if SubscriptionService.shared.isSubscriptionValid()
+        if SubscriptionService.shared.isSubscriptionValid() // CHANGE THIS IF WANT TO TEST! 20171130
         {
             return ["FXViewController", "FXCalcViewController", "BitcoinViewController", "ReservesViewController", "InflationViewController",/* "GDPViewController",*/ "TaxRevViewController", "M2ViewController", "MinWageViewController", "OilViewController", "CrudeProductionViewController", "USOilViewController", "TaxUnitViewController", "AboutViewController"]
         }
         else
         {
-            return ["FXViewController", "FXCalcViewController", "BuyViewController", "BuyViewController", "BuyViewController",/* "BuyViewController",*/ "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "AboutViewController"]
+            return ["FXViewController", "FXCalcViewController", "BitcoinViewController", "BuyViewController", "BuyViewController",/* "BuyViewController",*/ "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "AboutViewController"]
         }
     }
     

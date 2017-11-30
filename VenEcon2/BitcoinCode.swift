@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class BitcoinCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
+    var interstitial: GADInterstitial!
+    
+    @IBOutlet weak var Activity: UIActivityIndicatorView!
     //Variables to hold data
     var Bitcoin = [String: Double]()
     
@@ -107,6 +111,17 @@ class BitcoinCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        if !SubscriptionService.shared.isSubscriptionValid()
+        {
+            interstitial = GADInterstitial(adUnitID: "ca-app-pub-7175811277195688/1463700737")
+            //interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+            let requestad = GADRequest()
+            interstitial.load(requestad)
+            //https://developers.google.com/admob/ios/interstitial 20171125
+            //https://apps.admob.com/v2/apps/7903495316/adunits/create?pli=1
+        }
         
         //Layout
         ChartSVHeight.isActive = false
@@ -211,6 +226,7 @@ class BitcoinCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.positionLegend()
                 
                 //All set to make everything visible again!
+                self.Activity.isHidden = true
                 self.Header.isHidden = false
                 self.AllText.isHidden = false
                 self.RangeController.isHidden = false
@@ -225,6 +241,21 @@ class BitcoinCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
             
         })
         task.resume()
+        
+        
+        
+        if !SubscriptionService.shared.isSubscriptionValid()
+        {
+            delay(6)
+            {
+                if self.interstitial.isReady {
+                    self.interstitial.present(fromRootViewController: self)
+                } else {
+                    print("Ad wasn't ready")
+                }
+            }
+        }
+
         
         
         

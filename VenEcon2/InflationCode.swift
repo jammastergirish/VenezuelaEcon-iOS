@@ -9,6 +9,8 @@
 import UIKit
 
 class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
+
+    @IBOutlet weak var Activity: UIActivityIndicatorView!
     
     //Variables to hold data
     var CentralBank = [String: Double]()
@@ -270,6 +272,7 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.chart.positionLegend()
                 
                 //All set to make everything visible again!
+                self.Activity.isHidden = true
                 self.Header.isHidden = false
                 self.AllText.isHidden = false
                 self.RangeController.isHidden = false
