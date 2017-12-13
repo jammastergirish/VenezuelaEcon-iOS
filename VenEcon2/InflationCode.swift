@@ -261,7 +261,7 @@ class InflationCode: UIViewController, ENSideMenuDelegate, SChartDatasource{
                 self.xAxis.style.majorGridLineStyle.showMajorGridLines = false
                 self.xAxis.style.lineWidth = 2
                 self.yAxis.style.lineWidth = 2
-                self.yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.NA.values.max()! as NSNumber!)
+                self.yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.BPP.values.max()! as NSNumber!)
                 
                 self.chart.xAxis = self.xAxis
                 self.chart.yAxis = self.yAxis

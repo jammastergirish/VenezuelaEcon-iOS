@@ -318,7 +318,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource {
         
             // Axes
             self.xAxis.title = NSLocalizedString("Date", comment: "")
-            self.yAxis.title = NSLocalizedString("Exchange Rate", comment: "")+" (" + units + ")"
+            self.yAxis.title = NSLocalizedString("Exchange Rate", comment: "")+" (1,000 " + units + ")"
             if SubscriptionService.shared.isSubscriptionValid() //20171111
             {
                 self.enablePanningAndZoomingOnAxis(self.xAxis)
@@ -334,7 +334,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource {
             self.xAxis.style.majorGridLineStyle.showMajorGridLines = false
             self.xAxis.style.lineWidth = 1
             self.yAxis.style.lineWidth = 1
-            self.yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.BM.values.max()! as NSNumber!)
+            self.yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.BM.values.max()!/1000 as NSNumber!)
             
             self.chart.xAxis = self.xAxis
             self.chart.yAxis = self.yAxis
@@ -499,7 +499,7 @@ for dataPoint in Utils.shared.JSONDataFromFile("FXdata") {
         BM[dateString] = Double(BMVal) // Adds to my dictionary
         let DataPointBM = SChartDataPoint() // Adds to graph data
         DataPointBM.xValue = date
-        DataPointBM.yValue = Double(BMVal)
+        DataPointBM.yValue = Double(BMVal)!/1000.0
         DataBM.append(DataPointBM)
     }
     
@@ -508,7 +508,7 @@ for dataPoint in Utils.shared.JSONDataFromFile("FXdata") {
         Official[dateString] = Double(OfficialVal)
         let DataPointOfficial = SChartDataPoint()
         DataPointOfficial.xValue = date
-        DataPointOfficial.yValue = Double(OfficialVal)
+        DataPointOfficial.yValue = Double(OfficialVal)!/1000.0
         DataOfficial.append(DataPointOfficial)
     }
     
@@ -517,7 +517,7 @@ for dataPoint in Utils.shared.JSONDataFromFile("FXdata") {
         Simadi[dateString] = Double(SimadiVal)
         let DataPointSimadi = SChartDataPoint()
         DataPointSimadi.xValue = date
-        DataPointSimadi.yValue = Double(SimadiVal)
+        DataPointSimadi.yValue = Double(SimadiVal)!/1000.0
         DataSimadi.append(DataPointSimadi)
     }
     
@@ -526,7 +526,7 @@ for dataPoint in Utils.shared.JSONDataFromFile("FXdata") {
         Dicom[dateString] = Double(DicomVal)
         let DataPointDicom = SChartDataPoint()
         DataPointDicom.xValue = date
-        DataPointDicom.yValue = Double(DicomVal)
+        DataPointDicom.yValue = Double(DicomVal)!/1000.0
         DataDicom.append(DataPointDicom)
     }
     
@@ -535,7 +535,7 @@ for dataPoint in Utils.shared.JSONDataFromFile("FXdata") {
         M2_Res[dateString] = Double(M2_ResVal)
         let DataPointM2_Res = SChartDataPoint()
         DataPointM2_Res.xValue = date
-        DataPointM2_Res.yValue = Double(M2_ResVal)
+        DataPointM2_Res.yValue = Double(M2_ResVal)!/1000.0
         DataM2_Res.append(DataPointM2_Res)
     }
     
@@ -543,7 +543,7 @@ for dataPoint in Utils.shared.JSONDataFromFile("FXdata") {
     {
         let DataPointSitme = SChartDataPoint()
         DataPointSitme.xValue = date
-        DataPointSitme.yValue = Double(SitmeVal)
+        DataPointSitme.yValue = Double(SitmeVal)!/1000.0
         DataSitme.append(DataPointSitme)
     }
     
@@ -551,7 +551,7 @@ for dataPoint in Utils.shared.JSONDataFromFile("FXdata") {
     {
         let DataPointSicad1 = SChartDataPoint()
         DataPointSicad1.xValue = date
-        DataPointSicad1.yValue = Double(Sicad1Val)
+        DataPointSicad1.yValue = Double(Sicad1Val)!/1000.0
         DataSicad1.append(DataPointSicad1)
     }
     
@@ -559,7 +559,7 @@ for dataPoint in Utils.shared.JSONDataFromFile("FXdata") {
     {
         let DataPointSicad2 = SChartDataPoint()
         DataPointSicad2.xValue = date
-        DataPointSicad2.yValue = Double(Sicad2Val)
+        DataPointSicad2.yValue = Double(Sicad2Val)!/1000.0
         DataSicad2.append(DataPointSicad2)
     }
     
@@ -567,7 +567,7 @@ for dataPoint in Utils.shared.JSONDataFromFile("FXdata") {
     {
         let DataPointSupp = SChartDataPoint()
         DataPointSupp.xValue = date
-        DataPointSupp.yValue = Double(SuppVal)
+        DataPointSupp.yValue = Double(SuppVal)!/1000.0
         DataSupp.append(DataPointSupp)
     }
     
@@ -610,7 +610,7 @@ func Data(_ json : [[String : AnyObject]]) {
             BM[dateString] = Double(BMVal) // Adds to my dictionary
             let DataPointBM = SChartDataPoint() // Adds to graph data
             DataPointBM.xValue = date
-            DataPointBM.yValue = Double(BMVal)
+            DataPointBM.yValue = Double(BMVal)!/1000.0
             DataBM.append(DataPointBM)
         }
         
@@ -619,7 +619,7 @@ func Data(_ json : [[String : AnyObject]]) {
             Official[dateString] = Double(OfficialVal)
             let DataPointOfficial = SChartDataPoint()
             DataPointOfficial.xValue = date
-            DataPointOfficial.yValue = Double(OfficialVal)
+            DataPointOfficial.yValue = Double(OfficialVal)!/1000.0
             DataOfficial.append(DataPointOfficial)
         }
         
@@ -628,7 +628,7 @@ func Data(_ json : [[String : AnyObject]]) {
             Simadi[dateString] = Double(SimadiVal)
             let DataPointSimadi = SChartDataPoint()
             DataPointSimadi.xValue = date
-            DataPointSimadi.yValue = Double(SimadiVal)
+            DataPointSimadi.yValue = Double(SimadiVal)!/1000.0
             DataSimadi.append(DataPointSimadi)
         }
         
@@ -637,7 +637,7 @@ func Data(_ json : [[String : AnyObject]]) {
             Dicom[dateString] = Double(DicomVal)
             let DataPointDicom = SChartDataPoint()
             DataPointDicom.xValue = date
-            DataPointDicom.yValue = Double(DicomVal)
+            DataPointDicom.yValue = Double(DicomVal)!/1000.0
             DataDicom.append(DataPointDicom)
         }
         
@@ -646,7 +646,7 @@ func Data(_ json : [[String : AnyObject]]) {
             M2_Res[dateString] = Double(M2_ResVal)
             let DataPointM2_Res = SChartDataPoint()
             DataPointM2_Res.xValue = date
-            DataPointM2_Res.yValue = Double(M2_ResVal)
+            DataPointM2_Res.yValue = Double(M2_ResVal)!/1000.0
             DataM2_Res.append(DataPointM2_Res)
         }
         
@@ -654,7 +654,7 @@ func Data(_ json : [[String : AnyObject]]) {
         {
             let DataPointSitme = SChartDataPoint()
             DataPointSitme.xValue = date
-            DataPointSitme.yValue = Double(SitmeVal)
+            DataPointSitme.yValue = Double(SitmeVal)!/1000.0
             DataSitme.append(DataPointSitme)
         }
         
@@ -662,7 +662,7 @@ func Data(_ json : [[String : AnyObject]]) {
         {
             let DataPointSicad1 = SChartDataPoint()
             DataPointSicad1.xValue = date
-            DataPointSicad1.yValue = Double(Sicad1Val)
+            DataPointSicad1.yValue = Double(Sicad1Val)!/1000.0
             DataSicad1.append(DataPointSicad1)
         }
         
@@ -670,7 +670,7 @@ func Data(_ json : [[String : AnyObject]]) {
         {
             let DataPointSicad2 = SChartDataPoint()
             DataPointSicad2.xValue = date
-            DataPointSicad2.yValue = Double(Sicad2Val)
+            DataPointSicad2.yValue = Double(Sicad2Val)!/1000.0
             DataSicad2.append(DataPointSicad2)
         }
         
@@ -678,7 +678,7 @@ func Data(_ json : [[String : AnyObject]]) {
         {
             let DataPointSupp = SChartDataPoint()
             DataPointSupp.xValue = date
-            DataPointSupp.yValue = Double(SuppVal)
+            DataPointSupp.yValue = Double(SuppVal)!/1000.0
             DataSupp.append(DataPointSupp)
         }
         

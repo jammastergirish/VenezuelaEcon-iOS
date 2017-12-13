@@ -38,7 +38,7 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        //UIApplication.shared.isNetworkActivityIndicatorVisible = true
     
         
         VersionLabel.text = "Version: " + version() + " on " + UIDevice.current.model
