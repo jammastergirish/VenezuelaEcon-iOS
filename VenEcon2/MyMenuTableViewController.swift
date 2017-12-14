@@ -61,25 +61,23 @@ class MyMenuTableViewController: UITableViewController {
             return [NSLocalizedString("Exchange Rates", comment: ""), " • "+NSLocalizedString("Calculator", comment: ""), "Bitcoin", "🔒 "+NSLocalizedString("Foreign Reserves", comment: ""), "🔒 "+NSLocalizedString("Inflation", comment: ""), /*"🔒 "+NSLocalizedString("GDP", comment: ""), */"🔒 "+NSLocalizedString("Tax Revenue", comment: ""), "🔒 "+NSLocalizedString("Money Supply", comment: ""), "🔒 "+NSLocalizedString("Minimum Wage", comment: ""), "🔒 "+NSLocalizedString("Oil Prices", comment: ""), "🔒 "+NSLocalizedString("Crude Production", comment: ""), "🔒 "+NSLocalizedString("U.S. Oil", comment: ""), "🔒 "+NSLocalizedString("Tax Unit", comment: ""), NSLocalizedString("About", comment: "")]
         }
     }
-    
-    
-//        let labels : [String] = [NSLocalizedString("Exchange Rates", comment: ""), " • "+NSLocalizedString("Calculator", comment: ""), "Bitcoin", NSLocalizedString("Foreign Reserves", comment: ""), NSLocalizedString("Inflation", comment: ""), /*NSLocalizedString("GDP", comment: ""), */NSLocalizedString("Tax Revenue", comment: ""), NSLocalizedString("Money Supply", comment: ""), NSLocalizedString("Minimum Wage", comment: ""), NSLocalizedString("Oil Prices", comment: ""), NSLocalizedString("Crude Production", comment: ""), NSLocalizedString("U.S. Oil", comment: ""), NSLocalizedString("Tax Unit", comment: ""), NSLocalizedString("About", comment: "")]
-    
-    
+
 
     func labelsForViewControllers() -> [String] // added for subscription service on 20171022. changed htis to a function rather than a variable/property below
     {
-        if SubscriptionService.shared.isSubscriptionValid() // CHANGE THIS IF WANT TO TEST! 20171130
+        if !SubscriptionService.shared.isSubscriptionValid() // CHANGE THIS IF WANT TO TEST! 20171130
         {
-            return ["FXViewController", "FXCalcViewController", "BitcoinViewController", "ReservesViewController", "InflationViewController",/* "GDPViewController",*/ "TaxRevViewController", "M2ViewController", "MinWageViewController", "OilViewController", "CrudeProductionViewController", "USOilViewController", "TaxUnitViewController", "AboutViewController"]
+            return ["ParentViewController", "FXCalcViewController", "ParentViewController", "ParentViewController", "ParentViewController",/* "GDPViewController",*/ "ParentViewController", "ParentViewController", "ParentViewController", "ParentViewController", "ParentViewController", "ParentViewController", "ParentViewController", "AboutViewController"]
         }
         else
         {
-            return ["FXViewController", "FXCalcViewController", "BitcoinViewController", "BuyViewController", "BuyViewController",/* "BuyViewController",*/ "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "AboutViewController"]
+            return ["ParentViewController", "FXCalcViewController", "BitcoinViewController", "BuyViewController", "BuyViewController",/* "BuyViewController",*/ "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "AboutViewController"]
         }
     }
     
-    //let labelsForViewControllers = ["FXViewController", "FXCalcViewController", "BitcoinViewController", "ReservesViewController", "InflationViewController",/* "GDPViewController",*/ "TaxRevViewController", "M2ViewController", "MinWageViewController", "OilViewController", "CrudeProductionViewController", "USOilViewController", "TaxUnitViewController", "AboutViewController"]
+    
+    var Indicators : [Indicator?] = [.FX, nil, .Reserves, .FX, .FX, .FX, .FX, .FX, .FX, .FX, .FX, .FX, .FX, nil]
+    
 
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -138,58 +136,24 @@ class MyMenuTableViewController: UITableViewController {
         
         selectedMenuItem = (indexPath as NSIndexPath).row
         
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-        var destViewController : UIViewController
         
-        GoToViewControllerWithName(name: labelsForViewControllers()[indexPath.row])
-        
-//        switch ((indexPath as NSIndexPath).row) {
+        GoToViewControllerAtIndex(index: indexPath.row)
         
 
-            
-//        case 0:
-//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "FXViewController")
-//            break
-//        case 1:
-//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "FXCalcViewController")
-//            break
-//        case 2:
-//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "ReservesViewController")
-//            break
-//        case 3:
-//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "InflationViewController")
-//            break
-//        case 4:
-//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "M2ViewController")
-//            break
-//        case 5:
-//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "MinWageViewController")
-//            break
-//        case 6:
-//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "OilViewController")
-//            break
-//        case 7:
-//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "CrudeProductionViewController")
-//            break
-//        case 8:
-//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "USOilViewController")
-//            break
-//        case (labels.count-1):
-//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "AboutViewController")
-//            break
-//        default:
-//            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "FXViewController")
-//            break
-//        }
-//        sideMenuController()?.setContentViewController(destViewController)
     }
     
-    func GoToViewControllerWithName(name : String)
+    func GoToViewControllerAtIndex(index : Int)
     {
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)  // Here's we creating the View Controller that we want to go to. (commented on 20171028)
+        let name = labelsForViewControllers()[index] // Added on 20171214
+        let indicator = Indicators[index]
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)  // Here we creating the View Controller that we want to go to. (commented on 20171028)
         let DestViewController = mainStoryboard.instantiateViewController(withIdentifier: name)
-        //if !sideMenuController()?.contentViewController?.isKind(of: DestViewController) // added 20171028 to make sure not changing VC if already showing it
-        //{
+        if let parent = DestViewController as? ParentViewController
+        {
+            parent.Indicator = indicator!
+        }
+        
             sideMenuController()?.setContentViewController(DestViewController) // Set up the VC
             if let index = labelsForViewControllers().index(of: name) // this added on 20171028
             {
@@ -199,18 +163,25 @@ class MyMenuTableViewController: UITableViewController {
             { //if tableview has anything selected, then unselect it
                 tableView.deselectRow(at: index, animated: true)
             }
-        //}
     }
     
+    
+    func GoToViewControllerWithName(name : String)
+    {
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)  // Here's we creating the View Controller that we want to go to. (commented on 20171028)
+        let DestViewController = mainStoryboard.instantiateViewController(withIdentifier: name)
+        
+        sideMenuController()?.setContentViewController(DestViewController) // Set up the VC
+        if let index = labelsForViewControllers().index(of: name) // this added on 20171028
+        {
+            tableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .middle)
+        }
+        else if let index = tableView.indexPathForSelectedRow
+        { //if tableview has anything selected, then unselect it
+            tableView.deselectRow(at: index, animated: true)
+        }
     }
-    */
+
 
 }

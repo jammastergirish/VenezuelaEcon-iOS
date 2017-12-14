@@ -15,6 +15,9 @@
 		68127F691F0C564100C4AC5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68127F661F0C564100C4AC5C /* GoogleService-Info.plist */; };
 		68127F6A1F0C564100C4AC5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68127F661F0C564100C4AC5C /* GoogleService-Info.plist */; };
 		6812F21A1DE64F430013E7F7 /* DownloadMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6812F2191DE64F430013E7F7 /* DownloadMan.swift */; };
+		681D06731FE21BD900E4FFA3 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D06721FE21BD900E4FFA3 /* ParentViewController.swift */; };
+		681D06751FE21E5300E4FFA3 /* UIViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D06741FE21E5300E4FFA3 /* UIViewHelper.swift */; };
+		681D06771FE21FE200E4FFA3 /* FXChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D06761FE21FE200E4FFA3 /* FXChild.swift */; };
 		68315B3A1D6A561600BE7036 /* AboutCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68315B391D6A561600BE7036 /* AboutCode.swift */; };
 		68315B3C1D6A5EEA00BE7036 /* FXCalcCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */; };
 		6835ACAF1FE18EFC00FFCAC3 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6835ACAE1FE18EFC00FFCAC3 /* HeaderView.xib */; };
@@ -131,6 +134,9 @@
 		6811FFD01FA57690007C1D75 /* UserUpgradedCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpgradedCode.swift; sourceTree = "<group>"; };
 		68127F661F0C564100C4AC5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6812F2191DE64F430013E7F7 /* DownloadMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadMan.swift; sourceTree = "<group>"; };
+		681D06721FE21BD900E4FFA3 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		681D06741FE21E5300E4FFA3 /* UIViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewHelper.swift; sourceTree = "<group>"; };
+		681D06761FE21FE200E4FFA3 /* FXChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXChild.swift; sourceTree = "<group>"; };
 		6822A1C21DEA7E69009EDC80 /* VenEcon2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VenEcon2.entitlements; sourceTree = "<group>"; };
 		68315B391D6A561600BE7036 /* AboutCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCode.swift; sourceTree = "<group>"; };
 		68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXCalcCode.swift; sourceTree = "<group>"; };
@@ -325,10 +331,13 @@
 				68652D401D67DB9500049CBC /* Notes.swift */,
 				68D3DB961D593AA600F42648 /* AppDelegate.swift */,
 				68589DC21D65563400ECBC3E /* Utils.swift */,
-				68D3DB981D593AA600F42648 /* FXCode.swift */,
+				681D06741FE21E5300E4FFA3 /* UIViewHelper.swift */,
+				681D06721FE21BD900E4FFA3 /* ParentViewController.swift */,
 				6835ACAE1FE18EFC00FFCAC3 /* HeaderView.xib */,
 				6835ACB01FE18F7200FFCAC3 /* HeaderView.swift */,
+				681D06761FE21FE200E4FFA3 /* FXChild.swift */,
 				68B1BF021D6C47C800DC02C5 /* FXdata.json */,
+				68D3DB981D593AA600F42648 /* FXCode.swift */,
 				68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */,
 				6839E79D1D610DC5005ED3FA /* ReservesCode.swift */,
 				68B1BF041D6C4BC300DC02C5 /* ResData.json */,
@@ -811,9 +820,11 @@
 				68B6BE991F3BE635001E0E1E /* GDPCode.swift in Sources */,
 				688640061F3651B8009A0A0F /* TaxRevCode.swift in Sources */,
 				68652D411D67DB9500049CBC /* Notes.swift in Sources */,
+				681D06751FE21E5300E4FFA3 /* UIViewHelper.swift in Sources */,
 				68DF1BF61F367055001CE201 /* TaxUnitCode.swift in Sources */,
 				68D3DBBC1D593AFF00F42648 /* MyMenuTableViewController.swift in Sources */,
 				68D3DBBA1D593AFF00F42648 /* ENSideMenu.swift in Sources */,
+				681D06731FE21BD900E4FFA3 /* ParentViewController.swift in Sources */,
 				68460BAF1F9D801B004FD8ED /* BuyUpgradeCode.swift in Sources */,
 				68E16F861D69157E00CD8DA1 /* USoilCode.swift in Sources */,
 				68D3DBBD1D593AFF00F42648 /* MyNavigationController.swift in Sources */,
@@ -822,6 +833,7 @@
 				68B867E81D63C0B500309C56 /* MinWageCode.swift in Sources */,
 				68B867EA1D63D0A600309C56 /* InflationCode.swift in Sources */,
 				6835ACB11FE18F7200FFCAC3 /* HeaderView.swift in Sources */,
+				681D06771FE21FE200E4FFA3 /* FXChild.swift in Sources */,
 				68460BAD1F9D7D67004FD8ED /* SubscriptionService.swift in Sources */,
 				6839E79E1D610DC5005ED3FA /* ReservesCode.swift in Sources */,
 				68315B3C1D6A5EEA00BE7036 /* FXCalcCode.swift in Sources */,

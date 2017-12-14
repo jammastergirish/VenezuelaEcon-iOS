@@ -15,6 +15,8 @@ class MyNavigationController: ENSideMenuNavigationController, ENSideMenuDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setNavigationBarHidden(true, animated: false)// added 20171214 when trying to use parent/child
+        
         menuViewController = MyMenuTableViewController()
         
         sideMenu = ENSideMenu(sourceView: self.view, menuViewController: menuViewController, menuPosition:.left)

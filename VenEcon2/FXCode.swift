@@ -152,8 +152,8 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource, HeaderView
         
         if !SubscriptionService.shared.isSubscriptionValid()
         {
-         interstitial = GADInterstitial(adUnitID: "ca-app-pub-7175811277195688/1463700737")
-         //interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+         //interstitial = GADInterstitial(adUnitID: "ca-app-pub-7175811277195688/1463700737") //REAL
+         interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910") // DEVELOPMENT
          let requestad = GADRequest()
          interstitial.load(requestad)
          //https://developers.google.com/admob/ios/interstitial 20171125
@@ -204,8 +204,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource, HeaderView
         
         
         //For menu
-        self.sideMenuController()?.sideMenu?.delegate = self
-        self.navigationController?.isNavigationBarHidden = true
+        self.sideMenuController()?.sideMenu?.delegate = self // move this to parent
         
         //Telling what units we're using. Hopefully will be able to shift all this later
         let units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!

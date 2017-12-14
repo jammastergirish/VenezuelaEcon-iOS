@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="zDY-Lm-TOB" kind="relationship" relationship="rootViewController" id="P5s-lZ-MRe"/>
+                        <segue destination="Agr-F4-gFq" kind="relationship" relationship="rootViewController" id="Tvv-l0-c6M"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7Z-Ft-ZNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -44,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WK6-gD-Vfg">
-                                <rect key="frame" x="38" y="130" width="300" height="230"/>
+                                <rect key="frame" x="38" y="86" width="300" height="230"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="c7D-TO-AeX">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="160"/>
@@ -182,7 +182,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="bG9-c0-XZJ">
-                                <rect key="frame" x="16" y="400" width="343" height="267"/>
+                                <rect key="frame" x="16" y="356" width="343" height="311"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="JIR-Ze-I2l">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
@@ -202,7 +202,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OeS-VE-e7o" customClass="ShinobiChart">
-                                        <rect key="frame" x="0.0" y="33" width="343" height="234"/>
+                                        <rect key="frame" x="0.0" y="33" width="343" height="278"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
@@ -212,7 +212,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpH-vj-vd1">
-                                <rect key="frame" x="284" y="74" width="76" height="29"/>
+                                <rect key="frame" x="284" y="30" width="76" height="29"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <state key="normal" title=" UPGRADE ">
@@ -226,7 +226,7 @@
                                 <rect key="frame" x="16" y="106" width="20" height="20"/>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyE-yB-Lqf" customClass="HeaderView" customModule="VenEcon2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="10" width="375" height="110"/>
+                                <rect key="frame" x="0.0" y="-34" width="375" height="110"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="OtB-3X-0bf"/>
@@ -281,6 +281,250 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aCd-ZE-d6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="512" y="352"/>
+        </scene>
+        <!--Parent View Controller-->
+        <scene sceneID="d5h-4o-Nrp">
+            <objects>
+                <viewController storyboardIdentifier="ParentViewController" id="Agr-F4-gFq" customClass="ParentViewController" customModule="VenEcon2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sBZ-bi-VcE"/>
+                        <viewControllerLayoutGuide type="bottom" id="g82-Ea-kLR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OH0-Xy-bgA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8eY-74-0DQ" customClass="HeaderView" customModule="VenEcon2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="g6F-or-Yij"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Bbk-ZT-GXF">
+                                <rect key="frame" x="0.0" y="367" width="375" height="300"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="lAx-B3-AIY">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="qKX-ve-Tu7"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="32 years"/>
+                                            <segment title="16 years"/>
+                                            <segment title="8 years"/>
+                                            <segment title="4 years"/>
+                                            <segment title="2 years"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="RangeControl:" destination="zDY-Lm-TOB" eventType="valueChanged" id="FqQ-i7-lgX"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spo-e2-3lW" customClass="ShinobiChart">
+                                        <rect key="frame" x="0.0" y="33" width="375" height="267"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Spo-e2-3lW" firstAttribute="top" secondItem="lAx-B3-AIY" secondAttribute="bottom" constant="5" id="iRk-Ay-Mgc"/>
+                                    <constraint firstAttribute="height" constant="300" id="isT-kx-EJ4"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9y1-75-qIw">
+                                <rect key="frame" x="16" y="144" width="343" height="223"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="8eY-74-0DQ" firstAttribute="top" secondItem="sBZ-bi-VcE" secondAttribute="bottom" id="0Y4-OK-8Wh"/>
+                            <constraint firstAttribute="trailing" secondItem="8eY-74-0DQ" secondAttribute="trailing" id="7Zy-9W-EFw"/>
+                            <constraint firstAttribute="trailing" secondItem="Bbk-ZT-GXF" secondAttribute="trailing" id="ByK-gf-Qni"/>
+                            <constraint firstItem="Bbk-ZT-GXF" firstAttribute="leading" secondItem="OH0-Xy-bgA" secondAttribute="leading" id="PTr-cF-Gki"/>
+                            <constraint firstItem="9y1-75-qIw" firstAttribute="leading" secondItem="OH0-Xy-bgA" secondAttribute="leadingMargin" id="aei-4z-JuW"/>
+                            <constraint firstAttribute="bottom" secondItem="Bbk-ZT-GXF" secondAttribute="bottom" id="kjt-mU-gwy"/>
+                            <constraint firstItem="8eY-74-0DQ" firstAttribute="leading" secondItem="OH0-Xy-bgA" secondAttribute="leading" id="m6U-rj-4ed"/>
+                            <constraint firstItem="9y1-75-qIw" firstAttribute="top" secondItem="8eY-74-0DQ" secondAttribute="bottom" id="rxr-Nj-SlV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9y1-75-qIw" secondAttribute="trailing" id="vtm-mu-O5Y"/>
+                            <constraint firstItem="Bbk-ZT-GXF" firstAttribute="top" secondItem="9y1-75-qIw" secondAttribute="bottom" id="xCL-ns-ksd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fSJ-Rz-GU8"/>
+                    <connections>
+                        <outlet property="Chart" destination="Spo-e2-3lW" id="C0Z-uH-D1y"/>
+                        <outlet property="ContainerForChild" destination="9y1-75-qIw" id="9xv-kd-6T0"/>
+                        <outlet property="Header" destination="8eY-74-0DQ" id="ckN-uZ-CyO"/>
+                        <outlet property="SegmentedControl" destination="lAx-B3-AIY" id="8qG-wM-8NW"/>
+                        <outlet property="StackForChartAndSegmentedControl" destination="Bbk-ZT-GXF" id="O5L-8e-yUd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z28-Mz-3jE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1268" y="159"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8Up-9C-zWS">
+            <objects>
+                <viewController storyboardIdentifier="FXChild" id="f1Y-Bw-79K" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Orr-yb-mM6"/>
+                        <viewControllerLayoutGuide type="bottom" id="JWf-Jz-nSo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T0u-uy-pLF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="n7S-Wi-Eyj">
+                                <rect key="frame" x="37.5" y="0.0" width="300" height="230"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="sF5-sa-lHi">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="160"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="avh-Hf-iYx">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="160"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Isc-OD-zCG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="71.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DICOM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpH-a9-r7g">
+                                                                <rect key="frame" x="0.0" y="0.0" width="46.5" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DICOMVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBg-Rj-vw2">
+                                                                <rect key="frame" x="0.0" y="17" width="78.5" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DICOMMonth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q25-aa-aXV">
+                                                                <rect key="frame" x="0.0" y="37.5" width="88" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DICOMYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAl-te-NHL">
+                                                                <rect key="frame" x="0.0" y="54.5" width="75" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="hUU-Uh-PRR">
+                                                        <rect key="frame" x="0.0" y="122.5" width="73" height="37.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIPRO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbF-gT-VwA">
+                                                                <rect key="frame" x="0.0" y="0.0" width="42" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIPROVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cD-Zu-osJ">
+                                                                <rect key="frame" x="0.0" y="17" width="73" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PDu-Gs-KlA">
+                                                <rect key="frame" x="155.5" y="0.0" width="144.5" height="160"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Black Market" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sq7-J1-6lQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BlackMarketVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SZ-vc-mgg">
+                                                        <rect key="frame" x="0.0" y="20" width="118" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BlackMarketMonth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6P1-Di-Plp">
+                                                        <rect key="frame" x="0.0" y="43.5" width="121.5" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BlackMarketYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMJ-wq-jLf">
+                                                        <rect key="frame" x="0.0" y="63.5" width="108.5" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BlackMarketTwoYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hud-2v-yjT">
+                                                        <rect key="frame" x="0.0" y="83" width="133.5" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="BlackMarketThreeYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga6-ek-jzW">
+                                                        <rect key="frame" x="0.0" y="103" width="144.5" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="BlackMarketFourYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBe-bJ-28m">
+                                                        <rect key="frame" x="0.0" y="123" width="137.5" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="BlackMarketFiveYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOA-2p-dQc">
+                                                        <rect key="frame" x="0.0" y="143" width="133.5" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="160" id="WhL-BS-4EH"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="4LI-lp-sXG">
+                                        <rect key="frame" x="0.0" y="192.5" width="300" height="37.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M2 / Reserves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSG-e7-qzn">
+                                                <rect key="frame" x="0.0" y="0.0" width="92" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M2_ResVal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0U-vf-CaO">
+                                                <rect key="frame" x="0.0" y="17" width="82.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="56G-fB-EWQ"/>
+                                    <constraint firstAttribute="width" constant="300" id="PUs-Tq-Ga0"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="n7S-Wi-Eyj" firstAttribute="centerX" secondItem="T0u-uy-pLF" secondAttribute="centerX" id="C79-xd-xlm"/>
+                            <constraint firstItem="n7S-Wi-Eyj" firstAttribute="top" secondItem="Orr-yb-mM6" secondAttribute="bottom" id="Hh8-38-MVr"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="375" height="300"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W6f-1y-8E9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884" y="159"/>
         </scene>
         <!--Code-->
         <scene sceneID="b8l-Vw-p9M">
