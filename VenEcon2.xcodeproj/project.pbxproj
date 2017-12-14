@@ -17,6 +17,8 @@
 		6812F21A1DE64F430013E7F7 /* DownloadMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6812F2191DE64F430013E7F7 /* DownloadMan.swift */; };
 		68315B3A1D6A561600BE7036 /* AboutCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68315B391D6A561600BE7036 /* AboutCode.swift */; };
 		68315B3C1D6A5EEA00BE7036 /* FXCalcCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */; };
+		6835ACAF1FE18EFC00FFCAC3 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6835ACAE1FE18EFC00FFCAC3 /* HeaderView.xib */; };
+		6835ACB11FE18F7200FFCAC3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6835ACB01FE18F7200FFCAC3 /* HeaderView.swift */; };
 		6839E79E1D610DC5005ED3FA /* ReservesCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6839E79D1D610DC5005ED3FA /* ReservesCode.swift */; };
 		68460BAD1F9D7D67004FD8ED /* SubscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B95B041F9D6FAB00800890 /* SubscriptionService.swift */; };
 		68460BAF1F9D801B004FD8ED /* BuyUpgradeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68460BAE1F9D801B004FD8ED /* BuyUpgradeCode.swift */; };
@@ -132,6 +134,8 @@
 		6822A1C21DEA7E69009EDC80 /* VenEcon2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VenEcon2.entitlements; sourceTree = "<group>"; };
 		68315B391D6A561600BE7036 /* AboutCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCode.swift; sourceTree = "<group>"; };
 		68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXCalcCode.swift; sourceTree = "<group>"; };
+		6835ACAE1FE18EFC00FFCAC3 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		6835ACB01FE18F7200FFCAC3 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		6839E79D1D610DC5005ED3FA /* ReservesCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservesCode.swift; sourceTree = "<group>"; };
 		68460BAE1F9D801B004FD8ED /* BuyUpgradeCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyUpgradeCode.swift; sourceTree = "<group>"; };
 		68589DC21D65563400ECBC3E /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -322,6 +326,8 @@
 				68D3DB961D593AA600F42648 /* AppDelegate.swift */,
 				68589DC21D65563400ECBC3E /* Utils.swift */,
 				68D3DB981D593AA600F42648 /* FXCode.swift */,
+				6835ACAE1FE18EFC00FFCAC3 /* HeaderView.xib */,
+				6835ACB01FE18F7200FFCAC3 /* HeaderView.swift */,
 				68B1BF021D6C47C800DC02C5 /* FXdata.json */,
 				68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */,
 				6839E79D1D610DC5005ED3FA /* ReservesCode.swift */,
@@ -567,6 +573,7 @@
 				68127F671F0C564100C4AC5C /* GoogleService-Info.plist in Resources */,
 				68B1BF151D6C6D9200DC02C5 /* USOilData.json in Resources */,
 				68B48B2E1DE63DA8002D3574 /* InfoPlist.strings in Resources */,
+				6835ACAF1FE18EFC00FFCAC3 /* HeaderView.xib in Resources */,
 				68814A151D67180A002B88AF /* Images.xcassets in Resources */,
 				68B48B241DE63DA6002D3574 /* Localizable.strings in Resources */,
 				68D3DBA11D593AA600F42648 /* LaunchScreen.storyboard in Resources */,
@@ -814,6 +821,7 @@
 				68D3DB991D593AA600F42648 /* FXCode.swift in Sources */,
 				68B867E81D63C0B500309C56 /* MinWageCode.swift in Sources */,
 				68B867EA1D63D0A600309C56 /* InflationCode.swift in Sources */,
+				6835ACB11FE18F7200FFCAC3 /* HeaderView.swift in Sources */,
 				68460BAD1F9D7D67004FD8ED /* SubscriptionService.swift in Sources */,
 				6839E79E1D610DC5005ED3FA /* ReservesCode.swift in Sources */,
 				68315B3C1D6A5EEA00BE7036 /* FXCalcCode.swift in Sources */,

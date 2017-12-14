@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="c0c-FT-4u7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="c0c-FT-4u7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,15 +43,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exchange Rates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7It-mU-p5V">
-                                <rect key="frame" x="101.5" y="60" width="173" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="trx-M2-6em"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WK6-gD-Vfg">
                                 <rect key="frame" x="38" y="130" width="300" height="230"/>
                                 <subviews>
@@ -220,20 +211,6 @@
                                     <constraint firstItem="OeS-VE-e7o" firstAttribute="top" secondItem="JIR-Ze-I2l" secondAttribute="bottom" constant="5" id="jK2-YO-ecY"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SM-R0-YuW">
-                                <rect key="frame" x="16" y="65" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="K9C-Tz-Fo5"/>
-                                    <constraint firstAttribute="width" constant="25" id="Xww-J6-1uF"/>
-                                </constraints>
-                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="Hamburger">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="ShowMenu:" destination="zDY-Lm-TOB" eventType="touchUpInside" id="lCd-5F-VwY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpH-vj-vd1">
                                 <rect key="frame" x="284" y="74" width="76" height="29"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -248,26 +225,32 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="B48-pD-AOd">
                                 <rect key="frame" x="16" y="106" width="20" height="20"/>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyE-yB-Lqf" customClass="HeaderView" customModule="VenEcon2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="10" width="375" height="110"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="OtB-3X-0bf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7It-mU-p5V" firstAttribute="top" secondItem="2cC-yP-Aup" secondAttribute="topMargin" constant="10" id="139-hs-m5W"/>
                             <constraint firstItem="bG9-c0-XZJ" firstAttribute="top" secondItem="pPl-ad-7UV" secondAttribute="bottom" constant="336" id="665-Jy-x3p"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bG9-c0-XZJ" secondAttribute="trailing" id="B6Q-ko-hdL"/>
                             <constraint firstItem="dql-nS-G3N" firstAttribute="top" secondItem="bG9-c0-XZJ" secondAttribute="bottom" id="D1u-ox-yP2"/>
+                            <constraint firstItem="TyE-yB-Lqf" firstAttribute="leading" secondItem="2cC-yP-Aup" secondAttribute="leading" id="L4x-bM-6Bb"/>
                             <constraint firstItem="zpH-vj-vd1" firstAttribute="trailing" secondItem="2cC-yP-Aup" secondAttribute="trailingMargin" constant="1" id="NEm-AX-ASQ"/>
-                            <constraint firstItem="7It-mU-p5V" firstAttribute="centerX" secondItem="2cC-yP-Aup" secondAttribute="centerX" id="NT9-Rn-uVa"/>
                             <constraint firstItem="WEL-or-DUD" firstAttribute="centerX" secondItem="2cC-yP-Aup" secondAttribute="centerX" id="NgB-vi-Pqn"/>
                             <constraint firstItem="B48-pD-AOd" firstAttribute="centerX" secondItem="2cC-yP-Aup" secondAttribute="centerX" id="WJw-lB-rUP"/>
-                            <constraint firstItem="0SM-R0-YuW" firstAttribute="leading" secondItem="2cC-yP-Aup" secondAttribute="leadingMargin" id="XQI-CW-Y1y"/>
                             <constraint firstItem="0U3-u9-xyv" firstAttribute="centerX" secondItem="2cC-yP-Aup" secondAttribute="centerX" id="aMX-fz-3QF"/>
                             <constraint firstItem="bG9-c0-XZJ" firstAttribute="top" secondItem="WK6-gD-Vfg" secondAttribute="bottom" constant="40" id="bFb-rH-IbK"/>
-                            <constraint firstItem="WK6-gD-Vfg" firstAttribute="top" secondItem="7It-mU-p5V" secondAttribute="bottom" constant="40" id="hUr-qu-PCR"/>
+                            <constraint firstItem="TyE-yB-Lqf" firstAttribute="top" secondItem="2cC-yP-Aup" secondAttribute="top" id="flX-OZ-XgN"/>
                             <constraint firstItem="B48-pD-AOd" firstAttribute="centerY" secondItem="2cC-yP-Aup" secondAttribute="centerY" id="jIF-YX-lt0"/>
                             <constraint firstItem="WK6-gD-Vfg" firstAttribute="centerX" secondItem="2cC-yP-Aup" secondAttribute="centerX" id="k5a-Tf-oD4"/>
+                            <constraint firstAttribute="trailing" secondItem="TyE-yB-Lqf" secondAttribute="trailing" id="s5K-j4-gcq"/>
                             <constraint firstItem="zpH-vj-vd1" firstAttribute="top" secondItem="pPl-ad-7UV" secondAttribute="bottom" constant="10" id="sUa-9C-ydV"/>
-                            <constraint firstItem="0SM-R0-YuW" firstAttribute="bottom" secondItem="7It-mU-p5V" secondAttribute="bottom" id="sgk-fT-b5W"/>
                             <constraint firstItem="bG9-c0-XZJ" firstAttribute="centerX" secondItem="2cC-yP-Aup" secondAttribute="centerX" id="x8s-iy-tvq"/>
+                            <constraint firstItem="WK6-gD-Vfg" firstAttribute="top" secondItem="TyE-yB-Lqf" secondAttribute="bottom" constant="10" id="ybg-hR-i9a"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wUH-8R-b0q"/>
@@ -288,10 +271,9 @@
                         <outlet property="DicomVal" destination="h8Q-iV-nYK" id="Dsn-9h-6Xs"/>
                         <outlet property="DicomYear" destination="wXU-HU-rAf" id="yAY-oQ-ZGZ"/>
                         <outlet property="DistanceBetweenAllTextAndChartSV" destination="bFb-rH-IbK" id="JKV-Fq-31G"/>
-                        <outlet property="Header" destination="7It-mU-p5V" id="WaX-lF-KNd"/>
+                        <outlet property="Header" destination="TyE-yB-Lqf" id="9Nf-AD-tTa"/>
                         <outlet property="M2_ResVal" destination="WEL-or-DUD" id="zNb-9f-peY"/>
                         <outlet property="RangeController" destination="JIR-Ze-I2l" id="yXA-wf-DMY"/>
-                        <outlet property="ShowMenuButton" destination="0SM-R0-YuW" id="sut-jZ-ovL"/>
                         <outlet property="Upgrade" destination="zpH-vj-vd1" id="dIi-8s-jli"/>
                         <outlet property="chart" destination="OeS-VE-e7o" id="gQN-NJ-fTl"/>
                     </connections>

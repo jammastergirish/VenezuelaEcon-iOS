@@ -10,8 +10,13 @@ import UIKit
 import Firebase
 import GoogleMobileAds
 
-class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource {
+class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource, HeaderViewDelegate {
+    func ShowMenuTapped() {
+        toggleSideMenuView()
+    }
     
+    
+    @IBOutlet weak var Header: HeaderView!
     var interstitial: GADInterstitial!
     
     // 20160818 Decided not to use the following and just use Utils.shared.XXX
@@ -37,8 +42,6 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource {
     var DataSicad2: [SChartDataPoint] = []
     var DataM2_Res: [SChartDataPoint] = []
     
-    @IBOutlet var Header: UILabel!
-    
     //Axes
     let xAxis = SChartDiscontinuousDateTimeAxis()
     let yAxis = SChartNumberAxis()
@@ -53,9 +56,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource {
         {
             ChartSVHeight.isActive = false
             AllText.isHidden = false
-            Header.isHidden = false
             DistanceBetweenAllTextAndChartSV.isActive = true
-            ShowMenuButton.isHidden = false
             //self.ShareButton.isHidden = false
             ChartSVToTop.isActive = false
             if !SubscriptionService.shared.isSubscriptionValid() //20171111
@@ -68,9 +69,7 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource {
             ChartSVHeight.isActive = true
             ChartSVHeight.constant = view.frame.width
             AllText.isHidden = true
-            Header.isHidden = true
             DistanceBetweenAllTextAndChartSV.isActive = false
-            ShowMenuButton.isHidden = true
             //self.ShareButton.isHidden = true
             ChartSVToTop.isActive = true
             ChartSVToTop.constant = 0
@@ -147,6 +146,9 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Header.HeaderLabel.text = "Foreign Exchange"
+        Header.delegate = self
+        
         
         if !SubscriptionService.shared.isSubscriptionValid()
         {
@@ -209,14 +211,13 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource {
         let units : String = Utils.shared.currencies["VEF"]! + "/" + Utils.shared.currencies["USD"]!
         
         //Hide everything while loading
-        self.Header.isHidden = true
         self.AllText.isHidden = true
         self.RangeController.isHidden = true
         self.chart.isHidden = true
-        self.ShowMenuButton.isHidden = true
         //self.ShareButton.isHidden = true
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.Upgrade.isHidden = true
+    
         
         //Very nice addition on 20160823!
         loadLocalChartData()
@@ -356,13 +357,11 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource {
     
             //All set to make everything visible again!
             self.Activity.isHidden = true
-            self.Header.isHidden = false
-            self.AllText.isHidden = false
+           self.AllText.isHidden = false
             self.DicomMonth.isHidden = true // 20171111 as never changes any more
             self.DicomYear.isHidden = true
             self.RangeController.isHidden = false
             self.chart.isHidden = false
-            self.ShowMenuButton.isHidden = false
             //self.ShareButton.isHidden = false
             if !SubscriptionService.shared.isSubscriptionValid() //20171111
             {
@@ -398,15 +397,6 @@ class FXCode: UIViewController, ENSideMenuDelegate, SChartDatasource {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    @IBOutlet var ShowMenuButton: UIButton!
-    //@IBOutlet var ShareButton: UIButton!
-
-    @IBAction func ShowMenu(_ sender: AnyObject) {
-                toggleSideMenuView()
-    }
-    
     
 //    @IBAction func ShareButton(_ sender: UIButton) {
 //        
