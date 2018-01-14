@@ -46,7 +46,9 @@ class Utils
 
     let currencies : [String: String] = ["GBP": "£", "USD": "$", "EUR": "€", "COP": "COL$", "VEF": "BsF"]
     
+    let APIDomain : String = "https://api.venezuelaecon.com"
     let APIKey : String = "jbCHiQDZc2HvBNNYrQrMhQOczT4rB2IynRt"
+    let CountryCode : String = "ve"
     
     
     //Could make these functions or computed variables, says Pat on 20160817
@@ -301,7 +303,12 @@ class Utils
         return json
     }
 
-    
+    //https://stackoverflow.com/questions/38031137/how-to-program-a-delay-in-swift-3 20171125
+    func delay(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
+        }
+    }
     
     
 }

@@ -27,12 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         
-        //Inapptics.letsGo(withAppToken: "b3DOF1vPXE8K0kBV97bF46Bo0kRKr05o1JQ9Aeym")
-        //https://inapptics.com/integration-guide.html?t=NqJsdrRWyCGjzjFR7hAx6yyL7GcYEVJ31PVvZImj&_ga=2.213760988.995553334.1498954087-41180827.1498954087
-        
         SubscriptionService.shared.LoadSubscription()
-        
-        
         
         FirebaseApp.configure()
         

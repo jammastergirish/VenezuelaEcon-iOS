@@ -283,24 +283,7 @@ class M2Code: UIViewController, ENSideMenuDelegate, SChartDatasource{
         
         for dataPoint in Utils.shared.JSONDataFromFile("M2Data") {
             
-            guard let
-                dateString = dataPoint["date"] as? String,
-                let M2Val = dataPoint["m2"] as? String
-                else {
-                    print("Data is JSON but not the JSON variables expected")
-                    return
-            }
-            
-            let date = dateFormatter.date(from: dateString)
-            
-            if (M2Val != "0")
-            {
-                M2[dateString] = Double(M2Val)! // Adds to my dictionary
-                let DataPointM2 = SChartDataPoint() // Adds to graph data
-                DataPointM2.xValue = date
-                DataPointM2.yValue = Double(M2Val)!/1000000000
-                DataM2.append(DataPointM2)
-            }
+
             
             
         }

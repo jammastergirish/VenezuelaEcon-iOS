@@ -71,14 +71,12 @@ class MyMenuTableViewController: UITableViewController {
         }
         else
         {
-            return ["ParentViewController", "FXCalcViewController", "BitcoinViewController", "BuyViewController", "BuyViewController",/* "BuyViewController",*/ "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "AboutViewController"]
+            return ["ParentViewController", "FXCalcViewController", "ParentViewController", "BuyViewController", "BuyViewController",/* "BuyViewController",*/ "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "BuyViewController", "AboutViewController"]
         }
     }
     
     
-    var Indicators : [Indicator?] = [.FX, nil, .Reserves, .FX, .FX, .FX, .FX, .FX, .FX, .FX, .FX, .FX, .FX, nil]
-    
-
+    var Indicators : [Indicator?] = [.FX, nil, .Bitcoin, .Reserves, .Inflation, .TaxRevenue, .MoneySupply, .MinimumWage, .OilPrices, .CrudeProduction, .USOil, .TaxUnit, nil]
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

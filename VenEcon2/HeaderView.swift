@@ -6,7 +6,7 @@
 //  Copyright © 2017 Girish Gupta. All rights reserved.
 //
 
-// https://www.youtube.com/watch?v=H-55qZYc9qI 20171213
+// https://www.youtube.com/watch?v=H-55qZYc9qI 20171213 https://medium.com/@brianclouser/swift-3-creating-a-custom-view-from-a-xib-ecdfe5b3a960
 
 import UIKit
 protocol HeaderViewDelegate: class { //20171214 with Pat
@@ -29,7 +29,6 @@ class HeaderView: UIView {
     @IBOutlet weak var HeaderLabel: UILabel!
 
 //    self.sideMenuController()?.sideMenu?.delegate = self
-//    self.navigationController?.isNavigationBarHidden = true
 
     @IBAction func ShowMenu(_ sender: Any) {
         delegate?.ShowMenuTapped()

@@ -15,6 +15,7 @@
 		68127F691F0C564100C4AC5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68127F661F0C564100C4AC5C /* GoogleService-Info.plist */; };
 		68127F6A1F0C564100C4AC5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68127F661F0C564100C4AC5C /* GoogleService-Info.plist */; };
 		6812F21A1DE64F430013E7F7 /* DownloadMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6812F2191DE64F430013E7F7 /* DownloadMan.swift */; };
+		681A1F3B2005703C00BE9868 /* TwoColumnChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681A1F3A2005703C00BE9868 /* TwoColumnChild.swift */; };
 		681D06731FE21BD900E4FFA3 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D06721FE21BD900E4FFA3 /* ParentViewController.swift */; };
 		681D06751FE21E5300E4FFA3 /* UIViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D06741FE21E5300E4FFA3 /* UIViewHelper.swift */; };
 		681D06771FE21FE200E4FFA3 /* FXChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D06761FE21FE200E4FFA3 /* FXChild.swift */; };
@@ -32,6 +33,7 @@
 		688640061F3651B8009A0A0F /* TaxRevCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688640051F3651B8009A0A0F /* TaxRevCode.swift */; };
 		688640081F365281009A0A0F /* TaxRevData.json in Resources */ = {isa = PBXBuildFile; fileRef = 688640071F365281009A0A0F /* TaxRevData.json */; };
 		68A6E6951F9CE9B1002317FA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A6E6941F9CE9B1002317FA /* StoreKit.framework */; };
+		68A9DE4D2002C6A6000F4997 /* SingleColumnChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A9DE4C2002C6A6000F4997 /* SingleColumnChild.swift */; };
 		68B1BF031D6C47C800DC02C5 /* FXdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B1BF021D6C47C800DC02C5 /* FXdata.json */; };
 		68B1BF051D6C4BC300DC02C5 /* ResData.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B1BF041D6C4BC300DC02C5 /* ResData.json */; };
 		68B1BF071D6C4CDB00DC02C5 /* OilData.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B1BF061D6C4CDB00DC02C5 /* OilData.json */; };
@@ -68,6 +70,7 @@
 		68D3DBBD1D593AFF00F42648 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */; };
 		68D3DBBF1D593D4D00F42648 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D3DBBE1D593D4D00F42648 /* ShinobiCharts.framework */; };
 		68D3DBC11D593E4200F42648 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D3DBC01D593E4200F42648 /* libc++.tbd */; };
+		68D9AA5B20044EB000AFD35D /* QuadChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9AA5A20044EB000AFD35D /* QuadChild.swift */; };
 		68DF1BF61F367055001CE201 /* TaxUnitCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DF1BF51F367055001CE201 /* TaxUnitCode.swift */; };
 		68E16F861D69157E00CD8DA1 /* USoilCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E16F851D69157E00CD8DA1 /* USoilCode.swift */; };
 		68E505A41D6A054D0017B885 /* CrudeProductionCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E505A31D6A054D0017B885 /* CrudeProductionCode.swift */; };
@@ -134,6 +137,7 @@
 		6811FFD01FA57690007C1D75 /* UserUpgradedCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpgradedCode.swift; sourceTree = "<group>"; };
 		68127F661F0C564100C4AC5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6812F2191DE64F430013E7F7 /* DownloadMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadMan.swift; sourceTree = "<group>"; };
+		681A1F3A2005703C00BE9868 /* TwoColumnChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoColumnChild.swift; sourceTree = "<group>"; };
 		681D06721FE21BD900E4FFA3 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		681D06741FE21E5300E4FFA3 /* UIViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewHelper.swift; sourceTree = "<group>"; };
 		681D06761FE21FE200E4FFA3 /* FXChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXChild.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 		688640051F3651B8009A0A0F /* TaxRevCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxRevCode.swift; sourceTree = "<group>"; };
 		688640071F365281009A0A0F /* TaxRevData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TaxRevData.json; sourceTree = "<group>"; };
 		68A6E6941F9CE9B1002317FA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		68A9DE4C2002C6A6000F4997 /* SingleColumnChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleColumnChild.swift; sourceTree = "<group>"; };
 		68AE4A081FA65CE30015984E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		68B1BF021D6C47C800DC02C5 /* FXdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FXdata.json; sourceTree = "<group>"; };
 		68B1BF041D6C4BC300DC02C5 /* ResData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ResData.json; sourceTree = "<group>"; };
@@ -198,6 +203,7 @@
 		68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		68D3DBBE1D593D4D00F42648 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiCharts.framework; path = VenEcon2/ShinobiCharts.framework; sourceTree = "<group>"; };
 		68D3DBC01D593E4200F42648 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		68D9AA5A20044EB000AFD35D /* QuadChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadChild.swift; sourceTree = "<group>"; };
 		68DF1BF51F367055001CE201 /* TaxUnitCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxUnitCode.swift; sourceTree = "<group>"; };
 		68E16F851D69157E00CD8DA1 /* USoilCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USoilCode.swift; sourceTree = "<group>"; };
 		68E505A31D6A054D0017B885 /* CrudeProductionCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrudeProductionCode.swift; sourceTree = "<group>"; };
@@ -329,6 +335,7 @@
 				68B48B261DE63DA6002D3574 /* Localizable.strings */,
 				68B95B041F9D6FAB00800890 /* SubscriptionService.swift */,
 				68652D401D67DB9500049CBC /* Notes.swift */,
+				68D3DB9A1D593AA600F42648 /* Main.storyboard */,
 				68D3DB961D593AA600F42648 /* AppDelegate.swift */,
 				68589DC21D65563400ECBC3E /* Utils.swift */,
 				681D06741FE21E5300E4FFA3 /* UIViewHelper.swift */,
@@ -336,6 +343,9 @@
 				6835ACAE1FE18EFC00FFCAC3 /* HeaderView.xib */,
 				6835ACB01FE18F7200FFCAC3 /* HeaderView.swift */,
 				681D06761FE21FE200E4FFA3 /* FXChild.swift */,
+				68A9DE4C2002C6A6000F4997 /* SingleColumnChild.swift */,
+				681A1F3A2005703C00BE9868 /* TwoColumnChild.swift */,
+				68D9AA5A20044EB000AFD35D /* QuadChild.swift */,
 				68B1BF021D6C47C800DC02C5 /* FXdata.json */,
 				68D3DB981D593AA600F42648 /* FXCode.swift */,
 				68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */,
@@ -357,7 +367,6 @@
 				68D3DBB71D593AFF00F42648 /* ENSideMenuNavigationController.swift */,
 				68D3DBB81D593AFF00F42648 /* MyMenuTableViewController.swift */,
 				68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */,
-				68D3DB9A1D593AA600F42648 /* Main.storyboard */,
 				6811FFD01FA57690007C1D75 /* UserUpgradedCode.swift */,
 				68460BAE1F9D801B004FD8ED /* BuyUpgradeCode.swift */,
 				68B6BE981F3BE635001E0E1E /* GDPCode.swift */,
@@ -820,6 +829,7 @@
 				68B6BE991F3BE635001E0E1E /* GDPCode.swift in Sources */,
 				688640061F3651B8009A0A0F /* TaxRevCode.swift in Sources */,
 				68652D411D67DB9500049CBC /* Notes.swift in Sources */,
+				68D9AA5B20044EB000AFD35D /* QuadChild.swift in Sources */,
 				681D06751FE21E5300E4FFA3 /* UIViewHelper.swift in Sources */,
 				68DF1BF61F367055001CE201 /* TaxUnitCode.swift in Sources */,
 				68D3DBBC1D593AFF00F42648 /* MyMenuTableViewController.swift in Sources */,
@@ -827,8 +837,10 @@
 				681D06731FE21BD900E4FFA3 /* ParentViewController.swift in Sources */,
 				68460BAF1F9D801B004FD8ED /* BuyUpgradeCode.swift in Sources */,
 				68E16F861D69157E00CD8DA1 /* USoilCode.swift in Sources */,
+				681A1F3B2005703C00BE9868 /* TwoColumnChild.swift in Sources */,
 				68D3DBBD1D593AFF00F42648 /* MyNavigationController.swift in Sources */,
 				68E505A41D6A054D0017B885 /* CrudeProductionCode.swift in Sources */,
+				68A9DE4D2002C6A6000F4997 /* SingleColumnChild.swift in Sources */,
 				68D3DB991D593AA600F42648 /* FXCode.swift in Sources */,
 				68B867E81D63C0B500309C56 /* MinWageCode.swift in Sources */,
 				68B867EA1D63D0A600309C56 /* InflationCode.swift in Sources */,
