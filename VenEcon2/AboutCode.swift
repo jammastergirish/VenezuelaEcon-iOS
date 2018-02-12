@@ -9,9 +9,9 @@ import Firebase
 //import FirebaseMessaging
 //import UserNotifications
 
-//class AboutCode: UIViewController {
-class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMenuDelegate {
+class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMenuDelegate, HeaderViewDelegate {
     
+    @IBOutlet weak var Header: HeaderView!
     
     let session = URLSession(configuration: URLSessionConfiguration.default)
     
@@ -37,6 +37,9 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Header.HeaderLabel.text = "About"
+        Header.delegate = self
         
         //UIApplication.shared.isNetworkActivityIndicatorVisible = true
     
@@ -149,7 +152,10 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
     }
 
     
-    
+    func ShowMenuTapped()
+    {
+        toggleSideMenuView()
+    }
     
     
     

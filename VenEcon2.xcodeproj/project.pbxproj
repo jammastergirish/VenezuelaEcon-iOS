@@ -23,14 +23,11 @@
 		68315B3C1D6A5EEA00BE7036 /* FXCalcCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */; };
 		6835ACAF1FE18EFC00FFCAC3 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6835ACAE1FE18EFC00FFCAC3 /* HeaderView.xib */; };
 		6835ACB11FE18F7200FFCAC3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6835ACB01FE18F7200FFCAC3 /* HeaderView.swift */; };
-		6839E79E1D610DC5005ED3FA /* ReservesCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6839E79D1D610DC5005ED3FA /* ReservesCode.swift */; };
 		68460BAD1F9D7D67004FD8ED /* SubscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B95B041F9D6FAB00800890 /* SubscriptionService.swift */; };
 		68460BAF1F9D801B004FD8ED /* BuyUpgradeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68460BAE1F9D801B004FD8ED /* BuyUpgradeCode.swift */; };
 		68589DC31D65563400ECBC3E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68589DC21D65563400ECBC3E /* Utils.swift */; };
-		685D86B01D629DA500F7FC42 /* OilCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685D86AF1D629DA500F7FC42 /* OilCode.swift */; };
 		68652D411D67DB9500049CBC /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68652D401D67DB9500049CBC /* Notes.swift */; };
 		68814A151D67180A002B88AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68814A141D67180A002B88AF /* Images.xcassets */; };
-		688640061F3651B8009A0A0F /* TaxRevCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688640051F3651B8009A0A0F /* TaxRevCode.swift */; };
 		688640081F365281009A0A0F /* TaxRevData.json in Resources */ = {isa = PBXBuildFile; fileRef = 688640071F365281009A0A0F /* TaxRevData.json */; };
 		68A6E6951F9CE9B1002317FA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A6E6941F9CE9B1002317FA /* StoreKit.framework */; };
 		68A9DE4D2002C6A6000F4997 /* SingleColumnChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A9DE4C2002C6A6000F4997 /* SingleColumnChild.swift */; };
@@ -53,14 +50,8 @@
 		68B48B4E1DE641F2002D3574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68B48B4D1DE641F2002D3574 /* Assets.xcassets */; };
 		68B48B521DE641F2002D3574 /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 68B48B341DE641F1002D3574 /* Watch.app */; };
 		68B48B5E1DE64AA2002D3574 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B48B5D1DE64AA2002D3574 /* ComplicationController.swift */; };
-		68B6BE991F3BE635001E0E1E /* GDPCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B6BE981F3BE635001E0E1E /* GDPCode.swift */; };
 		68B6BE9B1F3BE8E2001E0E1E /* GDPData.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B6BE9A1F3BE8E2001E0E1E /* GDPData.json */; };
-		68B867E61D63B73800309C56 /* M2Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E51D63B73800309C56 /* M2Code.swift */; };
-		68B867E81D63C0B500309C56 /* MinWageCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E71D63C0B500309C56 /* MinWageCode.swift */; };
-		68B867EA1D63D0A600309C56 /* InflationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B867E91D63D0A600309C56 /* InflationCode.swift */; };
-		68C9FF0B1F35193500BDFE37 /* BitcoinCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C9FF0A1F35193500BDFE37 /* BitcoinCode.swift */; };
 		68D3DB971D593AA600F42648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DB961D593AA600F42648 /* AppDelegate.swift */; };
-		68D3DB991D593AA600F42648 /* FXCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DB981D593AA600F42648 /* FXCode.swift */; };
 		68D3DB9C1D593AA600F42648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D3DB9A1D593AA600F42648 /* Main.storyboard */; };
 		68D3DBA11D593AA600F42648 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D3DB9F1D593AA600F42648 /* LaunchScreen.storyboard */; };
 		68D3DBAC1D593AA700F42648 /* VenEcon2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DBAB1D593AA700F42648 /* VenEcon2Tests.swift */; };
@@ -71,9 +62,6 @@
 		68D3DBBF1D593D4D00F42648 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D3DBBE1D593D4D00F42648 /* ShinobiCharts.framework */; };
 		68D3DBC11D593E4200F42648 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D3DBC01D593E4200F42648 /* libc++.tbd */; };
 		68D9AA5B20044EB000AFD35D /* QuadChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9AA5A20044EB000AFD35D /* QuadChild.swift */; };
-		68DF1BF61F367055001CE201 /* TaxUnitCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DF1BF51F367055001CE201 /* TaxUnitCode.swift */; };
-		68E16F861D69157E00CD8DA1 /* USoilCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E16F851D69157E00CD8DA1 /* USoilCode.swift */; };
-		68E505A41D6A054D0017B885 /* CrudeProductionCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E505A31D6A054D0017B885 /* CrudeProductionCode.swift */; };
 		8A9593F23C1CA3ABB3E84773 /* Pods_VenEcon2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7AD33EF818B2D10B8458B2C /* Pods_VenEcon2Tests.framework */; };
 		EDE7BC0464FA51BEA6A86685 /* Pods_VenEcon2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B7B874200F5239FE8E4A8D /* Pods_VenEcon2.framework */; };
 /* End PBXBuildFile section */
@@ -146,15 +134,12 @@
 		68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXCalcCode.swift; sourceTree = "<group>"; };
 		6835ACAE1FE18EFC00FFCAC3 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		6835ACB01FE18F7200FFCAC3 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		6839E79D1D610DC5005ED3FA /* ReservesCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservesCode.swift; sourceTree = "<group>"; };
 		68460BAE1F9D801B004FD8ED /* BuyUpgradeCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyUpgradeCode.swift; sourceTree = "<group>"; };
 		68589DC21D65563400ECBC3E /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		685D86AF1D629DA500F7FC42 /* OilCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilCode.swift; sourceTree = "<group>"; };
 		68652D401D67DB9500049CBC /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		686B725E1DE99526008F182E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Interface.strings; sourceTree = "<group>"; };
 		687C97001DEA34DE00C67FD0 /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		68814A141D67180A002B88AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		688640051F3651B8009A0A0F /* TaxRevCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxRevCode.swift; sourceTree = "<group>"; };
 		688640071F365281009A0A0F /* TaxRevData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TaxRevData.json; sourceTree = "<group>"; };
 		68A6E6941F9CE9B1002317FA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		68A9DE4C2002C6A6000F4997 /* SingleColumnChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleColumnChild.swift; sourceTree = "<group>"; };
@@ -181,16 +166,10 @@
 		68B48B4D1DE641F2002D3574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68B48B4F1DE641F2002D3574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68B48B5D1DE64AA2002D3574 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComplicationController.swift; path = ../Watch/ComplicationController.swift; sourceTree = "<group>"; };
-		68B6BE981F3BE635001E0E1E /* GDPCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDPCode.swift; sourceTree = "<group>"; };
 		68B6BE9A1F3BE8E2001E0E1E /* GDPData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GDPData.json; sourceTree = "<group>"; };
-		68B867E51D63B73800309C56 /* M2Code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M2Code.swift; sourceTree = "<group>"; };
-		68B867E71D63C0B500309C56 /* MinWageCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinWageCode.swift; sourceTree = "<group>"; };
-		68B867E91D63D0A600309C56 /* InflationCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflationCode.swift; sourceTree = "<group>"; };
 		68B95B041F9D6FAB00800890 /* SubscriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionService.swift; sourceTree = SOURCE_ROOT; };
-		68C9FF0A1F35193500BDFE37 /* BitcoinCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinCode.swift; sourceTree = "<group>"; };
 		68D3DB931D593AA600F42648 /* VenEcon2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenEcon2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D3DB961D593AA600F42648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		68D3DB981D593AA600F42648 /* FXCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXCode.swift; sourceTree = "<group>"; };
 		68D3DB9B1D593AA600F42648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68D3DBA01D593AA600F42648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68D3DBA21D593AA600F42648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -204,9 +183,6 @@
 		68D3DBBE1D593D4D00F42648 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiCharts.framework; path = VenEcon2/ShinobiCharts.framework; sourceTree = "<group>"; };
 		68D3DBC01D593E4200F42648 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		68D9AA5A20044EB000AFD35D /* QuadChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadChild.swift; sourceTree = "<group>"; };
-		68DF1BF51F367055001CE201 /* TaxUnitCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxUnitCode.swift; sourceTree = "<group>"; };
-		68E16F851D69157E00CD8DA1 /* USoilCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USoilCode.swift; sourceTree = "<group>"; };
-		68E505A31D6A054D0017B885 /* CrudeProductionCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrudeProductionCode.swift; sourceTree = "<group>"; };
 		9F9A45E7EE23C0B0F14A08C6 /* Pods-VenEcon2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenEcon2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VenEcon2Tests/Pods-VenEcon2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A45903EF57C0696ADCC3057D /* Pods-VenEcon2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenEcon2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VenEcon2/Pods-VenEcon2.debug.xcconfig"; sourceTree = "<group>"; };
 		ABD092514357C513B9816868 /* Pods-Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -331,10 +307,12 @@
 			children = (
 				6822A1C21DEA7E69009EDC80 /* VenEcon2.entitlements */,
 				68127F661F0C564100C4AC5C /* GoogleService-Info.plist */,
+				68D3DBA21D593AA600F42648 /* Info.plist */,
 				68B48B301DE63DA8002D3574 /* InfoPlist.strings */,
 				68B48B261DE63DA6002D3574 /* Localizable.strings */,
 				68B95B041F9D6FAB00800890 /* SubscriptionService.swift */,
 				68652D401D67DB9500049CBC /* Notes.swift */,
+				68D3DB9F1D593AA600F42648 /* LaunchScreen.storyboard */,
 				68D3DB9A1D593AA600F42648 /* Main.storyboard */,
 				68D3DB961D593AA600F42648 /* AppDelegate.swift */,
 				68589DC21D65563400ECBC3E /* Utils.swift */,
@@ -342,41 +320,27 @@
 				681D06721FE21BD900E4FFA3 /* ParentViewController.swift */,
 				6835ACAE1FE18EFC00FFCAC3 /* HeaderView.xib */,
 				6835ACB01FE18F7200FFCAC3 /* HeaderView.swift */,
-				681D06761FE21FE200E4FFA3 /* FXChild.swift */,
-				68A9DE4C2002C6A6000F4997 /* SingleColumnChild.swift */,
-				681A1F3A2005703C00BE9868 /* TwoColumnChild.swift */,
-				68D9AA5A20044EB000AFD35D /* QuadChild.swift */,
-				68B1BF021D6C47C800DC02C5 /* FXdata.json */,
-				68D3DB981D593AA600F42648 /* FXCode.swift */,
-				68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */,
-				6839E79D1D610DC5005ED3FA /* ReservesCode.swift */,
-				68B1BF041D6C4BC300DC02C5 /* ResData.json */,
-				685D86AF1D629DA500F7FC42 /* OilCode.swift */,
-				68B1BF061D6C4CDB00DC02C5 /* OilData.json */,
-				68B867E91D63D0A600309C56 /* InflationCode.swift */,
-				68B1BF101D6C53EA00DC02C5 /* InfData.json */,
-				68B867E51D63B73800309C56 /* M2Code.swift */,
-				68B1BF0C1D6C4E2F00DC02C5 /* M2Data.json */,
-				68B867E71D63C0B500309C56 /* MinWageCode.swift */,
-				68E505A31D6A054D0017B885 /* CrudeProductionCode.swift */,
-				68B1BF121D6C6C6B00DC02C5 /* CrudeProductionData.json */,
-				68E16F851D69157E00CD8DA1 /* USoilCode.swift */,
-				68B1BF141D6C6D9200DC02C5 /* USOilData.json */,
-				68315B391D6A561600BE7036 /* AboutCode.swift */,
 				68D3DBB61D593AFF00F42648 /* ENSideMenu.swift */,
 				68D3DBB71D593AFF00F42648 /* ENSideMenuNavigationController.swift */,
 				68D3DBB81D593AFF00F42648 /* MyMenuTableViewController.swift */,
 				68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */,
-				6811FFD01FA57690007C1D75 /* UserUpgradedCode.swift */,
+				681D06761FE21FE200E4FFA3 /* FXChild.swift */,
+				68A9DE4C2002C6A6000F4997 /* SingleColumnChild.swift */,
+				681A1F3A2005703C00BE9868 /* TwoColumnChild.swift */,
+				68D9AA5A20044EB000AFD35D /* QuadChild.swift */,
+				68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */,
 				68460BAE1F9D801B004FD8ED /* BuyUpgradeCode.swift */,
-				68B6BE981F3BE635001E0E1E /* GDPCode.swift */,
+				6811FFD01FA57690007C1D75 /* UserUpgradedCode.swift */,
+				68315B391D6A561600BE7036 /* AboutCode.swift */,
+				68B1BF021D6C47C800DC02C5 /* FXdata.json */,
+				68B1BF041D6C4BC300DC02C5 /* ResData.json */,
+				68B1BF061D6C4CDB00DC02C5 /* OilData.json */,
+				68B1BF101D6C53EA00DC02C5 /* InfData.json */,
+				68B1BF0C1D6C4E2F00DC02C5 /* M2Data.json */,
+				68B1BF121D6C6C6B00DC02C5 /* CrudeProductionData.json */,
+				68B1BF141D6C6D9200DC02C5 /* USOilData.json */,
 				68B6BE9A1F3BE8E2001E0E1E /* GDPData.json */,
-				68C9FF0A1F35193500BDFE37 /* BitcoinCode.swift */,
-				688640051F3651B8009A0A0F /* TaxRevCode.swift */,
-				68DF1BF51F367055001CE201 /* TaxUnitCode.swift */,
 				688640071F365281009A0A0F /* TaxRevData.json */,
-				68D3DB9F1D593AA600F42648 /* LaunchScreen.storyboard */,
-				68D3DBA21D593AA600F42648 /* Info.plist */,
 				68814A141D67180A002B88AF /* Images.xcassets */,
 			);
 			path = VenEcon2;
@@ -826,34 +790,22 @@
 			files = (
 				68315B3A1D6A561600BE7036 /* AboutCode.swift in Sources */,
 				68D3DBBB1D593AFF00F42648 /* ENSideMenuNavigationController.swift in Sources */,
-				68B6BE991F3BE635001E0E1E /* GDPCode.swift in Sources */,
-				688640061F3651B8009A0A0F /* TaxRevCode.swift in Sources */,
 				68652D411D67DB9500049CBC /* Notes.swift in Sources */,
 				68D9AA5B20044EB000AFD35D /* QuadChild.swift in Sources */,
 				681D06751FE21E5300E4FFA3 /* UIViewHelper.swift in Sources */,
-				68DF1BF61F367055001CE201 /* TaxUnitCode.swift in Sources */,
 				68D3DBBC1D593AFF00F42648 /* MyMenuTableViewController.swift in Sources */,
 				68D3DBBA1D593AFF00F42648 /* ENSideMenu.swift in Sources */,
 				681D06731FE21BD900E4FFA3 /* ParentViewController.swift in Sources */,
 				68460BAF1F9D801B004FD8ED /* BuyUpgradeCode.swift in Sources */,
-				68E16F861D69157E00CD8DA1 /* USoilCode.swift in Sources */,
 				681A1F3B2005703C00BE9868 /* TwoColumnChild.swift in Sources */,
 				68D3DBBD1D593AFF00F42648 /* MyNavigationController.swift in Sources */,
-				68E505A41D6A054D0017B885 /* CrudeProductionCode.swift in Sources */,
 				68A9DE4D2002C6A6000F4997 /* SingleColumnChild.swift in Sources */,
-				68D3DB991D593AA600F42648 /* FXCode.swift in Sources */,
-				68B867E81D63C0B500309C56 /* MinWageCode.swift in Sources */,
-				68B867EA1D63D0A600309C56 /* InflationCode.swift in Sources */,
 				6835ACB11FE18F7200FFCAC3 /* HeaderView.swift in Sources */,
 				681D06771FE21FE200E4FFA3 /* FXChild.swift in Sources */,
 				68460BAD1F9D7D67004FD8ED /* SubscriptionService.swift in Sources */,
-				6839E79E1D610DC5005ED3FA /* ReservesCode.swift in Sources */,
 				68315B3C1D6A5EEA00BE7036 /* FXCalcCode.swift in Sources */,
 				68589DC31D65563400ECBC3E /* Utils.swift in Sources */,
-				68B867E61D63B73800309C56 /* M2Code.swift in Sources */,
 				68D3DB971D593AA600F42648 /* AppDelegate.swift in Sources */,
-				685D86B01D629DA500F7FC42 /* OilCode.swift in Sources */,
-				68C9FF0B1F35193500BDFE37 /* BitcoinCode.swift in Sources */,
 				6811FFD11FA57690007C1D75 /* UserUpgradedCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

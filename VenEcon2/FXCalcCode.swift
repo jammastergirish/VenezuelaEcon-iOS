@@ -6,8 +6,9 @@
 import UIKit
 import MessageUI
 
-class FXCalcCode: UIViewController, ENSideMenuDelegate {
+class FXCalcCode: UIViewController, ENSideMenuDelegate, HeaderViewDelegate {
 
+    @IBOutlet weak var Header: HeaderView!
     
     var BM = [String: Double]()
     var Official = [String: Double]()
@@ -21,7 +22,6 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
     @IBOutlet var Val: UILabel!
     @IBOutlet var BlackMarketVal: UILabel!
     @IBOutlet var DICOMVal: UILabel!
-    @IBOutlet var DIPROVal: UILabel!
     
     
     var DataDownloaded : Bool = false
@@ -30,11 +30,13 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Header.HeaderLabel.text = "FX Calculator"
+        Header.delegate = self
+        
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         BlackMarketVal.text = "..."
         DICOMVal.text = "..."
-        DIPROVal.text = "..."
         Val.text = ""
 
         
@@ -116,7 +118,6 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
                 //Initial value was dollar
                 BlackMarketVal.text = Utils.shared.NumberFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))! + " BsF"
                 DICOMVal.text = Utils.shared.NumberFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(Dicom, date: Utils.shared.Today())))! + " BsF"
-                DIPROVal.text = Utils.shared.NumberFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)*Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))! + " BsF"
             }
             else if Currency.selectedSegmentIndex == 1
             {
@@ -124,7 +125,6 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
                 //Initial value was BsF
                 BlackMarketVal.text = Utils.shared.CurrencyFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(BM, date: Utils.shared.Today())))!
                 DICOMVal.text = Utils.shared.CurrencyFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(Dicom, date: Utils.shared.Today())))!
-                DIPROVal.text = Utils.shared.CurrencyFormatter.string(for: (Double((Utils.shared.NumberFormatter.number(from: ((Number.text!))))!)/Utils.shared.GetLatestNonZeroValue(Official, date: Utils.shared.Today())))!
             }
             
         }
@@ -133,7 +133,6 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
             print("Isn't number or is zero\n")
             BlackMarketVal.text = "..."
             DICOMVal.text = "..."
-            DIPROVal.text = "..."
             Val.text = ""
         }
         }
@@ -200,6 +199,11 @@ class FXCalcCode: UIViewController, ENSideMenuDelegate {
     
     func sideMenuDidOpen() {
         print("sideMenuDidOpen")
+    }
+    
+    func ShowMenuTapped()
+    {
+        toggleSideMenuView()
     }
 
     

@@ -65,7 +65,7 @@ class MyMenuTableViewController: UITableViewController {
 
     func labelsForViewControllers() -> [String] // added for subscription service on 20171022. changed htis to a function rather than a variable/property below
     {
-        if !SubscriptionService.shared.isSubscriptionValid() // CHANGE THIS IF WANT TO TEST! 20171130
+        if SubscriptionService.shared.isSubscriptionValid() // CHANGE THIS IF WANT TO TEST! 20171130
         {
             return ["ParentViewController", "FXCalcViewController", "ParentViewController", "ParentViewController", "ParentViewController",/* "GDPViewController",*/ "ParentViewController", "ParentViewController", "ParentViewController", "ParentViewController", "ParentViewController", "ParentViewController", "ParentViewController", "AboutViewController"]
         }

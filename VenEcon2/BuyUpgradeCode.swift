@@ -8,10 +8,15 @@
 
 import UIKit
 
-class BuyUpgradeCode: UIViewController {
+class BuyUpgradeCode: UIViewController, HeaderViewDelegate {
 
+    @IBOutlet weak var Header: HeaderView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Header.HeaderLabel.text = "Upgrade"
+        Header.delegate = self
 
         // Do any additional setup after loading the view.
         
@@ -65,15 +70,10 @@ class BuyUpgradeCode: UIViewController {
         }
     }
     
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func ShowMenuTapped()
+    {
+        toggleSideMenuView()
     }
-    */
-
+    
 }

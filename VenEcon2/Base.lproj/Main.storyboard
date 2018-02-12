@@ -43,6 +43,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9y1-75-qIw">
+                                <rect key="frame" x="16" y="144" width="343" height="230"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8eY-74-0DQ" customClass="HeaderView" customModule="VenEcon2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,11 +54,11 @@
                                     <constraint firstAttribute="height" constant="80" id="g6F-or-Yij"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Bbk-ZT-GXF">
-                                <rect key="frame" x="0.0" y="367" width="375" height="300"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Bbk-ZT-GXF">
+                                <rect key="frame" x="0.0" y="400" width="375" height="267"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="lAx-B3-AIY">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
+                                    <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="lAx-B3-AIY">
+                                        <rect key="frame" x="0.0" y="-33" width="375" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="qKX-ve-Tu7"/>
                                         </constraints>
@@ -68,36 +72,37 @@
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spo-e2-3lW" customClass="ShinobiChart">
-                                        <rect key="frame" x="0.0" y="33" width="375" height="267"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Spo-e2-3lW" firstAttribute="top" secondItem="lAx-B3-AIY" secondAttribute="bottom" constant="5" id="iRk-Ay-Mgc"/>
-                                    <constraint firstAttribute="height" constant="300" id="isT-kx-EJ4"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9y1-75-qIw">
-                                <rect key="frame" x="16" y="144" width="343" height="223"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="yWm-UW-YZa">
+                                <rect key="frame" x="0.0" y="217" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="8eY-74-0DQ" firstAttribute="top" secondItem="sBZ-bi-VcE" secondAttribute="bottom" id="0Y4-OK-8Wh"/>
                             <constraint firstAttribute="trailing" secondItem="8eY-74-0DQ" secondAttribute="trailing" id="7Zy-9W-EFw"/>
                             <constraint firstAttribute="trailing" secondItem="Bbk-ZT-GXF" secondAttribute="trailing" id="ByK-gf-Qni"/>
+                            <constraint firstItem="yWm-UW-YZa" firstAttribute="centerX" secondItem="OH0-Xy-bgA" secondAttribute="centerX" id="GYQ-MR-5NI"/>
                             <constraint firstItem="Bbk-ZT-GXF" firstAttribute="leading" secondItem="OH0-Xy-bgA" secondAttribute="leading" id="PTr-cF-Gki"/>
+                            <constraint firstItem="yWm-UW-YZa" firstAttribute="centerY" secondItem="OH0-Xy-bgA" secondAttribute="centerY" id="aYs-zM-vnc"/>
                             <constraint firstItem="9y1-75-qIw" firstAttribute="leading" secondItem="OH0-Xy-bgA" secondAttribute="leadingMargin" id="aei-4z-JuW"/>
                             <constraint firstAttribute="bottom" secondItem="Bbk-ZT-GXF" secondAttribute="bottom" id="kjt-mU-gwy"/>
                             <constraint firstItem="8eY-74-0DQ" firstAttribute="leading" secondItem="OH0-Xy-bgA" secondAttribute="leading" id="m6U-rj-4ed"/>
                             <constraint firstItem="9y1-75-qIw" firstAttribute="top" secondItem="8eY-74-0DQ" secondAttribute="bottom" id="rxr-Nj-SlV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9y1-75-qIw" secondAttribute="trailing" id="vtm-mu-O5Y"/>
-                            <constraint firstItem="Bbk-ZT-GXF" firstAttribute="top" secondItem="9y1-75-qIw" secondAttribute="bottom" id="xCL-ns-ksd"/>
+                            <constraint firstItem="Bbk-ZT-GXF" firstAttribute="top" secondItem="9y1-75-qIw" secondAttribute="bottom" constant="30" id="xCL-ns-ksd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fSJ-Rz-GU8"/>
                     <connections>
+                        <outlet property="ActivityIndicator" destination="yWm-UW-YZa" id="cGZ-wF-c17"/>
                         <outlet property="Chart" destination="Spo-e2-3lW" id="C0Z-uH-D1y"/>
                         <outlet property="ContainerForChild" destination="9y1-75-qIw" id="9xv-kd-6T0"/>
                         <outlet property="Header" destination="8eY-74-0DQ" id="ckN-uZ-CyO"/>
@@ -121,14 +126,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="n7S-Wi-Eyj">
-                                <rect key="frame" x="37.5" y="0.0" width="300" height="230"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="n7S-Wi-Eyj">
+                                <rect key="frame" x="37.5" y="0.0" width="300" height="292"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="sF5-sa-lHi">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="160"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="292"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="avh-Hf-iYx">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="160"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="92" height="292"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Isc-OD-zCG">
                                                         <rect key="frame" x="0.0" y="0.0" width="88" height="71.5"/>
@@ -160,16 +165,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="hUU-Uh-PRR">
-                                                        <rect key="frame" x="0.0" y="122.5" width="73" height="37.5"/>
+                                                        <rect key="frame" x="0.0" y="254.5" width="92" height="37.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIPRO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbF-gT-VwA">
-                                                                <rect key="frame" x="0.0" y="0.0" width="42" height="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M2 / Reserves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbF-gT-VwA">
+                                                                <rect key="frame" x="0.0" y="0.0" width="92" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIPROVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cD-Zu-osJ">
-                                                                <rect key="frame" x="0.0" y="17" width="73" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M2_ResVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cD-Zu-osJ">
+                                                                <rect key="frame" x="0.0" y="17" width="82.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -179,7 +184,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PDu-Gs-KlA">
-                                                <rect key="frame" x="155.5" y="0.0" width="144.5" height="160"/>
+                                                <rect key="frame" x="155.5" y="0.0" width="144.5" height="292"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Black Market" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sq7-J1-6lQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="84" height="17"/>
@@ -188,43 +193,43 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BlackMarketVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SZ-vc-mgg">
-                                                        <rect key="frame" x="0.0" y="20" width="118" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="39" width="118" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BlackMarketMonth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6P1-Di-Plp">
-                                                        <rect key="frame" x="0.0" y="43.5" width="121.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="81" width="121.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BlackMarketYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMJ-wq-jLf">
-                                                        <rect key="frame" x="0.0" y="63.5" width="108.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="120" width="108.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BlackMarketTwoYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hud-2v-yjT">
-                                                        <rect key="frame" x="0.0" y="83" width="133.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="158.5" width="133.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="BlackMarketThreeYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga6-ek-jzW">
-                                                        <rect key="frame" x="0.0" y="103" width="144.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="197.5" width="144.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="BlackMarketFourYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBe-bJ-28m">
-                                                        <rect key="frame" x="0.0" y="123" width="137.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="236" width="137.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="BlackMarketFiveYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOA-2p-dQc">
-                                                        <rect key="frame" x="0.0" y="143" width="133.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="275" width="133.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -236,30 +241,8 @@
                                             <constraint firstAttribute="height" constant="160" id="WhL-BS-4EH"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="4LI-lp-sXG">
-                                        <rect key="frame" x="0.0" y="192.5" width="300" height="37.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M2 / Reserves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSG-e7-qzn">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M2_ResVal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0U-vf-CaO">
-                                                <rect key="frame" x="0.0" y="17" width="300" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="mSG-e7-qzn" firstAttribute="centerX" secondItem="4LI-lp-sXG" secondAttribute="centerX" id="JaS-jL-r8k"/>
-                                            <constraint firstItem="h0U-vf-CaO" firstAttribute="centerX" secondItem="4LI-lp-sXG" secondAttribute="centerX" id="rED-eD-uQr"/>
-                                        </constraints>
-                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="230" id="56G-fB-EWQ"/>
                                     <constraint firstAttribute="width" constant="300" id="PUs-Tq-Ga0"/>
                                 </constraints>
                             </stackView>
@@ -268,6 +251,7 @@
                         <constraints>
                             <constraint firstItem="n7S-Wi-Eyj" firstAttribute="centerX" secondItem="T0u-uy-pLF" secondAttribute="centerX" id="C79-xd-xlm"/>
                             <constraint firstItem="n7S-Wi-Eyj" firstAttribute="top" secondItem="Orr-yb-mM6" secondAttribute="bottom" id="Hh8-38-MVr"/>
+                            <constraint firstItem="JWf-Jz-nSo" firstAttribute="top" secondItem="n7S-Wi-Eyj" secondAttribute="bottom" constant="8" id="LFq-fu-OqO"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="375" height="300"/>
@@ -279,11 +263,11 @@
                         <outlet property="BlackMarketTwoYear" destination="hud-2v-yjT" id="DpW-LC-8Ri"/>
                         <outlet property="BlackMarketVal" destination="5SZ-vc-mgg" id="HcQ-2F-y4w"/>
                         <outlet property="BlackMarketYear" destination="QMJ-wq-jLf" id="H0X-Vl-vff"/>
-                        <outlet property="DIPROVal" destination="3cD-Zu-osJ" id="Szn-G2-5Ya"/>
                         <outlet property="DicomMonth" destination="q25-aa-aXV" id="4qr-cE-37t"/>
                         <outlet property="DicomVal" destination="TBg-Rj-vw2" id="ypH-qG-m0H"/>
                         <outlet property="DicomYear" destination="wAl-te-NHL" id="T2V-P7-wZn"/>
-                        <outlet property="M2_ResVal" destination="h0U-vf-CaO" id="FFL-iH-14W"/>
+                        <outlet property="M2_ResVal" destination="3cD-Zu-osJ" id="lcj-dh-fkD"/>
+                        <outlet property="MainStack" destination="n7S-Wi-Eyj" id="sah-oo-gdl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6f-1y-8E9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -302,30 +286,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0i3-KG-nbz">
-                                <rect key="frame" x="155" y="30" width="65.5" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="VgA-hs-46o"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUX-Sh-PI5">
-                                <rect key="frame" x="16" y="26" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="ZX8-G5-bJN"/>
-                                    <constraint firstAttribute="height" constant="25" id="skK-Pr-fXR"/>
-                                </constraints>
-                                <state key="normal" image="Hamburger">
-                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="ShowMenu:" destination="RtX-C2-xsx" eventType="touchUpInside" id="I1I-aS-gV3"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oX-5M-Wkd">
-                                <rect key="frame" x="25" y="96" width="325" height="216.5"/>
+                                <rect key="frame" x="25" y="110" width="325" height="216.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="325" id="FnI-rd-x8O"/>
@@ -339,7 +301,7 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="3Ge-36-kjn">
-                                <rect key="frame" x="31" y="422" width="328" height="165"/>
+                                <rect key="frame" x="31" y="422" width="328" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data compiled and updated live from:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tke-ou-nXB">
                                         <rect key="frame" x="0.0" y="0.0" width="229.5" height="15"/>
@@ -348,7 +310,7 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="MNG-AV-zex">
-                                        <rect key="frame" x="0.0" y="15" width="328" height="150"/>
+                                        <rect key="frame" x="0.0" y="15" width="328" height="165"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Central Bank of Venezuela" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vQ-bZ-Wlk">
                                                 <rect key="frame" x="0.0" y="0.0" width="168.5" height="15"/>
@@ -410,6 +372,12 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                                 <color key="textColor" red="1" green="0.99438468089999998" blue="0.98976219480000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- CEDICE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FS-e1-Qti">
+                                                <rect key="frame" x="0.0" y="150" width="56" height="15"/>
+                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
+                                                <color key="textColor" red="1" green="0.99438468089999998" blue="0.98976219480000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -457,29 +425,34 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                 <rect key="frame" x="113" y="272" width="240" height="253"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nY1-B7-WOE" customClass="HeaderView" customModule="VenEcon2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="kTX-zI-qbj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="nY1-B7-WOE" firstAttribute="leading" secondItem="qjL-D2-mKH" secondAttribute="leading" id="1Jg-6w-vy9"/>
                             <constraint firstItem="jOg-4c-lis" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="Kka-Uo-h9J"/>
-                            <constraint firstItem="zUX-Sh-PI5" firstAttribute="bottom" secondItem="0i3-KG-nbz" secondAttribute="bottom" id="L4i-gd-UR4"/>
-                            <constraint firstItem="6oX-5M-Wkd" firstAttribute="top" secondItem="0i3-KG-nbz" secondAttribute="bottom" constant="36" id="OzI-Pf-E4F"/>
-                            <constraint firstItem="0i3-KG-nbz" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="QlL-1v-fI2"/>
                             <constraint firstItem="CPo-8n-bbW" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="Qsq-nK-X7f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VbT-dg-zzp" secondAttribute="trailing" constant="20" id="TbL-ug-EjK"/>
-                            <constraint firstItem="zUX-Sh-PI5" firstAttribute="leading" secondItem="qjL-D2-mKH" secondAttribute="leadingMargin" id="Vul-cK-Ao0"/>
                             <constraint firstItem="VbT-dg-zzp" firstAttribute="top" secondItem="3Ge-36-kjn" secondAttribute="bottom" constant="20" id="Wzi-6v-jXw"/>
                             <constraint firstItem="eoJ-kQ-llH" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="axO-bM-Xez"/>
-                            <constraint firstItem="zUX-Sh-PI5" firstAttribute="bottom" secondItem="0i3-KG-nbz" secondAttribute="bottom" id="f0a-MG-a4g"/>
                             <constraint firstItem="3Ge-36-kjn" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" constant="1" id="fzT-Qj-lb3"/>
-                            <constraint firstItem="0i3-KG-nbz" firstAttribute="top" secondItem="qjL-D2-mKH" secondAttribute="topMargin" constant="10" id="gQ2-BQ-eX3"/>
                             <constraint firstItem="Qeo-0r-rq7" firstAttribute="top" secondItem="VbT-dg-zzp" secondAttribute="bottom" constant="10" id="k3W-Ds-Opz"/>
+                            <constraint firstItem="nY1-B7-WOE" firstAttribute="top" secondItem="qjL-D2-mKH" secondAttribute="top" id="kah-PZ-Mhh"/>
+                            <constraint firstAttribute="trailing" secondItem="nY1-B7-WOE" secondAttribute="trailing" id="kgx-ur-Emr"/>
                             <constraint firstItem="jOg-4c-lis" firstAttribute="top" secondItem="6oX-5M-Wkd" secondAttribute="bottom" constant="15" id="qaH-AF-q8l"/>
                             <constraint firstItem="6oX-5M-Wkd" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="wem-XR-cIk"/>
                             <constraint firstItem="CPo-8n-bbW" firstAttribute="top" secondItem="jOg-4c-lis" secondAttribute="bottom" constant="5" id="zG8-1n-4sI"/>
+                            <constraint firstItem="6oX-5M-Wkd" firstAttribute="top" secondItem="nY1-B7-WOE" secondAttribute="bottom" constant="30" id="zWv-U3-Vhy"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ShowMenuButton" destination="zUX-Sh-PI5" id="orP-HU-Mcw"/>
+                        <outlet property="Header" destination="nY1-B7-WOE" id="Z8Z-Pl-h82"/>
                         <outlet property="TextBox" destination="6oX-5M-Wkd" id="FCa-ij-SJy"/>
                         <outlet property="VersionLabel" destination="VbT-dg-zzp" id="rxQ-o0-mfX"/>
                     </connections>
@@ -500,29 +473,6 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FX Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63N-YO-JjB">
-                                <rect key="frame" x="226" y="40" width="149" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="GeT-BN-634"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iu-71-Ikb">
-                                <rect key="frame" x="13" y="33" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="r4T-0h-TVJ"/>
-                                    <constraint firstAttribute="height" constant="25" id="zKj-m6-Pul"/>
-                                </constraints>
-                                <state key="normal" image="Hamburger">
-                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="ShowMenu:" destination="qjl-bd-12C" eventType="touchUpInside" id="9YF-HX-t6i"/>
-                                    <action selector="ShowMenu:" destination="RtX-C2-xsx" eventType="touchUpInside" id="rXP-AL-A62"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="V95-GQ-MFL">
                                 <rect key="frame" x="30" y="120" width="323" height="67.5"/>
                                 <subviews>
@@ -607,39 +557,30 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="cGt-MC-4W4">
-                                <rect key="frame" x="70" y="335" width="84" height="41"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIPRO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ca-el-e7h">
-                                        <rect key="frame" x="0.0" y="0.0" width="42" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIPROVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcC-lD-RFg">
-                                        <rect key="frame" x="0.0" y="17" width="84" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="cGt-MC-4W4">
+                                <rect key="frame" x="70" y="335" width="42" height="17"/>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iby-IK-Lyx" customClass="HeaderView" customModule="VenEcon2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="3Kz-Pa-CuB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="V95-GQ-MFL" firstAttribute="top" secondItem="63N-YO-JjB" secondAttribute="bottom" constant="50" id="2Mt-Dy-mt5"/>
-                            <constraint firstItem="63N-YO-JjB" firstAttribute="top" secondItem="4Sk-OK-w2h" secondAttribute="topMargin" constant="10" id="3FI-ge-d7s"/>
-                            <constraint firstItem="8iu-71-Ikb" firstAttribute="leading" secondItem="4Sk-OK-w2h" secondAttribute="leadingMargin" id="5qG-pb-TBC"/>
-                            <constraint firstItem="63N-YO-JjB" firstAttribute="centerX" secondItem="4Sk-OK-w2h" secondAttribute="centerX" id="99X-wp-AVI"/>
+                            <constraint firstItem="Iby-IK-Lyx" firstAttribute="top" secondItem="4Sk-OK-w2h" secondAttribute="top" id="2aU-0I-zg2"/>
+                            <constraint firstItem="Iby-IK-Lyx" firstAttribute="leading" secondItem="4Sk-OK-w2h" secondAttribute="leading" id="9hJ-2A-VCw"/>
                             <constraint firstItem="O83-mA-Ezw" firstAttribute="leading" secondItem="4Sk-OK-w2h" secondAttribute="leadingMargin" constant="50" id="BoW-FB-vM7"/>
                             <constraint firstItem="V95-GQ-MFL" firstAttribute="leading" secondItem="4Sk-OK-w2h" secondAttribute="leadingMargin" constant="10" id="GaZ-Wa-Rv1"/>
-                            <constraint firstItem="8iu-71-Ikb" firstAttribute="bottom" secondItem="63N-YO-JjB" secondAttribute="bottom" id="Lhi-tz-SOu"/>
                             <constraint firstItem="cGt-MC-4W4" firstAttribute="top" secondItem="f4C-ED-rbL" secondAttribute="bottom" constant="19" id="PlS-Uz-imN"/>
                             <constraint firstItem="O83-mA-Ezw" firstAttribute="top" secondItem="V95-GQ-MFL" secondAttribute="bottom" constant="50" id="asG-dW-K8y"/>
                             <constraint firstItem="f4C-ED-rbL" firstAttribute="top" secondItem="O83-mA-Ezw" secondAttribute="bottom" constant="17" id="bE2-YV-6uH"/>
-                            <constraint firstItem="8iu-71-Ikb" firstAttribute="bottom" secondItem="63N-YO-JjB" secondAttribute="bottom" id="bJD-8e-mpF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="V95-GQ-MFL" secondAttribute="trailing" constant="10" id="bn6-eG-u6d"/>
+                            <constraint firstItem="V95-GQ-MFL" firstAttribute="top" secondItem="Iby-IK-Lyx" secondAttribute="bottom" constant="40" id="gM2-Z5-L4b"/>
                             <constraint firstItem="V95-GQ-MFL" firstAttribute="centerX" secondItem="4Sk-OK-w2h" secondAttribute="centerX" id="iOP-Y4-gOj"/>
+                            <constraint firstAttribute="trailing" secondItem="Iby-IK-Lyx" secondAttribute="trailing" id="tag-VG-VJ5"/>
                             <constraint firstItem="f4C-ED-rbL" firstAttribute="leading" secondItem="O83-mA-Ezw" secondAttribute="leading" id="yb6-Js-ZhS"/>
                             <constraint firstItem="cGt-MC-4W4" firstAttribute="leading" secondItem="f4C-ED-rbL" secondAttribute="leading" id="zmV-hL-qun"/>
                         </constraints>
@@ -648,9 +589,8 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                         <outlet property="BlackMarketVal" destination="xD6-5O-FTX" id="xYJ-Ix-ucN"/>
                         <outlet property="Currency" destination="4j8-bt-CTJ" id="fdZ-S3-7SZ"/>
                         <outlet property="DICOMVal" destination="MlS-9g-SnQ" id="I91-tE-XOr"/>
-                        <outlet property="DIPROVal" destination="HcC-lD-RFg" id="6r1-Pg-t8Y"/>
+                        <outlet property="Header" destination="Iby-IK-Lyx" id="dfJ-dY-wmt"/>
                         <outlet property="Number" destination="KYu-N2-l2Y" id="94h-Ai-1u5"/>
-                        <outlet property="ShowMenuButton" destination="8iu-71-Ikb" id="riU-ES-5ja"/>
                         <outlet property="Val" destination="06o-CT-DFy" id="kjh-xQ-kwl"/>
                     </connections>
                 </viewController>
@@ -670,8 +610,8 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                         <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="QA9-S2-ons">
-                                <rect key="frame" x="112.5" y="0.0" width="150" height="150.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QA9-S2-ons">
+                                <rect key="frame" x="112.5" y="0.0" width="150" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="TopLine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFh-cM-hOR">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="17"/>
@@ -679,38 +619,38 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MainVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuH-fj-D9k">
-                                        <rect key="frame" x="0.0" y="21.5" width="150" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="MainVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuH-fj-D9k">
+                                        <rect key="frame" x="0.0" y="17" width="150" height="198"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Line1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSU-BQ-daQ">
-                                        <rect key="frame" x="0.0" y="47" width="150" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Line1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSU-BQ-daQ">
+                                        <rect key="frame" x="0.0" y="215" width="150" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Line2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiB-yD-m7s">
-                                        <rect key="frame" x="0.0" y="68.5" width="150" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Line2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiB-yD-m7s">
+                                        <rect key="frame" x="0.0" y="232" width="150" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Line3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMV-h2-xR3">
-                                        <rect key="frame" x="0.0" y="90" width="150" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Line3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMV-h2-xR3">
+                                        <rect key="frame" x="0.0" y="249" width="150" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Line4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xB8-3E-Q5Q">
-                                        <rect key="frame" x="0.0" y="112" width="150" height="17"/>
+                                        <rect key="frame" x="0.0" y="266" width="150" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Line5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec0-Cd-Ris">
-                                        <rect key="frame" x="0.0" y="133.5" width="150" height="17"/>
+                                        <rect key="frame" x="0.0" y="283" width="150" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -718,13 +658,13 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="LIs-mI-EpE"/>
-                                    <constraint firstAttribute="height" constant="150" id="NFQ-rF-DUA"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="QA9-S2-ons" firstAttribute="centerX" secondItem="S6c-8V-2oZ" secondAttribute="centerX" id="Wvb-wp-3Rr"/>
+                            <constraint firstItem="TZ3-fw-16z" firstAttribute="top" secondItem="QA9-S2-ons" secondAttribute="bottom" id="pNg-FO-HWg"/>
                             <constraint firstItem="QA9-S2-ons" firstAttribute="top" secondItem="k19-nX-iln" secondAttribute="bottom" id="xLc-r6-pSW"/>
                         </constraints>
                     </view>
@@ -756,13 +696,13 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="BOd-SE-bTW">
-                                <rect key="frame" x="37" y="0.0" width="300" height="210"/>
+                                <rect key="frame" x="37" y="0.0" width="300" height="300"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Ai1-X7-b0S">
-                                        <rect key="frame" x="0.0" y="0.0" width="145" height="210"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ai1-X7-b0S">
+                                        <rect key="frame" x="0.0" y="0.0" width="145" height="300"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="glE-iG-lbf">
-                                                <rect key="frame" x="0.0" y="0.0" width="145" height="88.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="glE-iG-lbf">
+                                                <rect key="frame" x="0.0" y="0.0" width="145" height="186.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TopLeftTop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLc-hq-b4X">
                                                         <rect key="frame" x="0.0" y="0.0" width="72.5" height="17"/>
@@ -770,54 +710,54 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                                         <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TopLeftMainVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bT8-hr-bT0">
-                                                        <rect key="frame" x="0.0" y="17" width="117.5" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TopLeftMainVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bT8-hr-bT0">
+                                                        <rect key="frame" x="0.0" y="41.5" width="117.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TopLeftLine1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlg-N4-RIk">
-                                                        <rect key="frame" x="0.0" y="37.5" width="82.5" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TopLeftLine1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlg-N4-RIk">
+                                                        <rect key="frame" x="0.0" y="86.5" width="82.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TopLeftLine2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGX-wa-pVQ">
-                                                        <rect key="frame" x="0.0" y="54.5" width="84.5" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TopLeftLine2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGX-wa-pVQ">
+                                                        <rect key="frame" x="0.0" y="128" width="84.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TopLeftLine3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cw7-Mg-UBJ">
-                                                        <rect key="frame" x="0.0" y="71.5" width="85" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TopLeftLine3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cw7-Mg-UBJ">
+                                                        <rect key="frame" x="0.0" y="169.5" width="85" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="sVN-rR-nfF">
-                                                <rect key="frame" x="0.0" y="121.5" width="145" height="88.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="sVN-rR-nfF">
+                                                <rect key="frame" x="0.0" y="211.5" width="145" height="88.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BottomLeftTop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqL-1j-a8m">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="BottomLeftTop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqL-1j-a8m">
                                                         <rect key="frame" x="0.0" y="0.0" width="96" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BottomLeftMainVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8p-ba-3Hk">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="BottomLeftMainVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8p-ba-3Hk">
                                                         <rect key="frame" x="0.0" y="17" width="145" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BottomLeftLine1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niw-Tw-uLe">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="BottomLeftLine1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niw-Tw-uLe">
                                                         <rect key="frame" x="0.0" y="37.5" width="106" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BottomLeftLine2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKo-e3-OaH">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="BottomLeftLine2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKo-e3-OaH">
                                                         <rect key="frame" x="0.0" y="54.5" width="108" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -833,11 +773,11 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="119-vi-kg9">
-                                        <rect key="frame" x="145" y="0.0" width="155" height="210"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="119-vi-kg9">
+                                        <rect key="frame" x="145" y="0.0" width="155" height="300"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Odm-ls-FVa">
-                                                <rect key="frame" x="0.0" y="0.0" width="155" height="88.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Odm-ls-FVa">
+                                                <rect key="frame" x="0.0" y="0.0" width="155" height="186.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TopRightTop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGz-Xw-NK2">
                                                         <rect key="frame" x="0.0" y="0.0" width="81.5" height="17"/>
@@ -845,54 +785,54 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                                         <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TopRightMainVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSs-qe-Zy4">
-                                                        <rect key="frame" x="0.0" y="17" width="127.5" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TopRightMainVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSs-qe-Zy4">
+                                                        <rect key="frame" x="0.0" y="41.5" width="127.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TopRightLine1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bI2-yG-hK6">
-                                                        <rect key="frame" x="0.0" y="37.5" width="91" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TopRightLine1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bI2-yG-hK6">
+                                                        <rect key="frame" x="0.0" y="86.5" width="91" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TopRightLine2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5F1-uu-NS7">
-                                                        <rect key="frame" x="0.0" y="54.5" width="93" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TopRightLine2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5F1-uu-NS7">
+                                                        <rect key="frame" x="0.0" y="128" width="93" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TopRightLine3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tb7-fN-YfI">
-                                                        <rect key="frame" x="0.0" y="71.5" width="93.5" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TopRightLine3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tb7-fN-YfI">
+                                                        <rect key="frame" x="0.0" y="169.5" width="93.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="q80-hY-O6g">
-                                                <rect key="frame" x="0.0" y="121.5" width="155" height="88.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="q80-hY-O6g">
+                                                <rect key="frame" x="0.0" y="211.5" width="155" height="88.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BottomRightTop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3w-Xi-Vbe">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="BottomRightTop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3w-Xi-Vbe">
                                                         <rect key="frame" x="0.0" y="0.0" width="104.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BottomRightMainVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWD-R2-qyX">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="BottomRightMainVal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWD-R2-qyX">
                                                         <rect key="frame" x="0.0" y="17" width="155" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BottomRightLine1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5n-RC-d8Y">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="BottomRightLine1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5n-RC-d8Y">
                                                         <rect key="frame" x="0.0" y="37.5" width="114.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BottomRightLine2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9r-Yf-Fnx">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="BottomRightLine2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9r-Yf-Fnx">
                                                         <rect key="frame" x="0.0" y="54.5" width="116.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -913,22 +853,14 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="d2T-Wv-xzR"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="epa-z4-yN0"/>
-                                    <constraint firstAttribute="height" constant="210" id="wAS-dL-J8X"/>
                                     <constraint firstAttribute="width" constant="300" id="zW1-SX-axs"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="d2T-Wv-xzR"/>
-                                        <exclude reference="epa-z4-yN0"/>
-                                    </mask>
-                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="BOd-SE-bTW" firstAttribute="top" secondItem="PdM-yW-usF" secondAttribute="bottom" id="jBP-FM-9BZ"/>
+                            <constraint firstItem="n86-Uk-AUC" firstAttribute="top" secondItem="BOd-SE-bTW" secondAttribute="bottom" id="5YF-w5-oU9"/>
+                            <constraint firstItem="BOd-SE-bTW" firstAttribute="top" secondItem="PdM-yW-usF" secondAttribute="bottom" id="Vvc-SO-xGN"/>
                             <constraint firstItem="BOd-SE-bTW" firstAttribute="centerX" secondItem="1bQ-c2-oqc" secondAttribute="centerX" id="o9Y-4Q-8Ss"/>
                         </constraints>
                     </view>
@@ -958,7 +890,7 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B1N-xZ-MGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860" y="139"/>
+            <point key="canvasLocation" x="1921" y="139"/>
         </scene>
         <!--Two Column Child-->
         <scene sceneID="gRv-Kv-n54">
@@ -973,107 +905,105 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYh-Iy-w56">
-                                <rect key="frame" x="12.5" y="0.0" width="350" height="150.5"/>
+                                <rect key="frame" x="12.5" y="0.0" width="350" height="300"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="9Z5-qY-sOz">
-                                        <rect key="frame" x="0.0" y="0.0" width="175" height="150.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Z5-qY-sOz">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="300"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LeftTop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWa-GO-XGI">
-                                                <rect key="frame" x="0.0" y="0.0" width="175" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="LeftTop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWa-GO-XGI">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="194.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LeftMain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcU-tv-m54">
-                                                <rect key="frame" x="0.0" y="21.5" width="175" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="LeftMain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcU-tv-m54">
+                                                <rect key="frame" x="0.0" y="194.5" width="175" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Left1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfx-BY-kVw">
-                                                <rect key="frame" x="0.0" y="47" width="175" height="17"/>
+                                                <rect key="frame" x="0.0" y="215" width="175" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Left2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnP-4A-FRd">
-                                                <rect key="frame" x="0.0" y="68.5" width="175" height="17"/>
+                                                <rect key="frame" x="0.0" y="232" width="175" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Left3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Flk-em-27I">
-                                                <rect key="frame" x="0.0" y="90" width="175" height="17"/>
+                                                <rect key="frame" x="0.0" y="249" width="175" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Left4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDA-N5-wWK">
-                                                <rect key="frame" x="0.0" y="112" width="175" height="17"/>
+                                                <rect key="frame" x="0.0" y="266" width="175" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Left5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k50-AB-yZt">
-                                                <rect key="frame" x="0.0" y="133.5" width="175" height="17"/>
+                                                <rect key="frame" x="0.0" y="283" width="175" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="eFE-eW-Mua"/>
                                             <constraint firstAttribute="width" constant="175" id="i2S-Uc-WcM"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WaH-tD-nc4">
-                                        <rect key="frame" x="175" y="0.0" width="175" height="150.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WaH-tD-nc4">
+                                        <rect key="frame" x="175" y="0.0" width="175" height="300"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RightTop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxW-ZR-CWJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="175" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="RightTop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxW-ZR-CWJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="194.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RightMan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6u-DN-OUg">
-                                                <rect key="frame" x="0.0" y="21.5" width="175" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="RightMan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6u-DN-OUg">
+                                                <rect key="frame" x="0.0" y="194.5" width="175" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Right1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YV4-nY-ZoM">
-                                                <rect key="frame" x="0.0" y="47" width="175" height="17"/>
+                                                <rect key="frame" x="0.0" y="215" width="175" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Right2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQf-Bt-vtE">
-                                                <rect key="frame" x="0.0" y="68.5" width="175" height="17"/>
+                                                <rect key="frame" x="0.0" y="232" width="175" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Right3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akT-Wt-rcA">
-                                                <rect key="frame" x="0.0" y="90" width="175" height="17"/>
+                                                <rect key="frame" x="0.0" y="249" width="175" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Right4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4R-CL-h5I">
-                                                <rect key="frame" x="0.0" y="112" width="175" height="17"/>
+                                                <rect key="frame" x="0.0" y="266" width="175" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Right5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUN-x4-bzr">
-                                                <rect key="frame" x="0.0" y="133.5" width="175" height="17"/>
+                                                <rect key="frame" x="0.0" y="283" width="175" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="UXz-Bz-ZO4"/>
                                             <constraint firstAttribute="width" constant="175" id="hTS-Oq-sRJ"/>
                                         </constraints>
                                     </stackView>
@@ -1082,6 +1012,7 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="FKf-KK-4Ir" firstAttribute="top" secondItem="VYh-Iy-w56" secondAttribute="bottom" id="1xn-h8-mMA"/>
                             <constraint firstItem="VYh-Iy-w56" firstAttribute="top" secondItem="76d-EM-cXN" secondAttribute="bottom" id="YA6-Kp-cF8"/>
                             <constraint firstItem="VYh-Iy-w56" firstAttribute="centerX" secondItem="tv3-ra-QWN" secondAttribute="centerX" id="ZIr-pW-ZnC"/>
                         </constraints>
@@ -1159,29 +1090,6 @@ Start your free trial now!</string>
                                     <action selector="RestorePreviousPurchasePress:" destination="Wkt-Os-S7H" eventType="touchUpInside" id="J3v-l4-o95"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upgrade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NU-mX-4fr">
-                                <rect key="frame" x="140" y="30" width="95" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="HV1-f5-S7t"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGK-rs-o5C">
-                                <rect key="frame" x="16" y="35" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="6QH-ko-aZz"/>
-                                    <constraint firstAttribute="height" constant="25" id="uNd-K6-9ii"/>
-                                </constraints>
-                                <state key="normal" image="Hamburger">
-                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="ShowMenu:" destination="RtX-C2-xsx" eventType="touchUpInside" id="CS3-FC-C02"/>
-                                    <action selector="SideMenu:" destination="Wkt-Os-S7H" eventType="touchUpInside" id="fH7-Wn-SQL"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PriceLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCB-O5-ufa">
                                 <rect key="frame" x="147" y="424" width="81" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1215,35 +1123,40 @@ Start your free trial now!</string>
                             <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Hand" translatesAutoresizingMaskIntoConstraints="NO" id="ZJQ-el-mt1">
                                 <rect key="frame" x="67" y="236" width="240" height="253"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVC-3r-Omu" customClass="HeaderView" customModule="VenEcon2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="dXL-7g-ESj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PSX-71-I0M" firstAttribute="centerX" secondItem="TWR-oC-3tH" secondAttribute="centerX" id="0Bu-07-E2O"/>
-                            <constraint firstItem="oGK-rs-o5C" firstAttribute="leading" secondItem="TWR-oC-3tH" secondAttribute="leadingMargin" id="1cG-SO-R6d"/>
                             <constraint firstItem="mgt-3J-TgD" firstAttribute="top" secondItem="cRU-8t-3os" secondAttribute="bottom" constant="5" id="3Uj-fz-kx8"/>
                             <constraint firstItem="fsg-kg-rpw" firstAttribute="top" secondItem="PSX-71-I0M" secondAttribute="bottom" constant="5" id="7RA-F7-SBf"/>
                             <constraint firstItem="PSX-71-I0M" firstAttribute="top" secondItem="OCB-O5-ufa" secondAttribute="bottom" constant="10" id="8EJ-7f-sjG"/>
-                            <constraint firstItem="HO0-yc-H1j" firstAttribute="top" secondItem="1NU-mX-4fr" secondAttribute="bottom" constant="40" id="B73-30-RHK"/>
                             <constraint firstItem="HO0-yc-H1j" firstAttribute="trailing" secondItem="ZJQ-el-mt1" secondAttribute="trailing" id="BgP-UF-CT8"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m9f-dm-EAa" secondAttribute="trailing" constant="20" symbolic="YES" id="ETZ-dL-KZe"/>
-                            <constraint firstItem="oGK-rs-o5C" firstAttribute="bottom" secondItem="1NU-mX-4fr" secondAttribute="bottom" id="H1h-6W-eG9"/>
                             <constraint firstItem="HO0-yc-H1j" firstAttribute="leading" secondItem="TWR-oC-3tH" secondAttribute="leadingMargin" constant="51" id="Ifx-Pc-MYv"/>
                             <constraint firstItem="OCB-O5-ufa" firstAttribute="centerX" secondItem="TWR-oC-3tH" secondAttribute="centerX" id="Jqq-5t-DRP"/>
                             <constraint firstItem="cRU-8t-3os" firstAttribute="leading" secondItem="TWR-oC-3tH" secondAttribute="leading" constant="5" id="Mdc-M0-nBL"/>
+                            <constraint firstItem="HVC-3r-Omu" firstAttribute="top" secondItem="TWR-oC-3tH" secondAttribute="top" id="R40-x0-iZr"/>
                             <constraint firstItem="mgt-3J-TgD" firstAttribute="top" secondItem="m9f-dm-EAa" secondAttribute="bottom" constant="62" id="XaM-MY-D7Z"/>
                             <constraint firstItem="fsg-kg-rpw" firstAttribute="centerX" secondItem="TWR-oC-3tH" secondAttribute="centerX" id="e7T-kx-xVT"/>
-                            <constraint firstItem="HO0-yc-H1j" firstAttribute="centerX" secondItem="1NU-mX-4fr" secondAttribute="centerX" id="hqr-nb-oYF"/>
+                            <constraint firstAttribute="trailing" secondItem="HVC-3r-Omu" secondAttribute="trailing" id="jhj-dH-0T2"/>
                             <constraint firstItem="m9f-dm-EAa" firstAttribute="leading" secondItem="TWR-oC-3tH" secondAttribute="leading" constant="155" id="kUF-zb-hqM"/>
+                            <constraint firstItem="HVC-3r-Omu" firstAttribute="leading" secondItem="TWR-oC-3tH" secondAttribute="leading" id="klA-rP-iIo"/>
                             <constraint firstAttribute="trailing" secondItem="cRU-8t-3os" secondAttribute="trailing" constant="5" id="mQX-7W-8Wh"/>
-                            <constraint firstItem="1NU-mX-4fr" firstAttribute="centerX" secondItem="TWR-oC-3tH" secondAttribute="centerX" id="pi1-DA-dDR"/>
-                            <constraint firstItem="1NU-mX-4fr" firstAttribute="top" secondItem="ZtO-nI-WHp" secondAttribute="bottom" constant="10" id="rP8-7K-hzu"/>
                             <constraint firstItem="m9f-dm-EAa" firstAttribute="top" secondItem="fsg-kg-rpw" secondAttribute="bottom" constant="26" id="wtK-f6-Mf6"/>
                             <constraint firstItem="HO0-yc-H1j" firstAttribute="centerX" secondItem="TWR-oC-3tH" secondAttribute="centerX" id="xbf-P9-s0m"/>
                             <constraint firstItem="HO0-yc-H1j" firstAttribute="leading" secondItem="ZJQ-el-mt1" secondAttribute="leading" id="yfx-fP-I3x"/>
-                            <constraint firstItem="oGK-rs-o5C" firstAttribute="bottom" secondItem="1NU-mX-4fr" secondAttribute="bottom" id="zBn-uB-ysg"/>
+                            <constraint firstItem="HO0-yc-H1j" firstAttribute="top" secondItem="HVC-3r-Omu" secondAttribute="bottom" constant="20" id="zFW-tE-Fvg"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Header" destination="HVC-3r-Omu" id="L1F-1v-FtM"/>
                         <outlet property="PriceLabel" destination="OCB-O5-ufa" id="Xi6-Re-2Z5"/>
                     </connections>
                 </viewController>
@@ -1263,29 +1176,7 @@ Start your free trial now!</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsL-iU-C0f">
-                                <rect key="frame" x="130.5" y="30" width="114" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="nma-JG-Uw6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cn9-Uu-gRd">
-                                <rect key="frame" x="16" y="35" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="PdL-8T-sf7"/>
-                                    <constraint firstAttribute="width" constant="25" id="wyE-Nf-egK"/>
-                                </constraints>
-                                <state key="normal" image="Hamburger">
-                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="SideMenu:" destination="lMi-ll-Ght" eventType="touchUpInside" id="dHT-k9-mo5"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="9FT-pr-63B">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="9FT-pr-63B">
                                 <rect key="frame" x="67" y="100" width="241" height="150"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Thanks so much for upgrading. 
@@ -1299,20 +1190,27 @@ Click the menu button on the left to enjoy full access.</string>
                                 <rect key="frame" x="67" y="236" width="240" height="253"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Zb-68-wO1" customClass="HeaderView" customModule="VenEcon2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="CEy-iP-Sv9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wsL-iU-C0f" firstAttribute="top" secondItem="JV5-wl-ZcM" secondAttribute="bottom" constant="10" id="4Gk-vv-4vu"/>
-                            <constraint firstItem="9FT-pr-63B" firstAttribute="top" secondItem="wsL-iU-C0f" secondAttribute="bottom" constant="40" id="V9i-Ey-ZmJ"/>
-                            <constraint firstItem="9FT-pr-63B" firstAttribute="centerX" secondItem="wsL-iU-C0f" secondAttribute="centerX" id="WjS-sb-Ybk"/>
+                            <constraint firstAttribute="trailing" secondItem="1Zb-68-wO1" secondAttribute="trailing" id="DJe-ys-wV7"/>
+                            <constraint firstItem="9FT-pr-63B" firstAttribute="top" secondItem="1Zb-68-wO1" secondAttribute="bottom" constant="20" id="NQC-KE-AhZ"/>
+                            <constraint firstItem="1Zb-68-wO1" firstAttribute="leading" secondItem="IG3-wT-S4h" secondAttribute="leading" id="Uaq-eq-B8w"/>
                             <constraint firstItem="9FT-pr-63B" firstAttribute="leading" secondItem="IG3-wT-S4h" secondAttribute="leadingMargin" constant="51" id="XJX-Ea-bt9"/>
-                            <constraint firstItem="Cn9-Uu-gRd" firstAttribute="bottom" secondItem="wsL-iU-C0f" secondAttribute="bottom" id="baJ-2r-O6o"/>
+                            <constraint firstItem="1Zb-68-wO1" firstAttribute="top" secondItem="IG3-wT-S4h" secondAttribute="top" id="jPA-qR-fjD"/>
                             <constraint firstItem="9FT-pr-63B" firstAttribute="centerY" secondItem="IG3-wT-S4h" secondAttribute="centerY" constant="-158.5" id="lVc-PZ-UKd"/>
-                            <constraint firstItem="wsL-iU-C0f" firstAttribute="centerX" secondItem="IG3-wT-S4h" secondAttribute="centerX" id="lcx-Hy-9oq"/>
-                            <constraint firstItem="Cn9-Uu-gRd" firstAttribute="leading" secondItem="IG3-wT-S4h" secondAttribute="leadingMargin" id="reN-Ua-Cbh"/>
-                            <constraint firstItem="Cn9-Uu-gRd" firstAttribute="bottom" secondItem="wsL-iU-C0f" secondAttribute="bottom" id="zMX-hb-1OQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Header" destination="1Zb-68-wO1" id="5Iq-Au-iy0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDB-wK-5q7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1320,7 +1218,6 @@ Click the menu button on the left to enjoy full access.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Hamburger" width="44" height="44"/>
         <image name="Hand" width="960" height="720"/>
     </resources>
 </document>

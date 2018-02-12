@@ -285,6 +285,21 @@ class Utils
         
     }
     
+    func HTMLText(_ label: UILabel, Text: String, Units: String)
+    {
+        let text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Text + " <font size=2>" + Units + "</font></font>"
+        
+        let encodedData = text.data(using: String.Encoding.utf8)!
+        
+        let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+        do
+        {
+            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+            label.attributedText = attributedString
+        }
+        catch _ {}
+    }
+    
     
     
     func JSONDataFromFile(_ fileName: String) -> [[String : AnyObject]] {

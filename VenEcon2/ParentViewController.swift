@@ -50,7 +50,7 @@ enum Indicator : String
                 case .MinimumWage :  return Utils.shared.CountryCode + "_" + "mw"
                 case .OilPrices :  return Utils.shared.CountryCode + "_" + "oil"
                 case .CrudeProduction :  return Utils.shared.CountryCode + "_" + "crude"
-                case .USOil :  return Utils.shared.CountryCode + "_" + "us-oil"
+                case .USOil :  return Utils.shared.CountryCode + "_" + "USimpexp"
                 case .TaxUnit : return Utils.shared.CountryCode + "_" + "ut"
             }
         }
@@ -65,8 +65,9 @@ enum Indicator : String
                 case .TaxRevenue : return "2017-07-31"
                 case .MoneySupply : return "2017-07-28"
                 case .OilPrices :  return "2017-08-09"
-                case .CrudeProduction :  return "2017-11-15"
-                case .USOil :  return "2016-07-31"
+                case .CrudeProduction :  return "2018-01-01"
+                case .USOil :  return "2016-12-15"
+                case .Inflation : return "2017-12-31"
                 default: return "1970-01-01"
             }
         }
@@ -83,7 +84,27 @@ enum Indicator : String
                 case .OilPrices :  return "OilData"
                 case .USOil : return "USOilData"
                 case . CrudeProduction: return "CrudeProductionData"
+                case .Inflation: return "InfData"
                 default: return nil
+            }
+        }
+    
+        var numberOfSeries : Int
+        {
+            switch self
+            {
+                case .FX:
+                    return 8
+                case .Inflation, .OilPrices:
+                    return 4
+                case .CrudeProduction:
+                    return 2
+                case .USOil:
+                    return 2
+                case .MoneySupply:
+                    return 2
+                default:
+                    return 1
             }
         }
     
@@ -105,16 +126,18 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     
     var Reserves = [String: Double]()
     
-    var CentralBank = [String: Double]()
+    var CENDA = [String: Double]()
     var Ecoanalitica = [String: Double]()
     var NA = [String: Double]()
     var BPP = [String: Double]()
     
     var TaxRev = [String: Double]()
     
+    var M0 = [String: Double]()
     var M2 = [String: Double]()
     
-    var MinWage = [String: Double]()
+    var DollarMinWage = [String: Double]()
+    var BolivarMinWage = [String: Double]()
     
     var WTI = [String: Double]()
     var Brent = [String: Double]()
@@ -144,16 +167,18 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     
     var DataReserves: [SChartDataPoint] = []
     
-    var DataCentralBank: [SChartDataPoint] = []
+    var DataCENDA: [SChartDataPoint] = []
     var DataEcoanalitica: [SChartDataPoint] = []
     var DataNA: [SChartDataPoint] = []
     var DataBPP: [SChartDataPoint] = []
     
     var DataTaxRev: [SChartDataPoint] = []
     
+    var DataM0: [SChartDataPoint] = []
     var DataM2: [SChartDataPoint] = []
     
-    var DataMinWage: [SChartDataPoint] = []
+    var DataDollarMinWage: [SChartDataPoint] = []
+    var DataBolivarMinWage: [SChartDataPoint] = []
     
     var DataWTI: [SChartDataPoint] = []
     var DataBrent: [SChartDataPoint] = []
@@ -171,6 +196,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     //Axes
     let xAxis = SChartDiscontinuousDateTimeAxis()
     let yAxis = SChartNumberAxis()
+    //let yAxis = SChartLogarithmicAxis()
     
     var Indicator : Indicator = .FX // for when first open app (and default)
     
@@ -181,29 +207,64 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     @IBOutlet weak var StackForChartAndSegmentedControl: UIStackView!
     @IBOutlet weak var SegmentedControl: UISegmentedControl!
     @IBOutlet weak var Chart: ShinobiChart!
+    @IBOutlet weak var ActivityIndicator: UIActivityIndicatorView!
     
+
+//    @IBAction func SegmentedControl(_ sender: AnyObject)
+//    {
+//        var Start : String = Utils.shared.YearsAgo(4)
+//        switch SegmentedControl.selectedSegmentIndex
+//        {
+//            case 0:
+//                Start = Utils.shared.YearsAgo(32)
+//                xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
+//            case 1:
+//                Start = Utils.shared.YearsAgo(16)
+//                xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
+//            case 2:
+//                Start = Utils.shared.YearsAgo(8)
+//                xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
+//            case 3:
+//                Start = Utils.shared.YearsAgo(4)
+//                xAxis.labelFormatter!.dateFormatter().dateFormat = "YYYY"
+//            case 4:
+//                Start = Utils.shared.YearsAgo(2)
+//                xAxis.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
+//            default:
+//                break;
+//        }
+//
+//        let startDate = Utils.shared.dateFormatter.date(from: Start)
+//        let endDate = Date()
+//
+//        Chart.xAxis!.defaultRange = SChartDateRange(dateMinimum: startDate, andDateMaximum: endDate)
+//
+//        Chart.reloadData()
+//        Chart.redraw()
+//   }
+
     
-    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval)
-    {
-        if (toInterfaceOrientation == .portrait)
-        {
-            Header.isHidden = false
-            ContainerForChild.isHidden = false
-        }
-        else
-        {
-            Header.isHidden = true
-            ContainerForChild.isHidden = true
-            
-            //THESE ABOVE AND HERE
-//            ChartSVHeight.isActive = true
-//            ChartSVHeight.constant = view.frame.width
-//            DistanceBetweenAllTextAndChartSV.isActive = false
-//            ChartSVToTop.isActive = true
-//            ChartSVToTop.constant = 0
-        }
-    }
-    
+//    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval)
+//    {
+//        if (toInterfaceOrientation == .portrait)
+//        {
+//            Header.isHidden = false
+//            ContainerForChild.isHidden = false
+//        }
+//        else
+//        {
+//            Header.isHidden = true
+//            ContainerForChild.isHidden = true
+//            
+//            //THESE ABOVE AND HERE
+////            ChartSVHeight.isActive = true
+////            ChartSVHeight.constant = view.frame.width
+////            DistanceBetweenAllTextAndChartSV.isActive = false
+////            ChartSVToTop.isActive = true
+////            ChartSVToTop.constant = 0
+//        }
+//    }
+//    
     
     
     let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -212,8 +273,13 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        self.ContainerForChild.isHidden = true
+        StackForChartAndSegmentedControl.isHidden = true
+        
+        ActivityIndicator.hidesWhenStopped = true
+        ActivityIndicator.startAnimating()
+
         //20170716 Need to work out why this Messeging.messaging().fcmToken doesn't always work
         //should i be doing this? https://stackoverflow.com/questions/40013764/correct-way-to-retrieve-token-for-fcm-ios-10-swift-3
         if let token : String = InstanceID.instanceID().token() //Messaging.messaging().fcmToken
@@ -264,8 +330,8 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
         
         if !SubscriptionService.shared.isSubscriptionValid()
         {
-            //interstitial = GADInterstitial(adUnitID: "ca-app-pub-7175811277195688/1463700737") //LIVE
-            interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910") // DEVELOPMENT
+            interstitial = GADInterstitial(adUnitID: "ca-app-pub-7175811277195688/1463700737") //LIVE
+            //interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910") // DEVELOPMENT
             let requestad = GADRequest()
             interstitial.load(requestad)
             //https://developers.google.com/admob/ios/interstitial 20171125 https://apps.admob.com/v2/apps/7903495316/adunits/create?pli=1
@@ -287,7 +353,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
             case .TaxRevenue:
                 child = (storyboard?.instantiateViewController(withIdentifier: "SingleColumnChild")) as! SingleColumnChild
             case .MoneySupply:
-                child = (storyboard?.instantiateViewController(withIdentifier: "SingleColumnChild")) as! SingleColumnChild
+                child = (storyboard?.instantiateViewController(withIdentifier: "TwoColumnChild")) as! TwoColumnChild
             case .MinimumWage:
                 child = (storyboard?.instantiateViewController(withIdentifier: "TwoColumnChild")) as! TwoColumnChild
             case .OilPrices:
@@ -313,8 +379,9 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
         {
             Utils.shared.delay(6)
             {
-                if self.interstitial.isReady {
-                    //self.interstitial.present(fromRootViewController: self)
+                if self.interstitial.isReady
+                {
+                    self.interstitial.present(fromRootViewController: self)
                 }
                 else
                 {
@@ -376,6 +443,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
                 case .TaxUnit:
                     self.TaxUnitData()
             }
+            self.ContainerForChild.isHidden = false
                 
                 //DRAW THE GRAPHS
                 self.Chart.canvasAreaBackgroundColor = UIColor.black
@@ -392,7 +460,6 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
                 self.Chart.crosshair?.style.lineColor = UIColor.white
                 self.Chart.crosshair?.style.lineWidth = 1
                 
-                //Axes
                 self.xAxis.title = NSLocalizedString("Date", comment: "")
                 
                 switch self.Indicator
@@ -416,16 +483,14 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
                     case .CrudeProduction:
                         self.yAxis.title = ""+NSLocalizedString("Crude Production", comment: "")+" ("+NSLocalizedString("million", comment: "")+" "+NSLocalizedString("barrels", comment: "")+"/"+NSLocalizedString("day", comment: "")+")"
                     case .USOil:
-                        self.yAxis.title = NSLocalizedString("U.S. Imports/Exports", comment: "")+" ("+NSLocalizedString("million", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("year", comment: "")+")"
+                        self.yAxis.title = NSLocalizedString("U.S. Imports/Exports", comment: "")+" ("+NSLocalizedString("million", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("month", comment: "")+")"
                     case .TaxUnit:
                         self.yAxis.title = NSLocalizedString("Tax Unit", comment: "") + " (BsF)"
                 }
                 
-                if SubscriptionService.shared.isSubscriptionValid() //20171111
-                {
-                    self.enablePanningAndZoomingOnAxis(self.xAxis)
-                    self.enablePanningAndZoomingOnAxis(self.yAxis)
-                }
+                self.enablePanningAndZoomingOnAxis(self.xAxis)
+                self.enablePanningAndZoomingOnAxis(self.yAxis)
+
                 self.xAxis.style.lineColor = UIColor.white
                 self.yAxis.style.lineColor = UIColor.white
                 self.xAxis.style.titleStyle.textColor = UIColor.white
@@ -451,7 +516,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
                     case .MoneySupply:
                         self.yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: NSNumber(floatLiteral: self.M2.values.max()!/1000000000))
                     case .MinimumWage:
-                        self.yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.MinWage.values.max()! as NSNumber!)
+                        self.yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.DollarMinWage.values.max()! as NSNumber!)
                     case .OilPrices:
                         self.yAxis.defaultRange = SChartRange(minimum: 0, andMaximum: self.WTI.values.max()! as NSNumber!)
                     case .CrudeProduction:
@@ -488,7 +553,8 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
                 
                 //self.SegmentedControl(2 as AnyObject)
                 
-                
+                self.StackForChartAndSegmentedControl.isHidden = false
+                self.ActivityIndicator.stopAnimating()
             })
             
             
@@ -511,51 +577,20 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     {
         guard let child = self.child as? FXChild else {return} //20180107 - get here and if the child is FX then do the following:
         
-        //Set all the text.
-        var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Dicom, date: Utils.shared.Today()))! + " <font size=2>BsF/$</font></font>"
-        var encodedData = text.data(using: String.Encoding.utf8)!
-        var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.DicomVal.attributedText = attributedString
-            
-        } catch _ {}
-        
+        let units:String = "BsF/$"
+
+        Utils.shared.HTMLText(child.DicomVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Dicom, date: Utils.shared.Today()))!, Units: units)
         Utils.shared.Compare(self.Dicom, date: Utils.shared.OneMonthAgo(), label: child.DicomMonth, type: "FX")
-        
-        text = "<CENTER><font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.M2_Res, date: Utils.shared.Today()))! + " <font size=2>BsF/$</font></font></CENTER>"
-        encodedData = text.data(using: String.Encoding.utf8)!
-        attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.M2_ResVal.attributedText = attributedString
-            
-        } catch _ {}
-        
-        text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Official, date: Utils.shared.Today()))! + " <font size=2>BsF/$</font></font>"
-        encodedData = text.data(using: String.Encoding.utf8)!
-        attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.DIPROVal.attributedText = attributedString
-            
-        } catch _ {}
-        
-        text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.BM, date: Utils.shared.Today()))! + " <font size=2>BsF/$</font></font>"
-        encodedData = text.data(using: String.Encoding.utf8)!
-        attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.BlackMarketVal.attributedText = attributedString
-            
-        } catch _ {}
-        
+        child.DicomYear.isHidden = true
+        child.DicomMonth.isHidden = true
+        Utils.shared.HTMLText(child.BlackMarketVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.BM, date: Utils.shared.Today()))!, Units: units)
         Utils.shared.Compare(self.BM, date: Utils.shared.OneMonthAgo(), label: child.BlackMarketMonth, type: "FX")
         Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(1), label: child.BlackMarketYear, type: "FX")
         Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(2), label: child.BlackMarketTwoYear, type: "FX")
         Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(3), label: child.BlackMarketThreeYear, type: "FX")
         Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(4), label: child.BlackMarketFourYear, type: "FX")
         Utils.shared.Compare(self.BM, date: Utils.shared.YearsAgo(5), label: child.BlackMarketFiveYear, type: "FX")
+        Utils.shared.HTMLText(child.M2_ResVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.M2_Res, date: Utils.shared.Today()))!, Units: units)
     }
     
     
@@ -566,16 +601,8 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
         
         child.TopLine.isHidden = true
         
-        var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Bitcoin, date: Utils.shared.Today()))! + " <font size=2>"+NSLocalizedString("million", comment: "")+" BsF / BTC</font></font>"
-        var encodedData = text.data(using: String.Encoding.utf8)!
-        var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.MainVal.attributedText = attributedString
-            
-        } catch _ {}
+        Utils.shared.HTMLText(child.MainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Bitcoin, date: Utils.shared.Today()))!, Units: "BsF/BTC")
         
-        //var comparison : Double = Utils.shared.YearsAgo(GetLatestNonZeroValue(self.Bitcoin, date: Yesterday)
         Utils.shared.Compare(self.Bitcoin, date: Utils.shared.Yesterday(), label: child.Line1, type: nil)
         Utils.shared.Compare(self.Bitcoin, date: Utils.shared.OneMonthAgo(), label: child.Line2, type: nil)
         Utils.shared.Compare(self.Bitcoin, date: Utils.shared.YearsAgo(1), label: child.Line3, type: nil)
@@ -589,17 +616,10 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     {
         guard let child = self.child as? SingleColumnChild else {return} //20180107 - get here and if the child is a stype of single child then do the following:
         
-        child.TopLine.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.Reserves, date: Utils.shared.Today())[0])!)
+        child.TopLine.isHidden = true
+        //child.TopLine.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.Reserves, date: Utils.shared.Today())[0])!)
         
-        var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Reserves, date: Utils.shared.Today()))! + " <font size=2>"+NSLocalizedString("million", comment: "")+" BsF / BTC</font></font>"
-        var encodedData = text.data(using: String.Encoding.utf8)!
-        var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.MainVal.attributedText = attributedString
-            
-        } catch _ {}
-        
+        Utils.shared.HTMLText(child.MainVal, Text: "$"+Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Reserves, date: Utils.shared.Today()))!, Units: "billion")
         Utils.shared.Compare(self.Reserves, date: Utils.shared.Yesterday(), label: child.Line1, type: nil)
         Utils.shared.Compare(self.Reserves, date: Utils.shared.OneMonthAgo(), label: child.Line2, type: nil)
         Utils.shared.Compare(self.Reserves, date: Utils.shared.YearsAgo(1), label: child.Line3, type: nil)
@@ -613,84 +633,53 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     
     func InflationData()
     {
-        guard let child = self.child as? QuadChild else {return} //20180107 - get here and if the child is a stype of single child then do the following:
+        guard let child = self.child as? QuadChild else {return}
         
-        var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.CentralBank, date: Utils.shared.Today()))! + " <font size=2> %</font></font>"
-        var encodedData = text.data(using: String.Encoding.utf8)!
-        var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.TopLeftMainVal.attributedText = attributedString
-            
-        } catch _ {}
+        let units: String = "%"
         
-        child.TopLeftTop.text = "Central Bank"
-        child.TopLeftLine1.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.CentralBank, date: Utils.shared.Today())[0])!)
+        Utils.shared.HTMLText(child.TopLeftMainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.CENDA, date: Utils.shared.Today()))!, Units: units)
+        
+        child.TopLeftTop.text = "CENDA"
+        child.TopLeftLine1.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.CENDA, date: Utils.shared.Today())[0])!)
         
         
         
-
-        
-        text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Ecoanalitica, date: Utils.shared.Today()))! + " <font size=2> %</font></font>"
-        encodedData = text.data(using: String.Encoding.utf8)!
-        attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.TopRightMainVal.attributedText = attributedString
-            
-        } catch _ {}
+        Utils.shared.HTMLText(child.TopRightMainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Ecoanalitica, date: Utils.shared.Today()))!, Units: units)
         
         child.TopRightTop.text = "Ecoanalítica"
         child.TopRightLine1.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.Ecoanalitica, date: Utils.shared.Today())[0])!)
         
         
         
-        text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.NA, date: Utils.shared.Today()))! + " <font size=2> %</font></font>"
-        encodedData = text.data(using: String.Encoding.utf8)!
-        attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.BottomLeftMainVal.attributedText = attributedString
-            
-        } catch _ {}
+        Utils.shared.HTMLText(child.BottomLeftMainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.NA, date: Utils.shared.Today()))!, Units: units)
         
         child.BottomLeftTop.text = "National Assembly"
         child.BottomLeftLine1.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.NA, date: Utils.shared.Today())[0])!)
         
-        
-        
-        
-        text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.BPP, date: Utils.shared.Today()))! + " <font size=2> %</font></font>"
-        encodedData = text.data(using: String.Encoding.utf8)!
-        attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.BottomRightMainVal.attributedText = attributedString
-            
-        } catch _ {}
+
+        Utils.shared.HTMLText(child.BottomRightMainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.BPP, date: Utils.shared.Today()))!, Units: units)
         
         child.BottomRightTop.text = "MIT Billion Prices"
         child.BottomRightLine1.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.BPP, date: Utils.shared.Today())[0])!)
         
-        
+        child.TopLeftLine2.isHidden = true
+        child.TopLeftLine3.isHidden = true
+        child.TopRightLine2.isHidden = true
+        child.TopRightLine3.isHidden = true
+        child.BottomLeftLine2.isHidden = true
+        child.BottomLeftLine3.isHidden = true
+        child.BottomRightLine2.isHidden = true
+        child.BottomRightLine3.isHidden = true
     }
     
     func TaxRevenueData()
     {
-        guard let child = self.child as? SingleColumnChild else {return} //20180107 - get here and if the child is a stype of single child then do the following:
-        
-        var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.TaxRev, date: Utils.shared.Today()))! + " <font size=2>"+NSLocalizedString("billion", comment: "")+" BsF</font></font>"
-        var encodedData = text.data(using: String.Encoding.utf8)!
-        var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.MainVal.attributedText = attributedString
-            
-        } catch _ {}
+        guard let child = self.child as? SingleColumnChild else {return}
+ 
+        Utils.shared.HTMLText(child.MainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.TaxRev, date: Utils.shared.Today()))!, Units: NSLocalizedString("billion", comment: "")+" BsF")
         
         child.TopLine.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.TaxRev, date: Utils.shared.Today())[0])!)
         
-        //var comparison : Double = Utils.shared.YearsAgo(GetLatestNonZeroValue(self.TaxRev, date: Yesterday)
         Utils.shared.Compare(self.TaxRev, date: Utils.shared.OneMonthAgo(), label: child.Line1, type: nil)
         Utils.shared.Compare(self.TaxRev, date: Utils.shared.YearsAgo(1), label: child.Line2, type: nil)
         Utils.shared.Compare(self.TaxRev, date: Utils.shared.YearsAgo(2), label: child.Line3, type: nil)
@@ -702,84 +691,67 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     
     func MoneySupplyData()
     {
-        guard let child = self.child as? SingleColumnChild else {return} //20180107 - get here and if the child is a stype of single child then do the following:
+        guard let child = self.child as? TwoColumnChild else {return}
         
-        var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.M2, date: Utils.shared.Today()))! + " <font size=2>/ "+NSLocalizedString("month", comment: "")+"</font></font>"
-        var encodedData = text.data(using: String.Encoding.utf8)!
-        var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.MainVal.attributedText = attributedString
-            
-        } catch _ {}
+        child.LeftTop.text = "M0"
+        child.RightTop.text = "M2"
         
-        Utils.shared.Compare(self.M2, date: Utils.shared.OneMonthAgo(), label: child.Line1, type: nil)
-        Utils.shared.Compare(self.M2, date: Utils.shared.YearsAgo(1), label: child.Line2, type: nil)
-        Utils.shared.Compare(self.M2, date: Utils.shared.YearsAgo(2), label: child.Line3, type: nil)
-        Utils.shared.Compare(self.M2, date: Utils.shared.YearsAgo(3), label: child.Line4, type: nil)
-        Utils.shared.Compare(self.M2, date: Utils.shared.YearsAgo(4), label: child.Line5, type: nil)
+        Utils.shared.HTMLText(child.LeftMain, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.M0, date: Utils.shared.Today())/1000000000)!, Units: NSLocalizedString("trillion", comment: "")+" BsF")
+        
+        Utils.shared.Compare(self.M0, date: Utils.shared.OneMonthAgo(), label: child.Left1, type: nil)
+        Utils.shared.Compare(self.M0, date: Utils.shared.YearsAgo(1), label: child.Left2, type: nil)
+        Utils.shared.Compare(self.M0, date: Utils.shared.YearsAgo(2), label: child.Left3, type: nil)
+        Utils.shared.Compare(self.M0, date: Utils.shared.YearsAgo(3), label: child.Left4, type: nil)
+        Utils.shared.Compare(self.M0, date: Utils.shared.YearsAgo(4), label: child.Left5, type: nil)
+        
+        Utils.shared.HTMLText(child.RightMain, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.M2, date: Utils.shared.Today())/1000000000)!, Units: NSLocalizedString("trillion", comment: "")+" BsF")
+        
+        Utils.shared.Compare(self.M2, date: Utils.shared.OneMonthAgo(), label: child.Right1, type: nil)
+        Utils.shared.Compare(self.M2, date: Utils.shared.YearsAgo(1), label: child.Right2, type: nil)
+        Utils.shared.Compare(self.M2, date: Utils.shared.YearsAgo(2), label: child.Right3, type: nil)
+        Utils.shared.Compare(self.M2, date: Utils.shared.YearsAgo(3), label: child.Right4, type: nil)
+        Utils.shared.Compare(self.M2, date: Utils.shared.YearsAgo(4), label: child.Right5, type: nil)
     }
     
     func MinimumWageData()
     {
-        guard let child = self.child as? TwoColumnChild else {return} //20180107 - get here and if the child is a stype of single child then do the following:
+        guard let child = self.child as? TwoColumnChild else {return}
         
-        var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.MinWage, date: Utils.shared.Today()))! + " <font size=2>/ "+NSLocalizedString("month", comment: "")+"</font></font>"
-        var encodedData = text.data(using: String.Encoding.utf8)!
-        var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.LeftMain.attributedText = attributedString
-            
-        } catch _ {}
+        child.LeftTop.text = "U.S dollars"
+        child.RightTop.text = "Venezuelan bolivars"
         
-        Utils.shared.Compare(self.MinWage, date: Utils.shared.OneMonthAgo(), label: child.Left1, type: nil)
-        Utils.shared.Compare(self.MinWage, date: Utils.shared.YearsAgo(1), label: child.Left2, type: nil)
-        Utils.shared.Compare(self.MinWage, date: Utils.shared.YearsAgo(2), label: child.Left3, type: nil)
-        Utils.shared.Compare(self.MinWage, date: Utils.shared.YearsAgo(3), label: child.Left4, type: nil)
-        Utils.shared.Compare(self.MinWage, date: Utils.shared.YearsAgo(4), label: child.Left5, type: nil)
+        Utils.shared.HTMLText(child.LeftMain, Text: "$"+Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.DollarMinWage, date: Utils.shared.Today()))!, Units: "/ "+NSLocalizedString("month", comment: ""))
+        Utils.shared.HTMLText(child.RightMain, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.BolivarMinWage, date: Utils.shared.Today())/1000)!, Units: "1,000 BsF / "+NSLocalizedString("month", comment: ""))
+        
+        Utils.shared.Compare(self.DollarMinWage, date: Utils.shared.OneMonthAgo(), label: child.Left1, type: nil)
+        Utils.shared.Compare(self.DollarMinWage, date: Utils.shared.YearsAgo(1), label: child.Left2, type: nil)
+        Utils.shared.Compare(self.DollarMinWage, date: Utils.shared.YearsAgo(2), label: child.Left3, type: nil)
+        Utils.shared.Compare(self.DollarMinWage, date: Utils.shared.YearsAgo(3), label: child.Left4, type: nil)
+        Utils.shared.Compare(self.DollarMinWage, date: Utils.shared.YearsAgo(4), label: child.Left5, type: nil)
+        
+        Utils.shared.Compare(self.BolivarMinWage, date: Utils.shared.OneMonthAgo(), label: child.Right1, type: nil)
+        Utils.shared.Compare(self.BolivarMinWage, date: Utils.shared.YearsAgo(1), label: child.Right2, type: nil)
+        Utils.shared.Compare(self.BolivarMinWage, date: Utils.shared.YearsAgo(2), label: child.Right3, type: nil)
+        Utils.shared.Compare(self.BolivarMinWage, date: Utils.shared.YearsAgo(3), label: child.Right4, type: nil)
+        Utils.shared.Compare(self.BolivarMinWage, date: Utils.shared.YearsAgo(4), label: child.Right5, type: nil)
     }
     
     func OilPricesData()
     {
         
-        guard let child = self.child as? QuadChild else {return} //20180107 - get here and if the child is a stype of single child then do the following:
+        guard let child = self.child as? QuadChild else {return}
         
-        var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.WTI, date: Utils.shared.Today()))! + " <font size=2> / "+NSLocalizedString("barrel", comment: "")+"</font></font>"
-        var encodedData = text.data(using: String.Encoding.utf8)!
-        var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.TopLeftMainVal.attributedText = attributedString
-            
-        } catch _ {}
+        let units: String = "/ " + NSLocalizedString("barrel", comment: "")
         
-        text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Brent, date: Utils.shared.Today()))! + " <font size=2> / "+NSLocalizedString("barrel", comment: "")+"</font></font>"
-        encodedData = text.data(using: String.Encoding.utf8)!
-        attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.BottomLeftMainVal.attributedText = attributedString
-            
-        } catch _ {}
+        child.TopLeftTop.text = "WTI"
+        child.TopRightTop.text = "Venezuela"
+        child.BottomLeftTop.text = "Brent"
+        child.BottomRightTop.text = "OPEC"
         
-        text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Ven, date: Utils.shared.Today()))! + " <font size=2> / "+NSLocalizedString("barrel", comment: "")+"</font></font>"
-        encodedData = text.data(using: String.Encoding.utf8)!
-        attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.TopRightMainVal.attributedText = attributedString
-            
-        } catch _ {}
-        
-        text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.OPEC, date: Utils.shared.Today()))! + " <font size=2> / "+NSLocalizedString("barrel", comment: "")+"</font></font>"
-        encodedData = text.data(using: String.Encoding.utf8)!
-        attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.BottomRightMainVal.attributedText = attributedString
-            
-        } catch _ {}
+        Utils.shared.HTMLText(child.TopLeftMainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.WTI, date: Utils.shared.Today()))!, Units: units)
+        Utils.shared.HTMLText(child.BottomLeftMainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Brent, date: Utils.shared.Today()))!, Units: units)
+        Utils.shared.HTMLText(child.TopRightMainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Ven, date: Utils.shared.Today()))!, Units: units)
+        Utils.shared.HTMLText(child.BottomRightMainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.OPEC, date: Utils.shared.Today()))!, Units: units)
         
         Utils.shared.Compare(self.WTI, date: Utils.shared.OneMonthAgo(), label: child.TopLeftLine1, type: nil)
         Utils.shared.Compare(self.WTI, date: Utils.shared.YearsAgo(1), label: child.TopLeftLine2, type: nil)
@@ -801,27 +773,15 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     
     func CrudeProductionData()
     {
-        guard let child = self.child as? TwoColumnChild else {return} //20180107 - get here and if the child is a stype of single child then do the following:
+        guard let child = self.child as? TwoColumnChild else {return}
         
-        var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Direct, date: Utils.shared.Today())/1000)! + " <font size=2>"+NSLocalizedString("million", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("day", comment: "")+"</font></font>"
-        var encodedData = text.data(using: String.Encoding.utf8)!
-        var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.LeftMain.attributedText = attributedString
-            
-        } catch _ {}
+        let units: String = NSLocalizedString("million", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("day", comment: "")
         
-        text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Secondary, date: Utils.shared.Today())/1000)! + " <font size=2>"+NSLocalizedString("million", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("day", comment: "")+"</font></font>"
-        encodedData = text.data(using: String.Encoding.utf8)!
-        attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.RightMain.attributedText = attributedString
-            
-        } catch _ {}
+        child.LeftTop.text = "Direct comm. with OPEC"
+        child.RightTop.text = "Secondary sources to OPEC"
         
-        
+        Utils.shared.HTMLText(child.LeftMain, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Direct, date: Utils.shared.Today())/1000)!, Units: units)
+        Utils.shared.HTMLText(child.RightMain, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Secondary, date: Utils.shared.Today())/1000)!, Units: units)
         
         Utils.shared.Compare(self.Direct, date: Utils.shared.YearsAgo(1), label: child.Left1, type: nil)
         Utils.shared.Compare(self.Direct, date: Utils.shared.YearsAgo(2), label: child.Left2, type: nil)
@@ -838,30 +798,15 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     func USOilData()
     {
         guard let child = self.child as? TwoColumnChild else {return}
+
+        let units: String = NSLocalizedString("million", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("month", comment: "")
         
-        let number = Utils.shared.GetLatestNonZeroValue(self.USexports, date: Utils.shared.Today())
-        let numberString = Utils.shared.NumberFormatter.string(for: number/1000)
-        var text1 = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + numberString! + " <font size=2>"+NSLocalizedString("million", comment: "")+" "
-        var text2 = NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("year", comment: "")+"</font></font>"
-        var text = text1+text2
-        var encodedData = text.data(using: String.Encoding.utf8)!
-        var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.LeftMain.attributedText = attributedString
-            
-        } catch _ {}
+        child.LeftTop.text = "Exports to Venezuela"
+        child.RightTop.text = "Imports from Venezuela"
         
-        text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.USimports, date: Utils.shared.Today())/1000)! + " <font size=2>"+NSLocalizedString("million", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("year", comment: "")+"</font></font>"
-        encodedData = text.data(using: String.Encoding.utf8)!
-        attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.RightMain.attributedText = attributedString
-            
-        } catch _ {}
-        
-        
+        Utils.shared.HTMLText(child.LeftMain, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.USexports, date: Utils.shared.Today())/1000)!, Units: units)
+        Utils.shared.HTMLText(child.RightMain, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.USimports, date: Utils.shared.Today())/1000)!, Units: units)
+
         Utils.shared.Compare(self.USexports, date: Utils.shared.YearsAgo(2), label: child.Left1, type: nil)
         Utils.shared.Compare(self.USexports, date: Utils.shared.YearsAgo(3), label: child.Left2, type: nil)
         Utils.shared.Compare(self.USexports, date: Utils.shared.YearsAgo(4), label: child.Left3, type: nil)
@@ -879,14 +824,9 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     {
         guard let child = self.child as? SingleColumnChild else {return}
         
-        var text = "<font face=\"Trebuchet MS\" size=6 color=#FFFFFF>" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.TaxUnit, date: Utils.shared.Today()))! + " <font size=2>BsF</font></font>"
-        var encodedData = text.data(using: String.Encoding.utf8)!
-        var attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            child.MainVal.attributedText = attributedString
-            
-        } catch _ {}
+        child.TopLine.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.TaxUnit, date: Utils.shared.Today())[0])!)
+        
+        Utils.shared.HTMLText(child.MainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.TaxUnit, date: Utils.shared.Today()))!, Units: "BsF")
         
         Utils.shared.Compare(self.TaxUnit, date: Utils.shared.YearsAgo(1), label: child.Line1, type: nil)
         Utils.shared.Compare(self.TaxUnit, date: Utils.shared.YearsAgo(2), label: child.Line2, type: nil)
@@ -1061,7 +1001,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
             {
                 guard let
                     dateString = dataPoint["date"] as? String,
-                    let CentralBankVal = dataPoint["monthly"] as? String,
+                    let CENDAVal = dataPoint["cedice"] as? String,
                     let EcoanaliticaVal = dataPoint["eco_monthly"] as? String, //,
                     let NAVal = dataPoint["na"] as? String,
                     let BPPVal = dataPoint["bpp"] as? String
@@ -1073,13 +1013,13 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
                 
                     let date = Utils.shared.dateFormatter.date(from: dateString)
                 
-                    if (CentralBankVal != "0")
+                    if (CENDAVal != "0")
                     {
-                        CentralBank[dateString] = Double(CentralBankVal) // Adds to my dictionary
-                        let DataPointCentralBank = SChartDataPoint() // Adds to graph data
-                        DataPointCentralBank.xValue = date
-                        DataPointCentralBank.yValue = Double(CentralBankVal)
-                        DataCentralBank.append(DataPointCentralBank)
+                        CENDA[dateString] = Double(CENDAVal) // Adds to my dictionary
+                        let DataPointCENDA = SChartDataPoint() // Adds to graph data
+                        DataPointCENDA.xValue = date
+                        DataPointCENDA.yValue = Double(CENDAVal)
+                        DataCENDA.append(DataPointCENDA)
                     }
                 
                     if (EcoanaliticaVal != "0")
@@ -1135,6 +1075,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
             {
                 guard let
                     dateString = dataPoint["date"] as? String,
+                    let M0Val = dataPoint["m0"] as? String,
                     let M2Val = dataPoint["m2"] as? String
                     else
                     {
@@ -1143,6 +1084,15 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
                     }
                 
                     let date = Utils.shared.dateFormatter.date(from: dateString)
+                
+                    if (M0Val != "0")
+                    {
+                        M0[dateString] = Double(M0Val)! // Adds to my dictionary
+                        let DataPointM0 = SChartDataPoint() // Adds to graph data
+                        DataPointM0.xValue = date
+                        DataPointM0.yValue = Double(M0Val)!/1000000000
+                        DataM0.append(DataPointM0)
+                    }
                 
                     if (M2Val != "0")
                     {
@@ -1157,7 +1107,8 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
             {
                 guard let
                     dateString = dataPoint["date"] as? String,
-                    let MinWageVal = dataPoint["usd_bm"] as? String
+                    let DollarMinWageVal = dataPoint["usd_bm"] as? String,
+                    let BolivarMinWageVal = dataPoint["mw"] as? String
                     else
                     {
                         print("Data is JSON but not the JSON variables expected")
@@ -1166,13 +1117,22 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
                 
                     let date = Utils.shared.dateFormatter.date(from: dateString)
                 
-                    if (MinWageVal != "0")
+                    if (DollarMinWageVal != "0")
                     {
-                        MinWage[dateString] = Double(MinWageVal)! // Adds to my dictionary
-                        let DataPointMinWage = SChartDataPoint() // Adds to graph data
-                        DataPointMinWage.xValue = date
-                        DataPointMinWage.yValue = Double(MinWageVal)!
-                        DataMinWage.append(DataPointMinWage)
+                        DollarMinWage[dateString] = Double(DollarMinWageVal)! // Adds to my dictionary
+                        let DataPointDollarMinWage = SChartDataPoint() // Adds to graph data
+                        DataPointDollarMinWage.xValue = date
+                        DataPointDollarMinWage.yValue = Double(DollarMinWageVal)!
+                        DataDollarMinWage.append(DataPointDollarMinWage)
+                    }
+                
+                    if (BolivarMinWageVal != "0")
+                    {
+                        BolivarMinWage[dateString] = Double(BolivarMinWageVal)! // Adds to my dictionary
+                        let DataPointBolivarMinWage = SChartDataPoint() // Adds to graph data
+                        DataPointBolivarMinWage.xValue = date
+                        DataPointBolivarMinWage.yValue = Double(BolivarMinWageVal)!
+                        DataBolivarMinWage.append(DataPointBolivarMinWage)
                     }
             }
             else if (Indicator == .OilPrices)
@@ -1320,19 +1280,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     
     func numberOfSeries(inSChart chart: ShinobiChart) -> Int
     {
-        switch Indicator
-        {
-            case .FX:
-                return 8
-            case .Inflation, .OilPrices:
-                return 4
-            case .CrudeProduction:
-                return 2
-            case .USOil:
-                return 2
-            default:
-                return 1
-        }
+        return Indicator.numberOfSeries
     }
     
     
@@ -1363,7 +1311,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
         }
         else if (Indicator == .Inflation)
         {
-            titles = ["CentralBank", "Ecoanalitica", "National Assembly", "MIT Billion Prices"]
+            titles = ["CENDA", "Ecoanalitica", "National Assembly", "MIT Billion Prices"]
             colors = [UIColor.orange, UIColor.green, UIColor.white, UIColor.red]
         }
         else if (Indicator == .TaxRevenue)
@@ -1373,8 +1321,8 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
         }
         else if (Indicator == .MoneySupply)
         {
-            titles = ["MoneySupply"]
-            colors = [UIColor.red]
+            titles = ["M0", "M2"]
+            colors = [UIColor.green, UIColor.red]
         }
         else if (Indicator == .MinimumWage)
         {
@@ -1425,13 +1373,13 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
             case .Reserves:
                 counts = [DataReserves.count]
             case .Inflation:
-                counts = [DataCentralBank.count, DataEcoanalitica.count, DataNA.count, DataBPP.count]
+                counts = [DataCENDA.count, DataEcoanalitica.count, DataNA.count, DataBPP.count]
             case .TaxRevenue:
                 counts = [DataTaxRev.count]
             case .MoneySupply:
-                counts = [DataM2.count]
+                counts = [DataM0.count, DataM2.count]
             case .MinimumWage:
-                counts = [DataMinWage.count]
+                counts = [DataDollarMinWage.count]
             case .OilPrices:
                 counts = [DataWTI.count, DataBrent.count, DataVen.count, DataOPEC.count]
             case .CrudeProduction:
@@ -1518,7 +1466,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
         {
             if seriesIndex == 0
             {
-                return DataCentralBank[dataIndex]
+                return DataCENDA[dataIndex]
             }
             if seriesIndex == 1
             {
@@ -1535,7 +1483,6 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
             else
             {
                 return DataEcoanalitica[dataIndex]
-                
             }
         }
         else if (Indicator == .TaxRevenue)
@@ -1544,7 +1491,18 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
         }
         else if (Indicator == .MoneySupply)
         {
-            return DataM2[dataIndex]
+            if seriesIndex == 0
+            {
+                return DataM0[dataIndex]
+            }
+            if seriesIndex == 1
+            {
+                return DataM2[dataIndex]
+            }
+            else
+            {
+                return DataM0[dataIndex]
+            }
         }
         else if (Indicator == .OilPrices)
         {
@@ -1612,7 +1570,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
         }
         else if (Indicator == .MinimumWage)
         {
-            return DataMinWage[dataIndex]
+            return DataDollarMinWage[dataIndex]
         }
         else
         {

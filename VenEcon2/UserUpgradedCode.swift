@@ -8,10 +8,15 @@
 
 import UIKit
 
-class UserUpgradedCode: UIViewController {
+class UserUpgradedCode: UIViewController, HeaderViewDelegate {
+    
+    @IBOutlet weak var Header: HeaderView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Header.HeaderLabel.text = "Thank You"
+        Header.delegate = self
         
         // Do any additional setup after loading the view.
         
@@ -48,15 +53,10 @@ class UserUpgradedCode: UIViewController {
         print("sideMenuDidOpen")
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func ShowMenuTapped()
+    {
+        toggleSideMenuView()
+    }
     
 }
 
