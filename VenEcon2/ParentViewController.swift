@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import GoogleMobileAds
 
+
+
 enum Indicator : String
    {
         case FX, Bitcoin, Reserves, Inflation, TaxRevenue, MoneySupply, MinimumWage, OilPrices, CrudeProduction, USOil, TaxUnit
@@ -49,7 +51,7 @@ enum Indicator : String
                 case .MoneySupply : return Utils.shared.CountryCode + "_" + "m2"
                 case .MinimumWage :  return Utils.shared.CountryCode + "_" + "mw"
                 case .OilPrices :  return Utils.shared.CountryCode + "_" + "oil"
-                case .CrudeProduction :  return Utils.shared.CountryCode + "_" + "crude"
+                case .CrudeProduction :  return Utils.shared.CountryCode + "_" + "crudeproduction"
                 case .USOil :  return Utils.shared.CountryCode + "_" + "USimpexp"
                 case .TaxUnit : return Utils.shared.CountryCode + "_" + "ut"
             }
@@ -65,7 +67,7 @@ enum Indicator : String
                 case .TaxRevenue : return "2017-07-31"
                 case .MoneySupply : return "2017-07-28"
                 case .OilPrices :  return "2017-08-09"
-                case .CrudeProduction :  return "2018-01-01"
+                case .CrudeProduction :  return "2017-12-01"
                 case .USOil :  return "2016-12-15"
                 case .Inflation : return "2017-12-31"
                 default: return "1970-01-01"
@@ -333,7 +335,10 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
             interstitial = GADInterstitial(adUnitID: "ca-app-pub-7175811277195688/1463700737") //LIVE
             //interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910") // DEVELOPMENT
             let requestad = GADRequest()
-            interstitial.load(requestad)
+            if (Utils.shared.DevelopmentMode==false)
+            {
+                interstitial.load(requestad)
+            }
             //https://developers.google.com/admob/ios/interstitial 20171125 https://apps.admob.com/v2/apps/7903495316/adunits/create?pli=1
         }
         
@@ -536,6 +541,9 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
                 self.Chart.datasource = self
                 
                 self.Chart.positionLegend()
+                
+                self.Chart.xAxis?.labelFormatter!.dateFormatter().dateFormat = "MMM YYYY"
+                self.Chart.xAxis!.defaultRange = SChartDateRange(dateMinimum: Utils.shared.dateFormatter.date(from: Utils.shared.YearsAgo(5)), andDateMaximum: Date()) // Added while we don't have the SegmentedControl
                 
                 
                 if !SubscriptionService.shared.isSubscriptionValid() //20171111
@@ -775,10 +783,20 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     {
         guard let child = self.child as? TwoColumnChild else {return}
         
-        let units: String = NSLocalizedString("million", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("day", comment: "")
+        var units: String = NSLocalizedString("million", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("day", comment: "")
         
         child.LeftTop.text = "Direct comm. with OPEC"
         child.RightTop.text = "Secondary sources to OPEC"
+
+        let screenWidth = UIScreen.main.bounds.width
+        //let screenHeight = screenSize.height
+        //https://stackoverflow.com/questions/24110762/swift-determine-ios-screen-size
+        if (screenWidth<667)
+        {
+            child.LeftTop.text = "Direct comm."
+            child.RightTop.text = "Sec. sources"
+            units = NSLocalizedString("m", comment: "")+" "+NSLocalizedString("barrels", comment: "")+" / "+NSLocalizedString("day", comment: "")
+        }
         
         Utils.shared.HTMLText(child.LeftMain, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Direct, date: Utils.shared.Today())/1000)!, Units: units)
         Utils.shared.HTMLText(child.RightMain, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Secondary, date: Utils.shared.Today())/1000)!, Units: units)

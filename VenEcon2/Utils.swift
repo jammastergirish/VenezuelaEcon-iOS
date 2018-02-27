@@ -14,6 +14,8 @@ class Utils
 {
     static let shared = Utils() // this makes it a singleton
     
+    let DevelopmentMode = false 
+    
     let userCalendar = Calendar.current
     
     let dateFormatter : DateFormatter = {
@@ -50,6 +52,7 @@ class Utils
     let APIKey : String = "jbCHiQDZc2HvBNNYrQrMhQOczT4rB2IynRt"
     let CountryCode : String = "ve"
     
+
     
     //Could make these functions or computed variables, says Pat on 20160817
     
