@@ -287,15 +287,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oX-5M-Wkd">
-                                <rect key="frame" x="25" y="110" width="325" height="216.5"/>
+                                <rect key="frame" x="25" y="90" width="325" height="231"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="325" id="FnI-rd-x8O"/>
-                                    <constraint firstAttribute="height" constant="216.5" id="VyX-7M-5bu"/>
+                                    <constraint firstAttribute="height" constant="231" id="VyX-7M-5bu"/>
                                 </constraints>
-                                <string key="text">For the first time, Venezuela-watchers can witness the collapse of the local currency, soaring money supply and falling wages in real time — as well as historic data going back nearly half a century.
+                                <string key="text">Venezuela Econ is the data platform to help researchers, traders, analysts and anyone with an interest in the world's worst economy. 
 
-Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based journalist, physics graduate, and software developer, wrote code to automate the acquisition, manipulation and storage of the country's economic data.</string>
+Users can witness the collapse of the currency, soaring money supply and falling wages in real time — as well as historic data going back nearly half a century.
+
+The website contains even more features, such as the ability to create custom graphs, a flight tracker and social indicators such as murder rates.
+</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -391,8 +394,8 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOg-4c-lis">
-                                <rect key="frame" x="101" y="315" width="229" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOg-4c-lis">
+                                <rect key="frame" x="73" y="331" width="229" height="36"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
                                 <state key="normal" title="www.venezuelaecon.com">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -401,8 +404,8 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                                     <action selector="GoToWebsite:" destination="RtX-C2-xsx" eventType="touchUpInside" id="iqf-aA-6Qi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPo-8n-bbW">
-                                <rect key="frame" x="111" y="325" width="229" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPo-8n-bbW">
+                                <rect key="frame" x="73.5" y="372" width="228" height="36"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
                                 <state key="normal" title="info@venezuelaecon.com">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -436,6 +439,7 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nY1-B7-WOE" firstAttribute="leading" secondItem="qjL-D2-mKH" secondAttribute="leading" id="1Jg-6w-vy9"/>
+                            <constraint firstItem="jOg-4c-lis" firstAttribute="top" secondItem="6oX-5M-Wkd" secondAttribute="bottom" constant="10" id="BZd-eB-h2g"/>
                             <constraint firstItem="jOg-4c-lis" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="Kka-Uo-h9J"/>
                             <constraint firstItem="CPo-8n-bbW" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="Qsq-nK-X7f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VbT-dg-zzp" secondAttribute="trailing" constant="20" id="TbL-ug-EjK"/>
@@ -445,10 +449,10 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                             <constraint firstItem="Qeo-0r-rq7" firstAttribute="top" secondItem="VbT-dg-zzp" secondAttribute="bottom" constant="10" id="k3W-Ds-Opz"/>
                             <constraint firstItem="nY1-B7-WOE" firstAttribute="top" secondItem="qjL-D2-mKH" secondAttribute="top" id="kah-PZ-Mhh"/>
                             <constraint firstAttribute="trailing" secondItem="nY1-B7-WOE" secondAttribute="trailing" id="kgx-ur-Emr"/>
-                            <constraint firstItem="jOg-4c-lis" firstAttribute="top" secondItem="6oX-5M-Wkd" secondAttribute="bottom" constant="15" id="qaH-AF-q8l"/>
+                            <constraint firstItem="jOg-4c-lis" firstAttribute="top" secondItem="6oX-5M-Wkd" secondAttribute="bottom" constant="10" id="qaH-AF-q8l"/>
                             <constraint firstItem="6oX-5M-Wkd" firstAttribute="centerX" secondItem="qjL-D2-mKH" secondAttribute="centerX" id="wem-XR-cIk"/>
                             <constraint firstItem="CPo-8n-bbW" firstAttribute="top" secondItem="jOg-4c-lis" secondAttribute="bottom" constant="5" id="zG8-1n-4sI"/>
-                            <constraint firstItem="6oX-5M-Wkd" firstAttribute="top" secondItem="nY1-B7-WOE" secondAttribute="bottom" constant="30" id="zWv-U3-Vhy"/>
+                            <constraint firstItem="6oX-5M-Wkd" firstAttribute="top" secondItem="nY1-B7-WOE" secondAttribute="bottom" constant="10" id="zWv-U3-Vhy"/>
                         </constraints>
                     </view>
                     <connections>
@@ -459,7 +463,7 @@ Venezuela Econ was created in January 2015 when Girish Gupta, a Venezuela-based 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UQo-Fv-mto" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="966"/>
+            <point key="canvasLocation" x="-82.400000000000006" y="965.6671664167917"/>
         </scene>
         <!--Calc Code-->
         <scene sceneID="6Kh-pb-Jdg">

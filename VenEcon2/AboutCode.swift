@@ -49,7 +49,7 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
         
      //   print("This is the key: " + (UserDefaults.standard.string(forKey: TokenKey))!)
     
-        print("FCM token: "+Messaging.messaging().fcmToken!)
+        //print("FCM token: "+Messaging.messaging().fcmToken!)
         
         
     }
