@@ -128,7 +128,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     
     var Reserves = [String: Double]()
     
-    var CENDA = [String: Double]()
+    var CEDICE = [String: Double]()
     var Ecoanalitica = [String: Double]()
     var NA = [String: Double]()
     var BPP = [String: Double]()
@@ -169,7 +169,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
     
     var DataReserves: [SChartDataPoint] = []
     
-    var DataCENDA: [SChartDataPoint] = []
+    var DataCEDICE: [SChartDataPoint] = []
     var DataEcoanalitica: [SChartDataPoint] = []
     var DataNA: [SChartDataPoint] = []
     var DataBPP: [SChartDataPoint] = []
@@ -645,10 +645,10 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
         
         let units: String = "%"
         
-        Utils.shared.HTMLText(child.TopLeftMainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.CENDA, date: Utils.shared.Today()))!, Units: units)
+        Utils.shared.HTMLText(child.TopLeftMainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.CEDICE, date: Utils.shared.Today()))!, Units: units)
         
-        child.TopLeftTop.text = "CENDA"
-        child.TopLeftLine1.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.CENDA, date: Utils.shared.Today())[0])!)
+        child.TopLeftTop.text = "CEDICE"
+        child.TopLeftLine1.text = Utils.shared.dateFormatterText.string(from: Utils.shared.dateFormatter.date(from:Utils.shared.GetLatestNonZeroKey(self.CEDICE, date: Utils.shared.Today())[0])!)
         
         
         
@@ -1019,7 +1019,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
             {
                 guard let
                     dateString = dataPoint["date"] as? String,
-                    let CENDAVal = dataPoint["cedice"] as? String,
+                    let CEDICEVal = dataPoint["cedice"] as? String,
                     let EcoanaliticaVal = dataPoint["eco_monthly"] as? String, //,
                     let NAVal = dataPoint["na"] as? String,
                     let BPPVal = dataPoint["bpp"] as? String
@@ -1031,13 +1031,13 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
                 
                     let date = Utils.shared.dateFormatter.date(from: dateString)
                 
-                    if (CENDAVal != "0")
+                    if (CEDICEVal != "0")
                     {
-                        CENDA[dateString] = Double(CENDAVal) // Adds to my dictionary
-                        let DataPointCENDA = SChartDataPoint() // Adds to graph data
-                        DataPointCENDA.xValue = date
-                        DataPointCENDA.yValue = Double(CENDAVal)
-                        DataCENDA.append(DataPointCENDA)
+                        CEDICE[dateString] = Double(CEDICEVal) // Adds to my dictionary
+                        let DataPointCEDICE = SChartDataPoint() // Adds to graph data
+                        DataPointCEDICE.xValue = date
+                        DataPointCEDICE.yValue = Double(CEDICEVal)
+                        DataCEDICE.append(DataPointCEDICE)
                     }
                 
                     if (EcoanaliticaVal != "0")
@@ -1329,7 +1329,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
         }
         else if (Indicator == .Inflation)
         {
-            titles = ["CENDA", "Ecoanalitica", "National Assembly", "MIT Billion Prices"]
+            titles = ["CEDICE", "Ecoanalitica", "National Assembly", "MIT Billion Prices"]
             colors = [UIColor.orange, UIColor.green, UIColor.white, UIColor.red]
         }
         else if (Indicator == .TaxRevenue)
@@ -1391,7 +1391,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
             case .Reserves:
                 counts = [DataReserves.count]
             case .Inflation:
-                counts = [DataCENDA.count, DataEcoanalitica.count, DataNA.count, DataBPP.count]
+                counts = [DataCEDICE.count, DataEcoanalitica.count, DataNA.count, DataBPP.count]
             case .TaxRevenue:
                 counts = [DataTaxRev.count]
             case .MoneySupply:
@@ -1484,7 +1484,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
         {
             if seriesIndex == 0
             {
-                return DataCENDA[dataIndex]
+                return DataCEDICE[dataIndex]
             }
             if seriesIndex == 1
             {
