@@ -756,10 +756,10 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
         child.BottomLeftTop.text = "Brent"
         child.BottomRightTop.text = "OPEC"
         
-        Utils.shared.HTMLText(child.TopLeftMainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.WTI, date: Utils.shared.Today()))!, Units: units)
-        Utils.shared.HTMLText(child.BottomLeftMainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Brent, date: Utils.shared.Today()))!, Units: units)
-        Utils.shared.HTMLText(child.TopRightMainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Ven, date: Utils.shared.Today()))!, Units: units)
-        Utils.shared.HTMLText(child.BottomRightMainVal, Text: Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.OPEC, date: Utils.shared.Today()))!, Units: units)
+        Utils.shared.HTMLText(child.TopLeftMainVal, Text: "$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.WTI, date: Utils.shared.Today()))!, Units: units)
+        Utils.shared.HTMLText(child.BottomLeftMainVal, Text: "$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Brent, date: Utils.shared.Today()))!, Units: units)
+        Utils.shared.HTMLText(child.TopRightMainVal, Text: "$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.Ven, date: Utils.shared.Today()))!, Units: units)
+        Utils.shared.HTMLText(child.BottomRightMainVal, Text: "$" + Utils.shared.NumberFormatter.string(for: Utils.shared.GetLatestNonZeroValue(self.OPEC, date: Utils.shared.Today()))!, Units: units)
         
         Utils.shared.Compare(self.WTI, date: Utils.shared.OneMonthAgo(), label: child.TopLeftLine1, type: nil)
         Utils.shared.Compare(self.WTI, date: Utils.shared.YearsAgo(1), label: child.TopLeftLine2, type: nil)
