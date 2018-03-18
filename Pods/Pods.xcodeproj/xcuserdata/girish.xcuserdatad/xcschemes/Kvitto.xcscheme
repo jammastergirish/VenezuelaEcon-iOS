@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '40142001FB07E6099C0E4C7437007290'
+               BlueprintIdentifier = '79B8A5C51F17E89EEC464F0A6CEB77C3'
                BlueprintName = 'Kvitto'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Kvitto.framework'>

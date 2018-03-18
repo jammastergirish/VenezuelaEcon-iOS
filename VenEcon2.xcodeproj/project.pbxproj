@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C7931D71856CAE763B6DDAE /* Pods_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50D398B69A991E56B9E0B99 /* Pods_Watch_Extension.framework */; };
-		0FA02FF5721E214F31BB6A04 /* Pods_Watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339E3DFEB1F09E1BF65C1964 /* Pods_Watch.framework */; };
+		263438219B1D174A50586C67 /* Pods_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F08E11C4A4A4D00B422CA6 /* Pods_Watch_Extension.framework */; };
+		335138DFD0D9C5021553F824 /* Pods_VenEcon2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4BA4B67638B6CA3B073D6B /* Pods_VenEcon2.framework */; };
+		538BAE1F04DACEC38058DF17 /* Pods_Watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0028BDEEFC148A155DA4F48C /* Pods_Watch.framework */; };
+		585824377F4ED93169D19E67 /* Pods_VenEcon2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735E615930CE486DAF80BDF2 /* Pods_VenEcon2Tests.framework */; };
 		6811FFD11FA57690007C1D75 /* UserUpgradedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6811FFD01FA57690007C1D75 /* UserUpgradedCode.swift */; };
 		68127F671F0C564100C4AC5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68127F661F0C564100C4AC5C /* GoogleService-Info.plist */; };
 		68127F681F0C564100C4AC5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68127F661F0C564100C4AC5C /* GoogleService-Info.plist */; };
@@ -62,8 +64,6 @@
 		68D3DBBF1D593D4D00F42648 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D3DBBE1D593D4D00F42648 /* ShinobiCharts.framework */; };
 		68D3DBC11D593E4200F42648 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D3DBC01D593E4200F42648 /* libc++.tbd */; };
 		68D9AA5B20044EB000AFD35D /* QuadChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9AA5A20044EB000AFD35D /* QuadChild.swift */; };
-		8A9593F23C1CA3ABB3E84773 /* Pods_VenEcon2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7AD33EF818B2D10B8458B2C /* Pods_VenEcon2Tests.framework */; };
-		EDE7BC0464FA51BEA6A86685 /* Pods_VenEcon2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B7B874200F5239FE8E4A8D /* Pods_VenEcon2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,9 +116,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		339E3DFEB1F09E1BF65C1964 /* Pods_Watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0028BDEEFC148A155DA4F48C /* Pods_Watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28DED339E8A49C05CF873481 /* Pods-Watch Extension.indiaecon.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.indiaecon.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.indiaecon.xcconfig"; sourceTree = "<group>"; };
 		468CD5D85FF29E646B632ECF /* Pods-VenEcon2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenEcon2.release.xcconfig"; path = "Pods/Target Support Files/Pods-VenEcon2/Pods-VenEcon2.release.xcconfig"; sourceTree = "<group>"; };
-		57B7B874200F5239FE8E4A8D /* Pods_VenEcon2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenEcon2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5970EF07C674CA08CE6C9A34 /* Pods-Watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch/Pods-Watch.release.xcconfig"; sourceTree = "<group>"; };
 		5F6AC45266CC529B928DD585 /* Pods-Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		6629ED1FFBB37212F9CE4965 /* Pods-VenEcon2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenEcon2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VenEcon2Tests/Pods-VenEcon2Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +134,8 @@
 		68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXCalcCode.swift; sourceTree = "<group>"; };
 		6835ACAE1FE18EFC00FFCAC3 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		6835ACB01FE18F7200FFCAC3 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		683EFE58205F10ED0059DBE2 /* India.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = India.xcconfig; sourceTree = "<group>"; };
+		683EFE59205F13210059DBE2 /* Venezuela.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Venezuela.xcconfig; sourceTree = "<group>"; };
 		68460BAE1F9D801B004FD8ED /* BuyUpgradeCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyUpgradeCode.swift; sourceTree = "<group>"; };
 		68589DC21D65563400ECBC3E /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		68652D401D67DB9500049CBC /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
@@ -183,12 +185,15 @@
 		68D3DBBE1D593D4D00F42648 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiCharts.framework; path = VenEcon2/ShinobiCharts.framework; sourceTree = "<group>"; };
 		68D3DBC01D593E4200F42648 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		68D9AA5A20044EB000AFD35D /* QuadChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadChild.swift; sourceTree = "<group>"; };
+		735E615930CE486DAF80BDF2 /* Pods_VenEcon2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenEcon2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76EE7EFDA85EC03E9FC71BED /* Pods-Watch.indiaecon.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch.indiaecon.xcconfig"; path = "Pods/Target Support Files/Pods-Watch/Pods-Watch.indiaecon.xcconfig"; sourceTree = "<group>"; };
+		8D599103DCE731D05E5E6704 /* Pods-VenEcon2Tests.indiaecon.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenEcon2Tests.indiaecon.xcconfig"; path = "Pods/Target Support Files/Pods-VenEcon2Tests/Pods-VenEcon2Tests.indiaecon.xcconfig"; sourceTree = "<group>"; };
+		9E4BA4B67638B6CA3B073D6B /* Pods_VenEcon2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenEcon2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9A45E7EE23C0B0F14A08C6 /* Pods-VenEcon2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenEcon2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VenEcon2Tests/Pods-VenEcon2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A45903EF57C0696ADCC3057D /* Pods-VenEcon2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenEcon2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VenEcon2/Pods-VenEcon2.debug.xcconfig"; sourceTree = "<group>"; };
 		ABD092514357C513B9816868 /* Pods-Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		AE25E1FE1C2239E04C03F8DD /* Pods-Watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watch/Pods-Watch.debug.xcconfig"; sourceTree = "<group>"; };
-		F50D398B69A991E56B9E0B99 /* Pods_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7AD33EF818B2D10B8458B2C /* Pods_VenEcon2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenEcon2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1F08E11C4A4A4D00B422CA6 /* Pods_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,7 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C7931D71856CAE763B6DDAE /* Pods_Watch_Extension.framework in Frameworks */,
+				263438219B1D174A50586C67 /* Pods_Watch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,8 +211,8 @@
 			files = (
 				68D3DBC11D593E4200F42648 /* libc++.tbd in Frameworks */,
 				68D3DBBF1D593D4D00F42648 /* ShinobiCharts.framework in Frameworks */,
-				EDE7BC0464FA51BEA6A86685 /* Pods_VenEcon2.framework in Frameworks */,
 				68A6E6951F9CE9B1002317FA /* StoreKit.framework in Frameworks */,
+				335138DFD0D9C5021553F824 /* Pods_VenEcon2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A9593F23C1CA3ABB3E84773 /* Pods_VenEcon2Tests.framework in Frameworks */,
+				585824377F4ED93169D19E67 /* Pods_VenEcon2Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FA02FF5721E214F31BB6A04 /* Pods_Watch.framework in Frameworks */,
+				538BAE1F04DACEC38058DF17 /* Pods_Watch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,12 +239,21 @@
 			isa = PBXGroup;
 			children = (
 				68A6E6941F9CE9B1002317FA /* StoreKit.framework */,
-				57B7B874200F5239FE8E4A8D /* Pods_VenEcon2.framework */,
-				F7AD33EF818B2D10B8458B2C /* Pods_VenEcon2Tests.framework */,
-				339E3DFEB1F09E1BF65C1964 /* Pods_Watch.framework */,
-				F50D398B69A991E56B9E0B99 /* Pods_Watch_Extension.framework */,
+				9E4BA4B67638B6CA3B073D6B /* Pods_VenEcon2.framework */,
+				735E615930CE486DAF80BDF2 /* Pods_VenEcon2Tests.framework */,
+				0028BDEEFC148A155DA4F48C /* Pods_Watch.framework */,
+				E1F08E11C4A4A4D00B422CA6 /* Pods_Watch_Extension.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		683EFE57205F10BE0059DBE2 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				683EFE58205F10ED0059DBE2 /* India.xcconfig */,
+				683EFE59205F13210059DBE2 /* Venezuela.xcconfig */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		68B48B351DE641F2002D3574 /* Watch */ = {
@@ -305,6 +319,7 @@
 		68D3DB951D593AA600F42648 /* VenEcon2 */ = {
 			isa = PBXGroup;
 			children = (
+				683EFE57205F10BE0059DBE2 /* Config */,
 				6822A1C21DEA7E69009EDC80 /* VenEcon2.entitlements */,
 				68127F661F0C564100C4AC5C /* GoogleService-Info.plist */,
 				68D3DBA21D593AA600F42648 /* Info.plist */,
@@ -320,9 +335,9 @@
 				681D06721FE21BD900E4FFA3 /* ParentViewController.swift */,
 				6835ACAE1FE18EFC00FFCAC3 /* HeaderView.xib */,
 				6835ACB01FE18F7200FFCAC3 /* HeaderView.swift */,
+				68D3DBB81D593AFF00F42648 /* MyMenuTableViewController.swift */,
 				68D3DBB61D593AFF00F42648 /* ENSideMenu.swift */,
 				68D3DBB71D593AFF00F42648 /* ENSideMenuNavigationController.swift */,
-				68D3DBB81D593AFF00F42648 /* MyMenuTableViewController.swift */,
 				68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */,
 				681D06761FE21FE200E4FFA3 /* FXChild.swift */,
 				68A9DE4C2002C6A6000F4997 /* SingleColumnChild.swift */,
@@ -367,6 +382,9 @@
 				5970EF07C674CA08CE6C9A34 /* Pods-Watch.release.xcconfig */,
 				ABD092514357C513B9816868 /* Pods-Watch Extension.debug.xcconfig */,
 				5F6AC45266CC529B928DD585 /* Pods-Watch Extension.release.xcconfig */,
+				8D599103DCE731D05E5E6704 /* Pods-VenEcon2Tests.indiaecon.xcconfig */,
+				76EE7EFDA85EC03E9FC71BED /* Pods-Watch.indiaecon.xcconfig */,
+				28DED339E8A49C05CF873481 /* Pods-Watch Extension.indiaecon.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -892,6 +910,139 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		683EFE5A205F140F0059DBE2 /* IndiaEcon */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = IndiaEcon;
+		};
+		683EFE5B205F140F0059DBE2 /* IndiaEcon */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 683EFE58205F10ED0059DBE2 /* India.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VenEcon2/VenEcon2.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 82R2WDARJW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VenEcon2",
+				);
+				INFOPLIST_FILE = VenEcon2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.girish.IndiaEcon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VenEcon2/ShinobiCharts.framework/Headers/ShinobiChart-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = IndiaEcon;
+		};
+		683EFE5C205F140F0059DBE2 /* IndiaEcon */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D599103DCE731D05E5E6704 /* Pods-VenEcon2Tests.indiaecon.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VenEcon2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.VenEcon2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VenEcon2.app/VenEcon2";
+			};
+			name = IndiaEcon;
+		};
+		683EFE5D205F140F0059DBE2 /* IndiaEcon */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76EE7EFDA85EC03E9FC71BED /* Pods-Watch.indiaecon.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 82R2WDARJW;
+				IBSC_MODULE = Watch_Extension;
+				INFOPLIST_FILE = Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.girish.IndiaEcon.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = IndiaEcon;
+		};
+		683EFE5E205F140F0059DBE2 /* IndiaEcon */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28DED339E8A49C05CF873481 /* Pods-Watch Extension.indiaecon.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 82R2WDARJW;
+				INFOPLIST_FILE = "Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.girish.IndiaEcon.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = IndiaEcon;
+		};
 		68B48B541DE641F2002D3574 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ABD092514357C513B9816868 /* Pods-Watch Extension.debug.xcconfig */;
@@ -1078,7 +1229,7 @@
 		};
 		68D3DBB11D593AA700F42648 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A45903EF57C0696ADCC3057D /* Pods-VenEcon2.debug.xcconfig */;
+			baseConfigurationReference = 683EFE59205F13210059DBE2 /* Venezuela.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = VenEcon2/VenEcon2.entitlements;
@@ -1157,6 +1308,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68B48B541DE641F2002D3574 /* Debug */,
+				683EFE5E205F140F0059DBE2 /* IndiaEcon */,
 				68B48B551DE641F2002D3574 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1166,6 +1318,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68B48B581DE641F2002D3574 /* Debug */,
+				683EFE5D205F140F0059DBE2 /* IndiaEcon */,
 				68B48B591DE641F2002D3574 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1175,6 +1328,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68D3DBAE1D593AA700F42648 /* Debug */,
+				683EFE5A205F140F0059DBE2 /* IndiaEcon */,
 				68D3DBAF1D593AA700F42648 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1184,6 +1338,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68D3DBB11D593AA700F42648 /* Debug */,
+				683EFE5B205F140F0059DBE2 /* IndiaEcon */,
 				68D3DBB21D593AA700F42648 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1193,6 +1348,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68D3DBB41D593AA700F42648 /* Debug */,
+				683EFE5C205F140F0059DBE2 /* IndiaEcon */,
 				68D3DBB51D593AA700F42648 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

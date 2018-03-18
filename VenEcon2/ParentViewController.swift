@@ -85,7 +85,7 @@ enum Indicator : String
                 case .MoneySupply : return "M2Data"
                 case .OilPrices :  return "OilData"
                 case .USOil : return "USOilData"
-                case . CrudeProduction: return "CrudeProductionData"
+                case .CrudeProduction: return "CrudeProductionData"
                 case .Inflation: return "InfData"
                 default: return nil
             }
@@ -401,7 +401,8 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
         }
         
         //Added this bit with Pat on 20160804, to download the file
-        let url = URL(string: Utils.shared.APIDomain + "/output.php?table=" + Indicator.mySQLTableName + "&format=json&start=" + Indicator.StartDate + "&key=" + Utils.shared.APIKey)!
+        print(Utils.shared.CountryCode)
+        let url = URL(string: "https://" + Utils.shared.APIDomain + "/output.php?table=" + Indicator.mySQLTableName + "&format=json&start=" + Indicator.StartDate + "&key=" + Utils.shared.APIKey)!
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             

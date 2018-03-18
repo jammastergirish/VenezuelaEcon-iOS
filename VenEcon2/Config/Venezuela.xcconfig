@@ -1,0 +1,15 @@
+//
+//  India.xcconfig
+//  VenEcon2
+//
+//  Created by Girish Gupta on 18/03/2018.
+//  Copyright © 2018 Girish Gupta. All rights reserved.
+//
+
+BUNDLE_NAME = Ven Econ
+BUNDLE_DISPLAY_NAME = Ven Econ
+API_DOMAIN = api.venezuelaecon.com
+COUNTRY_CODE = ve
+PRODUCT_BUNDLE_IDENTIFIER = com.girish.VenEcon
+
+#include "Pods/Target Support Files/Pods-VenEcon2/Pods-VenEcon2.debug.xcconfig"

@@ -48,9 +48,13 @@ class Utils
 
     let currencies : [String: String] = ["GBP": "£", "USD": "$", "EUR": "€", "COP": "COL$", "VEF": "BsF"]
     
-    let APIDomain : String = "https://api.venezuelaecon.com"
+    //let infoDictionary = Bundle.main.infoDictionary // With Pat on 20180318
+    let APIDomain = Bundle.main.infoDictionary!["API_DOMAIN"] as! String
+    let CountryCode = Bundle.main.infoDictionary!["COUNTRY_CODE"] as! String
+    
+//    let APIDomain : String = "https://api.venezuelaecon.com"
     let APIKey : String = "jbCHiQDZc2HvBNNYrQrMhQOczT4rB2IynRt"
-    let CountryCode : String = "ve"
+//    let CountryCode : String = "ve"
     
 
     

@@ -63,7 +63,7 @@ class MyMenuTableViewController: UITableViewController {
     }
 
 
-    func labelsForViewControllers() -> [String] // added for subscription service on 20171022. changed htis to a function rather than a variable/property below
+    func labelsForViewControllers() -> [String] // added for subscription service on 20171022. changed this to a function rather than a variable/property below
     {
         if SubscriptionService.shared.isSubscriptionValid() // CHANGE THIS IF WANT TO TEST! 20171130
         {
@@ -153,14 +153,15 @@ class MyMenuTableViewController: UITableViewController {
         }
         
             sideMenuController()?.setContentViewController(DestViewController) // Set up the VC
-            if let index = labelsForViewControllers().index(of: name) // this added on 20171028
-            {
-                tableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .middle)
-            }
-            else if let index = tableView.indexPathForSelectedRow
-            { //if tableview has anything selected, then unselect it
-                tableView.deselectRow(at: index, animated: true)
-            }
+//            if let index = labelsForViewControllers().index(of: name) // this added on 20171028
+//            {
+//                tableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .middle)
+//            }
+//            else if let index = tableView.indexPathForSelectedRow
+//            { //if tableview has anything selected, then unselect it
+//                tableView.deselectRow(at: index, animated: true)
+//            }
+           tableView.selectRow(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: .middle)
     }
     
     
