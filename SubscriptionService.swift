@@ -131,7 +131,7 @@ class SubscriptionService : NSObject, SKProductsRequestDelegate, SKPaymentTransa
     
     func LoadSubscription()
     {
-        let ProductIDs : Set = ["com.girish.venezuelaecon.allaccess"]
+        let ProductIDs : Set = Set(["com.girish.venezuelaecon.allaccess"])
         
         let request = SKProductsRequest(productIdentifiers: ProductIDs)
         
