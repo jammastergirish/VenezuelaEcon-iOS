@@ -13,8 +13,8 @@ target 'VenEcon2' do
   pod 'Firebase/Messaging'
   pod 'Firebase/AdMob'
 
-pod 'Fabric', '~> 1.7.2' # https://firebase.google.com/docs/crashlytics/get-started?authuser=0 20171202
-pod 'Crashlytics', '~> 3.9.3'
+pod 'Fabric', '~> 1.7.6'
+pod 'Crashlytics', '~> 3.10.1'
 
   #   platform :ios, '8.0'
   #   pod 'BMSCore', '~> 2.0'

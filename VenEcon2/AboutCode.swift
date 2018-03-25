@@ -8,6 +8,7 @@ import MessageUI
 import Firebase
 //import FirebaseMessaging
 //import UserNotifications
+import Crashlytics
 
 class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMenuDelegate, HeaderViewDelegate {
     
@@ -74,16 +75,18 @@ class AboutCode: UIViewController, MFMailComposeViewControllerDelegate, ENSideMe
     
     
     @IBAction func EmailButton(_ sender: AnyObject) {
+                //Crashlytics.sharedInstance().crash() // Testing a crash on 20180325
         if MFMailComposeViewController.canSendMail() {
             let picker = MFMailComposeViewController()
             picker.mailComposeDelegate = self
             picker.setToRecipients(["info@girish-gupta.com"])
             picker.setSubject("Venezuela Econ " + version() + " | " + UIDevice.current.model)
             //   picker.setMessageBody(body.text, isHTML: false)
-            
-            
+
+
             present(picker, animated: true, completion: nil)
         }
+
     }
     
     @IBAction func TwitterButton(_ sender: Any) {
