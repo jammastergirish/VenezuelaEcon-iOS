@@ -386,7 +386,8 @@ class ParentViewController: UIViewController, HeaderViewDelegate, ENSideMenuDele
             {
                 if self.interstitial.isReady
                 {
-                    self.interstitial.present(fromRootViewController: self)
+                    //Temporarily ditching ads after Apple issue. Will get back at some point. 20180327
+                    //self.interstitial.present(fromRootViewController: self)
                 }
                 else
                 {
