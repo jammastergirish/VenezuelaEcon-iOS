@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0F6B6C64B8118DC94025FC580589A9C4"
+               BlueprintIdentifier = "5F3FF5630FCF7EF4BB4AADC776F66B7F"
                BuildableName = "Pods_VenEcon2.framework"
                BlueprintName = "Pods-VenEcon2"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0F6B6C64B8118DC94025FC580589A9C4"
+            BlueprintIdentifier = "5F3FF5630FCF7EF4BB4AADC776F66B7F"
             BuildableName = "Pods_VenEcon2.framework"
             BlueprintName = "Pods-VenEcon2"
             ReferencedContainer = "container:Pods.xcodeproj">
