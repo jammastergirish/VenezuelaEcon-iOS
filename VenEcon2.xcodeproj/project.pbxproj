@@ -50,7 +50,6 @@
 		68B48B4A1DE641F2002D3574 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B48B491DE641F2002D3574 /* ExtensionDelegate.swift */; };
 		68B48B4C1DE641F2002D3574 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B48B4B1DE641F2002D3574 /* NotificationController.swift */; };
 		68B48B4E1DE641F2002D3574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68B48B4D1DE641F2002D3574 /* Assets.xcassets */; };
-		68B48B521DE641F2002D3574 /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 68B48B341DE641F1002D3574 /* Watch.app */; };
 		68B48B5E1DE64AA2002D3574 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B48B5D1DE64AA2002D3574 /* ComplicationController.swift */; };
 		68B6BE9B1F3BE8E2001E0E1E /* GDPData.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B6BE9A1F3BE8E2001E0E1E /* GDPData.json */; };
 		68D3DB971D593AA600F42648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DB961D593AA600F42648 /* AppDelegate.swift */; };
@@ -74,13 +73,6 @@
 			remoteGlobalIDString = 68B48B3F1DE641F2002D3574;
 			remoteInfo = "Watch Extension";
 		};
-		68B48B501DE641F2002D3574 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 68D3DB8B1D593AA600F42648 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 68B48B331DE641F1002D3574;
-			remoteInfo = Watch;
-		};
 		68D3DBA81D593AA700F42648 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 68D3DB8B1D593AA600F42648 /* Project object */;
@@ -100,17 +92,6 @@
 				68B48B411DE641F2002D3574 /* Watch Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		68B48B5A1DE641F2002D3574 /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				68B48B521DE641F2002D3574 /* Watch.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -440,14 +421,12 @@
 				68D3DB8F1D593AA600F42648 /* Sources */,
 				68D3DB901D593AA600F42648 /* Frameworks */,
 				68D3DB911D593AA600F42648 /* Resources */,
-				68B48B5A1DE641F2002D3574 /* Embed Watch Content */,
 				08B60FD6604FB4882DD466B4 /* [CP] Embed Pods Frameworks */,
 				4907E70B97994296B53D7C56 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				68B48B511DE641F2002D3574 /* PBXTargetDependency */,
 			);
 			name = VenEcon2;
 			productName = VenEcon2;
@@ -843,11 +822,6 @@
 			isa = PBXTargetDependency;
 			target = 68B48B3F1DE641F2002D3574 /* Watch Extension */;
 			targetProxy = 68B48B421DE641F2002D3574 /* PBXContainerItemProxy */;
-		};
-		68B48B511DE641F2002D3574 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 68B48B331DE641F1002D3574 /* Watch */;
-			targetProxy = 68B48B501DE641F2002D3574 /* PBXContainerItemProxy */;
 		};
 		68D3DBA91D593AA700F42648 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
