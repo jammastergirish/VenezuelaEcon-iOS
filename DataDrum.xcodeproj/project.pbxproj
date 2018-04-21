@@ -110,7 +110,7 @@
 		681D06721FE21BD900E4FFA3 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		681D06741FE21E5300E4FFA3 /* UIViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewHelper.swift; sourceTree = "<group>"; };
 		681D06761FE21FE200E4FFA3 /* FXChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXChild.swift; sourceTree = "<group>"; };
-		6822A1C21DEA7E69009EDC80 /* VenEcon2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VenEcon2.entitlements; sourceTree = "<group>"; };
+		6822A1C21DEA7E69009EDC80 /* DataDrum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DataDrum.entitlements; sourceTree = "<group>"; };
 		68315B391D6A561600BE7036 /* AboutCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCode.swift; sourceTree = "<group>"; };
 		68315B3B1D6A5EE900BE7036 /* FXCalcCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXCalcCode.swift; sourceTree = "<group>"; };
 		6835ACAE1FE18EFC00FFCAC3 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -151,19 +151,19 @@
 		68B48B5D1DE64AA2002D3574 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComplicationController.swift; path = ../Watch/ComplicationController.swift; sourceTree = "<group>"; };
 		68B6BE9A1F3BE8E2001E0E1E /* GDPData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GDPData.json; sourceTree = "<group>"; };
 		68B95B041F9D6FAB00800890 /* SubscriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionService.swift; sourceTree = SOURCE_ROOT; };
-		68D3DB931D593AA600F42648 /* VenEcon2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenEcon2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68D3DB931D593AA600F42648 /* DataDrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataDrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D3DB961D593AA600F42648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68D3DB9B1D593AA600F42648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68D3DBA01D593AA600F42648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68D3DBA21D593AA600F42648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		68D3DBA71D593AA700F42648 /* VenEcon2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VenEcon2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68D3DBA71D593AA700F42648 /* DataDrumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataDrumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D3DBAB1D593AA700F42648 /* VenEcon2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenEcon2Tests.swift; sourceTree = "<group>"; };
 		68D3DBAD1D593AA700F42648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68D3DBB61D593AFF00F42648 /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
 		68D3DBB71D593AFF00F42648 /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		68D3DBB81D593AFF00F42648 /* MyMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMenuTableViewController.swift; sourceTree = "<group>"; };
 		68D3DBB91D593AFF00F42648 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
-		68D3DBBE1D593D4D00F42648 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiCharts.framework; path = VenEcon2/ShinobiCharts.framework; sourceTree = "<group>"; };
+		68D3DBBE1D593D4D00F42648 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiCharts.framework; path = DataDrum/ShinobiCharts.framework; sourceTree = "<group>"; };
 		68D3DBC01D593E4200F42648 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		68D9AA5A20044EB000AFD35D /* QuadChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadChild.swift; sourceTree = "<group>"; };
 		735E615930CE486DAF80BDF2 /* Pods_VenEcon2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenEcon2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,7 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				68D3DBC01D593E4200F42648 /* libc++.tbd */,
-				68D3DB951D593AA600F42648 /* VenEcon2 */,
+				68D3DB951D593AA600F42648 /* DataDrum */,
 				68D3DBAA1D593AA700F42648 /* VenEcon2Tests */,
 				68B48B351DE641F2002D3574 /* Watch */,
 				68B48B441DE641F2002D3574 /* Watch Extension */,
@@ -289,19 +289,19 @@
 		68D3DB941D593AA600F42648 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				68D3DB931D593AA600F42648 /* VenEcon2.app */,
-				68D3DBA71D593AA700F42648 /* VenEcon2Tests.xctest */,
+				68D3DB931D593AA600F42648 /* DataDrum.app */,
+				68D3DBA71D593AA700F42648 /* DataDrumTests.xctest */,
 				68B48B341DE641F1002D3574 /* Watch.app */,
 				68B48B401DE641F2002D3574 /* Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		68D3DB951D593AA600F42648 /* VenEcon2 */ = {
+		68D3DB951D593AA600F42648 /* DataDrum */ = {
 			isa = PBXGroup;
 			children = (
 				683EFE57205F10BE0059DBE2 /* Config */,
-				6822A1C21DEA7E69009EDC80 /* VenEcon2.entitlements */,
+				6822A1C21DEA7E69009EDC80 /* DataDrum.entitlements */,
 				68127F661F0C564100C4AC5C /* GoogleService-Info.plist */,
 				68D3DBA21D593AA600F42648 /* Info.plist */,
 				68B48B301DE63DA8002D3574 /* InfoPlist.strings */,
@@ -339,7 +339,7 @@
 				688640071F365281009A0A0F /* TaxRevData.json */,
 				68814A141D67180A002B88AF /* Images.xcassets */,
 			);
-			path = VenEcon2;
+			path = DataDrum;
 			sourceTree = "<group>";
 		};
 		68D3DBAA1D593AA700F42648 /* VenEcon2Tests */ = {
@@ -413,9 +413,9 @@
 			productReference = 68B48B401DE641F2002D3574 /* Watch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
-		68D3DB921D593AA600F42648 /* VenEcon2 */ = {
+		68D3DB921D593AA600F42648 /* DataDrum */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 68D3DBB01D593AA700F42648 /* Build configuration list for PBXNativeTarget "VenEcon2" */;
+			buildConfigurationList = 68D3DBB01D593AA700F42648 /* Build configuration list for PBXNativeTarget "DataDrum" */;
 			buildPhases = (
 				6D7FF8CC870227E1FB131EF0 /* [CP] Check Pods Manifest.lock */,
 				68D3DB8F1D593AA600F42648 /* Sources */,
@@ -428,14 +428,14 @@
 			);
 			dependencies = (
 			);
-			name = VenEcon2;
+			name = DataDrum;
 			productName = VenEcon2;
-			productReference = 68D3DB931D593AA600F42648 /* VenEcon2.app */;
+			productReference = 68D3DB931D593AA600F42648 /* DataDrum.app */;
 			productType = "com.apple.product-type.application";
 		};
-		68D3DBA61D593AA700F42648 /* VenEcon2Tests */ = {
+		68D3DBA61D593AA700F42648 /* DataDrumTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 68D3DBB31D593AA700F42648 /* Build configuration list for PBXNativeTarget "VenEcon2Tests" */;
+			buildConfigurationList = 68D3DBB31D593AA700F42648 /* Build configuration list for PBXNativeTarget "DataDrumTests" */;
 			buildPhases = (
 				C290D819502F190E8E048CD1 /* [CP] Check Pods Manifest.lock */,
 				68D3DBA31D593AA700F42648 /* Sources */,
@@ -449,9 +449,9 @@
 			dependencies = (
 				68D3DBA91D593AA700F42648 /* PBXTargetDependency */,
 			);
-			name = VenEcon2Tests;
+			name = DataDrumTests;
 			productName = VenEcon2Tests;
-			productReference = 68D3DBA71D593AA700F42648 /* VenEcon2Tests.xctest */;
+			productReference = 68D3DBA71D593AA700F42648 /* DataDrumTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -503,7 +503,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 68D3DB8E1D593AA600F42648 /* Build configuration list for PBXProject "VenEcon2" */;
+			buildConfigurationList = 68D3DB8E1D593AA600F42648 /* Build configuration list for PBXProject "DataDrum" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -517,8 +517,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				68D3DB921D593AA600F42648 /* VenEcon2 */,
-				68D3DBA61D593AA700F42648 /* VenEcon2Tests */,
+				68D3DB921D593AA600F42648 /* DataDrum */,
+				68D3DBA61D593AA700F42648 /* DataDrumTests */,
 				68B48B331DE641F1002D3574 /* Watch */,
 				68B48B3F1DE641F2002D3574 /* Watch Extension */,
 			);
@@ -827,7 +827,7 @@
 		};
 		68D3DBA91D593AA700F42648 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 68D3DB921D593AA600F42648 /* VenEcon2 */;
+			target = 68D3DB921D593AA600F42648 /* DataDrum */;
 			targetProxy = 68D3DBA81D593AA700F42648 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -941,20 +941,20 @@
 			baseConfigurationReference = 683EFE58205F10ED0059DBE2 /* India.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = VenEcon2/VenEcon2.entitlements;
+				CODE_SIGN_ENTITLEMENTS = DataDrum/DataDrum.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 82R2WDARJW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/VenEcon2",
+					"$(PROJECT_DIR)/DataDrum",
 				);
-				INFOPLIST_FILE = VenEcon2/Info.plist;
+				INFOPLIST_FILE = DataDrum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.girish.IndiaEcon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "VenEcon2/ShinobiCharts.framework/Headers/ShinobiChart-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DataDrum/ShinobiCharts.framework/Headers/ShinobiChart-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = IndiaEcon;
@@ -969,7 +969,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.VenEcon2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VenEcon2.app/VenEcon2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataDrum.app/DataDrum";
 			};
 			name = IndiaEcon;
 		};
@@ -1208,20 +1208,20 @@
 			baseConfigurationReference = 683EFE59205F13210059DBE2 /* Venezuela.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = VenEcon2/VenEcon2.entitlements;
+				CODE_SIGN_ENTITLEMENTS = DataDrum/DataDrum.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 82R2WDARJW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/VenEcon2",
+					"$(PROJECT_DIR)/DataDrum",
 				);
-				INFOPLIST_FILE = VenEcon2/Info.plist;
+				INFOPLIST_FILE = DataDrum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.girish.VenEcon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "VenEcon2/ShinobiCharts.framework/Headers/ShinobiChart-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DataDrum/ShinobiCharts.framework/Headers/ShinobiChart-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1231,20 +1231,20 @@
 			baseConfigurationReference = 468CD5D85FF29E646B632ECF /* Pods-VenEcon2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = VenEcon2/VenEcon2.entitlements;
+				CODE_SIGN_ENTITLEMENTS = DataDrum/DataDrum.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 82R2WDARJW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/VenEcon2",
+					"$(PROJECT_DIR)/DataDrum",
 				);
-				INFOPLIST_FILE = VenEcon2/Info.plist;
+				INFOPLIST_FILE = DataDrum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.girish.VenEcon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "VenEcon2/ShinobiCharts.framework/Headers/ShinobiChart-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DataDrum/ShinobiCharts.framework/Headers/ShinobiChart-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -1259,7 +1259,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.VenEcon2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VenEcon2.app/VenEcon2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataDrum.app/DataDrum";
 			};
 			name = Debug;
 		};
@@ -1273,7 +1273,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.VenEcon2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VenEcon2.app/VenEcon2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataDrum.app/DataDrum";
 			};
 			name = Release;
 		};
@@ -1300,7 +1300,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		68D3DB8E1D593AA600F42648 /* Build configuration list for PBXProject "VenEcon2" */ = {
+		68D3DB8E1D593AA600F42648 /* Build configuration list for PBXProject "DataDrum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68D3DBAE1D593AA700F42648 /* Debug */,
@@ -1310,7 +1310,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		68D3DBB01D593AA700F42648 /* Build configuration list for PBXNativeTarget "VenEcon2" */ = {
+		68D3DBB01D593AA700F42648 /* Build configuration list for PBXNativeTarget "DataDrum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68D3DBB11D593AA700F42648 /* Debug */,
@@ -1320,7 +1320,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		68D3DBB31D593AA700F42648 /* Build configuration list for PBXNativeTarget "VenEcon2Tests" */ = {
+		68D3DBB31D593AA700F42648 /* Build configuration list for PBXNativeTarget "DataDrumTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68D3DBB41D593AA700F42648 /* Debug */,
